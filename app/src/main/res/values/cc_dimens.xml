@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 主页 -->
+    <dimen name="home_bottom_tab_height">@dimen/d25</dimen>
+    <dimen name="home_tab_button">@dimen/d12</dimen>
+    <dimen name="home_tab_button_text">12sp</dimen>
+    <dimen name="title_height">@dimen/d22</dimen>
+    <dimen name="home_map_viewpager_height">@dimen/d56</dimen>
+</resources>

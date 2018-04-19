@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_bottom_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/home_bottom_tab_height"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/line"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/home_1_layout1"
+            style="@style/home_bottom_tab"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/home_rdbt1"
+                android:layout_width="@dimen/home_tab_button"
+                android:layout_height="@dimen/home_tab_button"
+                android:background="@drawable/selector_home_tab1" />
+
+            <TextView
+                android:id="@+id/home_rdbt1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d1"
+                android:text="@string/home_tab_text_1"
+                android:textColor="@drawable/selector_home_tab_text"
+                android:textSize="@dimen/home_tab_button_text" />
+        </LinearLayout>
+        <!-- 2 -->
+
+        <LinearLayout
+            android:id="@+id/home_1_layout2"
+            style="@style/home_bottom_tab"
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/home_rdbt2"
+                android:layout_width="@dimen/home_tab_button"
+                android:layout_height="@dimen/home_tab_button"
+                android:background="@drawable/selector_home_tab2" />
+
+            <TextView
+                android:id="@+id/home_rdbt2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d1"
+                android:text="@string/home_tab_text_2"
+                android:textColor="@drawable/selector_home_tab_text"
+                android:textSize="@dimen/home_tab_button_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_1_layout4"
+            style="@style/home_bottom_tab"
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/home_rdbt4"
+                android:layout_width="@dimen/home_tab_button"
+                android:layout_height="@dimen/home_tab_button"
+                android:background="@drawable/selector_home_tab4" />
+
+            <TextView
+                android:id="@+id/home_rdbt4_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d1"
+                android:text="@string/home_tab_text_3"
+                android:textColor="@drawable/selector_home_tab_text"
+                android:textSize="@dimen/home_tab_button_text" />
+
+        </LinearLayout>
+        <!-- mindel -->
+        <!--  -->
+        <LinearLayout
+            android:id="@+id/home_1_layout3"
+            style="@style/home_bottom_tab"
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/home_rdbt3"
+                android:layout_width="@dimen/home_tab_button"
+                android:layout_height="@dimen/home_tab_button"
+                android:background="@drawable/selector_home_tab3" />
+
+            <TextView
+                android:id="@+id/home_rdbt3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d1"
+                android:text="@string/home_tab_text_4"
+                android:textColor="@drawable/selector_home_tab_text"
+                android:textSize="@dimen/home_tab_button_text" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+
