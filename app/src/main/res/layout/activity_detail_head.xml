@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+
+    <include layout="@layout/line_match"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/d3"
+        android:paddingTop="@dimen/d3"
+        android:paddingRight="@dimen/d3"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/d20"
+            android:src="@mipmap/default_head"
+            android:layout_height="@dimen/d20"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="酱油"
+            android:textSize="12sp"
+            android:layout_marginLeft="@dimen/d5"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ 关注"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草"
+        android:layout_marginTop="@dimen/d2"
+        android:paddingRight="@dimen/d8"
+        android:paddingLeft="@dimen/d8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/d7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="3dp">
+
+        <ImageView
+            android:layout_width="@dimen/d7"
+            android:layout_height="@dimen/d7"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/d2"
+            android:src="@drawable/ic_action" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="点个赞"
+            android:background="@drawable/shape_round_corner_center_yellow"
+            android:padding="@dimen/d2"
+            android:layout_marginTop="@dimen/d5"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="共有 30 个赞"
+            android:padding="@dimen/d2"
+            android:textColor="@color/gray3"
+            android:layout_height="wrap_content" />
+
+        <cc.cwalk.com.custom_view.AutoFlowLayout
+            android:id="@+id/af_heads"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d3"
+        android:background="@color/gray1"
+        android:padding="@dimen/d2"
+        android:text="最新评论"
+        android:textColor="@color/gray0"
+        android:textSize="12sp" />
+</LinearLayout>

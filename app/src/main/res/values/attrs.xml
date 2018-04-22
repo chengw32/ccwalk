@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NetworkImageView">
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+
+    <!--进度条-->
+    <declare-styleable name="RecoderProgress">
+        <attr name="bf_progress_color" format="color"/>
+        <attr name="af_progress_color" format="color"/>
+        <attr name="max_recoder_time" format="integer"/>
+        <attr name="min_recoder_time" format="integer"/>
+    </declare-styleable>
+
+    <!--进度条-->
+    <declare-styleable name="CircleProgressView">
+        <attr name="matProg_progressIndeterminate" format="boolean"/>
+        <attr name="matProg_barColor" format="color"/>
+        <attr name="matProg_rimColor" format="color"/>
+        <attr name="matProg_rimWidth" format="dimension"/>
+        <attr name="matProg_spinSpeed" format="float"/>
+        <attr name="matProg_barSpinCycleTime" format="integer"/>
+        <attr name="matProg_circleRadius" format="dimension"/>
+        <attr name="matProg_fillRadius" format="boolean"/>
+        <attr name="matProg_barWidth" format="dimension"/>
+        <attr name="matProg_linearProgress" format="boolean"/>
+    </declare-styleable>
+
+</resources>

@@ -14,6 +14,8 @@ import org.greenrobot.eventbus.EventBus;
  */
 public class EventUtil {
 
+	public final static String ACT_LOGIN = "login";
+	public final static String IMAGE_VIDEO = "pickerimages";
 	/**
 	 * 注册订阅者
 	 * @param context
@@ -42,12 +44,27 @@ public class EventUtil {
 	}
 
 	/**
-	 * 发送消息
-	 * @param object
+	 * 发送消息 数据
 	 */
-	public static void sendEvent(Object object){
-		EventBus.getDefault().post(object);
+	public static void sendEvent(String action,Object data){
+		EventBus.getDefault().post(new BaseEvent(action,data));
 	}
 
+
+	public static class BaseEvent{
+		private  String actiong ;
+		private  Object data ;
+		public BaseEvent(String act,Object object) {
+			this.actiong = act ;
+			this.data = object ;
+		}
+		public String getAction() {
+			return actiong;
+		}
+
+		public Object getData() {
+			return data;
+		}
+	}
 
 }

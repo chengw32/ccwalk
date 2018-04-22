@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/base_bar_layout"></include>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        style="@style/base_text_style"
+        android:hint="输入内容...."
+        android:background="@null"
+        android:layout_marginTop="@dimen/d5"
+        android:minHeight="@dimen/d50"
+        android:gravity="left"
+        android:padding="@dimen/d5"
+        android:layout_marginLeft="@dimen/d10"
+        android:layout_marginRight="@dimen/d10"
+        android:layout_height="wrap_content"/>
+
+    <cc.cwalk.com.custom_view.AutoFlowLayout
+        android:id="@+id/af_images"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/d5"
+        android:layout_marginLeft="@dimen/d10"
+        android:layout_marginRight="@dimen/d10"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

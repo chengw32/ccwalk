@@ -1,20 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cc.cwalk.com">
+          package="cc.cwalk.com">
+
+    <!-- 视频录制的权限star -->
+    <!-- sd卡写入权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 硬件支持 -->
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <!-- 视频录制的权限end -->
+
+
+    <!-- 权限声明 -->
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 外置存储存取权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- 多媒体相关 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_ico"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/app_ico"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".tab_one.DetailActivity"/>
+        <activity android:name=".tab_one.UserHomePagerActivity"/>
+        <activity android:name=".tab_two.MyAttentionActivity"/>
+        <activity android:name=".tab_four.MyFansActivity"/>
+        <activity android:name=".tab_four.SettingActivity"/>
+        <activity android:name=".tab_four.AboutActivity"/>
+        <activity android:name=".tab_four.GroupNoticeActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".tab_four.UserInfoActivity"/>
+        <activity android:name=".credits.CreditsActivity"/>
+        <activity android:name=".tab_four.MyMessageActivity"/>
+        <activity android:name=".tab_one.DetailImagesActivity"/>
+        <activity android:name=".tab_three.PublishActivity">
         </activity>
     </application>
 

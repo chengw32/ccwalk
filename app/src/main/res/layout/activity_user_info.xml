@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/activity_personal_data"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/base_bar_layout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/mine_setting_checkUpdate"
+                style="@style/mine_persion_info__list_layout_style">
+
+                <TextView
+                    style="@style/home_mine_persion_info_textView_style"
+                    android:text="手机号"/>
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    style="@style/mine_persion_info_editView_style"
+                    android:layout_marginRight="@dimen/d9"
+                    android:hint="输入手机号"
+                    android:inputType="phone"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+
+            <LinearLayout
+                android:id="@+id/mine_setting_custome"
+                style="@style/mine_persion_info__list_layout_style">
+
+                <TextView
+                    style="@style/home_mine_persion_info_textView_style"
+                    android:text="昵称"/>
+
+                <EditText
+                    android:id="@+id/personal_data_name"
+                    style="@style/mine_persion_info_editView_style"
+                    android:layout_marginRight="@dimen/d9"
+                    android:hint="海草"
+                    android:inputType="text"
+                    android:maxLength="15"/>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+
+
+            <LinearLayout
+                android:id="@+id/mine_setting_update_password"
+                style="@style/mine_persion_info__list_layout_style">
+
+                <TextView
+                    style="@style/home_mine_persion_info_textView_style"
+                    android:layout_weight="1"
+                    android:text="性别"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="@dimen/d3"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rb_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="男"
+                        android:textColor="@color/gray3"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_wman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="女"
+                        android:textColor="@color/gray3"/>
+                </RadioGroup>
+
+
+                <ImageView
+                    android:layout_width="@dimen/d9"
+                    android:layout_height="@dimen/d8"
+                    android:layout_marginRight="@dimen/d5"
+                    android:src="@mipmap/arrow_right"/>
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+
+
+            <LinearLayout
+                android:id="@+id/mine_setting_aboutUs"
+                style="@style/mine_persion_info__list_layout_style">
+
+                <TextView
+                    style="@style/home_mine_persion_info_textView_style"
+                    android:text="QQ"/>
+
+                <EditText
+                    android:id="@+id/et_qq"
+                    style="@style/mine_persion_info_editView_style"
+                    android:layout_marginRight="@dimen/d9"
+                    android:hint="请输入qq号码"
+                    android:inputType="number"
+                    android:maxLength="16"
+                    />
+
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+
+
+            <TextView
+                android:id="@+id/bt_comit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d23"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:layout_marginTop="@dimen/d15"
+                android:gravity="center"
+                android:text="保存"
+                android:background="@drawable/shape_corner_rect_solid_blue"
+                android:textColor="@color/white"
+                android:textSize="@dimen/d8"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

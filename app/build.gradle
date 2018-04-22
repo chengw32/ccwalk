@@ -4,11 +4,17 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "cc.cwalk.com"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            //用到注解时需要配置这个
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
     }
     buildTypes {
         release {
@@ -18,17 +24,39 @@ android {
     }
 }
 
+repositories {
+    // glide 框架需要配置
+    mavenCentral()
+    google()
+    maven { url 'https://maven.google.com' }
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.google.android.gms:play-services-plus:15.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     //注解
     compile 'com.jakewharton:butterknife:7.0.1'
     //广播传递
     compile 'org.greenrobot:eventbus:3.1.1'
-
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    //视频播放控件
+    compile 'com.shuyu:GSYVideoPlayer:4.1.1'
+    //圆形头像
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    //图片加载框架
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    // 开关控件
+    compile 'com.kyleduo.switchbutton:library:1.4.4'
+    //图片选择
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="@dimen/mine_content_padding"
+            android:scrollbars="none">
+
+    <ImageView
+        android:layout_width="@dimen/mine_ico_height"
+        android:layout_height="@dimen/mine_ico_height"
+        android:src="@drawable/ic_mark"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        style="@style/base_text_style"
+        android:layout_marginLeft="@dimen/d5"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

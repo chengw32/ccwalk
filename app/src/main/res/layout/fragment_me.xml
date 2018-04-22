@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llMyInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/d15"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivHeader"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/default_header"/>
+
+            <LinearLayout
+                android:id="@+id/ll_user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:singleLine="true"
+                    android:text="沧晓"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        android:layout_width="@dimen/d8"
+                        android:src="@mipmap/ic_gender_female"
+                        android:layout_marginLeft="@dimen/d3"
+                        android:layout_height="@dimen/d8"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="社团成员"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/d10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/d8"
+                    android:layout_height="@dimen/d8"
+                    android:src="@mipmap/gr_sign"/>
+
+                <TextView
+                    android:id="@+id/mine_sign_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d2"
+                    android:gravity="center"
+                    android:text="未签到"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/d6"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <include
+            android:id="@+id/myfans"
+            layout="@layout/fragment_me_item"/>
+        <include
+            android:id="@+id/my_credits"
+            layout="@layout/fragment_me_item"/>
+        <include
+            android:id="@+id/my_message"
+            layout="@layout/fragment_me_item"/>
+
+        <include layout="@layout/line"></include>
+
+        <include
+            android:id="@+id/mygroup"
+            layout="@layout/fragment_me_item"/>
+
+        <include
+            android:id="@+id/group_notice"
+            layout="@layout/fragment_me_item"/>
+
+        <include
+            android:id="@+id/group_join"
+            layout="@layout/fragment_me_item"/>
+
+        <include
+            android:id="@+id/hot_video"
+            layout="@layout/fragment_me_item"/>
+
+        <include layout="@layout/line"></include>
+
+        <include
+            android:id="@+id/settings"
+            layout="@layout/fragment_me_item"/>
+    </LinearLayout>
+</ScrollView>

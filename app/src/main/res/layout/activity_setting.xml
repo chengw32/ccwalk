@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/base_bar_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/clean_cache"
+            style="@style/seting_text_style"
+            android:text="清除缓存"
+            />
+
+        <include layout="@layout/line"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="3G/4G 播放"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                app:kswBackDrawable="@drawable/ios_back_drawable"
+                app:kswBackMeasureRatio="1.8"
+                app:kswThumbDrawable="@drawable/ios_thumb_selector"
+                app:kswThumbMarginBottom="-4dp"
+                app:kswThumbMarginLeft="-2dp"
+                app:kswThumbMarginRight="-2dp"
+                app:kswThumbMarginTop="-0dp"
+                app:kswThumbWidth="10dp"/>
+        </LinearLayout>
+
+        <include layout="@layout/line"></include>
+
+        <TextView
+            android:id="@+id/tv_about"
+            style="@style/seting_text_style"
+            android:text="关于 APP"
+            />
+
+
+        <include layout="@layout/line"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/exit"
+            style="@style/seting_text_style"
+            android:text="退出"
+            />
+
+        <include layout="@layout/line"></include>
+    </LinearLayout>
+
+</LinearLayout>
