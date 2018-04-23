@@ -1,5 +1,6 @@
 package cc.cwalk.com.tab_one;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -15,7 +16,8 @@ import cc.cwalk.com.base.BaseFragment;
 public class FindFragment extends BaseFragment {
 
     private ViewPager baseViewPager;
-    private PageAdapter basePagerAdapter ;
+    private PageAdapter basePagerAdapter;
+
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_find;
@@ -24,7 +26,7 @@ public class FindFragment extends BaseFragment {
     @Override
     public void initView(View v) {
         super.initView(v);
-        baseViewPager =  v.findViewById(R.id.viewpager);
+        baseViewPager = v.findViewById(R.id.viewpager);
         MainActivity act = (MainActivity) getActivity();
         basePagerAdapter = new PageAdapter(act.getSupportFragmentManager());
         baseViewPager.setAdapter(basePagerAdapter);
@@ -49,13 +51,34 @@ public class FindFragment extends BaseFragment {
 
 
     public class PageAdapter extends FragmentStatePagerAdapter {
+        private Fragment hotFragment;
+        private Fragment teachingFragment;
+        private Fragment nowFragment;
+
         public PageAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public android.support.v4.app.Fragment getItem(int position) {
-            return PlusOneFragment.newInstance();
+            return getFragment(position);
+        }
+
+        private Fragment getFragment(int position) {
+            switch (position) {
+                case 0:
+                    if (null == nowFragment)
+                        nowFragment = new TeachingFragment();
+                    return nowFragment;
+                case 1:
+                    if (null == hotFragment)
+                        hotFragment = new HotFragment();
+                    return hotFragment;
+                default:
+                    if (null == teachingFragment)
+                        teachingFragment = new TeachingFragment();
+                    return teachingFragment;
+            }
         }
 
         @Override

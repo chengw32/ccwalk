@@ -1,7 +1,13 @@
 package cc.cwalk.com.tab_one;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
@@ -11,29 +17,38 @@ import java.util.List;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
+import cc.cwalk.com.recycles.OnRefreshLoadMoreListener;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.recycles.RefreshLoadMoreRecyclerView;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.LogUtils;
 
 /**
- * 发现页
+ * 热门视频
  */
-public class HotFragment extends BaseListFragment {
+public class HotFragment extends Fragment implements BaseRecyclerAdapter.OnItemClickListener,OnRefreshLoadMoreListener {
 
+    protected RefreshLoadMoreRecyclerView mRcView;
 
+    @Nullable
     @Override
-    protected int setContentLayout() {
-        return R.layout.fragment_hot;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_hot, null);
+        initView(view);
+        return view;
     }
 
-    @Override
+
     public void initView(View v) {
-        super.initView(v);
+        mRcView =  v.findViewById(R.id.rc_list);
+        if (null != mRcView)
+            mRcView.setAdapter(getAdapter());
+        mRcView.setOnRefreshLoadMoreListener(this);
+        mRcView.setItemClick(this);
         getData(1);
     }
 
 
-    @Override
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter() {
             @Override
@@ -114,6 +129,11 @@ public class HotFragment extends BaseListFragment {
         dataContent.add("1");
         LogUtils.e("getData");
         mRcView.complete();
+    }
+
+    @Override
+    public void onLoadMore(int pageNo) {
+
     }
 
 }
