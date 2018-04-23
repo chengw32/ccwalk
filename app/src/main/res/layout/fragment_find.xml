@@ -35,7 +35,6 @@
             android:id="@+id/tv_hot"
             android:layout_width="wrap_content"
             android:text="热门"
-            android:paddingRight="10dp"
             android:textColor="@color/white"
             android:layout_height="wrap_content"/>
         <TextView
@@ -49,6 +48,7 @@
             android:id="@+id/tv_teaching"
             android:layout_width="wrap_content"
             android:text="教程"
+            android:paddingRight="10dp"
             android:textColor="@color/white"
             android:layout_height="wrap_content"/>
 

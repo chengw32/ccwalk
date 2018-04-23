@@ -1,12 +1,15 @@
 package cc.cwalk.com.tab_one;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.graphics.Color;
+import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.TextView;
 
-import cc.cwalk.com.MainActivity;
+import butterknife.Bind;
+import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
 
@@ -15,6 +18,12 @@ import cc.cwalk.com.base.BaseFragment;
  */
 public class FindFragment extends BaseFragment {
 
+    @Bind(R.id.tv_newest)
+    TextView mTvNewest;
+    @Bind(R.id.tv_hot)
+    TextView mTvHot;
+    @Bind(R.id.tv_teaching)
+    TextView mTvTeaching;
     private ViewPager baseViewPager;
     private PageAdapter basePagerAdapter;
 
@@ -27,14 +36,30 @@ public class FindFragment extends BaseFragment {
     public void initView(View v) {
         super.initView(v);
         baseViewPager = v.findViewById(R.id.viewpager);
-        MainActivity act = (MainActivity) getActivity();
-        basePagerAdapter = new PageAdapter(act.getSupportFragmentManager());
+        basePagerAdapter = new PageAdapter(getFragmentManager());
         baseViewPager.setAdapter(basePagerAdapter);
         baseViewPager.setOffscreenPageLimit(3);
         baseViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        mTvNewest.setTextColor(getResources().getColor(R.color.blue));
+                        mTvHot.setTextColor(Color.WHITE);
+                        mTvTeaching.setTextColor(Color.WHITE);
+                        break;
+                    case 1:
+                        mTvNewest.setTextColor(Color.WHITE);
+                        mTvHot.setTextColor(getResources().getColor(R.color.blue));
+                        mTvTeaching.setTextColor(Color.WHITE);
+                        break;
+                    case 2:
+                        mTvNewest.setTextColor(Color.WHITE);
+                        mTvHot.setTextColor(Color.WHITE);
+                        mTvTeaching.setTextColor(getResources().getColor(R.color.blue));
+                        break;
+                }
             }
 
             @Override
@@ -50,26 +75,43 @@ public class FindFragment extends BaseFragment {
     }
 
 
+
+    @OnClick({R.id.tv_newest, R.id.tv_hot, R.id.tv_teaching})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_newest:
+                baseViewPager.setCurrentItem(0);
+                break;
+            case R.id.tv_hot:
+                baseViewPager.setCurrentItem(1);
+                break;
+            case R.id.tv_teaching:
+                baseViewPager.setCurrentItem(2);
+                break;
+        }
+    }
+
+
     public class PageAdapter extends FragmentStatePagerAdapter {
         private Fragment hotFragment;
+        private Fragment newestFragment;
         private Fragment teachingFragment;
-        private Fragment nowFragment;
 
         public PageAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
-        public android.support.v4.app.Fragment getItem(int position) {
+        public Fragment getItem(int position) {
             return getFragment(position);
         }
 
         private Fragment getFragment(int position) {
             switch (position) {
                 case 0:
-                    if (null == nowFragment)
-                        nowFragment = new TeachingFragment();
-                    return nowFragment;
+                    if (null == newestFragment)
+                        newestFragment = new NewestFragment();
+                    return newestFragment;
                 case 1:
                     if (null == hotFragment)
                         hotFragment = new HotFragment();

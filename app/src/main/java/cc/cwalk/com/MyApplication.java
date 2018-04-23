@@ -23,16 +23,23 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+
+import cc.cwalk.com.utils.LogUtils;
 
 public class MyApplication extends Application {
     private static MyApplication instance;
     public static boolean DEBUG = true;
     private static float scale ;//手机不同分辨率百分比  用在代码设置大小的时候适配不同分辨率
+
+    //文件缓存路径
+    public final static String cachePath = Environment.getExternalStorageDirectory()+"/ccwalk";
 
     @Override
     public void onCreate() {

@@ -3,7 +3,6 @@ package cc.cwalk.com;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.icu.util.Currency;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,7 +11,9 @@ import android.widget.TextView;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.entity.LocalMedia;
+import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
+import java.io.File;
 import java.util.List;
 
 import butterknife.Bind;
@@ -23,7 +24,6 @@ import cc.cwalk.com.tab_one.FindFragment;
 import cc.cwalk.com.tab_three.CommunityFragment;
 import cc.cwalk.com.tab_two.AttentionFragment;
 import cc.cwalk.com.utils.EventUtil;
-import cc.cwalk.com.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
     @Bind(R.id.iv_tab_1)
@@ -63,6 +63,8 @@ public class MainActivity extends BaseActivity {
         mIvTab1.setSelected(true);
         mTvTab1.setSelected(true);
 
+        GSYVideoManager instance = GSYVideoManager.instance();
+        instance.newProxy(xContext,new File(MyApplication.cachePath));
     }
 
     @Override

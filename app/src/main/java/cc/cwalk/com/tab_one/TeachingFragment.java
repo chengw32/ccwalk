@@ -1,14 +1,8 @@
 package cc.cwalk.com.tab_one;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
@@ -16,38 +10,26 @@ import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 import java.util.List;
 
 import cc.cwalk.com.R;
+import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
-import cc.cwalk.com.recycles.OnRefreshLoadMoreListener;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.recycles.RefreshLoadMoreRecyclerView;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.LogUtils;
 
-/**
+/**q
  * 教程
  */
-public class TeachingFragment extends Fragment implements BaseRecyclerAdapter.OnItemClickListener,OnRefreshLoadMoreListener {
-
-    protected RefreshLoadMoreRecyclerView mRcView;
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hot, null);
-        initView(view);
-        return view;
-    }
+public class TeachingFragment extends BaseListFragment {
 
 
+
+@Override
     public void initView(View v) {
-        mRcView =  v.findViewById(R.id.rc_list);
-        mRcView.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        if (null != mRcView)
-            mRcView.setAdapter(getAdapter());
-        mRcView.setOnRefreshLoadMoreListener(this);
-        mRcView.setItemClick(this);
-        getData(1);
-    }
+    super.initView(v);
+    setBarGone();
+    mRcView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+    getData(1);
+}
 
 
     protected BaseRecyclerAdapter getAdapter() {
@@ -60,13 +42,8 @@ public class TeachingFragment extends Fragment implements BaseRecyclerAdapter.On
                         UserHomePagerActivity.startActivity(getActivity());
                     }
                 });
-                holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity());
-                    }
-                });
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
+
                 setThumbImageView(view, position);
             }
 
@@ -132,9 +109,5 @@ public class TeachingFragment extends Fragment implements BaseRecyclerAdapter.On
         mRcView.complete();
     }
 
-    @Override
-    public void onLoadMore(int pageNo) {
-
-    }
 
 }

@@ -1,53 +1,36 @@
 package cc.cwalk.com.tab_one;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
+import java.io.File;
 import java.util.List;
 
+import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
-import cc.cwalk.com.recycles.OnRefreshLoadMoreListener;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.recycles.RefreshLoadMoreRecyclerView;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.LogUtils;
 
 /**
  * 热门视频
  */
-public class HotFragment extends Fragment implements BaseRecyclerAdapter.OnItemClickListener,OnRefreshLoadMoreListener {
+public class HotFragment extends BaseListFragment{
 
-    protected RefreshLoadMoreRecyclerView mRcView;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hot, null);
-        initView(view);
-        return view;
-    }
-
-
     public void initView(View v) {
-        mRcView =  v.findViewById(R.id.rc_list);
-        if (null != mRcView)
-            mRcView.setAdapter(getAdapter());
-        mRcView.setOnRefreshLoadMoreListener(this);
-        mRcView.setItemClick(this);
+        super.initView(v);
+        setBarGone();
+        mRcView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         getData(1);
     }
-
 
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter() {
@@ -59,13 +42,8 @@ public class HotFragment extends Fragment implements BaseRecyclerAdapter.OnItemC
                         UserHomePagerActivity.startActivity(getActivity());
                     }
                 });
-                holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity());
-                    }
-                });
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
+
                 setThumbImageView(view, position);
             }
 
@@ -108,6 +86,7 @@ public class HotFragment extends Fragment implements BaseRecyclerAdapter.OnItemC
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
         videoPlayer.setUp(video_url, true, "");
+        videoPlayer.setUp(video_url,true,new File(MyApplication.cachePath,"1.mp4"),"");
     }
 
 
@@ -129,11 +108,6 @@ public class HotFragment extends Fragment implements BaseRecyclerAdapter.OnItemC
         dataContent.add("1");
         LogUtils.e("getData");
         mRcView.complete();
-    }
-
-    @Override
-    public void onLoadMore(int pageNo) {
-
     }
 
 }

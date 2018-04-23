@@ -17,6 +17,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.ToastUtils;
 import cc.cwalk.com.base.BaseFragment;
 import cc.cwalk.com.credits.CreditsActivity;
+import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.SPUtils;
 
@@ -41,6 +42,16 @@ public class MeFragment extends BaseFragment {
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_me;
+    }
+
+    @Override
+    protected String setTitle() {
+        return "我的";
+    }
+
+    @Override
+    protected void onRightClick() {
+        MyMessageActivity.startActivity(xContext);
     }
 
     @Override
@@ -77,6 +88,8 @@ public class MeFragment extends BaseFragment {
     public void initView(View v) {
         super.initView(v);
 
+        setBackButtonGone();//隐藏返回键
+        setRightVisable();//显示右边的按钮
         //刷新界面数据
         refreshLayout();
 
@@ -133,12 +146,20 @@ public class MeFragment extends BaseFragment {
                 CreditsActivity.startActivity(xContext);
             }
         });
-        View message_collection = initItem(v, R.id.my_message, "我的消息");
+        View message_collection = initItem(v, R.id.my_download, "视频管理");
         message_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
                 MyMessageActivity.startActivity(xContext);
+            }
+        });
+        View my_homepager = initItem(v, R.id.my_homepager, "我的主页");
+        my_homepager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!SPUtils.isLoginWithToast())return;
+                UserHomePagerActivity.startActivity(xContext);
             }
         });
 

@@ -9,14 +9,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/base_bar_layout"></include>
+
         <LinearLayout
             android:id="@+id/llMyInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/d15"
+            android:layout_marginBottom="@dimen/d10"
             >
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -99,6 +101,9 @@
         </LinearLayout>
 
 
+        <include
+            android:id="@+id/my_homepager"
+            layout="@layout/fragment_me_item"/>
 
         <include
             android:id="@+id/myfans"
@@ -107,7 +112,7 @@
             android:id="@+id/my_credits"
             layout="@layout/fragment_me_item"/>
         <include
-            android:id="@+id/my_message"
+            android:id="@+id/my_download"
             layout="@layout/fragment_me_item"/>
 
         <include layout="@layout/line"></include>
