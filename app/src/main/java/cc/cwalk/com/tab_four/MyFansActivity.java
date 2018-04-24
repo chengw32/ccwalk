@@ -35,6 +35,7 @@ public class MyFansActivity extends BaseListActivity {
                     @Override
                     public void onClick(View v) {
                         mRcView.getDataContent().remove(position);
+                        mRcView.notifyDataSetChanged();
                     }
                 });
 

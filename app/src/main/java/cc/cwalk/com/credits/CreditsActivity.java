@@ -9,12 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.google.android.exoplayer2.text.webvtt.WebvttCssStyle;
+
 import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.webview.WebViewActivity;
 
 public class CreditsActivity extends BaseListActivity {
 
@@ -43,7 +46,7 @@ public class CreditsActivity extends BaseListActivity {
 
     @Override
     public void onRightClick() {
-
+        WebViewActivity.startActivity(xContext,"积分商城");
     }
 
     @Override

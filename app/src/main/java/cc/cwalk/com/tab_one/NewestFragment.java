@@ -6,16 +6,16 @@ import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
-import java.io.File;
 import java.util.List;
 
-import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.VideoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.DataUtils;
 
 /**
  * 热门视频
@@ -67,30 +67,14 @@ public class NewestFragment extends BaseListFragment{
 
     private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, int position) {
         //增加封面
-        String video_url = "http://chengw32.com:8080/sample.mp4";
-        String image_url = "http://chengw32.com:8080/sample.png";
-        switch (position % 3) {
-
-            case 0:
-                video_url = "http://chengw32.com:8080/sample.mp4";
-                image_url = "http://chengw32.com:8080/sample.png";
-                break;
-            case 1:
-                video_url = "http://chengw32.com:8080/sample1.mp4";
-                image_url = "http://chengw32.com:8080/sample1.png";
-                break;
-            case 2:
-                video_url = "http://chengw32.com:8080/sample2.flv";
-                image_url = "http://chengw32.com:8080/sample2.png";
-                break;
-        }
+        VideoBean videoInfo = DataUtils.getVideoInfo(position);
         ImageView imageView = new ImageView(getActivity());
-        GlideUtils.lodeImage(image_url, imageView);
+        GlideUtils.lodeImage(videoInfo.videoImages, imageView);
         videoPlayer.setThumbImageView(imageView);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(video_url, true, "");
-        videoPlayer.setUp(video_url,true,new File(MyApplication.cachePath,"1.mp4"),"");
+        LogUtils.e(videoInfo.videoUrl);
+        videoPlayer.setUp(videoInfo.videoUrl, true, "");
     }
 
 

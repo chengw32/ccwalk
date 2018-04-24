@@ -15,6 +15,7 @@ import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.webview.WebViewActivity;
 
 /**q
  * 教程
@@ -27,29 +28,21 @@ public class TeachingFragment extends BaseListFragment {
     public void initView(View v) {
     super.initView(v);
     setBarGone();
-    mRcView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+    mRcView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
     getData(1);
 }
 
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<String>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity());
-                    }
-                });
-                NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
-
-                setThumbImageView(view, position);
+            public void bindData(RecyclerViewHolder holder, int position, String item) {
+                holder.getTextView(R.id.tv_name).setText(item);
             }
 
             @Override
             public int getItemLayoutId(int viewType) {
-                return R.layout.item_hot;
+                return R.layout.item_teaching;
             }
 
 
@@ -91,21 +84,28 @@ public class TeachingFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-//        DetailActivity.startActivity(getActivity());
+//        http://v.youku.com/v_show/id_XMjI1OTg4NDky.html?spm=a2h0k.8191407.0.0&from=s1.8-1-1.2
+
+        WebViewActivity.startActivity(xContext, (String) mRcView.getDataContent().get(pos));
     }
 
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        LogUtils.e("getData");
+        dataContent.add("曳舞教学");
+        dataContent.add("AUS风格");
+        dataContent.add("MAS风格");
+        dataContent.add("休闲视频");
+        dataContent.add("国外Cwalk");
+        dataContent.add("教学Cwalk");
+        dataContent.add("Elector教学");
+        dataContent.add("jumpStyle教学");
+        dataContent.add("Elector手舞");
+        dataContent.add("Freestyle教学");
+        dataContent.add("Freestep教学");
+        dataContent.add("jumpStyle教学");
+        dataContent.add("韩国曳舞教学");
+        dataContent.add("巴西曳舞教学");
         mRcView.complete();
     }
 

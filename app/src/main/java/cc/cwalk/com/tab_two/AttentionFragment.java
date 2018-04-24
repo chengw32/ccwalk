@@ -15,6 +15,8 @@ import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 
 /**
  * Time 2018/4/11 14:12
@@ -61,6 +63,12 @@ public class AttentionFragment extends BaseListFragment {
                         UserHomePagerActivity.startActivity(getActivity());
                     }
                 });
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
+                //设置图片
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+1).videoImages,holder.getImageView(R.id.iv_images));
+                //设置名字
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
             }
 
             @Override

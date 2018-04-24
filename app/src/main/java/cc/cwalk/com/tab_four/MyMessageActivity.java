@@ -17,12 +17,6 @@ import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
 
 public class MyMessageActivity extends BaseListActivity {
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_my_message);
-//    }
 
     @Override
     protected void initData() {

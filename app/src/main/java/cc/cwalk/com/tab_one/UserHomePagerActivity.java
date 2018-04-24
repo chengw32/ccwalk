@@ -46,7 +46,7 @@ public class UserHomePagerActivity extends BaseListActivity {
         topbar.setVisibility(View.GONE);
         View headView = LayoutInflater.from(UserHomePagerActivity.this).inflate(R.layout.activity_user_home_pager_head_view, null);
         mRcView.addHeadView(headView);
-        findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
+        headView.findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
