@@ -48,6 +48,9 @@ public class HotFragment extends BaseListFragment{
                         UserHomePagerActivity.startActivity(getActivity());
                     }
                 });
+                NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
+
+                setThumbImageView(view, position);
                 holder.getView(R.id.tv_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -56,13 +59,10 @@ public class HotFragment extends BaseListFragment{
                 });
 
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+7).videoImages,holder.getImageView(R.id.iv_head));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
 
-                NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
-
-                setThumbImageView(view, position);
             }
 
             @Override

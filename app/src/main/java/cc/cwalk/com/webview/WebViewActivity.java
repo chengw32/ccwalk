@@ -54,7 +54,7 @@ public class WebViewActivity extends BaseActivity {
 
 
     private WebView mWebView;
-    private String mUrl= "http://v.youku.com/v_show/id_XMjI1OTg4NDky.html?spm=a2h0k.8191407.0.0&from=s1.8-1-1.2";
+    private String mUrl= "  http://chengw32.com:8080/videos/sample.mp4";
 
 
     @Override
