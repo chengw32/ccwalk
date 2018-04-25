@@ -18,6 +18,7 @@ import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -50,7 +51,7 @@ public class DetailActivity extends BaseListActivity {
 //        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 //
 //        videoPlayer.setThumbImageView(imageView);
-        videoPlayer.setUp("http://chengw32.com:8080/sample2.flv", true, "");
+        videoPlayer.setUp(DataUtils.getVideoInfo(getIntent().getIntExtra("position",1)).videoUrl, true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
@@ -134,7 +135,9 @@ public class DetailActivity extends BaseListActivity {
         return null;
     }
 
-    public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, DetailActivity.class));
+    public static void startActivity(Context context,int position) {
+        Intent intent = new Intent(context, DetailActivity.class);
+        intent.putExtra("position",position);
+        context.startActivity(intent);
     }
 }

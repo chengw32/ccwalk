@@ -35,7 +35,7 @@ public class HotFragment extends BaseListFragment{
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -54,7 +54,7 @@ public class HotFragment extends BaseListFragment{
                 holder.getView(R.id.tv_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity());
+                        DetailActivity.startActivity(getActivity(),position);
                     }
                 });
 
@@ -62,6 +62,7 @@ public class HotFragment extends BaseListFragment{
                 GlideUtils.lodeImage(DataUtils.getVideoInfo(position+7).videoImages,holder.getImageView(R.id.iv_head));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_play_num).setText("播放量  "+DataUtils.getDetail(position).numPaly);
 
             }
 

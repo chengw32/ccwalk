@@ -33,7 +33,7 @@ public class NewestFragment extends BaseListFragment{
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -43,9 +43,16 @@ public class NewestFragment extends BaseListFragment{
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity());
+                        DetailActivity.startActivity(getActivity(),position);
                     }
                 });
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+7).videoImages,holder.getImageView(R.id.iv_head));
+                //设置名字
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
+                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position).numEvaluate);
+                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position).numZang);
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, position);

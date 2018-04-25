@@ -3,7 +3,9 @@ package cc.cwalk.com.tab_two;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import java.util.List;
@@ -39,6 +41,9 @@ public class AttentionFragment extends BaseListFragment {
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         for (int j = 0; j < 8; j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
+            GlideUtils.lodeImage(DataUtils.getVideoInfo(j+5).videoImages, (ImageView) item.findViewById(R.id.iv_head));
+            TextView tv_name = item.findViewById(R.id.tv_name);
+            tv_name.setText(DataUtils.getString(j+10));
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -66,9 +71,13 @@ public class AttentionFragment extends BaseListFragment {
                 //设置头像
                 GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+1).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+5).videoImages,holder.getImageView(R.id.iv_images));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+7));
+                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position+7).numEvaluate);
+                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position+7).numZang);
             }
 
             @Override

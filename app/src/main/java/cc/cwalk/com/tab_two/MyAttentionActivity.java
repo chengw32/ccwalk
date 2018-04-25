@@ -10,6 +10,8 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 
 public class MyAttentionActivity extends BaseListActivity {
 
@@ -24,7 +26,10 @@ public class MyAttentionActivity extends BaseListActivity {
         return new BaseRecyclerAdapter() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_time).setText("关注于 "+DataUtils.getDetail(position).time);
             }
 
             @Override

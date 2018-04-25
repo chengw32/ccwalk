@@ -54,37 +54,10 @@ public class TeachingFragment extends BaseListFragment {
         };
     }
 
-    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, int position) {
-        //增加封面
-        String video_url = "http://chengw32.com:8080/sample.mp4";
-        String image_url = "http://chengw32.com:8080/sample.png";
-        switch (position % 3) {
-
-            case 0:
-                video_url = "http://chengw32.com:8080/sample.mp4";
-                image_url = "http://chengw32.com:8080/sample.png";
-                break;
-            case 1:
-                video_url = "http://chengw32.com:8080/sample1.mp4";
-                image_url = "http://chengw32.com:8080/sample1.png";
-                break;
-            case 2:
-                video_url = "http://chengw32.com:8080/sample2.flv";
-                image_url = "http://chengw32.com:8080/sample2.png";
-                break;
-        }
-        ImageView imageView = new ImageView(getActivity());
-        GlideUtils.lodeImage(image_url, imageView);
-        videoPlayer.setThumbImageView(imageView);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(video_url, true, "");
-    }
 
 
     @Override
     public void onItemClick(View itemView, int pos) {
-//        http://v.youku.com/v_show/id_XMjI1OTg4NDky.html?spm=a2h0k.8191407.0.0&from=s1.8-1-1.2
 
         WebViewActivity.startActivity(xContext, (String) mRcView.getDataContent().get(pos));
     }

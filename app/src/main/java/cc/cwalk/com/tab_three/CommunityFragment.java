@@ -24,7 +24,9 @@ import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
+import cc.cwalk.com.utils.GlideUtils;
 
 /**
  * Created by Chen on 2018/4/18.
@@ -47,7 +49,7 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailActivity.startActivity(xContext);
+        DetailActivity.startActivity(xContext,pos);
     }
 
     @Override
@@ -55,6 +57,14 @@ public class CommunityFragment extends BaseListFragment {
         return new BaseRecyclerAdapter() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
+                //设置图片
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+5).videoImages,holder.getImageView(R.id.iv_images));
+                //设置名字
+                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ DataUtils.getDetail(position+7).numEvaluate+")");
+                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+DataUtils.getDetail(position+7).numZang+")");
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+17));
             }
 
             @Override
