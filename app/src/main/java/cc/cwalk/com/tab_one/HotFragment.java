@@ -39,13 +39,13 @@ public class HotFragment extends BaseListFragment{
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity());
+                        UserHomePagerActivity.startActivity(getActivity(), position);
                     }
                 });
                 holder.getView(R.id.tv_name).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity());
+                        UserHomePagerActivity.startActivity(getActivity(), position);
                     }
                 });
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);

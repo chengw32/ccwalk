@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import cc.cwalk.com.MyApplication;
-import cc.cwalk.com.ToastUtils;
 
 
 /**

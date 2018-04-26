@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import java.util.List;
@@ -17,6 +19,7 @@ import cc.cwalk.com.utils.GlideUtils;
 
 public class UserHomePagerActivity extends BaseListActivity {
 
+    private int mPostion ;
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
@@ -34,13 +37,15 @@ public class UserHomePagerActivity extends BaseListActivity {
 
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position+10).name);
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(mPostion).name);
                 holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+17));
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position+7).numEvaluate);
-                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position+7).numZang);
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
+                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position).numEvaluate);
+                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position).numZang);
                 //设置图片
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+5).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_images));
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(mPostion).videoImages,holder.getImageView(R.id.iv_head));
             }
 
         };
@@ -52,7 +57,21 @@ public class UserHomePagerActivity extends BaseListActivity {
         super.initView();
         if (null != topbar)
         topbar.setVisibility(View.GONE);
+
+        mPostion = getIntent().getIntExtra("position", 1);
+
         View headView = LayoutInflater.from(UserHomePagerActivity.this).inflate(R.layout.activity_user_home_pager_head_view, null);
+        GlideUtils.lodeImage(DataUtils.getVideoInfo(mPostion).videoImages, (ImageView) headView.findViewById(R.id.head_image));
+        //名字
+        TextView tvName = headView.findViewById(R.id.tvName);
+        tvName.setText(DataUtils.getUserInfo(mPostion).name);
+        //名字
+        TextView tvAccount = headView.findViewById(R.id.tvAccount);
+        tvAccount.setText(DataUtils.getUserInfo(mPostion).adress);
+        //性别
+        ImageView iv_sex = (ImageView) headView.findViewById(R.id.iv_sex);
+        iv_sex.setImageResource(DataUtils.getUserInfo(mPostion).sex == 1?R.mipmap.ic_gender_male:R.mipmap.ic_gender_female);
+
         mRcView.addHeadView(headView);
         headView.findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +87,11 @@ public class UserHomePagerActivity extends BaseListActivity {
         return "主页";
     }
 
-    public static void startActivity(Context context) {
+    public static void startActivity(Context context, int pos) {
 
-        context.startActivity(new Intent(context,UserHomePagerActivity.class));
+        Intent intent = new Intent(context, UserHomePagerActivity.class);
+        intent.putExtra("position",pos);
+        context.startActivity(intent);
 
     }
 

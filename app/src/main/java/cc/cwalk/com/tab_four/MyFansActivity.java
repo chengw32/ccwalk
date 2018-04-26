@@ -12,6 +12,8 @@ import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 
 public class MyFansActivity extends BaseListActivity {
 
@@ -23,7 +25,7 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        UserHomePagerActivity.startActivity(xContext);
+        UserHomePagerActivity.startActivity(xContext,pos);
     }
 
     @Override
@@ -38,6 +40,10 @@ public class MyFansActivity extends BaseListActivity {
                         mRcView.notifyDataSetChanged();
                     }
                 });
+                //设置头像
+                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time+" 成为你的粉丝");
 
             }
 

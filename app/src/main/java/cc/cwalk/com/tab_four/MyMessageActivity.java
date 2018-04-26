@@ -72,6 +72,6 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailImagesActivity.startActivity(xContext);
+        DetailImagesActivity.startActivity(xContext,pos);
     }
 }

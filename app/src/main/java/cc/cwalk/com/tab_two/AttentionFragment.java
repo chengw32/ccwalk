@@ -14,7 +14,6 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
@@ -43,11 +42,12 @@ public class AttentionFragment extends BaseListFragment {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
             GlideUtils.lodeImage(DataUtils.getVideoInfo(j+5).videoImages, (ImageView) item.findViewById(R.id.iv_head));
             TextView tv_name = item.findViewById(R.id.tv_name);
-            tv_name.setText(DataUtils.getString(j+10));
+            tv_name.setText(DataUtils.getString(j+5));
+            final int finalJ = j;
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UserHomePagerActivity.startActivity(getActivity());
+                    UserHomePagerActivity.startActivity(getActivity(), finalJ+5);
                 }
             });
             content.addView(item);
@@ -61,11 +61,11 @@ public class AttentionFragment extends BaseListFragment {
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity());
+                        UserHomePagerActivity.startActivity(getActivity(), position);
                     }
                 });
                 //设置头像
@@ -101,7 +101,7 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailImagesActivity.startActivity(getActivity());
+        DetailImagesActivity.startActivity(getActivity(),pos);
     }
 
     @Override

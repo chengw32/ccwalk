@@ -14,6 +14,7 @@
 
 
         <ImageView
+            android:id="@+id/iv_head"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:scaleType="centerCrop"
@@ -28,6 +29,7 @@
             android:paddingRight="15dp">
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="海草"
@@ -35,6 +37,7 @@
                 android:textSize="12sp"/>
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -49,15 +52,15 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_des"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/d3"
         android:layout_marginLeft="@dimen/d5"
         android:layout_marginRight="@dimen/d5"
-        android:layout_marginTop="@dimen/d2"
         android:text="6666666666666666"
         android:textColor="@color/gray3"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <cc.cwalk.com.custom_view.AutoFlowLayout
         android:id="@+id/af_images"

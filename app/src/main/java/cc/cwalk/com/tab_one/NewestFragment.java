@@ -37,7 +37,7 @@ public class NewestFragment extends BaseListFragment{
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity());
+                        UserHomePagerActivity.startActivity(getActivity(), position);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {

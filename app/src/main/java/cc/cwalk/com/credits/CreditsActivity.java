@@ -65,7 +65,6 @@ public class CreditsActivity extends BaseListActivity {
         return new BaseRecyclerAdapter() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-
             }
 
             @Override

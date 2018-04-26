@@ -1,12 +1,7 @@
 package cc.cwalk.com.tab_three;
 
 import android.content.Context;
-import android.content.Intent;
-import android.media.audiofx.Equalizer;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -14,11 +9,8 @@ import com.luck.picture.lib.config.PictureMimeType;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cc.cwalk.com.MainActivity;
 import cc.cwalk.com.R;
-import cc.cwalk.com.ToastUtils;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
@@ -64,6 +56,7 @@ public class CommunityFragment extends BaseListFragment {
                 //设置名字
                 holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ DataUtils.getDetail(position+7).numEvaluate+")");
                 holder.getTextView(R.id.tv_num_zang).setText("赞 ("+DataUtils.getDetail(position+7).numZang+")");
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
                 holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+17));
             }
 

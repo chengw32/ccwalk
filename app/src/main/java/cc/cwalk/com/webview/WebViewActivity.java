@@ -1,32 +1,14 @@
 package cc.cwalk.com.webview;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.AndroidCharacter;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.DownloadListener;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.ZoomButtonsController;
-
-import java.io.File;
-import java.lang.reflect.Method;
 
 import cc.cwalk.com.R;
-import cc.cwalk.com.ToastUtils;
 import cc.cwalk.com.base.BaseActivity;
-import cc.cwalk.com.utils.SPUtils;
 
 public class WebViewActivity extends BaseActivity {
 

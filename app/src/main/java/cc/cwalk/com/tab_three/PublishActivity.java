@@ -21,7 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
-import cc.cwalk.com.ToastUtils;
+import cc.cwalk.com.utils.ToastUtils;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.utils.GlideUtils;

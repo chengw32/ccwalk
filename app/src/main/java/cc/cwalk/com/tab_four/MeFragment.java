@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
-import cc.cwalk.com.ToastUtils;
+import cc.cwalk.com.utils.ToastUtils;
 import cc.cwalk.com.base.BaseFragment;
 import cc.cwalk.com.credits.CreditsActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
@@ -101,27 +101,6 @@ public class MeFragment extends BaseFragment {
                 startActivity(new Intent(xContext, GroupNoticeActivity.class));
             }
         });
-        View group_collection = initItem(v, R.id.group_notice, "社团公告");
-        group_collection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(xContext, GroupNoticeActivity.class));
-            }
-        });
-        View join_collection = initItem(v, R.id.group_join, "入团申请");
-        join_collection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(xContext, GroupNoticeActivity.class));
-            }
-        });
-        View hot_collection = initItem(v, R.id.hot_video, "申请热榜");
-        hot_collection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(xContext, GroupNoticeActivity.class));
-            }
-        });
         View fans_collection = initItem(v, R.id.myfans, "我的粉丝");
         fans_collection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +138,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                UserHomePagerActivity.startActivity(xContext);
+                UserHomePagerActivity.startActivity(xContext, 1);
             }
         });
 

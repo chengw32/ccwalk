@@ -115,25 +115,9 @@
             android:id="@+id/my_download"
             layout="@layout/fragment_me_item"/>
 
-        <include layout="@layout/line"></include>
-
         <include
             android:id="@+id/mygroup"
             layout="@layout/fragment_me_item"/>
-
-        <include
-            android:id="@+id/group_notice"
-            layout="@layout/fragment_me_item"/>
-
-        <include
-            android:id="@+id/group_join"
-            layout="@layout/fragment_me_item"/>
-
-        <include
-            android:id="@+id/hot_video"
-            layout="@layout/fragment_me_item"/>
-
-        <include layout="@layout/line"></include>
 
         <include
             android:id="@+id/settings"

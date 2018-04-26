@@ -14,7 +14,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
 
 /**
- * 发现页
+ * 现在模块的主容器
  */
 public class FindFragment extends BaseFragment {
 

@@ -3,17 +3,15 @@ package cc.cwalk.com;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.widget.Button;
 import android.widget.EditText;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.SPUtils;
+import cc.cwalk.com.utils.ToastUtils;
 
 /**
  * @描述 登录界面

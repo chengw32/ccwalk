@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
@@ -18,6 +19,8 @@ import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -27,6 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * */
 public class DetailImagesActivity extends BaseListActivity {
 
+    private int mPosition;
 
     @Override
     protected void initData() {
@@ -38,9 +42,18 @@ public class DetailImagesActivity extends BaseListActivity {
     protected void initView() {
         super.initView();
 
+        mPosition = getIntent().getIntExtra("position", 0);
         float screenWidth = MyApplication.getScreenWidth(this);
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_images, null);
+        //头像
+        ImageView iv_head = view.findViewById(R.id.iv_head);
+        GlideUtils.lodeImage(DataUtils.getVideoInfo(mPosition).videoImages, iv_head);
+        //名字
+        TextView tv_name = view.findViewById(R.id.tv_name);
+        tv_name.setText(DataUtils.getUserInfo(mPosition).name);
+        TextView tv_des = view.findViewById(R.id.tv_des);
+        tv_des.setText(DataUtils.getString(mPosition));
         AutoFlowLayout af_heads = view.findViewById(R.id.af_images);
         for (int i = 0; i < 7; i++) {
 
@@ -50,6 +63,7 @@ public class DetailImagesActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.samp2);
+            GlideUtils.lodeImage(DataUtils.getVideoInfo(i+mPosition).videoImages, imageView);
             af_heads.addView(imageView);
 
         }
@@ -62,6 +76,9 @@ public class DetailImagesActivity extends BaseListActivity {
         return new BaseRecyclerAdapter() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position+mPosition).name);
+                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
+                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getString(position+mPosition));
 
             }
 
@@ -96,7 +113,9 @@ public class DetailImagesActivity extends BaseListActivity {
         return "详情";
     }
 
-    public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, DetailImagesActivity.class));
+    public static void startActivity(Context context,int  pos) {
+        Intent intent = new Intent(context, DetailImagesActivity.class);
+        intent.putExtra("position",pos);
+        context.startActivity(intent);
     }
 }

@@ -19,11 +19,13 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_head"
             android:layout_width="@dimen/d20"
             android:src="@mipmap/default_head"
             android:layout_height="@dimen/d20"
             />
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -33,6 +35,7 @@
             android:textColor="@color/white"
             />
         <TextView
+            android:id="@+id/tv_attention"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+ 关注"
@@ -41,6 +44,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_des"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草海草"
@@ -74,6 +78,7 @@
             android:textColor="@color/white"
             android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/tv_num_zang"
             android:layout_width="wrap_content"
             android:text="共有 30 个赞"
             android:padding="@dimen/d2"

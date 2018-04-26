@@ -2,7 +2,6 @@ package cc.cwalk.com.tab_four;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -10,11 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
-import cc.cwalk.com.ToastUtils;
+import cc.cwalk.com.utils.ToastUtils;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.custom_view.CustomDialog;
 import cc.cwalk.com.utils.EventUtil;
