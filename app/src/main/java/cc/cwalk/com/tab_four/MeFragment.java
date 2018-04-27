@@ -130,7 +130,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                MyMessageActivity.startActivity(xContext);
+                VideoManagementActivity.startActivity(xContext);
             }
         });
         View my_homepager = initItem(v, R.id.my_homepager, "我的主页");

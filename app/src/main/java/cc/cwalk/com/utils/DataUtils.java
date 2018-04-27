@@ -2,6 +2,7 @@ package cc.cwalk.com.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.beans.UserBean;
@@ -56,26 +57,26 @@ public class DataUtils {
     }
 
     private static void initDetail() {
-        detailContent.add(new DetailBean(3,4,432,"2018-4-8"));
-        detailContent.add(new DetailBean(54,65,4662,"2018-3-25"));
-        detailContent.add(new DetailBean(36,3,32,"2018-4-7"));
-        detailContent.add(new DetailBean(36,53,712,"2018-4-2"));
-        detailContent.add(new DetailBean(36,6,284,"2018-4-21"));
-        detailContent.add(new DetailBean(2,45,258,"2018-2-25"));
-        detailContent.add(new DetailBean(35,25,458,"2017-4-7"));
-        detailContent.add(new DetailBean(25,85,2584,"2018-5-14"));
-        detailContent.add(new DetailBean(653,25,458,"2018-2-7"));
-        detailContent.add(new DetailBean(7,5,458,"2018-4-7"));
-        detailContent.add(new DetailBean(375,85,458,"2018-4-7"));
-        detailContent.add(new DetailBean(3,45,258,"2018-4-7"));
-        detailContent.add(new DetailBean(13,82,585,"2018-5-4"));
-        detailContent.add(new DetailBean(75,52,237,"2018-4-7"));
-        detailContent.add(new DetailBean(357,358,5538,"2018-4-7"));
-        detailContent.add(new DetailBean(58,848,38455,"2018-4-7"));
-        detailContent.add(new DetailBean(245,32,535,"2018-4-6"));
-        detailContent.add(new DetailBean(584,24,1585,"2018-4-7"));
-        detailContent.add(new DetailBean(245,859,452,"2018-3-13"));
-        detailContent.add(new DetailBean(85,852,554,"2018-4-25"));
+        detailContent.add(new DetailBean(1,3,4,432,"2018-4-27"));
+        detailContent.add(new DetailBean(0,54,65,4662,"2018-4-26"));
+        detailContent.add(new DetailBean(0,36,3,32,"2018-4-25"));
+        detailContent.add(new DetailBean(1,36,53,712,"2018-4-24"));
+        detailContent.add(new DetailBean(1,36,6,284,"2018-4-23"));
+        detailContent.add(new DetailBean(1,2,45,258,"2018-4-22"));
+        detailContent.add(new DetailBean(0,35,25,458,"2018-4-21"));
+        detailContent.add(new DetailBean(1,25,85,2584,"2018-4-20"));
+        detailContent.add(new DetailBean(0,653,25,458,"2018-4-19"));
+        detailContent.add(new DetailBean(1,7,5,458,"2018-4-18"));
+        detailContent.add(new DetailBean(0,375,85,458,"2018-4-17"));
+        detailContent.add(new DetailBean(0,3,45,258,"2018-4-16"));
+        detailContent.add(new DetailBean(0,13,82,585,"2018-4-15"));
+        detailContent.add(new DetailBean(0,75,52,237,"2018-4-14"));
+        detailContent.add(new DetailBean(1,357,358,5538,"2018-10"));
+        detailContent.add(new DetailBean(1,58,848,38455,"2018-4-9"));
+        detailContent.add(new DetailBean(0,245,32,535,"2018-4-8"));
+        detailContent.add(new DetailBean(0,584,24,1585,"2018-4-7"));
+        detailContent.add(new DetailBean(1,245,859,452,"2018-4-6"));
+        detailContent.add(new DetailBean(1,85,852,554,"2018-4-5"));
     }
 
     public static void initVideo(){
@@ -115,6 +116,7 @@ public class DataUtils {
         userContent.add(new UserBean("王卫国","厦门",1));
         userContent.add(new UserBean("溪水不与泉流","厦门",1));
     }
+
 
     /**
      * Creat By_Chen

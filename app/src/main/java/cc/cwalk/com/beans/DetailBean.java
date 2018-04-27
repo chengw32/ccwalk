@@ -10,8 +10,10 @@ public class DetailBean {
     public int numEvaluate ;//评论数量
     public  int numPaly;//播放次数
     public  String time ;
+    public int isVideo ;
 
-    public DetailBean( int numZang, int numEvaluate, int numPaly, String time) {
+    public DetailBean(int isVideo, int numZang, int numEvaluate, int numPaly, String time) {
+        this.isVideo = isVideo;
         this.numZang = numZang;
         this.numEvaluate = numEvaluate;
         this.numPaly = numPaly;

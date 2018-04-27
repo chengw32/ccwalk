@@ -37,20 +37,22 @@ public class UserHomePagerActivity extends BaseListActivity {
 
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(mPostion).name);
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
                 holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
                 holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position).numEvaluate);
                 holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position).numZang);
                 //设置图片
                 GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_images));
-                //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(mPostion).videoImages,holder.getImageView(R.id.iv_head));
             }
 
         };
     }
 
+    @Override
+    public void onItemClick(View itemView, int pos) {
+        if (DataUtils.getDetail(pos).isVideo == 1)
+        DetailActivity.startActivity(xContext,pos);
+        else DetailImagesActivity.startActivity(xContext,pos);
+    }
 
     @Override
     protected void initView() {

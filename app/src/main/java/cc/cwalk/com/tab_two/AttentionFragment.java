@@ -1,6 +1,7 @@
 package cc.cwalk.com.tab_two;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
@@ -68,6 +70,9 @@ public class AttentionFragment extends BaseListFragment {
                         UserHomePagerActivity.startActivity(getActivity(), position);
                     }
                 });
+                View iv_isvideo = holder.getView(R.id.iv_isvideo);
+                if (DataUtils.getDetail(position).isVideo == 1)iv_isvideo.setVisibility(View.VISIBLE);
+                else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
                 GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
                 //设置图片
@@ -75,7 +80,7 @@ public class AttentionFragment extends BaseListFragment {
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
                 holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+7));
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
                 holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position+7).numEvaluate);
                 holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position+7).numZang);
             }
@@ -101,7 +106,11 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailImagesActivity.startActivity(getActivity(),pos);
+        if (DataUtils.getDetail(pos-1).isVideo==1)
+            DetailActivity.startActivity(xContext,pos-1);
+        else
+        DetailImagesActivity.startActivity(getActivity(),pos-1);
+
     }
 
     @Override

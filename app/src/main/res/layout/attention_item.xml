@@ -54,6 +54,9 @@
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d90">
 
             <ImageView
                 android:id="@+id/iv_images"
@@ -62,6 +65,14 @@
                 android:layout_marginTop="5dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/sample3" />
+                <ImageView
+                    android:id="@+id/iv_isvideo"
+                    android:layout_width="@dimen/d20"
+                    android:src="@drawable/ic_video"
+                    android:layout_centerInParent="true"
+                    android:layout_height="@dimen/d20" />
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"

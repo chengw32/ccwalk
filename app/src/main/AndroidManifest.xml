@@ -57,8 +57,9 @@
         <activity android:name=".credits.CreditsActivity" />
         <activity android:name=".tab_four.MyMessageActivity" />
         <activity android:name=".tab_one.DetailImagesActivity" />
-        <activity android:name=".tab_three.PublishActivity"></activity>
-        <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".tab_three.PublishActivity" />
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".tab_four.VideoManagementActivity"></activity>
     </application>
 
 </manifest>
