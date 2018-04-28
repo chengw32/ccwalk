@@ -17,6 +17,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.webview.WebViewActivity;
 
 public class CreditsActivity extends BaseListActivity {
@@ -65,6 +66,7 @@ public class CreditsActivity extends BaseListActivity {
         return new BaseRecyclerAdapter() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
+                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
             }
 
             @Override

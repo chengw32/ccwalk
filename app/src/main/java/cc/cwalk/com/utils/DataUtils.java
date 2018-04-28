@@ -1,9 +1,20 @@
 package cc.cwalk.com.utils;
 
+import android.content.Context;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import cc.cwalk.com.MyApplication;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.beans.VideoBean;
@@ -20,7 +31,6 @@ public class DataUtils {
     private static List<DetailBean> detailContent = new ArrayList();
     private static List<String> stringContent = new ArrayList();
     public static void init(){
-        initUser();
         initVideo();
         initDetail();
         initString();
@@ -82,7 +92,7 @@ public class DataUtils {
     public static void initVideo(){
         videoContent.add(new VideoBean("sample.mp4","sample.png","0","cwalk 各种快"));
         videoContent.add(new VideoBean("sample1.mp4","sample1.png","1","i love the rain"));
-        videoContent.add(new VideoBean("sample2.mp4","sample2.png","2","cwalk"));
+        videoContent.add(new VideoBean("sample2.flv","sample2.png","2","cwalk"));
         videoContent.add(new VideoBean("slkdjgejgseslsgej.flv","slkdjgejgseslsgej.png","3","C-walk"));
         videoContent.add(new VideoBean("062E0B53EA8BBB94F6B0CEFD87D8286B.flv","062E0B53EA8BBB94F6B0CEFD87D8286B.png","4","Cwalk Abelard-Hey stranger_高清"));
         videoContent.add(new VideoBean("8AF705836C6694848E227F3D7F5D4ABD.mp4","8AF705836C6694848E227F3D7F5D4ABD.png","5","大神级舞步"));
@@ -98,7 +108,7 @@ public class DataUtils {
     }
 
     public static void initUser(){
-        userContent.add(new UserBean("七炫","厦门",0));
+        userContent.add(new UserBean("七炫","厦门","2018-4-28","2018-4-28","",0));
         userContent.add(new UserBean("熊小莫","广州",0));
         userContent.add(new UserBean("GY癸酉","福州",1));
         userContent.add(new UserBean("Y欧瑞","福州",1));
@@ -117,6 +127,54 @@ public class DataUtils {
         userContent.add(new UserBean("溪水不与泉流","厦门",1));
     }
 
+//
+//    public static String initUser(){
+//        try {
+//            InputStream is = MyApplication.getContext().getResources().getAssets().open("user.txt");
+//            int size = is.available();
+//            // Read the entire asset into a local byte buffer.
+//            byte[] buffer = new byte[size];
+//            is.read(buffer);
+//            is.close();
+//            // Convert the buffer into a string.
+//            return new String(buffer, "utf-8");
+//            // Finally stick the string into the text view.
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return "文件读取错误";
+//    }
+//
+//public static List<UserBean> getUserList(){
+//       return getList(initUser(),UserBean.class);
+//}
+    public static <T> T getData(String jsonString, Class<T> clazz) {
+        return getGson().fromJson(jsonString, clazz);
+    }
+    private static Gson gson;
+
+    public static Gson getGson() {
+        if (gson == null) {
+            return new Gson();
+        } else {
+            return gson;
+        }
+    }
+    public static <T> List<T> getList(String json, Class<T> clazz) {
+        List<T> lst = new ArrayList<T>();
+        try {
+            JsonElement data = new JsonParser().parse(json);
+            if (data.isJsonArray()) {
+                JsonArray array = data.getAsJsonArray();
+                for (final JsonElement elem : array) {
+                    lst.add(new Gson().fromJson(elem, clazz));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lst;
+    }
 
     /**
      * Creat By_Chen
@@ -129,15 +187,15 @@ public class DataUtils {
     }
 
 
-    /**
-     * Creat By_Chen
-     * Time 2018/4/25 22:17
-     * Des 获取用户信息
-     * */
-    public static UserBean getUserInfo(int position){
-
-        return userContent.get(position % userContent.size());
-    }
+//    /**
+//     * Creat By_Chen
+//     * Time 2018/4/25 22:17
+//     * Des 获取用户信息
+//     * */
+//    public static UserBean getUserInfo(int position){
+//
+//        return new UserBean();
+//    }
 
     //获取帖子数据信息
     public static DetailBean getDetail(int position){
@@ -146,6 +204,13 @@ public class DataUtils {
     //获取文本信息
     public static String getString(int position){
         return stringContent.get(position % stringContent.size());
+    }
+
+    private static List<DataBean> dataList = new ArrayList();
+    public static void getDataList(){
+        for (int i = 0; i < 10; i++) {
+            dataList.add(new DataBean());
+        }
     }
 
 }

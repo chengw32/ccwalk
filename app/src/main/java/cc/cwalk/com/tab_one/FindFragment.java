@@ -8,10 +8,15 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
+import cc.cwalk.com.beans.UserBean;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.LogUtils;
 
 /**
  * 现在模块的主容器

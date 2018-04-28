@@ -9,35 +9,34 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java" line="148" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a992780e-2f28-4c3b-86ce-1b3de28836fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoManagementActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_video_management.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_video.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/user.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DataBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/attention_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/attention_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_home_page_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_home_page_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,125 +68,108 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="385">
-      <file leaf-file-name="activity_video_management.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_video_management.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoManagementActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoManagementActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="133" column="55" lean-forward="false" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
-              <folding>
-                <element signature="e#1001#1002#0" expanded="true" />
-                <element signature="e#1058#1059#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewestFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_newest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_newest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_video.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_video.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding>
-                <element signature="e#342#354#0" expanded="true" />
-                <element signature="e#428#440#0" expanded="true" />
-                <element signature="e#675#686#0" expanded="true" />
-                <element signature="e#1037#1048#0" expanded="true" />
-                <element signature="e#1194#1206#0" expanded="true" />
-                <element signature="e#1296#1308#0" expanded="true" />
-                <element signature="e#1466#1477#0" expanded="true" />
-                <element signature="e#1520#1531#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MeFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="132" column="43" lean-forward="false" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FindFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="62" column="12" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="475">
+              <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/base/BaseActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="377">
+              <caret line="197" column="43" lean-forward="true" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/base/XActivity.java">
+      <file leaf-file-name="DataUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="321">
+              <caret line="200" column="53" lean-forward="true" selection-start-line="200" selection-start-column="53" selection-end-line="200" selection-end-column="53" />
+              <folding>
+                <marker date="1524905628109" expanded="true" signature="9435:9457" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DataBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VideoBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/VideoBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/user.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1952,11 +1934,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/base/XFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_plus_one.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/PlusOneFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_hot.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/base_bar_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/base/BaseFragment.java" />
@@ -1964,16 +1941,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_find.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/VideoBean.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/VideoUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_web_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/TeachingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_teaching.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_hot.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/attention_head_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_newest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/ToastUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_my_fans.xml" />
@@ -1993,8 +1966,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/DetailImagesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/user_home_page_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/attention_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java" />
@@ -2003,14 +1974,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoManagementActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_video.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/user.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DataBean.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="443" />
-    <option name="y" value="2" />
-    <option name="width" value="1484" />
-    <option name="height" value="1026" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -2030,7 +2012,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -2040,16 +2021,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="ccwalk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2105,92 +2076,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mipmap-mdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2288,108 +2173,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tab_three" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tab_one" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tab_four" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccwalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2416,21 +2199,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -2441,11 +2217,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="SearchEverywhereHistoryKey" value="mef&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java&#10;findf&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java&#10;newe&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;atten&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;data&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;userh&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java&#10;credi&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java&#10;publi&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/PublishActivity.java&#10;detaili&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailImagesActivity.java&#10;det&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailActivity&#10;detai&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;myatt&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/MyAttentionActivity.java&#10;attent&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;mfan&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyFansActivity.java&#10;credit&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java&#10;deta&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;da&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;myat&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.MyAttentionActivity&#10;mya&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/MyApplication.java&#10;hot&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/HotFragment.java&#10;atte&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;newest&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;main&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/MainActivity.java&#10;web&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java&#10;newestf&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;mymess&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyMessageActivity&#10;myf&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyFansActivity&#10;find&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java&#10;hotf&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/HotFragment.java&#10;crei&#9;PSI&#9;JAVA://com.sun.org.apache.xml.internal.security.encryption.XMLCipher.Factory.CipherReferenceImpl&#10;com&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;mymessag&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyMessageActivity.java&#10;detaila&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;myapp&#9;PSI&#9;JAVA://cc.cwalk.com.MyApplication&#10;att&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;comm&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/layout/community_item_layout.xml&#10;color&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/values/colors.xml&#10;bar&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/layout/base_bar_layout.xml&#10;userho&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java&#10;userin&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/UserInfoActivity.java&#10;login&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;setting&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java&#10;fin&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.FindFragment&#10;set&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java&#10;glide&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/utils/GlideUtils.java&#10;glid&#9;PSI&#9;JAVA://cc.cwalk.com.utils.GlideUtils&#10;sett&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="find&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java&#10;data&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;sett&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.SettingActivity&#10;credits&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java&#10;mef&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java&#10;findf&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java&#10;newe&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;atten&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;userh&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java&#10;credi&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java&#10;publi&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/PublishActivity.java&#10;detaili&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailImagesActivity.java&#10;det&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailActivity&#10;detai&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;myatt&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/MyAttentionActivity.java&#10;attent&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;mfan&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyFansActivity.java&#10;credit&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java&#10;deta&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;da&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;myat&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.MyAttentionActivity&#10;mya&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/MyApplication.java&#10;hot&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/HotFragment.java&#10;atte&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;newest&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;main&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/MainActivity.java&#10;web&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java&#10;newestf&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;mymess&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyMessageActivity&#10;myf&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyFansActivity&#10;hotf&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/HotFragment.java&#10;crei&#9;PSI&#9;JAVA://com.sun.org.apache.xml.internal.security.encryption.XMLCipher.Factory.CipherReferenceImpl&#10;com&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;mymessag&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyMessageActivity.java&#10;detaila&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;myapp&#9;PSI&#9;JAVA://cc.cwalk.com.MyApplication&#10;att&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_two/AttentionFragment.java&#10;comm&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/layout/community_item_layout.xml&#10;color&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/values/colors.xml&#10;bar&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/res/layout/base_bar_layout.xml&#10;userho&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/UserHomePagerActivity.java&#10;userin&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/UserInfoActivity.java&#10;login&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;setting&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java&#10;fin&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.FindFragment&#10;set&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java&#10;glide&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/utils/GlideUtils.java&#10;glid&#9;PSI&#9;JAVA://cc.cwalk.com.utils.GlideUtils" />
+    <property name="android.profiler.active" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\GitHub\ccwalk\app\src\main\assets" />
+      <recent name="C:\Users\Administrator\Documents\GitHub\ccwalk\app\src\main\res\layout" />
       <recent name="D:\mywork\ccwalk\app\src\main\res\layout" />
+      <recent name="D:\mywork\ccwalk\app\src\main\res\mipmap-xxhdpi" />
+      <recent name="D:\mywork\ccwalk\app\src\main\res\anim" />
     </key>
     <key name="android.template.packageName">
       <recent name="cc.cwalk.com.tab_four" />
@@ -2463,12 +2244,8 @@
       <recent name="cc.cwalk.com" />
       <recent name="cc.cwalk.com.utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Documents\GitHub\ccwalk\app\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\mywork\ccwalk\app\src\main\res\layout" />
-      <recent name="D:\mywork\ccwalk\app\src\main\res\mipmap-xxhdpi" />
-      <recent name="D:\mywork\ccwalk\app\src\main\res\anim" />
-      <recent name="D:\mywork\ccwalk\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2554,7 +2331,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524823320079" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524909573966" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2602,7 +2379,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524823320079" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524909573966" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2785,7 +2562,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524823320080" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524909573967" />
       </method>
     </configuration>
     <list size="1">
@@ -2836,10 +2613,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="443" y="2" width="1484" height="1026" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4502857" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2847,16 +2624,16 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1483" y="146" width="641" height="845" />
+      <window_info id="Preview" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1114" y="63" width="746" height="866" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.8297143" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="199" y="154" width="1649" height="746" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.8297143" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="630" y="181" width="1222" height="746" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973261" sideWeight="0.4959631" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24858756" sideWeight="0.52249134" order="1" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18843684" sideWeight="0.52249134" order="1" side_tool="true" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973261" sideWeight="0.47750866" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2880,114 +2657,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_teaching.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#447#458#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_hot.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/VideoBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/base_recycle_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/base/BaseListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attention_head_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_attention_headview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/TeachingFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -3018,7 +2687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3048,10 +2716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding>
-            <element signature="e#997#1268#0" expanded="false" />
-            <element signature="e#1267#1268#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3059,7 +2723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="47" column="75" lean-forward="false" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3067,7 +2730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3086,11 +2748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#566#577#0" expanded="false" />
-            <element signature="e#2191#2202#0" expanded="false" />
-            <element signature="e#2237#2248#0" expanded="false" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3101,12 +2758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding>
-            <element signature="e#1206#1477#0" expanded="false" />
-            <element signature="e#1476#1477#0" expanded="false" />
-            <element signature="e#1570#1571#0" expanded="false" />
-            <marker date="1524730827037" expanded="true" signature="1479:1493" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3114,7 +2765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3125,9 +2775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-          <folding>
-            <marker date="1524731163671" expanded="true" signature="2064:2078" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3157,17 +2804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#630#631#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
-            <element signature="e#705#706#0" expanded="false" />
-            <element signature="e#734#735#0" expanded="false" />
-            <element signature="e#1381#1382#0" expanded="false" />
-            <element signature="e#1448#1449#0" expanded="false" />
-            <element signature="e#1513#1514#0" expanded="false" />
-            <element signature="e#1560#1561#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3198,22 +2834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="e#1841#1842#0" expanded="false" />
-            <element signature="e#1905#1906#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/webview/WebViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3221,47 +2845,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="83" column="39" lean-forward="false" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-          <folding>
-            <element signature="e#580#592#0" expanded="true" />
-            <element signature="e#813#824#0" expanded="true" />
-            <element signature="e#1358#1370#0" expanded="true" />
-            <element signature="e#1409#1421#0" expanded="true" />
-            <marker date="1524793615368" expanded="true" signature="3934:4232" ph="..." />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="76" column="42" lean-forward="false" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-          <folding>
-            <marker date="1524794666450" expanded="true" signature="7547:7569" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attention_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="68" column="47" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="47" />
-          <folding>
-            <element signature="e#2175#2187#0" expanded="true" />
-            <element signature="e#2347#2359#0" expanded="true" />
-            <element signature="e#2620#2632#0" expanded="true" />
-            <element signature="e#2785#2797#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3272,7 +2865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="88" column="40" lean-forward="false" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3325,16 +2917,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="2625">
           <caret line="132" column="43" lean-forward="false" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="62" column="12" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="62" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -3352,20 +2936,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoManagementActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
+        <state relative-caret-position="2675">
           <caret line="133" column="55" lean-forward="false" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
           <folding>
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="false" />
+            <element signature="e#1058#1059#0" expanded="false" />
+            <element signature="e#1107#1108#0" expanded="false" />
+            <element signature="e#1136#1137#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_newest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="425">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
@@ -3376,18 +2960,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_video.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="650">
           <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="e#342#354#0" expanded="true" />
-            <element signature="e#428#440#0" expanded="true" />
-            <element signature="e#675#686#0" expanded="true" />
-            <element signature="e#1037#1048#0" expanded="true" />
-            <element signature="e#1194#1206#0" expanded="true" />
-            <element signature="e#1296#1308#0" expanded="true" />
-            <element signature="e#1466#1477#0" expanded="true" />
-            <element signature="e#1520#1531#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3398,15 +2973,158 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2332#2333#0" expanded="false" />
+            <element signature="e#2391#2392#0" expanded="false" />
+            <element signature="e#2457#2458#0" expanded="false" />
+            <element signature="e#2509#2510#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/VideoFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#366#377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/credits/CreditsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="78" column="29" lean-forward="false" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding>
+            <element signature="e#1226#1227#0" expanded="false" />
+            <element signature="e#1288#1289#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/SettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/cc_styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/user.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/FindFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="197" column="43" lean-forward="true" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/VideoBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DetailBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/beans/DataBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="200" column="53" lean-forward="true" selection-start-line="200" selection-start-column="53" selection-end-line="200" selection-end-column="53" />
+          <folding>
+            <marker date="1524905628109" expanded="true" signature="9435:9457" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
