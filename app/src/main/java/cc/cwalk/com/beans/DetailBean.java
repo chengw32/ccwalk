@@ -1,5 +1,6 @@
 package cc.cwalk.com.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * Des  帖子数据详情
  */
 
-public class DetailBean {
+public class DetailBean implements Serializable {
    public int numZang ;//赞数量
     public int numEvaluate ;//评论数量
     public  int numPaly;//播放次数

@@ -76,6 +76,8 @@ public class RefreshLoadMoreRecyclerView extends SwipeRefreshLayout {
             //刷新监听
             @Override
             public void onRefresh() {
+                //下拉刷新 把数据容器清空
+                mHeaderViewRecyclerAdapter.getDataContent().clear();
                 RefreshLoadMoreRecyclerView.this.onRefresh();
             }
         });

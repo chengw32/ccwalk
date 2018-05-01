@@ -59,14 +59,25 @@
     android:layout_marginTop="@dimen/d3"
     android:layout_height="wrap_content"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/d3"
+        android:layout_marginBottom="@dimen/d8"
+        android:layout_height="@dimen/d90">
+
     <ImageView
         android:id="@+id/iv_images"
         android:layout_width="match_parent"
         android:src="@mipmap/samp1"
         android:scaleType="centerCrop"
-        android:layout_marginTop="@dimen/d3"
-        android:layout_marginBottom="@dimen/d8"
-        android:layout_height="@dimen/d90"/>
+        android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/iv_isvideo"
+            android:layout_width="@dimen/d20"
+            android:src="@drawable/ic_video"
+            android:layout_centerInParent="true"
+            android:layout_height="@dimen/d20" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

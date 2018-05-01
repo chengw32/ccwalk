@@ -12,9 +12,13 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 
 public class MyMessageActivity extends BaseListActivity {
 
@@ -31,22 +35,21 @@ public class MyMessageActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-
+            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+                //设置头像
+                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_title).setText(item.userBean.name +"  评论了你的作品  " +item.detailBeans.get(0).videoBeans.get(0).mtitle);
+                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getStringText());
             }
 
             @Override
@@ -59,10 +62,6 @@ public class MyMessageActivity extends BaseListActivity {
                 return xContext;
             }
 
-            @Override
-            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-            }
         };
     }
 
@@ -72,6 +71,10 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailImagesActivity.startActivity(xContext,pos);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+        if (itembean.detailBeans.get(0).isVideo == 1)
+            DetailActivity.startActivity(xContext,itembean);
+        else
+            DetailImagesActivity.startActivity(MyMessageActivity.this,itembean);
     }
 }

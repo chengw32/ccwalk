@@ -15,6 +15,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -53,20 +54,17 @@ public class CreditsActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
+            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
             }
 
             @Override

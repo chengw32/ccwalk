@@ -9,6 +9,8 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
@@ -25,13 +27,13 @@ public class MyAttentionActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages, holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
-                holder.getTextView(R.id.tv_time).setText("关注于 "+DataUtils.getDetail(position).time);
+                GlideUtils.lodeImage(item.userBean.head, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
+                holder.getTextView(R.id.tv_time).setText("关注于 "+item.userBean.attentiontime);
                 holder.getView(R.id.tv_remove).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -57,20 +59,15 @@ public class MyAttentionActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        UserHomePagerActivity.startActivity(xContext,pos);
+        DataBean dataContent = (DataBean) mRcView.getDataContent().get(pos);
+        UserHomePagerActivity.startActivity(xContext,dataContent);
     }
 
     @Override
     public void getData(int pageNo) {
-        List dataList = mRcView.getDataContent();
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
+        List dataContent = mRcView.getDataContent();
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 

@@ -11,6 +11,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.VideoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
@@ -33,36 +34,36 @@ public class HotFragment extends BaseListFragment{
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, final DataBean item) {
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), position);
+                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 holder.getView(R.id.tv_name).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), position);
+                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
-                setThumbImageView(view, position);
+                setThumbImageView(view, item);
                 holder.getView(R.id.tv_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity(),position);
+                        DetailActivity.startActivity(getActivity(),item);
                     }
                 });
 
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+7).videoImages,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
-                holder.getTextView(R.id.tv_play_num).setText("播放量  "+DataUtils.getDetail(position).numPaly);
+//                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_play_num).setText("播放量  "+item.detailBeans.get(0).numPaly);
 
             }
 
@@ -80,9 +81,9 @@ public class HotFragment extends BaseListFragment{
         };
     }
 
-    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, int position) {
+    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer,  DataBean item) {
         //增加封面
-        VideoBean videoInfo = DataUtils.getVideoInfo(position);
+        VideoBean videoInfo = item.detailBeans.get(0).videoBeans.get(0);
         ImageView imageView = new ImageView(getActivity());
         GlideUtils.lodeImage(videoInfo.videoImages, imageView);
         videoPlayer.setThumbImageView(imageView);
@@ -100,15 +101,8 @@ public class HotFragment extends BaseListFragment{
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        LogUtils.e("getData");
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 

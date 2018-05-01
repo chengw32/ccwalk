@@ -70,9 +70,10 @@
             android:src="@drawable/ic_action" />
 
         <TextView
+            android:id="@+id/tv_zang"
             android:layout_width="wrap_content"
             android:text="点个赞"
-            android:background="@drawable/shape_round_corner_center_yellow"
+            android:background="@drawable/selector_zang"
             android:padding="@dimen/d2"
             android:layout_marginTop="@dimen/d5"
             android:textColor="@color/white"

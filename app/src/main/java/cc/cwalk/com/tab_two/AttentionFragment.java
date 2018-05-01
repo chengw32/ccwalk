@@ -13,6 +13,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
@@ -42,14 +43,14 @@ public class AttentionFragment extends BaseListFragment {
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         for (int j = 0; j < 8; j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
-            GlideUtils.lodeImage(DataUtils.getVideoInfo(j+5).videoImages, (ImageView) item.findViewById(R.id.iv_head));
+            GlideUtils.lodeImage(DataUtils.getDataList().get(j).userBean.head, (ImageView) item.findViewById(R.id.iv_head));
             TextView tv_name = item.findViewById(R.id.tv_name);
-            tv_name.setText(DataUtils.getString(j+5));
+            tv_name.setText(DataUtils.getDataList().get(j).userBean.name);
             final int finalJ = j;
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UserHomePagerActivity.startActivity(getActivity(), finalJ+5);
+                    UserHomePagerActivity.startActivity(getActivity(), DataUtils.getDataList().get(finalJ));
                 }
             });
             content.addView(item);
@@ -61,28 +62,28 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, final DataBean item) {
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), position);
+                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 View iv_isvideo = holder.getView(R.id.iv_isvideo);
-                if (DataUtils.getDetail(position).isVideo == 1)iv_isvideo.setVisibility(View.VISIBLE);
+                if (item.detailBeans.get(0).isVideo == 1)iv_isvideo.setVisibility(View.VISIBLE);
                 else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+5).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(item.detailBeans.get(0).videoBeans.get(0).videoImages,holder.getImageView(R.id.iv_images));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position+7).numEvaluate);
-                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position+7).numZang);
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
+                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
+                holder.getTextView(R.id.tv_des).setText(item.detailBeans.get(0).videoBeans.get(0).mtitle);
+                holder.getTextView(R.id.tv_num_evaluate).setText(""+item.detailBeans.get(0).numEvaluate);
+                holder.getTextView(R.id.tv_num_zang).setText(""+item.detailBeans.get(0).numZang);
             }
 
             @Override
@@ -106,26 +107,19 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        if (DataUtils.getDetail(pos-1).isVideo==1)
-            DetailActivity.startActivity(xContext,pos-1);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-1);
+        if (itembean.detailBeans.get(0).isVideo == 1)
+            DetailActivity.startActivity(xContext,itembean);
         else
-        DetailImagesActivity.startActivity(getActivity(),pos-1);
+        DetailImagesActivity.startActivity(getActivity(),itembean);
 
     }
 
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 

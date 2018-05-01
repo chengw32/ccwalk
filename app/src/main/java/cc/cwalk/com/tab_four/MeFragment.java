@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.ToastUtils;
 import cc.cwalk.com.base.BaseFragment;
 import cc.cwalk.com.credits.CreditsActivity;
@@ -138,7 +139,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                UserHomePagerActivity.startActivity(xContext, 1);
+                UserHomePagerActivity.startActivity(xContext, DataUtils.getDataList().get(0));
             }
         });
 

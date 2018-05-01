@@ -11,16 +11,20 @@ import android.widget.TextView;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
+import java.io.Serializable;
 import java.util.List;
 
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.utils.ToastUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -28,9 +32,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class DetailActivity extends BaseListActivity {
 
     NormalGSYVideoPlayer videoPlayer;
-    private int mPosition;
     private int numZang = 30;
     private TextView tv_attention;
+    private DataBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -45,8 +49,7 @@ public class DetailActivity extends BaseListActivity {
     @Override
     protected void initView() {
         super.initView();
-        mPosition = getIntent().getIntExtra("position", 0);
-        numZang += mPosition ;
+        bean = (DataBean) getIntent().getSerializableExtra("bean");
         videoPlayer = findViewById(R.id.video_view);
         videoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +57,37 @@ public class DetailActivity extends BaseListActivity {
                 finish();
             }
         });
-        videoPlayer.setUp(DataUtils.getVideoInfo(getIntent().getIntExtra("position", 1)).videoUrl, true, "");
+
+        ImageView image = new ImageView(this);
+        GlideUtils.lodeImage(bean.detailBeans.get(0).videoBeans.get(0).videoImages, image);
+        videoPlayer.setThumbImageView(image);
+        image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        LogUtils.e("播放video url " + bean.detailBeans.get(0).videoBeans.get(0).videoUrl);
+        videoPlayer.setUp(bean.detailBeans.get(0).videoBeans.get(0).videoUrl, true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
+        final TextView tv_num_zang = view.findViewById(R.id.tv_num_zang);
+        final TextView tv_zang = view.findViewById(R.id.tv_zang);
+        tv_zang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tv_zang.isSelected()) {
+                    tv_zang.setSelected(false);
+                    tv_zang.setText("取消赞");
+                    ToastUtils.s("取消赞");
+                    numZang-- ;
+
+                } else {
+                    tv_zang.setText("点个赞");
+                    tv_zang.setSelected(true);
+                    ToastUtils.s("已赞");
+                    numZang++ ;
+
+                }
+                tv_num_zang.setText("共有 " + numZang + " 个赞");
+            }
+        });
         tv_attention = view.findViewById(R.id.tv_attention);
         tv_attention.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +105,12 @@ public class DetailActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeImage(DataUtils.getVideoInfo(mPosition).videoImages, iv_head);
+        GlideUtils.lodeImage(bean.userBean.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
-        tv_name.setText(DataUtils.getUserInfo(mPosition).name);
+        tv_name.setText(bean.userBean.name);
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(DataUtils.getString(mPosition));
-        TextView tv_num_zang = view.findViewById(R.id.tv_num_zang);
+        tv_des.setText(bean.detailBeans.get(0).videoBeans.get(0).mtitle);
         tv_num_zang.setText("共有 " + numZang + " 个赞");
         AutoFlowLayout af_heads = view.findViewById(R.id.af_heads);
         for (int i = 0; i < numZang; i++) {
@@ -92,7 +121,7 @@ public class DetailActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
-            GlideUtils.lodeImage(DataUtils.getVideoInfo(i+7).videoImages, imageView);
+            GlideUtils.lodeImage(DataUtils.getSingleUserData().head, imageView);
             af_heads.addView(imageView);
 
         }
@@ -127,12 +156,12 @@ public class DetailActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position+mPosition).name);
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
-                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getString(position+mPosition));
+            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
+                holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime);
+                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getStringText());
 
             }
 
@@ -152,13 +181,8 @@ public class DetailActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 
@@ -167,9 +191,9 @@ public class DetailActivity extends BaseListActivity {
         return null;
     }
 
-    public static void startActivity(Context context, int position) {
+    public static void startActivity(Context context, DataBean bean) {
         Intent intent = new Intent(context, DetailActivity.class);
-        intent.putExtra("position", position);
+        intent.putExtra("bean", bean);
         context.startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package cc.cwalk.com.tab_one;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.List;
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
@@ -30,7 +32,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * */
 public class DetailImagesActivity extends BaseListActivity {
 
-    private int mPosition;
+    private DataBean mBean;
 
     @Override
     protected void initData() {
@@ -42,18 +44,18 @@ public class DetailImagesActivity extends BaseListActivity {
     protected void initView() {
         super.initView();
 
-        mPosition = getIntent().getIntExtra("position", 0);
+        mBean = (DataBean) getIntent().getSerializableExtra("bean");
         float screenWidth = MyApplication.getScreenWidth(this);
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_images, null);
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeImage(DataUtils.getVideoInfo(mPosition).videoImages, iv_head);
+        GlideUtils.lodeImage(mBean.userBean.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
-        tv_name.setText(DataUtils.getUserInfo(mPosition).name);
+        tv_name.setText(mBean.userBean.name);
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(DataUtils.getString(mPosition));
+        tv_des.setText(mBean.detailBeans.get(0).videoBeans.get(0).mtitle);
         AutoFlowLayout af_heads = view.findViewById(R.id.af_images);
         for (int i = 0; i < 7; i++) {
 
@@ -63,7 +65,7 @@ public class DetailImagesActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.samp2);
-            GlideUtils.lodeImage(DataUtils.getVideoInfo(i+mPosition).videoImages, imageView);
+            GlideUtils.lodeImage(mBean.detailBeans.get(0).videoBeans.get(i).videoImages, imageView);
             af_heads.addView(imageView);
 
         }
@@ -73,13 +75,12 @@ public class DetailImagesActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position+mPosition).name);
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time);
-                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getString(position+mPosition));
-
+            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
+                holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime);
+                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getStringText());
             }
 
             @Override
@@ -98,13 +99,8 @@ public class DetailImagesActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
-        dataContent.add("");
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 
@@ -113,9 +109,9 @@ public class DetailImagesActivity extends BaseListActivity {
         return "详情";
     }
 
-    public static void startActivity(Context context,int  pos) {
+    public static void startActivity(Context context, DataBean bean) {
         Intent intent = new Intent(context, DetailImagesActivity.class);
-        intent.putExtra("position",pos);
+        intent.putExtra("bean",bean);
         context.startActivity(intent);
     }
 }

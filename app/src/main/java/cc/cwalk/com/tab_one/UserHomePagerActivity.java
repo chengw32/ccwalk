@@ -12,6 +12,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -19,7 +20,6 @@ import cc.cwalk.com.utils.GlideUtils;
 
 public class UserHomePagerActivity extends BaseListActivity {
 
-    private int mPostion ;
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
@@ -37,11 +37,9 @@ public class UserHomePagerActivity extends BaseListActivity {
 
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position));
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+DataUtils.getDetail(position).numEvaluate);
-                holder.getTextView(R.id.tv_num_zang).setText(""+DataUtils.getDetail(position).numZang);
+                holder.getTextView(R.id.tv_des).setText(bean.detailBeans.get(position).videoBeans.get(0).mtitle);
                 //设置图片
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(bean.detailBeans.get(position).videoBeans.get(0).videoImages,holder.getImageView(R.id.iv_images));
             }
 
         };
@@ -49,30 +47,32 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        if (DataUtils.getDetail(pos).isVideo == 1)
-        DetailActivity.startActivity(xContext,pos);
-        else DetailImagesActivity.startActivity(xContext,pos);
+        if (bean.detailBeans.get(0).isVideo == 1)
+        DetailActivity.startActivity(xContext,bean);
+        else DetailImagesActivity.startActivity(xContext,bean);
     }
 
+
+    private DataBean bean ;
     @Override
     protected void initView() {
         super.initView();
         if (null != topbar)
         topbar.setVisibility(View.GONE);
 
-        mPostion = getIntent().getIntExtra("position", 1);
+        bean = (DataBean) getIntent().getSerializableExtra("bean");
 
         View headView = LayoutInflater.from(UserHomePagerActivity.this).inflate(R.layout.activity_user_home_pager_head_view, null);
-        GlideUtils.lodeImage(DataUtils.getVideoInfo(mPostion).videoImages, (ImageView) headView.findViewById(R.id.head_image));
+        GlideUtils.lodeImage(bean.userBean.head, (ImageView) headView.findViewById(R.id.head_image));
         //名字
         TextView tvName = headView.findViewById(R.id.tvName);
-        tvName.setText(DataUtils.getUserInfo(mPostion).name);
+        tvName.setText(bean.userBean.name);
         //名字
         TextView tvAccount = headView.findViewById(R.id.tvAccount);
-        tvAccount.setText(DataUtils.getUserInfo(mPostion).adress);
+        tvAccount.setText(bean.userBean.name);
         //性别
         ImageView iv_sex = (ImageView) headView.findViewById(R.id.iv_sex);
-        iv_sex.setImageResource(DataUtils.getUserInfo(mPostion).sex == 1?R.mipmap.ic_gender_male:R.mipmap.ic_gender_female);
+        iv_sex.setImageResource(bean.userBean.sex == 1?R.mipmap.ic_gender_male:R.mipmap.ic_gender_female);
 
         mRcView.addHeadView(headView);
         headView.findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
@@ -89,10 +89,10 @@ public class UserHomePagerActivity extends BaseListActivity {
         return "主页";
     }
 
-    public static void startActivity(Context context, int pos) {
+    public static void startActivity(Context context, DataBean bean) {
 
         Intent intent = new Intent(context, UserHomePagerActivity.class);
-        intent.putExtra("position",pos);
+        intent.putExtra("bean",bean);
         context.startActivity(intent);
 
     }
@@ -100,7 +100,11 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
+
         List dataContent = mRcView.getDataContent();
+        if (dataContent.size() > 15)mRcView.setEanbleLoadMore(false);
+        else {
+            mRcView.setEanbleLoadMore(true);
         dataContent.add("1");
         dataContent.add("1");
         dataContent.add("1");
@@ -110,6 +114,7 @@ public class UserHomePagerActivity extends BaseListActivity {
         dataContent.add("1");
         dataContent.add("1");
         dataContent.add("1");
+        }
         mRcView.complete();
     }
 

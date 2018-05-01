@@ -12,10 +12,12 @@ import java.util.List;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
+import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
@@ -41,23 +43,30 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailActivity.startActivity(xContext,pos);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+        if (itembean.detailBeans.get(0).isVideo == 1)
+            DetailActivity.startActivity(xContext,itembean);
+        else
+            DetailImagesActivity.startActivity(getActivity(),itembean);
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+                View iv_isvideo = holder.getView(R.id.iv_isvideo);
+                if (item.detailBeans.get(0).isVideo == 1)iv_isvideo.setVisibility(View.VISIBLE);
+                else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position+5).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(item.detailBeans.get(0).videoBeans.get(0).videoImages,holder.getImageView(R.id.iv_images));
                 //设置名字
-                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ DataUtils.getDetail(position+7).numEvaluate+")");
-                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+DataUtils.getDetail(position+7).numZang+")");
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getString(position+17));
+                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ item.detailBeans.get(0).numEvaluate+")");
+                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.detailBeans.get(0).numZang+")");
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
+                holder.getTextView(R.id.tv_des).setText(item.detailBeans.get(0).videoBeans.get(0).mtitle);
             }
 
             @Override
@@ -78,14 +87,8 @@ public class CommunityFragment extends BaseListFragment {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 

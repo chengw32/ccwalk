@@ -9,6 +9,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
@@ -25,14 +26,14 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        UserHomePagerActivity.startActivity(xContext,pos);
+        UserHomePagerActivity.startActivity(xContext,DataUtils.getDataList().get(0));
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
                 holder.getView(R.id.tv_remove).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -41,9 +42,9 @@ public class MyFansActivity extends BaseListActivity {
                     }
                 });
                 //设置头像
-                GlideUtils.lodeImage(DataUtils.getVideoInfo(position).videoImages, holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
-                holder.getTextView(R.id.tv_time).setText(DataUtils.getDetail(position).time+" 成为你的粉丝");
+                GlideUtils.lodeImage(item.userBean.head, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText("");
+                holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime+" 成为你的粉丝");
 
             }
 
@@ -63,15 +64,9 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataList = mRcView.getDataContent();
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
-        dataList.add("1");
+        List dataContent = mRcView.getDataContent();
+        List<DataBean> dataList = DataUtils.getDataList();
+        dataContent.addAll(dataList);
         mRcView.complete();
     }
 

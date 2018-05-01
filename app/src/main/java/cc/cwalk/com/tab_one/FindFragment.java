@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
+import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.LogUtils;
@@ -40,6 +42,10 @@ public class FindFragment extends BaseFragment {
     @Override
     public void initView(View v) {
         super.initView(v);
+        for (int i = 0; i < 15 ; i++) {
+            int random = DataUtils.getRandom(15);
+            LogUtils.e(random);
+        }
         baseViewPager = v.findViewById(R.id.viewpager);
         basePagerAdapter = new PageAdapter(getFragmentManager());
         baseViewPager.setAdapter(basePagerAdapter);

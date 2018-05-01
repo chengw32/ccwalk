@@ -2,6 +2,8 @@ package cc.cwalk.com.beans;
 
 import java.io.Serializable;
 
+import cc.cwalk.com.utils.DataUtils;
+
 /**
  * Author chen_gw
  * Date 2018/4/24 16:35
@@ -20,7 +22,7 @@ public class UserBean implements Serializable {
         this.adress = adress;
         this.attentiontime = attentiontime;
         this.befanstime = befanstime;
-        this.head = head;
+        this.head = DataUtils.baseheadUrl + head;
         this.sex = sex;
     }
 }
