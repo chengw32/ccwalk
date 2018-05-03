@@ -43,14 +43,14 @@ public class AttentionFragment extends BaseListFragment {
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         for (int j = 0; j < 8; j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
-            GlideUtils.lodeImage(DataUtils.getDataList().get(j).userBean.head, (ImageView) item.findViewById(R.id.iv_head));
+            GlideUtils.lodeImage(DataUtils.getInstance().getDataList().get(j).userBean.head, (ImageView) item.findViewById(R.id.iv_head));
             TextView tv_name = item.findViewById(R.id.tv_name);
-            tv_name.setText(DataUtils.getDataList().get(j).userBean.name);
+            tv_name.setText(DataUtils.getInstance().getDataList().get(j).userBean.name);
             final int finalJ = j;
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UserHomePagerActivity.startActivity(getActivity(), DataUtils.getDataList().get(finalJ));
+                    UserHomePagerActivity.startActivity(getActivity(), DataUtils.getInstance().getDataList().get(finalJ));
                 }
             });
             content.addView(item);
@@ -118,7 +118,7 @@ public class AttentionFragment extends BaseListFragment {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }

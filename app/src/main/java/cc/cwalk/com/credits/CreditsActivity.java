@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.exoplayer2.text.webvtt.WebvttCssStyle;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import cc.cwalk.com.R;
@@ -33,6 +36,11 @@ public class CreditsActivity extends BaseListActivity {
     protected void initView() {
         super.initView();
         View view = LayoutInflater.from(xContext).inflate(R.layout.activity_credits_head, null);
+        TextView tv_time = view.findViewById(R.id.tv_time);
+        SimpleDateFormat formatter   =   new   SimpleDateFormat   ("更新时间 yyyy-MM-dd   HH:mm:ss");
+        Date curDate =  new Date(System.currentTimeMillis());
+        String   str   =   formatter.format(curDate);
+        tv_time.setText(str);
         mRcView.addHeadView(view);
     }
 
@@ -48,13 +56,13 @@ public class CreditsActivity extends BaseListActivity {
 
     @Override
     public void onRightClick() {
-        WebViewActivity.startActivity(xContext,"积分商城");
+        WebViewActivity.startActivity(xContext,"积分商城","https://www.taobao.com/");
     }
 
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }

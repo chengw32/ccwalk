@@ -29,6 +29,7 @@ public class NewestFragment extends BaseListFragment{
         super.initView(v);
         setBarGone();
         getData(1);
+
     }
 
     protected BaseRecyclerAdapter getAdapter() {
@@ -93,7 +94,7 @@ public class NewestFragment extends BaseListFragment{
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }

@@ -62,7 +62,8 @@ public class UserHomePagerActivity extends BaseListActivity {
 
         bean = (DataBean) getIntent().getSerializableExtra("bean");
 
-        View headView = LayoutInflater.from(UserHomePagerActivity.this).inflate(R.layout.activity_user_home_pager_head_view, null);
+        View headView = LayoutInflater.from(UserHomePagerActivity.this)
+                .inflate(R.layout.activity_user_home_pager_head_view, null);
         GlideUtils.lodeImage(bean.userBean.head, (ImageView) headView.findViewById(R.id.head_image));
         //名字
         TextView tvName = headView.findViewById(R.id.tvName);

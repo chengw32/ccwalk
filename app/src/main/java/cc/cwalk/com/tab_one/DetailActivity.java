@@ -121,7 +121,7 @@ public class DetailActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
-            GlideUtils.lodeImage(DataUtils.getSingleUserData().head, imageView);
+            GlideUtils.lodeImage(DataUtils.getInstance().getSingleUserData().head, imageView);
             af_heads.addView(imageView);
 
         }
@@ -161,7 +161,7 @@ public class DetailActivity extends BaseListActivity {
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 holder.getTextView(R.id.tv_name).setText(item.userBean.name);
                 holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime);
-                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getStringText());
+                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getInstance().getStringText());
 
             }
 
@@ -181,7 +181,7 @@ public class DetailActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }

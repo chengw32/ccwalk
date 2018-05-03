@@ -19,6 +19,7 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
 
 	public BaseRecyclerAdapter() {
 		mInflater = LayoutInflater.from(mContext= getContext());
+		mData =new ArrayList<T>() ;
 	}
 
 	@Override
@@ -56,22 +57,15 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
 		return getCount();
 	}
 
-
-	private void initDataList(){
-		if (mData == null) mData =new ArrayList<T>() ;
-	}
 	private int getCount(){
-		initDataList();
 		return mData.size();
 	}
 
 	public void addData(List list){
-		initDataList();
 		mData.addAll(list);
 	}
 
 	public List getDataContent() {
-		initDataList();
 		return mData;
 	}
 

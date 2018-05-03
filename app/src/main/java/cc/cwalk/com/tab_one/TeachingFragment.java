@@ -59,7 +59,7 @@ public class TeachingFragment extends BaseListFragment {
     @Override
     public void onItemClick(View itemView, int pos) {
 
-        WebViewActivity.startActivity(xContext, (String) mRcView.getDataContent().get(pos));
+        WebViewActivity.startActivity(xContext,"教程", "http://chengw32.com:8080/videos/sample.mp4 ");
     }
 
     @Override

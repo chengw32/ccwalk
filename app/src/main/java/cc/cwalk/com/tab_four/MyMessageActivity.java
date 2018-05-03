@@ -35,7 +35,7 @@ public class MyMessageActivity extends BaseListActivity {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }
@@ -49,7 +49,7 @@ public class MyMessageActivity extends BaseListActivity {
                 GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
                 holder.getTextView(R.id.tv_title).setText(item.userBean.name +"  评论了你的作品  " +item.detailBeans.get(0).videoBeans.get(0).mtitle);
                 holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getStringText());
+                holder.getTextView(R.id.tv_des).setText(DataUtils.getInstance().getStringText());
             }
 
             @Override

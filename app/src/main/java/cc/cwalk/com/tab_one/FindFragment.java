@@ -42,10 +42,6 @@ public class FindFragment extends BaseFragment {
     @Override
     public void initView(View v) {
         super.initView(v);
-        for (int i = 0; i < 15 ; i++) {
-            int random = DataUtils.getRandom(15);
-            LogUtils.e(random);
-        }
         baseViewPager = v.findViewById(R.id.viewpager);
         basePagerAdapter = new PageAdapter(getFragmentManager());
         baseViewPager.setAdapter(basePagerAdapter);

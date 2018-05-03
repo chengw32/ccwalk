@@ -62,7 +62,7 @@ public class HotFragment extends BaseListFragment{
                 //设置头像
                 GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
                 //设置名字
-//                holder.getTextView(R.id.tv_name).setText(DataUtils.getUserInfo(position).name);
+                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
                 holder.getTextView(R.id.tv_play_num).setText("播放量  "+item.detailBeans.get(0).numPaly);
 
             }
@@ -101,7 +101,7 @@ public class HotFragment extends BaseListFragment{
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getDataList();
+        List<DataBean> dataList = DataUtils.getInstance().getDataList();
         dataContent.addAll(dataList);
         mRcView.complete();
     }

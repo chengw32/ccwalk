@@ -13,6 +13,7 @@ import cc.cwalk.com.base.BaseActivity;
 public class WebViewActivity extends BaseActivity {
 
     private final static String TITLE= "tile" ;
+    private final static String URL= "url" ;
 
     @Override
     protected int setContentLayout() {
@@ -26,6 +27,7 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mUrl = getIntent().getStringExtra(URL);
         initUI();
     }
 
@@ -36,7 +38,7 @@ public class WebViewActivity extends BaseActivity {
 
 
     private WebView mWebView;
-    private String mUrl= "http://chengw32.com:8080/videos/sample.mp4";
+    private String mUrl= "https://www.taobao.com/";
 
 
     @Override
@@ -52,7 +54,6 @@ public class WebViewActivity extends BaseActivity {
 
     private void initUI() {
 
-
         mWebView = (WebView) findViewById(R.id.webView1);
         WebSettings webSettings = mWebView.getSettings();
         //对离线应用的支持
@@ -61,7 +62,7 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setAllowFileAccess(true);//设置可以访问文件
         webSettings.setAppCacheEnabled(true);
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
-        mWebView.setWebViewClient(new WebViewClient());
+//        mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(mUrl);
     }
 
@@ -89,9 +90,11 @@ public class WebViewActivity extends BaseActivity {
     }
 
 
-    public static void startActivity(Context xContext,String titile) {
+    public static void startActivity(Context xContext,String titile,String url) {
         Intent intent = new Intent(xContext, WebViewActivity.class);
         intent.putExtra(TITLE,titile);
+        intent.putExtra(URL,url);
         xContext.startActivity(intent);
     }
+
 }

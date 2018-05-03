@@ -139,7 +139,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                UserHomePagerActivity.startActivity(xContext, DataUtils.getDataList().get(0));
+                UserHomePagerActivity.startActivity(xContext, DataUtils.getInstance().getDataList().get(0));
             }
         });
 
