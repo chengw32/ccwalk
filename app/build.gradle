@@ -57,4 +57,7 @@ dependencies {
     implementation 'com.android.support:design:26.0.0-alpha1'
     //json解析
     implementation 'com.google.code.gson:gson:2.2.4'
+    //数据请求
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    compile "io.reactivex.rxjava2:rxjava:2.1.13"
 }

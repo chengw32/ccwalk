@@ -1,11 +1,15 @@
 package cc.cwalk.com.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -14,6 +18,17 @@ import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.DetailBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.beans.VideoBean;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Author chen_gw
@@ -23,22 +38,22 @@ import cc.cwalk.com.beans.VideoBean;
 public class DataUtils {
     public final static String baseUrl = "http://chengw32.com:8080/videos/";
     public final static String baseheadUrl = "http://chengw32.com:8080/heads/";
-    private  List<VideoBean> videoContent = new ArrayList();
-    private  List<UserBean> userContent = new ArrayList();
-    private  List<DetailBean> detailContent = new ArrayList();
-    private  List<String> stringContent = new ArrayList();
+    private List<VideoBean> videoContent = new ArrayList();
+    private List<UserBean> userContent = new ArrayList();
+    private List<DetailBean> detailContent = new ArrayList();
+    private List<String> stringContent = new ArrayList();
 
-    public  void init() {
+    public void init() {
         initUser();
         initVideo();
         initDetail();
         initString();
     }
 
-    public static DataUtils mInstance ;
+    public static DataUtils mInstance;
 
 
-    private  void initString() {
+    private void initString() {
         stringContent.add("岁月不老，情怀还在");
         stringContent.add("不仅仅是喜欢。。。。。");
         stringContent.add("D.LHX国内最强高清C WALK教程 by D.LHX：");
@@ -68,7 +83,7 @@ public class DataUtils {
         stringContent.add("我奇迹般的发现10年前我居然学过cwalk，因为觉得简单只有8个动作而且可以随便跳。v步，滑步，蛇步，摇，双摇~~在大学还嘚瑟了一阵子~~我说seve这么熟悉~");
     }
 
-    private  void initDetail() {
+    private void initDetail() {
         detailContent.add(new DetailBean(1, 3, 4, 432, "2018-4-27"));
         detailContent.add(new DetailBean(0, 54, 65, 4662, "2018-4-26"));
         detailContent.add(new DetailBean(0, 36, 3, 32, "2018-4-25"));
@@ -91,7 +106,7 @@ public class DataUtils {
         detailContent.add(new DetailBean(1, 85, 852, 554, "2018-4-5"));
     }
 
-    public  void initVideo() {
+    public void initVideo() {
         videoContent.add(new VideoBean("sample.mp4", "sample.png", "0", "cwalk 各种快"));
         videoContent.add(new VideoBean("sample1.mp4", "sample1.png", "1", "i love the rain"));
         videoContent.add(new VideoBean("sample2.flv", "sample2.png", "2", "cwalk"));
@@ -108,7 +123,7 @@ public class DataUtils {
         videoContent.add(new VideoBean("01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4", "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png", "14", "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"));
     }
 
-    public  void initUser() {
+    public void initUser() {
         userContent.add(new UserBean("七炫", "厦门", "2018-4-28", "2018-4-28", "0aca472def0b8c0ccc9350674539f6a7.jpg", 0));
         userContent.add(new UserBean("熊小莫", "广州", "2018-4-28", "2018-4-28", "03514dbb47703398b8a96b1a9ab013c6.jpg", 0));
         userContent.add(new UserBean("GY癸酉", "福州", "2018-4-28", "2018-4-26", "05bc3aa3423cae4d0a2baec9535fe464.jpeg", 1));
@@ -128,9 +143,10 @@ public class DataUtils {
         userContent.add(new UserBean("溪水不与泉流", "厦门", "2018-4-24", "2018-3-22", "d8d9fcecb6441e8e3b5f9f1276243cef.jpg", 1));
     }
 
-    public  String getStringText(){
+    public String getStringText() {
         return stringContent.get(new Random().nextInt(stringContent.size()));
     }
+
     //
 //    public static String initUser(){
 //        try {
@@ -182,16 +198,16 @@ public class DataUtils {
         return lst;
     }
 
-    public static DataUtils getInstance(){
-        if (mInstance == null)mInstance = new DataUtils();
+    public static DataUtils getInstance() {
+        if (mInstance == null) mInstance = new DataUtils();
         return mInstance;
     }
 
 
-    public   List<DataBean> getDataList() {
+    public List<DataBean> getDataList() {
         List<DataBean> dataList = new ArrayList();
         //获取用户数据
-        UserBean userBean = null ;
+        UserBean userBean = null;
         for (int i = 0; i < 10; i++) {
             while (true) {
                 userBean = userContent.get(new Random().nextInt(userContent.size()));
@@ -207,13 +223,11 @@ public class DataUtils {
     }
 
 
-
-
-    public  UserBean getSingleUserData() {
-           return   userContent.get(new Random().nextInt(userContent.size()));
+    public UserBean getSingleUserData() {
+        return userContent.get(new Random().nextInt(userContent.size()));
     }
 
-    public  List<DetailBean> getDetailList() {
+    public List<DetailBean> getDetailList() {
         List<DetailBean> list = new ArrayList<>();
         for (int i = 0; i < detailContent.size(); i++) {
             DetailBean e = detailContent.get(i);
@@ -223,16 +237,58 @@ public class DataUtils {
         return list;
     }
 
-    public  List<VideoBean> getVideoInfo() {
+    public List<VideoBean> getVideoInfo() {
         List<VideoBean> list = new ArrayList<>();
         for (int i = 0; i < videoContent.size(); i++) {
             VideoBean e = videoContent.get(i);
             list.add(e);
 
         }
+        Collections.shuffle(list);
         return list;
     }
 
+
+    public void getJsonFromService(final String url, final StringCallback callBack) {
+
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                Response response = client.newCall(request).execute();
+                e.onNext(response.body().string());
+            }
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        callBack.success(s);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+    }
 
 
 }

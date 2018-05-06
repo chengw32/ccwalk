@@ -47,9 +47,9 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        if (bean.detailBeans.get(0).isVideo == 1)
-        DetailActivity.startActivity(xContext,bean);
-        else DetailImagesActivity.startActivity(xContext,bean);
+//        if (bean.detailBeans.get(0).isVideo == 1)
+//        DetailActivity.startActivity(xContext,bean);
+//        else DetailImagesActivity.startActivity(xContext,bean);
     }
 
 

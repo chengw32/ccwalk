@@ -1,27 +1,32 @@
 package cc.cwalk.com.tab_one;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
+import java.util.Collections;
 import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.VideoBean;
+import cc.cwalk.com.beans.xxxBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.utils.GlideUtils;
-import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.StringCallback;
 
 /**
  * 热门视频
  */
-public class NewestFragment extends BaseListFragment{
+public class NewestFragment extends BaseListFragment {
 
 
     @Override
@@ -33,28 +38,28 @@ public class NewestFragment extends BaseListFragment{
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<xxxBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, final DataBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, final xxxBean item) {
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), item);
+//                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity(),item);
+                        DetailActivity.startActivity(getActivity(), item);
                     }
                 });
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.getHead(), holder.getImageView(R.id.iv_head));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_des).setText(item.detailBeans.get(0).videoBeans.get(0).mtitle);
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+item.detailBeans.get(0).numEvaluate);
-                holder.getTextView(R.id.tv_num_zang).setText(""+item.detailBeans.get(0).numZang);
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_des).setText(item.getDetail().get(0).getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.getDetail().get(0).getNumEvaluate());
+                holder.getTextView(R.id.tv_num_zang).setText("" + item.getDetail().get(0).getNumZang());
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, item);
@@ -74,15 +79,15 @@ public class NewestFragment extends BaseListFragment{
         };
     }
 
-    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, DataBean item) {
+    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, xxxBean item) {
         //增加封面
-        VideoBean videoInfo = item.detailBeans.get(0).videoBeans.get(0);
+        xxxBean.DetailBean.VideosBean videoInfo = item.getDetail().get(0).getVideos().get(0);
         ImageView imageView = new ImageView(getActivity());
-        GlideUtils.lodeImage(videoInfo.videoImages, imageView);
+        GlideUtils.lodeImage(videoInfo.getVideoImages(), imageView);
         videoPlayer.setThumbImageView(imageView);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(videoInfo.videoUrl, true, "");
+        videoPlayer.setUp(videoInfo.getVideoUrl(), true, "");
     }
 
 
@@ -91,12 +96,29 @@ public class NewestFragment extends BaseListFragment{
 //        DetailActivity.startActivity(getActivity());
     }
 
+    Dialog mDialog ;
+
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+       DataUtils.getInstance().getJsonFromService("http://chengw32.com:8080/wtf.txt", new StringCallback() {
+            @Override
+            public void success(String result) {
+                LogUtils.e(result);
+                List<xxxBean> data = GsonUtil.getData(result);
+                Collections.shuffle(data.get(0).getDetail().get(0).getVideos());
+                List dataContent = mRcView.getDataContent();
+                dataContent.clear();
+                dataContent.addAll(data);
+                mRcView.complete();
+//                mDialog = new Dialog(xContext);
+//                mDialog.setTitle("444444444");
+//
+//
+//                mDialog.show();
+//
+//                LogUtils.e(data.getName());
+            }
+        });
     }
 
 }

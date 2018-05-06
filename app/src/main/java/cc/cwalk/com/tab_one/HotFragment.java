@@ -55,7 +55,7 @@ public class HotFragment extends BaseListFragment{
                 holder.getView(R.id.tv_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DetailActivity.startActivity(getActivity(),item);
+//                        DetailActivity.startActivity(getActivity(),item);
                     }
                 });
 

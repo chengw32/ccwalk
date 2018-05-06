@@ -3,9 +3,6 @@ package cc.cwalk.com.tab_one;
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
-import android.widget.ImageView;
-
-import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
 import java.util.List;
 
@@ -13,8 +10,6 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.utils.GlideUtils;
-import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.webview.WebViewActivity;
 
 /**q

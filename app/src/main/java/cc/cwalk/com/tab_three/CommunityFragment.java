@@ -43,11 +43,11 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
-        if (itembean.detailBeans.get(0).isVideo == 1)
-            DetailActivity.startActivity(xContext,itembean);
-        else
-            DetailImagesActivity.startActivity(getActivity(),itembean);
+//        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+//        if (itembean.detailBeans.get(0).isVideo == 1)
+//            DetailActivity.startActivity(xContext,itembean);
+//        else
+//            DetailImagesActivity.startActivity(getActivity(),itembean);
     }
 
     @Override

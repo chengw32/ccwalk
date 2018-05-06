@@ -1,0 +1,1483 @@
+[
+{
+
+		"name": "熊小莫",
+		"adress":"广州",
+		"attentiontime":"2018-5-6",
+		"befanstime": "2018-4-5",
+		"head": "03514dbb47703398b8a96b1a9ab013c6.jpg",
+		"sex":1 ,
+		"detail": [{
+			"numZang":32 ,
+			"numEvaluate":54 ,
+			"numPaly": 2356,
+			"isVideo": 1,
+			"time": "2018-5-6",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "GY癸酉",
+		"adress":"福州",
+		"attentiontime":"2018-4-28" ,
+		"befanstime": "2018-4-26",
+		"head":"05bc3aa3423cae4d0a2baec9535fe464.jpeg" ,
+		"sex": 0,
+		"detail": [{
+			"numZang": 35,
+			"numEvaluate":63 ,
+			"numPaly": 3256,
+			"isVideo": 1,
+			"time": "2018-4-26",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name":"Y欧瑞" ,
+		"adress":"福州",
+		"attentiontime": "2018-4-27",
+		"befanstime":"2018-4-26" ,
+		"head": "2a25512470e56727305b5dd5aeb49bdb.png",
+		"sex":0 ,
+		"detail": [{
+			"numZang":56 ,
+			"numEvaluate":21 ,
+			"numPaly": 3678,
+			"isVideo":0 ,
+			"time": "2018-4-27",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "极光·繁星",
+		"adress":"厦门",
+		"attentiontime": "2018-4-27",
+		"befanstime":"2018-4-26" ,
+		"head": "2d4a88f1f2814263a0891a3899bb3d8f.jpg",
+		"sex":0 ,
+		"detail": [{
+			"numZang":46 ,
+			"numEvaluate":23 ,
+			"numPaly": 4672,
+			"isVideo": 0,
+			"time": "2018-4-27",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "凳子o",
+		"adress":"厦门",
+		"attentiontime":"2018-4-27" ,
+		"befanstime": "2018-4-23",
+		"head":"6a270402690fd97046a0944740a265c5.jpg" ,
+		"sex": 1,
+		"detail": [{
+			"numZang":53 ,
+			"numEvaluate":23 ,
+			"numPaly": 2356,
+			"isVideo": 1,
+			"time": "2018-4-23",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name":"CW小嚄" ,
+		"adress":"上海",
+		"attentiontime": "2018-4-26",
+		"befanstime": "2018-4-22",
+		"head":"8bde2581fcc001c2ca90ef56293226ac.jpg" ,
+		"sex": 0,
+		"detail": [{
+			"numZang": 37,
+			"numEvaluate":56 ,
+			"numPaly": 8341,
+			"isVideo": 1,
+			"time":  "2018-4-26",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "gwhh",
+		"adress":"上海",
+		"attentiontime": "2018-4-26",
+		"befanstime": "2018-4-18",
+		"head":"8ecaf4ccd0d9bde63be9ca977235b6fc.jpg" ,
+		"sex": 1,
+		"detail": [{
+			"numZang": 74,
+			"numEvaluate": 166,
+			"numPaly": 9543,
+			"isVideo":1 ,
+			"time": "2018-4-26",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "用户pou",
+		"adress":"北京",
+		"attentiontime":"2018-4-26" ,
+		"befanstime":"2018-3-28",
+		"head":"9f1ee91e8c65b00ca11ab66fc2cf453b.jpg",
+		"sex": 1,
+		"detail": [{
+			"numZang":85,
+			"numEvaluate":25 ,
+			"numPaly":98776,
+			"isVideo":0,
+			"time":"2018-4-26" ,
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "用户eeeee",
+		"adress":"北京",
+		"attentiontime": "2018-4-26",
+		"befanstime":"2018-3-26",
+		"head":"dd45308282eb82d1451ea28d9ca4339a.jpg",
+		"sex": 0,
+		"detail": [{
+			"numZang":68,
+			"numEvaluate":48 ,
+			"numPaly":3589,
+			"isVideo":0,
+			"time": "2018-4-26",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "撩个屁",
+		"adress":"北京",
+		"attentiontime": "2018-4-25",
+		"befanstime":"2018-3-28",
+		"head":"366dfdf17c2631aae519e03e857c11b5.jpg",
+		"sex": 0,
+		"detail": [{
+			"numZang":96,
+			"numEvaluate":35 ,
+			"numPaly":469043,
+			"isVideo":0,
+			"time": "2018-4-25",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "wjigl",
+		"adress":"北京",
+		"attentiontime":"2018-4-25" ,
+		"befanstime":"2018-3-25",
+		"head":"686b0b3ebaf9064a970842ba8fb4bc9e.jpg",
+		"sex":1 ,
+		"detail": [{
+			"numZang":78,
+			"numEvaluate":65 ,
+			"numPaly":7654,
+			"isVideo":1,
+			"time": "2018-3-25",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "tjrer",
+		"adress":"北京",
+		"attentiontime":"2018-4-25" ,
+		"befanstime":"2018-3-23",
+		"head":"5907c5c3b5edcd5d9413a4e6ae7a4aa2.jpg",
+		"sex": 0,
+		"detail": [{
+			"numZang":537,
+			"numEvaluate":468 ,
+			"numPaly":77564,
+			"isVideo":0,
+			"time": "2018-4-25",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "手机用户268",
+		"adress":"厦门",
+		"attentiontime": "2018-4-25",
+		"befanstime":"2018-3-23",
+		"head":"b2df9f6b960ccc5aac81437f59ae36a1.jpg",
+		"sex": 1,
+		"detail": [{
+			"numZang":45,
+			"numEvaluate":94 ,
+			"numPaly":24799,
+			"isVideo":0,
+			"time": "2018-4-25",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "奇偶ie好",
+		"adress":"厦门",
+		"attentiontime": "2018-4-24",
+		"befanstime":"2018-3-23",
+		"head":"b39368ea665ab78cfc86af15a5115da7.jpeg",
+		"sex": 1,
+		"detail": [{
+			"numZang":36,
+			"numEvaluate":38 ,
+			"numPaly":87633,
+			"isVideo":1,
+			"time":  "2018-4-24",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name":"王卫国" ,
+		"adress":"厦门",
+		"attentiontime":"2018-4-24" ,
+		"befanstime":"2018-3-23",
+		"head":"bf9a2fbc87ba4d5e4ae3a087bac1592e.png",
+		"sex": 1,
+		"detail": [{
+			"numZang":52,
+			"numEvaluate": 53,
+			"numPaly":35682,
+			"isVideo":0,
+			"time": "2018-4-24" ,
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+{
+
+		"name": "溪水不与泉流",
+		"adress":"厦门",
+		"attentiontime":"2018-4-24" ,
+		"befanstime":"2018-3-22",
+		"head":"d8d9fcecb6441e8e3b5f9f1276243cef.jpg",
+		"sex": 1,
+		"detail": [{
+			"numZang":46,
+			"numEvaluate": 24,
+			"numPaly":38543,
+			"isVideo":1,
+			"time": "2018-4-24",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+		}]
+	},
+	{
+
+		"name": "七炫",
+		"adress": "厦门",
+		"attentiontime": "http://121.201.66.185:91/Pictures/201803/20180310093807-bvtu2l-o.jpg",
+		"befanstime": "2018-4-28",
+		"head": "0aca472def0b8c0ccc9350674539f6a7.jpg",
+		"sex": 1,
+		"detail": [
+		{
+			"numZang": 324,
+			"numEvaluate": 324,
+			"numPaly": 324,
+			"isVideo": 1,
+			"time": "2018-5-6",
+			"videos": [{
+            					"videoUrl": "sample.mp4",
+            					"videoImages": "sample.png",
+            					"mtitle": "cwalk 各种快"
+            				},
+            				{
+            					"videoUrl":"sample2.flv" ,
+            					"videoImages": "sample2.png",
+            					"mtitle": "cwalk"
+            				},
+            				{
+            					"videoUrl":"slkdjgejgseslsgej.flv" ,
+            					"videoImages": "slkdjgejgseslsgej.png",
+            					"mtitle": "C-walk"
+            				},
+            				{
+            					"videoUrl":"062E0B53EA8BBB94F6B0CEFD87D8286B.flv" ,
+            					"videoImages":"062E0B53EA8BBB94F6B0CEFD87D8286B.png" ,
+            					"mtitle": "Cwalk Abelard-Hey stranger_高清"
+            				},
+            				{
+            					"videoUrl": "D7FEC457DAFFEE65EE67A42982E02921.mp4",
+            					"videoImages": "D7FEC457DAFFEE65EE67A42982E02921.png",
+            					"mtitle": "RARE CWALK_高清"
+            				},
+            				{
+            					"videoUrl":"F22630B947F92D63E79A84DA1DE398B9.mp4" ,
+            					"videoImages": "F22630B947F92D63E79A84DA1DE398B9.png",
+            					"mtitle": "CWalk - PuGGy Mixtape - The Beast_高清"
+            				},
+            				{
+            					"videoUrl": "9B9A4A54576B0FF0B8A36A4E5DE66382.mp4",
+            					"videoImages": "9B9A4A54576B0FF0B8A36A4E5DE66382.png",
+            					"mtitle": "【曳舞天下】Cwalk Tutorial [Beginners] II[高清版]"
+            				},
+            				{
+            					"videoUrl": "2244CD0594A81165D7186C1987C50D9E.flv",
+            					"videoImages":"2244CD0594A81165D7186C1987C50D9E.png" ,
+            					"mtitle": "【骑士】 2014 这才是真正的C-walk 超清[超清版]"
+            				},
+            				{
+            					"videoUrl": "FE73411CFCC4935215173B4B071B75A8.mp4",
+            					"videoImages": "FE73411CFCC4935215173B4B071B75A8.png",
+            					"mtitle": "TFC C-Walk Choreo _ Routine _ RS PROD_超清"
+            				},
+            				{
+            					"videoUrl": "644BB8748DF89F20BB4BDE08FBB139C1.mp4",
+            					"videoImages": "644BB8748DF89F20BB4BDE08FBB139C1.png",
+            					"mtitle": "C-Walk Choreo _ Студия DANCEHALL_超清"
+            				},
+            				{
+            					"videoUrl":"F44136D83A2AFB70BB13AAA32535825B.mp4" ,
+            					"videoImages":"F44136D83A2AFB70BB13AAA32535825B.png" ,
+            					"mtitle": "V.A.LOKOS MIXTAPE_高清"
+            				},
+            				{
+            					"videoUrl": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            					"videoImages": "01AC2E0111D3A6BA0D2B1F9904D6EA3E.png",
+            					"mtitle": "【珍藏】V.A. Lokos - Cwalk - Before You Go_超清"
+            				},
+            				{
+            					"videoUrl": "8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            					"videoImages":"8AF705836C6694848E227F3D7F5D4ABD.png" ,
+            					"mtitle": "大神级舞步"
+            				},
+            				{
+            					"videoUrl": "sample1.mp4",
+            					"videoImages": "sample1.png",
+            					"mtitle": "i love the rain"
+            				}
+            			]
+
+		}]
+	}
+]

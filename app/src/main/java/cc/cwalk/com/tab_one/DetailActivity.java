@@ -19,6 +19,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.DetailBean;
+import cc.cwalk.com.beans.xxxBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
@@ -34,7 +35,7 @@ public class DetailActivity extends BaseListActivity {
     NormalGSYVideoPlayer videoPlayer;
     private int numZang = 30;
     private TextView tv_attention;
-    private DataBean bean;
+    private xxxBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -49,7 +50,7 @@ public class DetailActivity extends BaseListActivity {
     @Override
     protected void initView() {
         super.initView();
-        bean = (DataBean) getIntent().getSerializableExtra("bean");
+        bean = (xxxBean) getIntent().getSerializableExtra("bean");
         videoPlayer = findViewById(R.id.video_view);
         videoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,11 +60,11 @@ public class DetailActivity extends BaseListActivity {
         });
 
         ImageView image = new ImageView(this);
-        GlideUtils.lodeImage(bean.detailBeans.get(0).videoBeans.get(0).videoImages, image);
+        GlideUtils.lodeImage(bean.getDetail().get(0).getVideos().get(0).getVideoImages(), image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        LogUtils.e("播放video url " + bean.detailBeans.get(0).videoBeans.get(0).videoUrl);
-        videoPlayer.setUp(bean.detailBeans.get(0).videoBeans.get(0).videoUrl, true, "");
+        LogUtils.e("播放video url " + bean.getDetail().get(0).getVideos().get(0).getVideoUrl());
+        videoPlayer.setUp(bean.getDetail().get(0).getVideos().get(0).getVideoUrl(), true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
@@ -105,12 +106,12 @@ public class DetailActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeImage(bean.userBean.head, iv_head);
+        GlideUtils.lodeImage(bean.getHead(), iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
-        tv_name.setText(bean.userBean.name);
+        tv_name.setText(bean.getName());
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(bean.detailBeans.get(0).videoBeans.get(0).mtitle);
+        tv_des.setText(bean.getDetail().get(0).getVideos().get(0).getTitle());
         tv_num_zang.setText("共有 " + numZang + " 个赞");
         AutoFlowLayout af_heads = view.findViewById(R.id.af_heads);
         for (int i = 0; i < numZang; i++) {
@@ -191,7 +192,7 @@ public class DetailActivity extends BaseListActivity {
         return null;
     }
 
-    public static void startActivity(Context context, DataBean bean) {
+    public static void startActivity(Context context, xxxBean bean) {
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("bean", bean);
         context.startActivity(intent);

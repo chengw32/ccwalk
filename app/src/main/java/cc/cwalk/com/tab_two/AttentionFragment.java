@@ -107,11 +107,11 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-1);
-        if (itembean.detailBeans.get(0).isVideo == 1)
-            DetailActivity.startActivity(xContext,itembean);
-        else
-        DetailImagesActivity.startActivity(getActivity(),itembean);
+//        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-1);
+//        if (itembean.detailBeans.get(0).isVideo == 1)
+//            DetailActivity.startActivity(xContext,itembean);
+//        else
+//        DetailImagesActivity.startActivity(getActivity(),itembean);
 
     }
 
