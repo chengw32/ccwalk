@@ -11,21 +11,20 @@ import android.widget.TextView;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
-import java.io.Serializable;
 import java.util.List;
 
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
-import cc.cwalk.com.beans.DetailBean;
-import cc.cwalk.com.beans.xxxBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.StringCallback;
 import cc.cwalk.com.utils.ToastUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -35,7 +34,7 @@ public class DetailActivity extends BaseListActivity {
     NormalGSYVideoPlayer videoPlayer;
     private int numZang = 30;
     private TextView tv_attention;
-    private xxxBean bean;
+    private DataBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -50,7 +49,7 @@ public class DetailActivity extends BaseListActivity {
     @Override
     protected void initView() {
         super.initView();
-        bean = (xxxBean) getIntent().getSerializableExtra("bean");
+        bean = (DataBean) getIntent().getSerializableExtra("bean");
         videoPlayer = findViewById(R.id.video_view);
         videoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +62,7 @@ public class DetailActivity extends BaseListActivity {
         GlideUtils.lodeImage(bean.getDetail().get(0).getVideos().get(0).getVideoImages(), image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        LogUtils.e("播放video url " + bean.getDetail().get(0).getVideos().get(0).getVideoUrl());
-        videoPlayer.setUp(bean.getDetail().get(0).getVideos().get(0).getVideoUrl(), true, "");
+        videoPlayer.setUp(DataUtils.baseUrl+bean.getDetail().get(0).getVideos().get(0).getVideoUrl(), true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
@@ -106,7 +104,7 @@ public class DetailActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeImage(bean.getHead(), iv_head);
+        GlideUtils.lodeHeadImage(bean.getHead(), iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(bean.getName());
@@ -122,7 +120,7 @@ public class DetailActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
-            GlideUtils.lodeImage(DataUtils.getInstance().getSingleUserData().head, imageView);
+            GlideUtils.lodeHeadImage(DataUtils.getInstance().getSingleUserData().head, imageView);
             af_heads.addView(imageView);
 
         }
@@ -160,8 +158,8 @@ public class DetailActivity extends BaseListActivity {
         return new BaseRecyclerAdapter<DataBean>() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime);
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_time).setText(item.getBefanstime());
                 holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getInstance().getStringText());
 
             }
@@ -181,10 +179,16 @@ public class DetailActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getJsonFromService(new StringCallback() {
+            @Override
+            public void success(String result) {
+                List<DataBean> data = GsonUtil.getData(result);
+
+                List dataContent = mRcView.getDataContent();
+                dataContent.addAll(data);
+                mRcView.complete();
+            }
+        });
     }
 
     @Override
@@ -192,7 +196,7 @@ public class DetailActivity extends BaseListActivity {
         return null;
     }
 
-    public static void startActivity(Context context, xxxBean bean) {
+    public static void startActivity(Context context, DataBean bean) {
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("bean", bean);
         context.startActivity(intent);

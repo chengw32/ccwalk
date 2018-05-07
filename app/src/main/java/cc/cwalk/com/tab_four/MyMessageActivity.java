@@ -46,9 +46,9 @@ public class MyMessageActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_title).setText(item.userBean.name +"  评论了你的作品  " +item.detailBeans.get(0).videoBeans.get(0).mtitle);
-                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
+                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_title).setText(item.getName() +"  评论了你的作品  " +item.getDetail().get(0).getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
                 holder.getTextView(R.id.tv_des).setText(DataUtils.getInstance().getStringText());
             }
 

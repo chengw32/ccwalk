@@ -4,11 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import cc.cwalk.com.beans.DataBean;
-import cc.cwalk.com.beans.xxxBean;
 
 public class GsonUtil {
 	private static Gson gson;
@@ -35,8 +34,14 @@ public class GsonUtil {
 	 * @return
 	 */
 	public static List getData(String jsonString) {
-		Type listType = new TypeToken<List<xxxBean>>() {}.getType();
-		return getGson().fromJson(jsonString, listType);
+		Type listType = new TypeToken<List<DataBean>>() {}.getType();
+		List<DataBean> data = getGson().fromJson(jsonString, listType);
+		Collections.shuffle(data);//模拟数据变化
+		for (int i = 0; i < data.size(); i++) {
+			List<DataBean.DetailBean.VideosBean> videos = data.get(i).getDetail().get(0).getVideos();
+			Collections.shuffle(videos);
+		}
+		return data ;
 	}
 
 

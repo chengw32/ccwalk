@@ -21,6 +21,8 @@ import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.StringCallback;
 
 /**
  * Time 2018/4/11 14:12
@@ -43,9 +45,9 @@ public class AttentionFragment extends BaseListFragment {
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         for (int j = 0; j < 8; j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
-            GlideUtils.lodeImage(DataUtils.getInstance().getDataList().get(j).userBean.head, (ImageView) item.findViewById(R.id.iv_head));
+            GlideUtils.lodeImage(DataUtils.getInstance().getDataList().get(j).getHead(), (ImageView) item.findViewById(R.id.iv_head));
             TextView tv_name = item.findViewById(R.id.tv_name);
-            tv_name.setText(DataUtils.getInstance().getDataList().get(j).userBean.name);
+            tv_name.setText(DataUtils.getInstance().getDataList().get(j).getName());
             final int finalJ = j;
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -72,18 +74,18 @@ public class AttentionFragment extends BaseListFragment {
                     }
                 });
                 View iv_isvideo = holder.getView(R.id.iv_isvideo);
-                if (item.detailBeans.get(0).isVideo == 1)iv_isvideo.setVisibility(View.VISIBLE);
+                if (item.getDetail().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
                 else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(item.detailBeans.get(0).videoBeans.get(0).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(item.getDetail().get(0).getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
-                holder.getTextView(R.id.tv_des).setText(item.detailBeans.get(0).videoBeans.get(0).mtitle);
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+item.detailBeans.get(0).numEvaluate);
-                holder.getTextView(R.id.tv_num_zang).setText(""+item.detailBeans.get(0).numZang);
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
+                holder.getTextView(R.id.tv_des).setText(item.getDetail().get(0).getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_num_evaluate).setText(""+item.getDetail().get(0).getNumEvaluate());
+                holder.getTextView(R.id.tv_num_zang).setText(""+item.getDetail().get(0).getNumZang());
             }
 
             @Override
@@ -117,10 +119,16 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getJsonFromService(new StringCallback() {
+            @Override
+            public void success(String result) {
+                List<DataBean> data = GsonUtil.getData(result);
+
+                List dataContent = mRcView.getDataContent();
+                dataContent.addAll(data);
+                mRcView.complete();
+            }
+        });
     }
 
 

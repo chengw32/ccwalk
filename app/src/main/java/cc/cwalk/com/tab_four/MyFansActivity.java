@@ -42,9 +42,9 @@ public class MyFansActivity extends BaseListActivity {
                     }
                 });
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head, holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_time).setText(item.userBean.befanstime+" 成为你的粉丝");
+                GlideUtils.lodeImage(item.getHead(), holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_time).setText(item.getBefanstime()+" 成为你的粉丝");
 
             }
 

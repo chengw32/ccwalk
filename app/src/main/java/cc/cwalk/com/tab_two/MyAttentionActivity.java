@@ -31,9 +31,9 @@ public class MyAttentionActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head, holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_time).setText("关注于 "+item.userBean.attentiontime);
+                GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_time).setText("关注于 "+item.getAttentiontime());
                 holder.getView(R.id.tv_remove).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

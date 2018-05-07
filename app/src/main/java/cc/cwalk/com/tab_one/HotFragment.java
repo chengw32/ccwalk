@@ -16,8 +16,10 @@ import cc.cwalk.com.beans.VideoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.StringCallback;
 
 /**
  * 热门视频
@@ -60,10 +62,10 @@ public class HotFragment extends BaseListFragment{
                 });
 
                 //设置头像
-                GlideUtils.lodeImage(item.userBean.head,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(item.userBean.name);
-                holder.getTextView(R.id.tv_play_num).setText("播放量  "+item.detailBeans.get(0).numPaly);
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_play_num).setText("播放量  "+item.getDetail().get(0).getNumPaly());
 
             }
 
@@ -83,13 +85,13 @@ public class HotFragment extends BaseListFragment{
 
     private void setThumbImageView(NormalGSYVideoPlayer videoPlayer,  DataBean item) {
         //增加封面
-        VideoBean videoInfo = item.detailBeans.get(0).videoBeans.get(0);
+        DataBean.DetailBean.VideosBean videoInfo = item.getDetail().get(0).getVideos().get(0);
         ImageView imageView = new ImageView(getActivity());
-        GlideUtils.lodeImage(videoInfo.videoImages, imageView);
+        GlideUtils.lodeImage(videoInfo.getVideoImages(), imageView);
         videoPlayer.setThumbImageView(imageView);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(videoInfo.videoUrl, true, "");
+        videoPlayer.setUp(videoInfo.getVideoUrl(), true, "");
     }
 
 
@@ -100,10 +102,16 @@ public class HotFragment extends BaseListFragment{
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getJsonFromService(new StringCallback() {
+            @Override
+            public void success(String result) {
+                List<DataBean> data = GsonUtil.getData(result);
+
+                List dataContent = mRcView.getDataContent();
+                dataContent.addAll(data);
+                mRcView.complete();
+            }
+        });
     }
 
 }

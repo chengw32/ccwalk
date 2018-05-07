@@ -22,7 +22,19 @@ public class GlideUtils {
                                 .centerCrop()
                                 .error(R.mipmap.default_header)
                                 )
-                .load(url)
+                .load(DataUtils.baseUrl+url)
+                .into(mCoverImage);
+
+    }
+    public static void  lodeHeadImage(String url , ImageView mCoverImage){
+        Glide.with(MyApplication.getContext())
+                .setDefaultRequestOptions(
+                        new RequestOptions()
+                                .frame(1000000)
+                                .centerCrop()
+                                .error(R.mipmap.default_header)
+                                )
+                .load(DataUtils.baseheadUrl+url)
                 .into(mCoverImage);
 
     }

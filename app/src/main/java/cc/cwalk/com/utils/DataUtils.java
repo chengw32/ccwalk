@@ -36,8 +36,8 @@ import okhttp3.Response;
  * DES :模拟数据获取
  */
 public class DataUtils {
-    public final static String baseUrl = "http://chengw32.com:8080/videos/";
-    public final static String baseheadUrl = "http://chengw32.com:8080/heads/";
+    public final static String baseUrl = "http://chengw32.com:8080/videos/";//视频跟缩略图的地址
+    public final static String baseheadUrl = "http://chengw32.com:8080/heads/";//头像地址（单独的文件夹）
     private List<VideoBean> videoContent = new ArrayList();
     private List<UserBean> userContent = new ArrayList();
     private List<DetailBean> detailContent = new ArrayList();
@@ -215,8 +215,8 @@ public class DataUtils {
                 break;
             }
             DataBean e = new DataBean();
-            e.userBean = userBean;
-            e.detailBeans = getDetailList();
+//            e.userBean = userBean;
+//            e.detailBeans = getDetailList();
             dataList.add(e);
         }
         return dataList;
@@ -249,14 +249,14 @@ public class DataUtils {
     }
 
 
-    public void getJsonFromService(final String url, final StringCallback callBack) {
+    public void getJsonFromService(final StringCallback callBack) {
 
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
-                        .url(url)
+                        .url("http://chengw32.com:8080/wtf.txt")
                         .build();
 
                 Response response = client.newCall(request).execute();

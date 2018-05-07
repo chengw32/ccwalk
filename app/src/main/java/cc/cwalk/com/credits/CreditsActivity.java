@@ -72,7 +72,7 @@ public class CreditsActivity extends BaseListActivity {
         return new BaseRecyclerAdapter<DataBean>() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                holder.getTextView(R.id.tv_time).setText(item.userBean.attentiontime);
+                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
             }
 
             @Override

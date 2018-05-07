@@ -37,9 +37,9 @@ public class UserHomePagerActivity extends BaseListActivity {
 
             @Override
             public void bindData(RecyclerViewHolder holder, int position, Object item) {
-                holder.getTextView(R.id.tv_des).setText(bean.detailBeans.get(position).videoBeans.get(0).mtitle);
+                holder.getTextView(R.id.tv_des).setText(bean.getDetail().get(position).getVideos().get(0).getTitle());
                 //设置图片
-                GlideUtils.lodeImage(bean.detailBeans.get(position).videoBeans.get(0).videoImages,holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(bean.getDetail().get(position).getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
             }
 
         };
@@ -64,16 +64,16 @@ public class UserHomePagerActivity extends BaseListActivity {
 
         View headView = LayoutInflater.from(UserHomePagerActivity.this)
                 .inflate(R.layout.activity_user_home_pager_head_view, null);
-        GlideUtils.lodeImage(bean.userBean.head, (ImageView) headView.findViewById(R.id.head_image));
+        GlideUtils.lodeImage(bean.getHead(), (ImageView) headView.findViewById(R.id.head_image));
         //名字
         TextView tvName = headView.findViewById(R.id.tvName);
-        tvName.setText(bean.userBean.name);
+        tvName.setText(bean.getName());
         //名字
         TextView tvAccount = headView.findViewById(R.id.tvAccount);
-        tvAccount.setText(bean.userBean.name);
+        tvAccount.setText(bean.getName());
         //性别
         ImageView iv_sex = (ImageView) headView.findViewById(R.id.iv_sex);
-        iv_sex.setImageResource(bean.userBean.sex == 1?R.mipmap.ic_gender_male:R.mipmap.ic_gender_female);
+        iv_sex.setImageResource(bean.getSex() == 1?R.mipmap.ic_gender_male:R.mipmap.ic_gender_female);
 
         mRcView.addHeadView(headView);
         headView.findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
