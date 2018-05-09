@@ -82,6 +82,7 @@ public class VideoManagementActivity extends BaseActivity {
         });
     }
 
+
     @Override
     protected void initData() {
 

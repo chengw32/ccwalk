@@ -40,7 +40,7 @@ public class NewestFragment extends BaseListFragment {
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        UserHomePagerActivity.startActivity(getActivity(), item);
+                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
@@ -53,9 +53,9 @@ public class NewestFragment extends BaseListFragment {
                 GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText(item.getDetail().get(0).getVideos().get(0).getTitle());
-                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.getDetail().get(0).getNumEvaluate());
-                holder.getTextView(R.id.tv_num_zang).setText("" + item.getDetail().get(0).getNumZang());
+                holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.getVideos().get(0).getNumEvaluate());
+                holder.getTextView(R.id.tv_num_zang).setText("" + item.getVideos().get(0).getNumZang());
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, item);
@@ -77,7 +77,7 @@ public class NewestFragment extends BaseListFragment {
 
     private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, DataBean item) {
         //增加封面
-        DataBean.DetailBean.VideosBean videoInfo = item.getDetail().get(0).getVideos().get(0);
+        DataBean.VideosBean videoInfo = item.getVideos().get(0);
         ImageView imageView = new ImageView(getActivity());
         GlideUtils.lodeImage(videoInfo.getVideoImages(), imageView);
         videoPlayer.setThumbImageView(imageView);
@@ -96,16 +96,7 @@ public class NewestFragment extends BaseListFragment {
 
     @Override
     public void getData(int pageNo) {
-       DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                List<DataBean> data = GsonUtil.getData(result);
-
-                List dataContent = mRcView.getDataContent();
-                dataContent.addAll(data);
-                mRcView.complete();
-            }
-        });
+                DataUtils.getInstance().getDataList(mRcView);
     }
 
 }

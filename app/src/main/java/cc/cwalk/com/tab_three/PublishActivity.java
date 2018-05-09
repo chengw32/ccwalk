@@ -105,7 +105,7 @@ public class PublishActivity extends BaseActivity {
        imageView.setImageResource(R.mipmap.add_pic);
        imageView.setLayoutParams(lp);
        if (!TextUtils.isEmpty(url))
-       GlideUtils.lodeImage(url,imageView);
+       GlideUtils.lodeLocalImage(url,imageView);
        return imageView;
    }
 

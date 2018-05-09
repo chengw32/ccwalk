@@ -59,7 +59,12 @@
         <activity android:name=".tab_one.DetailImagesActivity" />
         <activity android:name=".tab_three.PublishActivity" />
         <activity android:name=".webview.WebViewActivity" />
-        <activity android:name=".tab_four.VideoManagementActivity"></activity>
+        <activity android:name=".tab_four.VideoManagementActivity" />
+        <activity android:name=".tab_four.MyGroupActivity" />
+        <activity android:name=".tab_four.GroupMemberActivity" />
+        <activity android:name=".tab_four.GroupInfoActivity" />
+        <activity android:name=".tab_four.PublishNoticeActivity" />
+        <activity android:name=".tab_four.JoinGroupActivity"></activity>
     </application>
 
 </manifest>

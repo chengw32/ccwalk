@@ -50,12 +50,12 @@ public class DetailImagesActivity extends BaseListActivity {
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_images, null);
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeImage(mBean.getHead(), iv_head);
+        GlideUtils.lodeHeadImage(mBean.getHead(), iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(mBean.getName());
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(mBean.getDetail().get(0).getVideos().get(0).getTitle());
+        tv_des.setText(mBean.getVideos().get(0).getTitle());
         AutoFlowLayout af_heads = view.findViewById(R.id.af_images);
         for (int i = 0; i < 7; i++) {
 
@@ -65,7 +65,7 @@ public class DetailImagesActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.samp2);
-            GlideUtils.lodeImage(mBean.getDetail().get(0).getVideos().get(i).getVideoImages(), imageView);
+            GlideUtils.lodeImage(mBean.getVideos().get(i).getVideoImages(), imageView);
             af_heads.addView(imageView);
 
         }
@@ -98,10 +98,7 @@ public class DetailImagesActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getDataList(mRcView);
     }
 
     @Override

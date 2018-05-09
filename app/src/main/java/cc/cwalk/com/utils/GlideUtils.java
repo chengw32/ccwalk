@@ -38,5 +38,17 @@ public class GlideUtils {
                 .into(mCoverImage);
 
     }
+    public static void  lodeLocalImage(String url , ImageView mCoverImage){
+        Glide.with(MyApplication.getContext())
+                .setDefaultRequestOptions(
+                        new RequestOptions()
+                                .frame(1000000)
+                                .centerCrop()
+                                .error(R.mipmap.default_header)
+                                )
+                .load(DataUtils.baseheadUrl+url)
+                .into(mCoverImage);
+
+    }
 
 }

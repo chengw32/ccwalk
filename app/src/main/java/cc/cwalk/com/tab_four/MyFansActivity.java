@@ -26,7 +26,8 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        UserHomePagerActivity.startActivity(xContext,DataUtils.getInstance().getDataList().get(0));
+        List<DataBean> data = mRcView.getDataContent();
+        UserHomePagerActivity.startActivity(xContext,data.get(pos));
     }
 
     @Override
@@ -42,7 +43,7 @@ public class MyFansActivity extends BaseListActivity {
                     }
                 });
                 //设置头像
-                GlideUtils.lodeImage(item.getHead(), holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
                 holder.getTextView(R.id.tv_name).setText(item.getName());
                 holder.getTextView(R.id.tv_time).setText(item.getBefanstime()+" 成为你的粉丝");
 
@@ -64,10 +65,7 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getDataList(mRcView);
     }
 
     public static void startActivity(Context context) {

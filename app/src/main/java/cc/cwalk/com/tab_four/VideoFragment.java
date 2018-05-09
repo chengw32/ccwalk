@@ -10,6 +10,7 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.VideoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
@@ -29,13 +30,21 @@ public class VideoFragment extends BaseListFragment{
     public void initView(View v) {
         super.initView(v);
         setBarGone();
+        mRcView.addLineDivider();
         getData(1);
+
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<DataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, Object item) {}
+            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
+                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_user_head));
+                holder.getTextView(R.id.tv_title).setText(item.getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_name).setText(item.getName());
+                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
+            }
 
             @Override
             public int getItemLayoutId(int viewType) {
@@ -54,22 +63,12 @@ public class VideoFragment extends BaseListFragment{
 
     @Override
     public void onItemClick(View itemView, int pos) {
-//        DetailActivity.startActivity(getActivity());
+        DetailActivity.startActivity(getActivity(), (DataBean) mRcView.getDataContent().get(pos));
     }
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        dataContent.add("1");
-        LogUtils.e("getData");
-        mRcView.complete();
+       DataUtils.getInstance().getDataList(mRcView);
     }
 
 }

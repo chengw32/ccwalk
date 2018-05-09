@@ -38,7 +38,7 @@ public class GsonUtil {
 		List<DataBean> data = getGson().fromJson(jsonString, listType);
 		Collections.shuffle(data);//模拟数据变化
 		for (int i = 0; i < data.size(); i++) {
-			List<DataBean.DetailBean.VideosBean> videos = data.get(i).getDetail().get(0).getVideos();
+			List<DataBean.VideosBean> videos = data.get(i).getVideos();
 			Collections.shuffle(videos);
 		}
 		return data ;

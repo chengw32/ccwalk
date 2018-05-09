@@ -62,10 +62,10 @@ public class HotFragment extends BaseListFragment{
                 });
 
                 //设置头像
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_play_num).setText("播放量  "+item.getDetail().get(0).getNumPaly());
+                holder.getTextView(R.id.tv_play_num).setText("播放次数  "+item.getVideos().get(0).getNumPaly());
 
             }
 
@@ -85,7 +85,7 @@ public class HotFragment extends BaseListFragment{
 
     private void setThumbImageView(NormalGSYVideoPlayer videoPlayer,  DataBean item) {
         //增加封面
-        DataBean.DetailBean.VideosBean videoInfo = item.getDetail().get(0).getVideos().get(0);
+        DataBean.VideosBean videoInfo = item.getVideos().get(0);
         ImageView imageView = new ImageView(getActivity());
         GlideUtils.lodeImage(videoInfo.getVideoImages(), imageView);
         videoPlayer.setThumbImageView(imageView);

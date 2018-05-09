@@ -52,6 +52,7 @@ public class MeFragment extends BaseFragment {
 
     @Override
     protected void onRightClick() {
+        if (!SPUtils.isLoginWithToast())return;
         MyMessageActivity.startActivity(xContext);
     }
 
@@ -99,7 +100,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                startActivity(new Intent(xContext, GroupNoticeActivity.class));
+                MyGroupActivity.startActivity(xContext);
             }
         });
         View fans_collection = initItem(v, R.id.myfans, "我的粉丝");
@@ -139,7 +140,7 @@ public class MeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (!SPUtils.isLoginWithToast())return;
-                UserHomePagerActivity.startActivity(xContext, DataUtils.getInstance().getDataList().get(0));
+                UserHomePagerActivity.startActivity(xContext, null);
             }
         });
 

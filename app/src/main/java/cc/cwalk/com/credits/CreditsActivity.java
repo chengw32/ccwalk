@@ -61,10 +61,7 @@ public class CreditsActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getDataList(mRcView);
     }
 
     @Override

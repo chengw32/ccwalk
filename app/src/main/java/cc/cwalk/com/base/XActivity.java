@@ -41,7 +41,7 @@ public abstract class XActivity extends FragmentActivity {
     }
     //EvenBus在注册的页面 必须重新这个方法 而且必须加上注解标记 @Subscribe
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMessageEvent(Object event) {/* Do something */};
+    public void onMessageEvent(EventUtil.BaseEvent event) {/* Do something */};
 
     /**
      * 设置布局

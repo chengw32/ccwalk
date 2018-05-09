@@ -45,11 +45,11 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-//        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
-//        if (itembean.detailBeans.get(0).isVideo == 1)
-//            DetailActivity.startActivity(xContext,itembean);
-//        else
-//            DetailImagesActivity.startActivity(getActivity(),itembean);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+        if (itembean.getVideos().get(0).getIsVideo() == 1)
+            DetailActivity.startActivity(xContext,itembean);
+        else
+            DetailImagesActivity.startActivity(getActivity(),itembean);
     }
 
     @Override
@@ -58,17 +58,18 @@ public class CommunityFragment extends BaseListFragment {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 View iv_isvideo = holder.getView(R.id.iv_isvideo);
-                if (item.getDetail().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
+                if (item.getVideos().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
                 else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(item.getDetail().get(0).getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
+                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
                 //设置名字
-                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ item.getDetail().get(0).getNumEvaluate()+")");
-                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getDetail().get(0).getNumZang()+")");
+                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ item.getVideos().get(0).getNumEvaluate()+")");
+                holder.getTextView(R.id.tv_time).setText(item.getVideos().get(0).getTime());
+                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getVideos().get(0).getNumZang()+")");
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText(item.getDetail().get(0).getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
             }
 
             @Override
@@ -88,16 +89,7 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                List<DataBean> data = GsonUtil.getData(result);
-
-                List dataContent = mRcView.getDataContent();
-                dataContent.addAll(data);
-                mRcView.complete();
-            }
-        });
+      DataUtils.getInstance().getDataList(mRcView);
     }
 
     @Override

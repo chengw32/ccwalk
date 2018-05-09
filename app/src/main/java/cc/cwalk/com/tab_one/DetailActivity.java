@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
@@ -20,6 +21,7 @@ import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.tab_two.MyAttentionActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
@@ -35,6 +37,8 @@ public class DetailActivity extends BaseListActivity {
     private int numZang = 30;
     private TextView tv_attention;
     private DataBean bean;
+    private AutoFlowLayout af_heads ;
+    private  TextView tv_num_zang;
 
     @Override
     protected int setContentLayout() {
@@ -59,14 +63,14 @@ public class DetailActivity extends BaseListActivity {
         });
 
         ImageView image = new ImageView(this);
-        GlideUtils.lodeImage(bean.getDetail().get(0).getVideos().get(0).getVideoImages(), image);
+        GlideUtils.lodeImage(bean.getVideos().get(0).getVideoImages(), image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        videoPlayer.setUp(DataUtils.baseUrl+bean.getDetail().get(0).getVideos().get(0).getVideoUrl(), true, "");
+        videoPlayer.setUp(DataUtils.baseUrl+bean.getVideos().get(0).getVideoUrl(), true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
-        final TextView tv_num_zang = view.findViewById(R.id.tv_num_zang);
+       tv_num_zang = view.findViewById(R.id.tv_num_zang);
         final TextView tv_zang = view.findViewById(R.id.tv_zang);
         tv_zang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,10 +113,28 @@ public class DetailActivity extends BaseListActivity {
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(bean.getName());
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(bean.getDetail().get(0).getVideos().get(0).getTitle());
+        tv_des.setText(bean.getVideos().get(0).getTitle());
         tv_num_zang.setText("共有 " + numZang + " 个赞");
-        AutoFlowLayout af_heads = view.findViewById(R.id.af_heads);
-        for (int i = 0; i < numZang; i++) {
+        af_heads = view.findViewById(R.id.af_heads);
+        mRcView.addHeadView(view);
+        getZangUser();
+    }
+
+    private void getZangUser(){
+        DataUtils.getInstance().getJsonFromService(new StringCallback() {
+            @Override
+            public void success(String result) {
+                //Gson解析数据
+                List<DataBean> data = GsonUtil.getData(result);
+                initHead(data);
+            }
+        });
+    }
+
+    private void initHead(final List<DataBean> data){
+        numZang = data.size();
+        tv_num_zang.setText("共有 " + numZang  + " 个赞");
+        for (int i = 0; i < data.size(); i++) {
 
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams((int) (20 * MyApplication.getScale()), (int) (20 * MyApplication.getScale()));
             CircleImageView imageView = new CircleImageView(xContext);
@@ -120,18 +142,14 @@ public class DetailActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
-            GlideUtils.lodeHeadImage(DataUtils.getInstance().getSingleUserData().head, imageView);
+            GlideUtils.lodeHeadImage(data.get(i).getHead(), imageView);
             af_heads.addView(imageView);
 
         }
-        mRcView.addHeadView(view);
-//        findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+
     }
+
+
 
     @Override
     protected void onDestroy() {
@@ -179,16 +197,7 @@ public class DetailActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                List<DataBean> data = GsonUtil.getData(result);
-
-                List dataContent = mRcView.getDataContent();
-                dataContent.addAll(data);
-                mRcView.complete();
-            }
-        });
+        DataUtils.getInstance().getDataList(mRcView);
     }
 
     @Override

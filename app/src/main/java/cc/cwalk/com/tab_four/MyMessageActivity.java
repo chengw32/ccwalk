@@ -34,10 +34,7 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        List<DataBean> dataList = DataUtils.getInstance().getDataList();
-        dataContent.addAll(dataList);
-        mRcView.complete();
+        DataUtils.getInstance().getDataList(mRcView);
     }
 
     @Override
@@ -46,8 +43,9 @@ public class MyMessageActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 //设置头像
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_title).setText(item.getName() +"  评论了你的作品  " +item.getDetail().get(0).getVideos().get(0).getTitle());
+                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_title).setText(item.getName() +"  评论了你的作品  ");
+                holder.getTextView(R.id.tv_video_name).setText( item.getVideos().get(0).getTitle());
                 holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
                 holder.getTextView(R.id.tv_des).setText(DataUtils.getInstance().getStringText());
             }
@@ -71,10 +69,10 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-//        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
-//        if (itembean.detailBeans.get(0).isVideo == 1)
-//            DetailActivity.startActivity(xContext,itembean);
-//        else
-//            DetailImagesActivity.startActivity(MyMessageActivity.this,itembean);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+        if (itembean.getVideos().get(0).getIsVideo() == 1)
+            DetailActivity.startActivity(xContext,itembean);
+        else
+            DetailImagesActivity.startActivity(MyMessageActivity.this,itembean);
     }
 }
