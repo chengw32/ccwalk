@@ -96,6 +96,8 @@ public class MeFragment extends BaseFragment {
         refreshLayout();
 
         View mygroup_collection = initItem(v, R.id.mygroup, "我的社团");
+        ImageView viewById = mygroup_collection.findViewById(R.id.iv_icon);
+        viewById.setImageResource(R.drawable.ic_group_member);
         mygroup_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,6 +106,8 @@ public class MeFragment extends BaseFragment {
             }
         });
         View fans_collection = initItem(v, R.id.myfans, "我的粉丝");
+        ImageView iv_fans = fans_collection.findViewById(R.id.iv_icon);
+        iv_fans.setImageResource(R.drawable.ic_fans);
         fans_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +116,8 @@ public class MeFragment extends BaseFragment {
             }
         });
         View setting_collection = initItem(v, R.id.settings, "设置");
+        ImageView iv_setting = setting_collection.findViewById(R.id.iv_icon);
+        iv_setting.setImageResource(R.drawable.ic_setting);
         setting_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +126,8 @@ public class MeFragment extends BaseFragment {
         });
 
         View my_credits_collection = initItem(v, R.id.my_credits, "我的积分");
+        ImageView iv_credits = my_credits_collection.findViewById(R.id.iv_icon);
+        iv_credits.setImageResource(R.drawable.ic_credits);
         my_credits_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,6 +136,8 @@ public class MeFragment extends BaseFragment {
             }
         });
         View message_collection = initItem(v, R.id.my_download, "视频管理");
+        ImageView iv_video = message_collection.findViewById(R.id.iv_icon);
+        iv_video.setImageResource(R.drawable.ic_video_ico);
         message_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +146,8 @@ public class MeFragment extends BaseFragment {
             }
         });
         View my_homepager = initItem(v, R.id.my_homepager, "我的主页");
+        ImageView iv_ushp = my_homepager.findViewById(R.id.iv_icon);
+        iv_ushp.setImageResource(R.drawable.ic_user_hp);
         my_homepager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

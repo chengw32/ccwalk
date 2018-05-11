@@ -15,13 +15,15 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/ll_inof_more"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/d5"
             android:background="@drawable/shape_corner_rect_solid_barcolor"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="@dimen/d15">
+            android:paddingTop="@dimen/d15"
+            >
 
             <TextView
                 style="@style/base_text_style"
@@ -49,6 +51,17 @@
                 android:text="创建时间 2018-4-21 17:46"
                 android:textColor="@color/white"
                 android:textSize="@dimen/d6" />
+            <TextView
+                style="@style/base_text_style"
+                android:layout_width="match_parent"
+                android:gravity="right"
+                android:paddingRight="@dimen/d15"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d3"
+                android:padding="@dimen/d3"
+                android:text="更多资料>>"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/d5" />
         </LinearLayout>
 
         <include layout="@layout/line"></include>
@@ -131,7 +144,7 @@
         <ImageView
             android:layout_width="@dimen/d15"
             android:layout_height="@dimen/d15"
-            android:src="@drawable/ic_notice" />
+            android:src="@drawable/ic_group_shopping" />
 
         <TextView
             style="@style/base_text_style"
@@ -139,6 +152,28 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/d5"
             android:text="社团采购" />
+    </LinearLayout>
+    <include layout="@layout/line"></include>
+
+    <LinearLayout
+        android:id="@+id/ll_all_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/d5">
+
+        <ImageView
+            android:layout_width="@dimen/d15"
+            android:layout_height="@dimen/d15"
+            android:src="@drawable/ic_group_post" />
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d5"
+            android:text="成员动态" />
     </LinearLayout>
 
 </LinearLayout>

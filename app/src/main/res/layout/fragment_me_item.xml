@@ -7,6 +7,7 @@
             android:scrollbars="none">
 
     <ImageView
+        android:id="@+id/iv_icon"
         android:layout_width="@dimen/mine_ico_height"
         android:layout_height="@dimen/mine_ico_height"
         android:src="@drawable/ic_mark"/>

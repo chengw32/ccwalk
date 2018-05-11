@@ -64,7 +64,9 @@
         <activity android:name=".tab_four.GroupMemberActivity" />
         <activity android:name=".tab_four.GroupInfoActivity" />
         <activity android:name=".tab_four.PublishNoticeActivity" />
-        <activity android:name=".tab_four.JoinGroupActivity"></activity>
+        <activity android:name=".tab_four.JoinGroupActivity" />
+        <activity android:name=".tab_four.GroupMoreInfoActivity" />
+        <activity android:name=".tab_four.GroupMemberPostActivity"></activity>
     </application>
 
 </manifest>
