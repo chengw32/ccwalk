@@ -25,7 +25,7 @@
                 style="@style/base_text_style"
                 android:textSize="@dimen/d8"
                 android:padding="@dimen/d5"
-                android:text="C-walk曳步舞协会"
+                android:text="@string/group_name"
                 android:layout_height="wrap_content"/>
             <include layout="@layout/line"></include>
             <LinearLayout
