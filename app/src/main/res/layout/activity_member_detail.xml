@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="cc.cwalk.com.tab_four.MyGroupActivity">
+
+    <include layout="@layout/base_bar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/d10"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d100">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/app_ico"
+                android:layout_height="@dimen/d100"/>
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="match_parent"
+                style="@style/base_text_style"
+                android:textSize="@dimen/d6"
+                android:background="@color/half2_transparent"
+                android:textColor="@color/gray3"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/d5"
+                android:text="做一条有梦想的咸鱼 ๑乛◡乛๑"
+                android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="张伟" />
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="海草`" />
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="男" />
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年级" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="大三" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学院" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="理工" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="专业" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="计算机科学与技术" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="入团时间" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="2018-5-3" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+
+        </LinearLayout>
+
+    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        style="@style/base_text_style"
+        android:text="移除成员"
+        android:gravity="center"
+        android:background="@color/blue"
+        android:padding="@dimen/d5"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,9 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="cc.cwalk.com.tab_four.GroupInfoActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="cc.cwalk.com.tab_four.MyGroupActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/base_bar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/base_text_style"
+                android:textSize="@dimen/d8"
+                android:padding="@dimen/d5"
+                android:text="C-walk曳步舞协会"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创建者" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="张伟" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创建时间" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="2017-5-14" />
+            </LinearLayout>
+
+
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="管理员" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="4人" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团员" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="130人" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <TextView
+                style="@style/base_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/d6"
+                android:text="社团介绍" />
+            <TextView
+                style="@style/base_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d6"
+                android:textColor="@color/gray3"
+                android:background="@color/gray0"
+                android:padding="@dimen/d2"
+                android:layout_marginRight="@dimen/d6"
+                android:text="街舞社团，不定期举行活动，丰富学生课余生活，培养兴趣跟交友。" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

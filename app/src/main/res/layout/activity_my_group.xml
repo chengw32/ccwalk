@@ -6,31 +6,43 @@
     android:orientation="vertical"
     tools:context="cc.cwalk.com.tab_four.MyGroupActivity">
 
-    <include layout="@layout/base_bar_layout"></include>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/default_head"
+        android:layout_height="@dimen/d90"
+        android:background="@drawable/background"
+        android:gravity="bottom"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ll_inof_more"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/d5"
-            android:background="@drawable/shape_corner_rect_solid_barcolor"
-            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:background="@color/half2_transparent"
             android:orientation="vertical"
-            android:paddingTop="@dimen/d15"
             >
-
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/bar_height"
+                android:padding="12dp"
+                android:src="@mipmap/ic_back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/d9" />
             <TextView
                 style="@style/base_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d5"
                 android:text="C-walk曳步舞协会"
-                android:textColor="@color/blue"
+                android:textColor="@color/white"
                 android:textSize="@dimen/d9" />
 
             <TextView
@@ -38,46 +50,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d3"
-                android:text="创建者：海草"
+                android:text="创建者：张伟"
+                android:layout_marginLeft="@dimen/d5"
                 android:textColor="@color/gray3"
                 android:textSize="@dimen/d6" />
 
-            <TextView
-                android:id="@+id/tv_time"
-                style="@style/base_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/d3"
-                android:text="创建时间 2018-4-21 17:46"
-                android:textColor="@color/white"
-                android:textSize="@dimen/d6" />
             <TextView
                 style="@style/base_text_style"
                 android:layout_width="match_parent"
                 android:gravity="right"
                 android:paddingRight="@dimen/d15"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/d3"
                 android:padding="@dimen/d3"
                 android:text="更多资料>>"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/d5" />
         </LinearLayout>
 
-        <include layout="@layout/line"></include>
     </LinearLayout>
 
+    <include layout="@layout/line_match"></include>
     <LinearLayout
         android:id="@+id/ll_members"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/d5">
+        android:padding="@dimen/d6">
 
         <ImageView
-            android:layout_width="@dimen/d15"
-            android:layout_height="@dimen/d15"
+            style="@style/group_image_style"
             android:src="@drawable/ic_group_member" />
 
         <TextView
@@ -96,11 +98,10 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/d5">
+        android:padding="@dimen/d6">
 
         <ImageView
-            android:layout_width="@dimen/d15"
-            android:layout_height="@dimen/d15"
+            style="@style/group_image_style"
             android:src="@drawable/ic_add_group" />
 
         <TextView
@@ -110,40 +111,19 @@
             android:layout_marginLeft="@dimen/d5"
             android:text="入团申请 （999+）" />
     </LinearLayout>
+
     <include layout="@layout/line"></include>
 
     <LinearLayout
-        android:id="@+id/ll_notice"
+        android:id="@+id/ll_purchase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/d5">
+        android:padding="@dimen/d6">
 
         <ImageView
-            android:layout_width="@dimen/d15"
-            android:layout_height="@dimen/d15"
-            android:src="@drawable/ic_notice" />
-
-        <TextView
-            style="@style/base_text_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/d5"
-            android:text="社团公告" />
-    </LinearLayout>
-    <include layout="@layout/line"></include>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="@dimen/d5">
-
-        <ImageView
-            android:layout_width="@dimen/d15"
-            android:layout_height="@dimen/d15"
+            style="@style/group_image_style"
             android:src="@drawable/ic_group_shopping" />
 
         <TextView
@@ -156,16 +136,15 @@
     <include layout="@layout/line"></include>
 
     <LinearLayout
-        android:id="@+id/ll_all_post"
+        android:id="@+id/ll_expenditure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/d5">
+        android:padding="@dimen/d6">
 
         <ImageView
-            android:layout_width="@dimen/d15"
-            android:layout_height="@dimen/d15"
+            style="@style/group_image_style"
             android:src="@drawable/ic_group_post" />
 
         <TextView
@@ -173,7 +152,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/d5"
-            android:text="成员动态" />
+            android:text="社团经费" />
     </LinearLayout>
+    <include layout="@layout/line"></include>
 
+    <LinearLayout
+        android:id="@+id/ll_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/d6">
+
+        <ImageView
+            style="@style/group_image_style"
+            android:src="@drawable/ic_notice" />
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d5"
+            android:text="社团公告" />
+    </LinearLayout>
+    <include layout="@layout/line"></include>
+
+    <LinearLayout
+        android:id="@+id/ll_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/d6">
+
+        <ImageView
+            style="@style/group_image_style"
+            android:src="@drawable/ic_notice" />
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d5"
+            android:text="社团活动" />
+    </LinearLayout>
 </LinearLayout>

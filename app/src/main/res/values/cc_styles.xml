@@ -26,6 +26,18 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+    <style name="group_image_style">
+        <item name="android:layout_width">@dimen/d15</item>
+        <item name="android:layout_height">@dimen/d15</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="group_activity_style">
+        <item name="android:layout_width">@dimen/d15</item>
+        <item name="android:layout_height">@dimen/d15</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:gravity">center</item>
+    </style>
 
     <style name="seting_text_style" parent="base_text_style">
         <item name="android:layout_width">match_parent</item>
@@ -61,6 +73,14 @@
         <item name="android:textColor">@color/gray3</item>
         <item name="android:textSize">@dimen/d7</item>
     </style>
+    <!-- 发布活动 -->
+    <style name="publish_activity_textView_style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/d7</item>
+    </style>
     <!-- 个人资料3 -->
     <style name="mine_persion_info_editView_style">
         <item name="android:layout_height">match_parent</item>
@@ -69,6 +89,17 @@
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center|right</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/d7</item>
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="android:layout_marginLeft">@dimen/d7</item>
+    </style>
+    <!-- 活动发布 -->
+    <style name="publish_activity_style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/gray3</item>
         <item name="android:textSize">@dimen/d7</item>
         <item name="android:textColorHint">@color/gray3</item>
         <item name="android:layout_marginLeft">@dimen/d7</item>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/d10"
+        android:background="@drawable/shape_corner_rect_solid_barcolor"
+        android:orientation="vertical"
+        android:padding="@dimen/d15">
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d3"
+            android:text="社团总费用:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/d8"/>
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="￥ 1346"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/d9"/>
+    </LinearLayout>
+
+    <include layout="@layout/line"></include>
+</LinearLayout>

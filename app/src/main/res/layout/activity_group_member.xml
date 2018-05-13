@@ -42,8 +42,7 @@
         android:id="@+id/tv_allow"
         android:layout_width="wrap_content"
         style="@style/base_text_style"
-        android:background="@drawable/selector_group_join"
-        android:text="移除成员"
+        android:text=">"
         android:padding="@dimen/d2"
         android:layout_height="wrap_content" />
 

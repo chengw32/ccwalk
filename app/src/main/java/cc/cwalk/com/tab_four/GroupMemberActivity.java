@@ -19,6 +19,11 @@ import cc.cwalk.com.utils.ToastUtils;
 
 public class GroupMemberActivity extends BaseListActivity {
 
+    @Override
+    protected void initView() {
+        super.initView();
+        mRcView.addLineDivider();
+    }
 
     @Override
     protected void initData() {
@@ -42,7 +47,7 @@ public class GroupMemberActivity extends BaseListActivity {
             public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
 
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText("加入时间： "+item.getAttentiontime());
+                holder.getTextView(R.id.tv_des).setText("入团时间： "+item.getAttentiontime());
                 GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 final TextView tv_zang = holder.getTextView(R.id.tv_allow);
                 tv_zang.setOnClickListener(new View.OnClickListener() {
@@ -71,5 +76,10 @@ public class GroupMemberActivity extends BaseListActivity {
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context,GroupMemberActivity.class));
+    }
+
+    @Override
+    public void onItemClick(View itemView, int pos) {
+        MemberDetailActivity.startActivity(xContext);
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/base_bar_layout"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d10"
+        android:layout_marginRight="@dimen/d10"
+        android:layout_marginLeft="@dimen/d10"
+        android:background="@drawable/shape_corner_rect_solid_barcolor"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/d15"
+        android:paddingTop="@dimen/d10"
+        android:paddingBottom="@dimen/d15"
+        android:paddingLeft="@dimen/d15"
+        >
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d3"
+            android:text="社团总费用:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/d8"/>
+
+        <TextView
+            style="@style/base_text_style"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="￥ 1346"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/d9"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:text="支出记录"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/blue"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="0.5dp"
+            android:background="@color/gray3"
+            android:textColor="@color/white"
+            android:layout_height="10dp"/>
+        <TextView
+            android:id="@+id/tv_cache"
+            android:layout_width="wrap_content"
+            android:text="收入记录"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <include layout="@layout/line_match"></include>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+</LinearLayout>
+

@@ -46,7 +46,7 @@ public class GlideUtils {
                                 .centerCrop()
                                 .error(R.mipmap.default_header)
                                 )
-                .load(DataUtils.baseheadUrl+url)
+                .load(url)
                 .into(mCoverImage);
 
     }

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="cc.cwalk.com.tab_four.MyGroupActivity">
+
+    <include layout="@layout/base_bar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/d10"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/app_ico"
+                android:layout_height="@dimen/d100"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                style="@style/base_text_style"
+                android:textSize="@dimen/d8"
+                android:padding="@dimen/d5"
+                android:text="校区操场进行社团内舞步交流活动"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="活动时间" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="2018-5-14 晚上8点集合" />
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="活动地点" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="校区操场" />
+            </LinearLayout>
+
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="负责人" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="团长" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/d6">
+
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="参与人数" />
+                <TextView
+                    style="@style/base_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray3"
+                    android:layout_marginLeft="@dimen/d5"
+                    android:text="自由参与" />
+            </LinearLayout>
+            <include layout="@layout/line"></include>
+            <TextView
+                style="@style/base_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/d6"
+                android:text="活动详情" />
+            <TextView
+                style="@style/base_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d6"
+                android:textColor="@color/gray3"
+                android:background="@color/gray0"
+                android:padding="@dimen/d2"
+                android:layout_marginRight="@dimen/d6"
+                android:text="活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情活动详情" />
+
+        </LinearLayout>
+
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="@dimen/d20">
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/base_text_style"
+        android:text="咨询"
+        android:background="@color/color_53"
+        android:paddingLeft="@dimen/d10"
+        android:gravity="center"
+        android:paddingRight="@dimen/d10"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/base_text_style"
+        android:text="我要报名"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@color/blue"
+        android:paddingLeft="@dimen/d10"
+        android:paddingRight="@dimen/d10"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+</LinearLayout>
