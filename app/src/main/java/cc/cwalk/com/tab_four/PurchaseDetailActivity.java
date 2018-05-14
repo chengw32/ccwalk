@@ -2,15 +2,26 @@ package cc.cwalk.com.tab_four;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
-import cc.cwalk.com.tab_three.PublishActivity;
+import cc.cwalk.com.beans.GroupInfoBean;
 
 public class PurchaseDetailActivity extends BaseActivity {
 
+    @Bind(R.id.tv_group_title)
+    TextView tvTitle;
+    @Bind(R.id.tv_des)
+    TextView tvDes;
+    @Bind(R.id.tv_money)
+    TextView tvMoney;
+    @Bind(R.id.tv_manager)
+    TextView tvManager;
+    private GroupInfoBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -19,6 +30,13 @@ public class PurchaseDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        bean = (GroupInfoBean) getIntent().getSerializableExtra("bean");
+
+        tvTitle.setText(bean.getTitle());
+        tvDes.setText(bean.getDes());
+        tvMoney.setText(bean.getMoney());
+        tvManager.setText(bean.getName());
 
     }
 
@@ -32,7 +50,16 @@ public class PurchaseDetailActivity extends BaseActivity {
 
     }
 
-    public static void startActivity(Context xContext) {
-        xContext.startActivity(new Intent(xContext,PurchaseDetailActivity.class));
+    public static void startActivity(Context xContext, GroupInfoBean groupInfoBean) {
+        Intent intent = new Intent(xContext, PurchaseDetailActivity.class);
+        intent.putExtra("bean", groupInfoBean);
+        xContext.startActivity(intent);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

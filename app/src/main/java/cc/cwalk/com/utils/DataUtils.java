@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.recycles.RefreshLoadMoreRecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -75,6 +76,10 @@ public class DataUtils {
         return mInstance;
     }
 
+    public int getRandow(int seed){
+        return new Random().nextInt(seed);
+    }
+
  public void getDataList(final RefreshLoadMoreRecyclerView mRcView){
      DataUtils.getInstance().getJsonFromService(new StringCallback() {
          @Override
@@ -96,6 +101,60 @@ public class DataUtils {
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
                         .url("http://chengw32.com:8080/wtf.txt")
+                        .build();
+
+                Response response = client.newCall(request).execute();
+                e.onNext(response.body().string());
+            }
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        callBack.success(s);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+    }
+
+    public void getGroupList(final RefreshLoadMoreRecyclerView mRcView){
+        DataUtils.getInstance().getJsonGroup(new StringCallback() {
+            @Override
+            public void success(String result) {
+                //Gson解析数据
+                List<GroupInfoBean> data = GsonUtil.getGroupData(result);
+                List dataContent = mRcView.getDataContent();
+                dataContent.addAll(data);
+                mRcView.complete();
+            }
+        });
+    }
+
+    public void getJsonGroup(final StringCallback callBack) {
+
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://chengw32.com:8080/groupmember.txt")
                         .build();
 
                 Response response = client.newCall(request).execute();

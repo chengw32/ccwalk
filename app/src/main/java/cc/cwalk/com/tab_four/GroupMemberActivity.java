@@ -11,6 +11,7 @@ import android.widget.TextView;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -37,17 +38,17 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+        DataUtils.getInstance().getGroupList(mRcView);
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<GroupInfoBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, GroupInfoBean item) {
 
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText("入团时间： "+item.getAttentiontime());
+                holder.getTextView(R.id.tv_name).setText(item.getNiname());
+                holder.getTextView(R.id.tv_des).setText("入团时间： "+item.getJointime());
                 GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 final TextView tv_zang = holder.getTextView(R.id.tv_allow);
                 tv_zang.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +81,6 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        MemberDetailActivity.startActivity(xContext);
+        MemberDetailActivity.startActivity(xContext,(GroupInfoBean)mRcView.getDataContent().get(pos));
     }
 }

@@ -20,6 +20,7 @@
 
 
             <TextView
+                android:id="@+id/tv_group_title"
                 android:layout_width="match_parent"
                 style="@style/base_text_style"
                 android:textSize="@dimen/d8"
@@ -31,6 +32,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_des"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -54,6 +56,7 @@
                     android:layout_height="wrap_content"
                     android:text="费用" />
                 <TextView
+                    android:id="@+id/tv_money"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:text="负责人" />
                 <TextView
+                    android:id="@+id/tv_manager"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

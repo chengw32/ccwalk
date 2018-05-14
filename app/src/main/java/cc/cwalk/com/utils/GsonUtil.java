@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.GroupInfoBean;
 
 public class GsonUtil {
 	private static Gson gson;
@@ -24,15 +25,6 @@ public class GsonUtil {
 		return getGson().toJson(list);
 	}
 
-	/**
-	 * 将字符转化为对象
-	 *
-	 * @author:qiuchen
-	 * @createTime:2012-9-24
-	 * @param <T>
-	 * @param jsonString
-	 * @return
-	 */
 	public static List getData(String jsonString) {
 		Type listType = new TypeToken<List<DataBean>>() {}.getType();
 		List<DataBean> data = getGson().fromJson(jsonString, listType);
@@ -41,6 +33,12 @@ public class GsonUtil {
 			List<DataBean.VideosBean> videos = data.get(i).getVideos();
 			Collections.shuffle(videos);
 		}
+		return data ;
+	}
+	public static List getGroupData(String jsonString) {
+		Type listType = new TypeToken<List<GroupInfoBean>>() {}.getType();
+		List<GroupInfoBean> data = getGson().fromJson(jsonString, listType);
+//		Collections.shuffle(data);//模拟数据变化
 		return data ;
 	}
 

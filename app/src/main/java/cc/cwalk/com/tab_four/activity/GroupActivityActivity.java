@@ -11,8 +11,11 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.GlideUtils;
 
 public class GroupActivityActivity extends BaseListActivity {
 
@@ -39,21 +42,23 @@ PublishActivityActivity.startActivity(xContext);
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        mRcView.addLineDivider();
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        mRcView.complete();
+        DataUtils.getInstance().getGroupList(mRcView);
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<GroupInfoBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
+            public void bindData(RecyclerViewHolder holder, int position, GroupInfoBean item) {
+
+                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_title).setText(item.getTitle());
+                holder.getTextView(R.id.tv_number).setText("已包名人数："+DataUtils.getInstance().getRandow(11));
+                holder.getTextView(R.id.tv_time).setText(item.getJointime());
+                if (position<2)
+                holder.getTextView(R.id.tv_is_runing).setText("进行中");
+                else
+                holder.getTextView(R.id.tv_is_runing).setText("已结束");
 
             }
 
@@ -67,10 +72,6 @@ PublishActivityActivity.startActivity(xContext);
                 return xContext;
             }
 
-            @Override
-            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-            }
         };
     }
 

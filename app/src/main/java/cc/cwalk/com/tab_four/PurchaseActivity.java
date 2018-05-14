@@ -11,8 +11,10 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
 
 /**
  * Creat By_Chen
@@ -40,21 +42,18 @@ public class PurchaseActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        List dataContent = mRcView.getDataContent();
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        dataContent.add(1);
-        mRcView.complete();
+        DataUtils.getInstance().getGroupList(mRcView);
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter() {
+        return new BaseRecyclerAdapter<GroupInfoBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, Object item) {
-
+            public void bindData(RecyclerViewHolder holder, int position, GroupInfoBean item) {
+                holder.getTextView(R.id.tv_title).setText(item.getTitle());
+                holder.getTextView(R.id.tv_money).setText(item.getMoney());
+                holder.getTextView(R.id.tv_manager).setText("负责人："+item.getNiname());
+                holder.getTextView(R.id.tv_time).setText(item.getTime());
             }
 
             @Override
@@ -72,11 +71,11 @@ public class PurchaseActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        PurchaseDetailActivity.startActivity(xContext);
+        PurchaseDetailActivity.startActivity(xContext,(GroupInfoBean)mRcView.getDataContent().get(pos));
     }
 
     public static void startActivity(Context xContext) {
-        xContext.startActivity(new Intent(xContext,PurchaseActivity.class));
+        xContext.startActivity(new Intent(xContext, PurchaseActivity.class));
     }
 
 }

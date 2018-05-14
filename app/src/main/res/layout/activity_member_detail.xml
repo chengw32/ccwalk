@@ -25,6 +25,7 @@
                 android:layout_height="@dimen/d100">
 
             <ImageView
+                android:id="@+id/iv_head"
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/app_ico"
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="姓名" />
                 <TextView
+                    android:id="@+id/tv_name"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:text="昵称" />
                 <TextView
+                    android:id="@+id/tv_ni_name"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -100,6 +103,7 @@
                     android:layout_height="wrap_content"
                     android:text="性别" />
                 <TextView
+                    android:id="@+id/tv_sex"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,6 +126,7 @@
                     android:layout_height="wrap_content"
                     android:text="年级" />
                 <TextView
+                    android:id="@+id/tv_grade"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,6 +148,7 @@
                     android:layout_height="wrap_content"
                     android:text="学院" />
                 <TextView
+                    android:id="@+id/tv_college"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -164,6 +170,7 @@
                     android:layout_height="wrap_content"
                     android:text="专业" />
                 <TextView
+                    android:id="@+id/tv_profession"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -185,6 +192,7 @@
                     android:layout_height="wrap_content"
                     android:text="入团时间" />
                 <TextView
+                    android:id="@+id/tv_join_time"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -198,10 +206,15 @@
 
     </ScrollView>
     <TextView
+        android:id="@+id/tv_del"
         android:layout_width="match_parent"
         style="@style/base_text_style"
         android:text="移除成员"
         android:gravity="center"
+        android:layout_marginLeft="@dimen/d20"
+        android:layout_marginRight="@dimen/d20"
+        android:layout_marginTop="@dimen/d10"
+        android:layout_marginBottom="@dimen/d10"
         android:background="@color/blue"
         android:padding="@dimen/d5"
         android:layout_height="wrap_content"/>
