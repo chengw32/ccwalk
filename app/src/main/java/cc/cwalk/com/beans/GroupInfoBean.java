@@ -39,6 +39,25 @@ public class GroupInfoBean implements Serializable {
     private String profession;
     private String jointime;
     private String persondes;
+    private String activity ;
+    private String activitydes ;
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
+
+    public String getActivitydes() {
+        return activitydes;
+    }
+
+    public void setActivitydes(String activitydes) {
+        this.activitydes = activitydes;
+    }
+
     private String title;
     private String des;
     private String head;

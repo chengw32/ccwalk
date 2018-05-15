@@ -21,12 +21,14 @@
 
 
             <ImageView
+                android:id="@+id/iv_image"
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/app_ico"
                 android:layout_height="@dimen/d100"/>
 
             <TextView
+                android:id="@+id/tv_act_title"
                 android:layout_width="match_parent"
                 style="@style/base_text_style"
                 android:textSize="@dimen/d8"
@@ -91,6 +93,7 @@
                     android:layout_height="wrap_content"
                     android:text="负责人" />
                 <TextView
+                    android:id="@+id/tv_manager"
                     style="@style/base_text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -127,6 +130,7 @@
                 android:layout_margin="@dimen/d6"
                 android:text="活动详情" />
             <TextView
+                android:id="@+id/tv_detial"
                 style="@style/base_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

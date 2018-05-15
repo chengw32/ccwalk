@@ -52,7 +52,7 @@ PublishActivityActivity.startActivity(xContext);
             public void bindData(RecyclerViewHolder holder, int position, GroupInfoBean item) {
 
                 GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_title).setText(item.getTitle());
+                holder.getTextView(R.id.tv_title).setText(item.getActivity());
                 holder.getTextView(R.id.tv_number).setText("已包名人数："+DataUtils.getInstance().getRandow(11));
                 holder.getTextView(R.id.tv_time).setText(item.getJointime());
                 if (position<2)
@@ -77,7 +77,7 @@ PublishActivityActivity.startActivity(xContext);
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        ActivityDetailActivity.startActivity(xContext);
+        ActivityDetailActivity.startActivity(xContext,(GroupInfoBean)mRcView.getDataContent().get(pos));
     }
 
     public static void startActivity(Context xContext) {
