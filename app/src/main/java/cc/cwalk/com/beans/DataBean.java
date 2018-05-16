@@ -8,7 +8,7 @@ import java.util.List;
  * Des :${input}
  */
 
-public class DataBean implements Serializable{
+public class DataBean extends  BaseBean{
 
     /**
      * name : 熊小莫

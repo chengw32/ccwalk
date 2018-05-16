@@ -9,7 +9,7 @@ import cc.cwalk.com.utils.DataUtils;
  * Date 2018/4/24 15:11
  * DES : 存储视频相关信息的类
  */
-public class VideoBean implements Serializable {
+public class VideoBean extends BaseBean {
     public String videoUrl ;
     public String videoImages ;
     public String beanId ;

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Date 2018/5/14 15:06
  * DES :
  */
-public class GroupInfoBean implements Serializable {
+public class GroupInfoBean extends BaseBean{
 
     /**
      * name : 张伟

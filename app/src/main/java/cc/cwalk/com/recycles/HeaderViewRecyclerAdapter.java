@@ -283,7 +283,7 @@ public class HeaderViewRecyclerAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
 
-    public List getDataContent() {
+    public <T> List<T> getDataContent() {
         if ( mWrappedAdapter instanceof BaseRecyclerAdapter) {
             BaseRecyclerAdapter a = (BaseRecyclerAdapter) mWrappedAdapter;
             return a.getDataContent();

@@ -65,7 +65,7 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
 		mData.addAll(list);
 	}
 
-	public List getDataContent() {
+	public List<T> getDataContent() {
 		return mData;
 	}
 

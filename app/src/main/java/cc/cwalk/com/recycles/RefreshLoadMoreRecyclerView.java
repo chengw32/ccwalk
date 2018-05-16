@@ -16,6 +16,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import cc.cwalk.com.R;
+import cc.cwalk.com.beans.BaseBean;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.utils.LogUtils;
 
 
@@ -25,7 +27,7 @@ import cc.cwalk.com.utils.LogUtils;
  * Time: 2016/12/21
  */
 
-public class RefreshLoadMoreRecyclerView extends SwipeRefreshLayout {
+public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
 
     public RecyclerView mRecyclerView;
     private View footView;
@@ -301,7 +303,7 @@ public class RefreshLoadMoreRecyclerView extends SwipeRefreshLayout {
         mHeaderViewRecyclerAdapter.addData(list);
     }
     //获取数据容器
-    public List getDataContent(){
+    public <T extends GroupInfoBean>  List<T> getDataContent(){
         return mHeaderViewRecyclerAdapter.getDataContent();
     }
 

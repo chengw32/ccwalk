@@ -9,7 +9,7 @@ import cc.cwalk.com.utils.DataUtils;
  * Date 2018/4/24 16:35
  * DES :
  */
-public class UserBean implements Serializable {
+public class UserBean extends BaseBean{
     public String name ;// 名字
     public String adress ;//所在地
     public String attentiontime ;//关注时间

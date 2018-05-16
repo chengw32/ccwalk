@@ -8,7 +8,7 @@ import java.util.List;
  * Des  帖子数据详情
  */
 
-public class DetailBean implements Serializable {
+public class DetailBean extends  BaseBean{
    public int numZang ;//赞数量
     public int numEvaluate ;//评论数量
     public  int numPaly;//播放次数

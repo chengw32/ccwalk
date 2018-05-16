@@ -12,6 +12,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.xxxxBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -46,6 +47,19 @@ public class GroupMemberActivity extends BaseListActivity {
         return new BaseRecyclerAdapter<GroupInfoBean>() {
             @Override
             public void bindData(RecyclerViewHolder holder, final int position, GroupInfoBean item) {
+
+
+
+                TextView textView = holder.getTextView(R.id.tv_type);
+                if (item.getCreater() == 1){
+                    textView.setVisibility(View.VISIBLE);
+                textView.setText("会长、副会长");
+                }else if(item.getManager() == 1){
+                    xxxxBean bean =  mRcView.getDataContent().get(position-1);
+                    textView.setVisibility(View.VISIBLE);
+                textView.setText("管理员");
+
+                }
 
                 holder.getTextView(R.id.tv_name).setText(item.getNiname());
                 holder.getTextView(R.id.tv_des).setText("入团时间： "+item.getJointime());

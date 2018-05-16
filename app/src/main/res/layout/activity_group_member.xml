@@ -2,11 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:padding="@dimen/d5"
     tools:context="cc.cwalk.com.tab_four.JoinGroupActivity">
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:paddingLeft="@dimen/d6"
+        android:textColor="@color/gray0"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/d10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/d6"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
 
 
     <ImageView
@@ -45,5 +61,5 @@
         android:text=">"
         android:padding="@dimen/d2"
         android:layout_height="wrap_content" />
-
+    </LinearLayout>
 </LinearLayout>
