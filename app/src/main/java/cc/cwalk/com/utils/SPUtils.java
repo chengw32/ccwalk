@@ -21,6 +21,7 @@ public class SPUtils {
     private static final String NAME = "name";//昵称
     private static final String QQ = "QQ";
     private static final String SEX = "sex";//1 男 其他 女性
+    private static final String CREAT = "1";//
     private static SharedPreferences	sp;
 
     /**
@@ -95,5 +96,15 @@ public class SPUtils {
     public static int getSex() {
         SharedPreferences sp = getPreferences();
         return sp.getInt(SEX,0);
+    }
+
+    public static void setCreat() {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putInt(CREAT,1);
+        editor.commit();
+    }
+    public static int getCreat() {
+        SharedPreferences sp = getPreferences();
+        return sp.getInt(CREAT,0);
     }
 }

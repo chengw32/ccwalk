@@ -13,7 +13,9 @@ import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
 
 public class MemberDetailActivity extends BaseActivity {
@@ -53,8 +55,14 @@ public class MemberDetailActivity extends BaseActivity {
     @Override
     protected void initView() {
         bean = (GroupInfoBean) getIntent().getSerializableExtra("bean");
-        if (bean.getCreater() == 1 || bean.getManager() ==1)tvDel.setVisibility(View.VISIBLE);
-        else tvDel.setVisibility(View.GONE);
+
+        if (SPUtils.getCreat() == 1){
+            if (bean.getCreater() == 1){
+                tvDel.setVisibility(View.GONE);
+            }else
+            tvDel.setVisibility(View.VISIBLE);
+        }else tvDel.setVisibility(View.GONE);
+
         tvName.setText(bean.getName());
         tvNiName.setText(bean.getNiname());
         tvCollege.setText(bean.getCollege());
@@ -87,6 +95,7 @@ public class MemberDetailActivity extends BaseActivity {
 
     @OnClick(R.id.tv_del)
     public void onViewClicked() {
+        EventUtil.sendEvent(EventUtil.REMOVE_MEMBER,bean);
         finish();
     }
 }

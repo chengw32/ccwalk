@@ -60,6 +60,8 @@ public class LoginActivity extends BaseActivity {
         ToastUtils.s("登录成功");
         SPUtils.setUserName(phone);
         SPUtils.setIsLogin(true);
+        if ("张伟塔".equals(phone))
+        SPUtils.setCreat();
         EventUtil.sendEvent(EventUtil.ACT_LOGIN,null);
         finish();
     }

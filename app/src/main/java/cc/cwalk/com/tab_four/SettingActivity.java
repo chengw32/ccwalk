@@ -82,7 +82,7 @@ public class SettingActivity extends BaseActivity {
                     mExitDialogView = View.inflate(this, R.layout.dialog_exit, null);
                     mDialog = new CustomDialog(this, mExitDialogView, R.style.dialog);
 
-                    TextView tvExitAccount = mExitDialogView.findViewById(R.id.tvExitAccount);
+                    final TextView tvExitAccount = mExitDialogView.findViewById(R.id.tvExitAccount);
                 tvExitAccount.setText(SPUtils.isLogin()?"退出登录":"登录账号");
 
                     tvExitAccount.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +93,11 @@ public class SettingActivity extends BaseActivity {
                             if (SPUtils.isLogin()){
 
                             ToastUtils.s("已退出当前账号");
+                                mExit.setText("登陆");
                             SPUtils.setIsLogin(false);
                             EventUtil.sendEvent(EventUtil.ACT_LOGIN,null);
                             }else {
+                                mExit.setText("退出");
                                 LoginActivity.startActivity(xContext);
                                 finish();
                             }

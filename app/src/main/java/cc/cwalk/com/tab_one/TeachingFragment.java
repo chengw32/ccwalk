@@ -3,6 +3,7 @@ package cc.cwalk.com.tab_one;
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.webview.WebViewActivity;
 
 /**q
@@ -17,13 +19,14 @@ import cc.cwalk.com.webview.WebViewActivity;
  */
 public class TeachingFragment extends BaseListFragment {
 
+private GridLayoutManager layoutManager;
 
-
-@Override
+    @Override
     public void initView(View v) {
     super.initView(v);
     setBarGone();
-    mRcView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+    layoutManager = new GridLayoutManager(getActivity(), 3);
+    mRcView.setLayoutManager(layoutManager);
     getData(1);
 }
 
@@ -32,7 +35,15 @@ public class TeachingFragment extends BaseListFragment {
         return new BaseRecyclerAdapter<String>() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, String item) {
-                holder.getTextView(R.id.tv_name).setText(item);
+                TextView textView = holder.getTextView(R.id.tv_name);
+                int spanSize = layoutManager.getSpanSizeLookup().getSpanSize(position);
+                if (spanSize == 1){
+                    textView.setBackgroundColor(getResources().getColor(R.color.transparent));
+                }else textView.setBackgroundColor(getResources().getColor(R.color.gray));
+                if (position == 25)
+                textView.setText("其他");
+                else
+                textView.setText(item);
             }
 
             @Override
@@ -60,6 +71,7 @@ public class TeachingFragment extends BaseListFragment {
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
+        dataContent.add("CRIP WALK");
         dataContent.add("曳舞教学");
         dataContent.add("AUS风格");
         dataContent.add("MAS风格");
@@ -69,11 +81,23 @@ public class TeachingFragment extends BaseListFragment {
         dataContent.add("Elector教学");
         dataContent.add("jumpStyle教学");
         dataContent.add("Elector手舞");
+        dataContent.add("CROWN WALK");
         dataContent.add("Freestyle教学");
         dataContent.add("Freestep教学");
         dataContent.add("jumpStyle教学");
         dataContent.add("韩国曳舞教学");
         dataContent.add("巴西曳舞教学");
+        dataContent.add("CLOWN WALK");
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (position == 0)return  3;
+                if (position == 10)return  3;
+                if (position == 16)return  3;
+                if (position == 25)return  3;
+                return 1;
+            }
+        });
         mRcView.complete();
     }
 

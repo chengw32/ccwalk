@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
@@ -59,11 +60,13 @@ public class ExpenditureFragment extends BaseListFragment {
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<GroupInfoBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
-                holder.getTextView(R.id.tv_mark).setText("1".equals(mParam1)?"订制团服":"会员 海草 交团费");
+            public void bindData(RecyclerViewHolder holder, final int position, GroupInfoBean item) {
+
+                holder.getTextView(R.id.tv_mark).setText("1".equals(mParam1)?item.getActivity():"会员"+item.getName()+ " 海草 交团费");
                 holder.getTextView(R.id.tv_money_change).setText("1".equals(mParam1)?"-300":"+200");
+                holder.getTextView(R.id.tv_time).setText("时间 "+item.getTime());
             }
 
             @Override
@@ -88,7 +91,7 @@ public class ExpenditureFragment extends BaseListFragment {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+        DataUtils.getInstance().getGroupList(mRcView);
     }
 
 }

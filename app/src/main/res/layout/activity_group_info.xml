@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray3"
                     android:layout_marginLeft="@dimen/d5"
-                    android:text="张伟" />
+                    android:text="张伟塔" />
             </LinearLayout>
             <include layout="@layout/line"></include>
             <LinearLayout
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray3"
                     android:layout_marginLeft="@dimen/d5"
-                    android:text="4人" />
+                    android:text="2人" />
             </LinearLayout>
             <include layout="@layout/line"></include>
             <LinearLayout

@@ -26,7 +26,7 @@ public class GroupNoticeActivity extends BaseListActivity {
 
     @Override
     public void setRightText(String text) {
-        super.setRightText("发布公告");
+        super.setRightText(SPUtils.getCreat()==1?"发布公告":"");
     }
 
     @Override

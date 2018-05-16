@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d3"
-                android:text="创建者：张伟"
+                android:text="创建者：张伟塔"
                 android:layout_marginLeft="@dimen/d5"
                 android:textColor="@color/gray3"
                 android:textSize="@dimen/d6" />

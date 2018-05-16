@@ -303,7 +303,7 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
         mHeaderViewRecyclerAdapter.addData(list);
     }
     //获取数据容器
-    public <T extends GroupInfoBean>  List<T> getDataContent(){
+    public   List getDataContent(){
         return mHeaderViewRecyclerAdapter.getDataContent();
     }
 
