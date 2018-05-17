@@ -30,28 +30,20 @@ import cc.cwalk.com.utils.StringCallback;
  */
 public class AttentionFragment extends BaseListFragment {
 
+    private  View inflate ;
 
     @Override
     public void initView(View v) {
         super.initView(v);
+        inflate = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_attention_headview, null);
+        mRcView.addHeadView(inflate);
         setBarGone();
-       getAttentionUser();
         getData(1);
     }
 
-    private void getAttentionUser(){
-        DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                //Gson解析数据
-                List<DataBean> data = GsonUtil.getData(result);
-                initHead(data);
-            }
-        });
-    }
 
     private void initHead(final List<DataBean> data){
-        View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_attention_headview, null);
+
         inflate.findViewById(R.id.tv_more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +51,7 @@ public class AttentionFragment extends BaseListFragment {
             }
         });
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
+        content.removeAllViews();
         for (int j = 0; j < 8; j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
             GlideUtils.lodeHeadImage(data.get(j).getHead(), (ImageView) item.findViewById(R.id.iv_head));
@@ -73,7 +66,7 @@ public class AttentionFragment extends BaseListFragment {
             });
             content.addView(item);
         }
-        mRcView.addHeadView(inflate);
+
     }
 
 
@@ -124,7 +117,7 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-1);
+        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
         if (itembean.getVideos().get(0).getIsVideo() == 1)
             DetailActivity.startActivity(xContext,itembean);
         else
@@ -138,7 +131,7 @@ public class AttentionFragment extends BaseListFragment {
             @Override
             public void success(String result) {
                 List<DataBean> data = GsonUtil.getData(result);
-
+                initHead(data);
                 List dataContent = mRcView.getDataContent();
                 dataContent.addAll(data);
                 mRcView.complete();

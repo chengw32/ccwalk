@@ -16,6 +16,7 @@ import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 public class GroupActivityActivity extends BaseListActivity {
 
@@ -27,7 +28,7 @@ getData(1);
 
     @Override
     public void setRightText(String text) {
-        super.setRightText("发布活动");
+        super.setRightText(SPUtils.getCreat() == 1 ?"发布活动":"");
     }
 
     @Override

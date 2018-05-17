@@ -65,28 +65,32 @@ private GridLayoutManager layoutManager;
     @Override
     public void onItemClick(View itemView, int pos) {
 
+        if (singlePosition[0] == pos || singlePosition[1] == pos ||singlePosition[2] == pos ||singlePosition[3] == pos )
+            return;
         WebViewActivity.startActivity(xContext,"教程", "http://chengw32.com:8080/videos/sample.mp4 ");
     }
+
+    int [] singlePosition = {0,10,16,25};
 
     @Override
     public void getData(int pageNo) {
         List dataContent = mRcView.getDataContent();
         dataContent.add("CRIP WALK");
-        dataContent.add("曳舞教学");
-        dataContent.add("AUS风格");
+        dataContent.add("cwalk教程");
+        dataContent.add("c-walk教学2");
         dataContent.add("MAS风格");
-        dataContent.add("休闲视频");
-        dataContent.add("国外Cwalk");
-        dataContent.add("教学Cwalk");
+        dataContent.add("Cwalk教学——弹性、基本动作和衔接_高清");
+        dataContent.add("Cwalk全教程_高清");
+        dataContent.add("Cwalk提高_高清");
         dataContent.add("Elector教学");
         dataContent.add("jumpStyle教学");
-        dataContent.add("Elector手舞");
+        dataContent.add("CWALK新手教程_标清");
         dataContent.add("CROWN WALK");
         dataContent.add("Freestyle教学");
         dataContent.add("Freestep教学");
         dataContent.add("jumpStyle教学");
-        dataContent.add("韩国曳舞教学");
-        dataContent.add("巴西曳舞教学");
+        dataContent.add("cwalk中级");
+        dataContent.add("Kecet Cwalk 【Heel toe】教程_标清");
         dataContent.add("CLOWN WALK");
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override

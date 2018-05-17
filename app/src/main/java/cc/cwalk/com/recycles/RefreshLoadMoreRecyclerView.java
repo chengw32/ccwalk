@@ -279,6 +279,9 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
     public void addHeadView(View v) {
         mHeaderViewRecyclerAdapter.addHeaderView(v);
     }
+    public int getHeadViewCount(){
+        return mHeaderViewRecyclerAdapter.getHeaderCount();
+    }
 
     //刷新适配器
     public void notifyDataSetChanged() {
