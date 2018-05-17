@@ -33,6 +33,7 @@ public class CommunityFragment extends BaseListFragment {
     @Override
     public void initView(View v) {
         super.initView(v);
+        mRcView.addLineDivider();
         setBarGone();
         getData(1);
     }
@@ -58,16 +59,20 @@ public class CommunityFragment extends BaseListFragment {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 View iv_isvideo = holder.getView(R.id.iv_isvideo);
-                if (item.getVideos().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
-                else iv_isvideo.setVisibility(View.GONE);
+//                if (item.getVideos().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
+//                else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
                 GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 //设置图片
-                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
+//                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
                 //设置名字
-                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ item.getVideos().get(0).getNumEvaluate()+")");
+                String numE ;
+                int numEvaluate = item.getVideos().get(0).getNumEvaluate();
+                if (numEvaluate>99)numE = "99+";
+                else numE = String.valueOf(numEvaluate);
+                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ numE +")");
                 holder.getTextView(R.id.tv_time).setText(item.getVideos().get(0).getTime());
-                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getVideos().get(0).getNumZang()+")");
+//                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getVideos().get(0).getNumZang()+")");
                 holder.getTextView(R.id.tv_name).setText(item.getName());
                 holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
             }

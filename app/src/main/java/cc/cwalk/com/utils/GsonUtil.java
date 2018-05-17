@@ -32,7 +32,9 @@ public class GsonUtil {
 		for (int i = 0; i < data.size(); i++) {
 			List<DataBean.VideosBean> videos = data.get(i).getVideos();
 			Collections.shuffle(videos);
-		}
+            List<DataBean.StrBean> str = data.get(i).getStr();
+			Collections.shuffle(str);
+        }
 		return data ;
 	}
 	public static List getGroupData(String jsonString) {

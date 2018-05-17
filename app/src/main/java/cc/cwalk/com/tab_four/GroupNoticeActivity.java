@@ -40,7 +40,7 @@ public class GroupNoticeActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 holder.getTextView(R.id.tv_name).setText("发布人： "+item.getName());
-                holder.getTextView(R.id.tv_content).setText(DataUtils.getInstance().getStringText());
+                holder.getTextView(R.id.tv_content).setText(item.getStr().get(0).getDes());
             }
 
             @Override

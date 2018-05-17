@@ -1,19 +1,28 @@
 package cc.cwalk.com.tab_one;
 
+import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
@@ -21,24 +30,26 @@ import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.tab_two.MyAttentionActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
-import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.StringCallback;
 import cc.cwalk.com.utils.ToastUtils;
+import cc.cwalk.com.utils.Utils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class DetailActivity extends BaseListActivity {
 
     NormalGSYVideoPlayer videoPlayer;
+    @Bind(R.id.et_evaluate)
+    EditText mEtEvaluate;
     private int numZang = 30;
     private TextView tv_attention;
     private DataBean bean;
-    private AutoFlowLayout af_heads ;
-    private  TextView tv_num_zang;
+    private AutoFlowLayout af_heads;
+    private TextView tv_num_zang;
 
     @Override
     protected int setContentLayout() {
@@ -66,11 +77,11 @@ public class DetailActivity extends BaseListActivity {
         GlideUtils.lodeImage(bean.getVideos().get(0).getVideoImages(), image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        videoPlayer.setUp(DataUtils.baseUrl+bean.getVideos().get(0).getVideoUrl(), true, "");
+        videoPlayer.setUp(DataUtils.baseUrl + bean.getVideos().get(0).getVideoUrl(), true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
-       tv_num_zang = view.findViewById(R.id.tv_num_zang);
+        tv_num_zang = view.findViewById(R.id.tv_num_zang);
         final TextView tv_zang = view.findViewById(R.id.tv_zang);
         tv_zang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +90,13 @@ public class DetailActivity extends BaseListActivity {
                     tv_zang.setSelected(false);
                     tv_zang.setText("取消赞");
                     ToastUtils.s("取消赞");
-                    numZang-- ;
+                    numZang--;
 
                 } else {
                     tv_zang.setText("点个赞");
                     tv_zang.setSelected(true);
                     ToastUtils.s("已赞");
-                    numZang++ ;
+                    numZang++;
 
                 }
                 tv_num_zang.setText("共有 " + numZang + " 个赞");
@@ -120,7 +131,7 @@ public class DetailActivity extends BaseListActivity {
         getZangUser();
     }
 
-    private void getZangUser(){
+    private void getZangUser() {
         DataUtils.getInstance().getJsonFromService(new StringCallback() {
             @Override
             public void success(String result) {
@@ -131,9 +142,9 @@ public class DetailActivity extends BaseListActivity {
         });
     }
 
-    private void initHead(final List<DataBean> data){
+    private void initHead(final List<DataBean> data) {
         numZang = data.size();
-        tv_num_zang.setText("共有 " + numZang  + " 个赞");
+        tv_num_zang.setText("共有 " + numZang + " 个赞");
         for (int i = 0; i < data.size(); i++) {
 
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams((int) (20 * MyApplication.getScale()), (int) (20 * MyApplication.getScale()));
@@ -148,7 +159,6 @@ public class DetailActivity extends BaseListActivity {
         }
 
     }
-
 
 
     @Override
@@ -177,8 +187,8 @@ public class DetailActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getBefanstime());
-                holder.getTextView(R.id.tv_evaluate).setText(DataUtils.getInstance().getStringText());
+                holder.getTextView(R.id.tv_time).setText(item.getStr().get(0).getTime());
+                holder.getTextView(R.id.tv_evaluate).setText(item.getStr().get(0).getDes());
 
             }
 
@@ -209,5 +219,49 @@ public class DetailActivity extends BaseListActivity {
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("bean", bean);
         context.startActivity(intent);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.tv_evaluate)
+    public void onViewClicked() {
+        String trim = mEtEvaluate.getText().toString().trim();
+        if (TextUtils.isEmpty(trim)) {
+            ToastUtils.s("内容不能为空");
+            return;
+        }
+        mEtEvaluate.setText("");
+        ToastUtils.s("评论成功");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+        String time = formatter.format(curDate);
+
+        DataBean bean = new DataBean();
+
+
+        List<DataBean.StrBean> strBeans = new ArrayList<>();
+        //创建评论的bean
+        DataBean.StrBean strBean = new DataBean.StrBean();
+        strBean.setDes(trim);
+        strBean.setTime(time);
+        strBeans.add(strBean);
+
+        bean.setStr(strBeans);
+
+        bean.setName(SPUtils.getUserName());
+
+        List<DataBean> dataContent = mRcView.getDataContent();
+
+        dataContent.add(0,bean);
+
+        mRcView.complete();
+
+        Utils.hideSoft(mEtEvaluate);
+
     }
 }

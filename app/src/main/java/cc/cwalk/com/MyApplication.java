@@ -37,7 +37,6 @@ public class MyApplication extends Application {
         }
         scale = getResources().getDisplayMetrics().density;
         instance = this;
-        DataUtils.getInstance().init();
     }
 
     public static float getScale(){

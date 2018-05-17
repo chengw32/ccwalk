@@ -47,7 +47,7 @@ public class MyMessageActivity extends BaseListActivity {
                 holder.getTextView(R.id.tv_title).setText(item.getName() +"  评论了你的作品  ");
                 holder.getTextView(R.id.tv_video_name).setText( item.getVideos().get(0).getTitle());
                 holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
-                holder.getTextView(R.id.tv_des).setText(DataUtils.getInstance().getStringText());
+                holder.getTextView(R.id.tv_des).setText(item.getStr().get(0).getDes());
             }
 
             @Override
