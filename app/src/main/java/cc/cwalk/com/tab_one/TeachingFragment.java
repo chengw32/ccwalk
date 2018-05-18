@@ -11,7 +11,9 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.StringCallback;
 import cc.cwalk.com.webview.WebViewActivity;
 
 /**q
@@ -60,6 +62,12 @@ private GridLayoutManager layoutManager;
         };
     }
 
+    String [] url = {"http://chengw32.com:8080/videos/sample.mp4",
+            "http://chengw32.com:8080/videos/FE73411CFCC4935215173B4B071B75A8.mp4",
+            "http://chengw32.com:8080/videos/01AC2E0111D3A6BA0D2B1F9904D6EA3E.mp4",
+            "http://chengw32.com:8080/videos/8AF705836C6694848E227F3D7F5D4ABD.mp4",
+            "http://chengw32.com:8080/videos/062E0B53EA8BBB94F6B0CEFD87D8286B.flv",
+            "http://chengw32.com:8080/videos/F22630B947F92D63E79A84DA1DE398B9.mp4"};
 
 
     @Override
@@ -67,13 +75,15 @@ private GridLayoutManager layoutManager;
 
         if (singlePosition[0] == pos || singlePosition[1] == pos ||singlePosition[2] == pos ||singlePosition[3] == pos )
             return;
-        WebViewActivity.startActivity(xContext,"教程", "http://chengw32.com:8080/videos/sample.mp4 ");
+        WebViewActivity.startActivity(xContext,"教程", url[DataUtils.getInstance().getRandow(url.length)]);
     }
 
     int [] singlePosition = {0,10,16,25};
 
     @Override
     public void getData(int pageNo) {
+
+
         List dataContent = mRcView.getDataContent();
         dataContent.add("CRIP WALK");
         dataContent.add("cwalk教程");

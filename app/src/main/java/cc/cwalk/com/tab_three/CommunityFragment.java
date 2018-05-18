@@ -18,6 +18,7 @@ import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
+import cc.cwalk.com.tab_one.DetailTextActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
@@ -47,10 +48,11 @@ public class CommunityFragment extends BaseListFragment {
     @Override
     public void onItemClick(View itemView, int pos) {
         DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
-        if (itembean.getVideos().get(0).getIsVideo() == 1)
-            DetailActivity.startActivity(xContext,itembean);
-        else
-            DetailImagesActivity.startActivity(getActivity(),itembean);
+        DetailTextActivity.startActivity(xContext,itembean);
+//        if (itembean.getVideos().get(0).getIsVideo() == 1)
+//            DetailActivity.startActivity(xContext,itembean);
+//        else
+//            DetailImagesActivity.startActivity(getActivity(),itembean);
     }
 
     @Override
@@ -74,7 +76,7 @@ public class CommunityFragment extends BaseListFragment {
                 holder.getTextView(R.id.tv_time).setText(item.getVideos().get(0).getTime());
 //                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getVideos().get(0).getNumZang()+")");
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_des).setText(item.commtitle);
             }
 
             @Override

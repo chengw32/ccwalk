@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.exoplayer2.text.webvtt.WebvttCssStyle;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,7 +55,8 @@ public class CreditsActivity extends BaseListActivity {
 
     @Override
     public void onRightClick() {
-        WebViewActivity.startActivity(xContext,"积分商城","https://www.taobao.com/");
+        CreditsStoreActivity.startActivity(xContext);
+//        WebViewActivity.startActivity(xContext,"积分商城","https://www.taobao.com/");
     }
 
     @Override
@@ -64,12 +64,15 @@ public class CreditsActivity extends BaseListActivity {
         DataUtils.getInstance().getDataList(mRcView);
     }
 
+    String [] mark = {"签到","发布视频","评论帖子"};
+
     @Override
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter<DataBean>() {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
+                holder.getTextView(R.id.tv_mark).setText(mark[DataUtils.getInstance().getRandow(mark.length)]);
             }
 
             @Override

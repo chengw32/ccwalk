@@ -57,6 +57,7 @@
             android:text="活动截止时间"/>
 
         <EditText
+            android:id="@+id/et_time"
             style="@style/publish_activity_style"
             android:layout_marginRight="@dimen/d9"
             android:hint="填写时间"
@@ -75,6 +76,7 @@
             android:text="活动地点"/>
 
         <EditText
+            android:id="@+id/et_adress"
             style="@style/publish_activity_style"
             android:layout_marginRight="@dimen/d9"
             android:hint="填写地点"
@@ -93,6 +95,7 @@
             android:text="活动费用"/>
 
         <EditText
+            android:id="@+id/et_money"
             style="@style/publish_activity_style"
             android:layout_marginRight="@dimen/d9"
             android:hint="活动费用"
@@ -106,6 +109,7 @@
 
 
     <EditText
+        android:id="@+id/et_des"
         android:layout_marginRight="@dimen/d6"
         android:layout_width="match_parent"
         android:minHeight="@dimen/d40"

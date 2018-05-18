@@ -62,7 +62,7 @@ public class WebViewActivity extends BaseActivity {
         webSettings.setAllowFileAccess(true);//设置可以访问文件
         webSettings.setAppCacheEnabled(true);
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
-//        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(mUrl);
     }
 

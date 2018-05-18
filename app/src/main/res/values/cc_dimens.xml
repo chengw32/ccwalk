@@ -15,4 +15,7 @@
     <!--我的 图标的宽高-->
     <dimen name="mine_ico_height">@dimen/d10</dimen>
     <dimen name="mine_content_padding">@dimen/d5</dimen>
+
+    <!--对话框圆角-->
+    <dimen name="dialog_radius">5dp</dimen>
 </resources>

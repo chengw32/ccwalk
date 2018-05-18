@@ -4,15 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.tab_four.activity.GroupActivityActivity;
+import cc.cwalk.com.utils.SPUtils;
 
 public class MyGroupActivity extends BaseActivity {
 
+
+    @Bind(R.id.ll_join)
+    LinearLayout llJoin;
+    @Bind(R.id.ll_expenditure)
+    LinearLayout llexpenditure;
 
     @Override
     protected int setContentLayout() {
@@ -21,6 +29,11 @@ public class MyGroupActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        if (SPUtils.getCreat() != 1) {
+                llJoin.setVisibility(View.GONE);
+            llexpenditure.setVisibility(View.GONE);
+        }
 
     }
 
@@ -39,7 +52,7 @@ public class MyGroupActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_purchase,R.id.ll_expenditure,R.id.ll_activity,R.id.ll_inof_more,R.id.ll_members, R.id.ll_join, R.id.ll_notice})
+    @OnClick({R.id.ll_purchase, R.id.ll_expenditure, R.id.ll_activity, R.id.ll_inof_more, R.id.ll_members, R.id.ll_join, R.id.ll_notice})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_members:
@@ -64,5 +77,12 @@ public class MyGroupActivity extends BaseActivity {
                 PurchaseActivity.startActivity(xContext);
                 break;
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

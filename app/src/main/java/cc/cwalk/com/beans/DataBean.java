@@ -26,6 +26,7 @@ public class DataBean extends  BaseBean{
     private String adress;
     private String attentiontime;
     private String befanstime;
+    public String commtitle;
     private String head;
     private int sex;
     private List<StrBean> str;

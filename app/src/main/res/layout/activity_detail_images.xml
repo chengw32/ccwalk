@@ -67,12 +67,12 @@
         android:id="@+id/tv_des"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/d4"
-        android:layout_marginTop="@dimen/d3"
+        android:layout_marginBottom="@dimen/d5"
+        android:layout_marginTop="@dimen/d5"
         android:layout_marginLeft="@dimen/d5"
         android:layout_marginRight="@dimen/d5"
         android:text="6666666666666666"
-        android:textColor="@color/gray3"
+        android:textColor="@color/white"
         android:textSize="13sp" />
 
     <cc.cwalk.com.custom_view.AutoFlowLayout
@@ -85,6 +85,7 @@
     </cc.cwalk.com.custom_view.AutoFlowLayout>
 
     <TextView
+        android:id="@+id/tv_zang"
         android:layout_width="match_parent"
         android:text="海草、小曳、~~~~~尬舞、 等 3人点赞"
         android:textColor="@color/blue"

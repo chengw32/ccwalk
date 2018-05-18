@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cc.cwalk.com.credits.CreditsStoreActivity">
+
+    <include layout="@layout/base_bar_layout"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/d3">
+
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:src="@drawable/goods1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d3"
+                    android:layout_marginRight="@dimen/d3"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/base_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/d3"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:text="六芒星新款死神裤大裤脚AUS风格鬼步舞裤子" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/base_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="39999 积分"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_buy4"
+                            android:layout_width="wrap_content"
+                            android:text="兑换"
+                            style="@style/base_text_style"
+                            android:textColor="@color/blue"
+                            android:gravity="right"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_match"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/d3">
+
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:src="@drawable/goods2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d3"
+                    android:layout_marginRight="@dimen/d3"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/base_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/d3"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:text="超帅大号粗十字架鬼步舞裤子AUS神器死神裤" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/base_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="19999 积分"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_buy3"
+                            android:layout_width="wrap_content"
+                            android:text="兑换"
+                            style="@style/base_text_style"
+                            android:textColor="@color/blue"
+                            android:gravity="right"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_match"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/d3">
+
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:src="@drawable/goods3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d3"
+                    android:layout_marginRight="@dimen/d3"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/base_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:layout_marginTop="@dimen/d3"
+                        android:text="送面具秋季薄款 T1M鬼步舞裤子 男aus死神裤学生女宽松曳步舞裤子" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/base_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="9999 积分"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_buy2"
+                            android:layout_width="wrap_content"
+                            android:text="兑换"
+                            style="@style/base_text_style"
+                            android:textColor="@color/blue"
+                            android:gravity="right"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_match"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/d3">
+
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:src="@drawable/goods4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d3"
+                    android:layout_marginRight="@dimen/d3"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/base_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/d3"
+                        android:gravity="top"
+                        android:text="鬼步舞荧光裤子 AUS大裤腿反光裤 鬼舞裤 嘻哈反光曳步舞喇叭裤子" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/base_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="19999 积分"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_buy1"
+                            android:layout_width="wrap_content"
+                            android:text="兑换"
+                            style="@style/base_text_style"
+                            android:textColor="@color/blue"
+                            android:gravity="right"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_match"></include>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/d3">
+
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:src="@drawable/goods5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d3"
+                    android:layout_marginRight="@dimen/d3"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/base_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/d3"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:text="原装正品科创美 耳塞iphone7plus苹果7/8/x耳机7p手机6plus入耳6s" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/base_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="5000 积分"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_buy"
+                            android:layout_width="wrap_content"
+                            android:text="兑换"
+                            style="@style/base_text_style"
+                            android:textColor="@color/blue"
+                            android:gravity="right"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/line_match"></include>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

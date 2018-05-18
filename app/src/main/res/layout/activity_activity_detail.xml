@@ -150,6 +150,7 @@
     android:layout_height="@dimen/d20">
 
     <TextView
+        android:id="@+id/tv_call"
         android:layout_width="wrap_content"
         style="@style/base_text_style"
         android:text="咨询"
@@ -160,6 +161,7 @@
         android:layout_height="match_parent"/>
 
     <TextView
+        android:id="@+id/tv_join"
         android:layout_width="wrap_content"
         style="@style/base_text_style"
         android:text="我要报名"

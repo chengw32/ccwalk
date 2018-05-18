@@ -14,6 +14,8 @@ import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.DialogUtils;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.ToastUtils;
 
@@ -55,9 +57,21 @@ public class JoinGroupActivity extends BaseListActivity {
                     @Override
                     public void onClick(View v) {
                         if (!tv_zang.isSelected()) {
-                            tv_zang.setSelected(true);
-                            tv_zang.setText("通过申请");
-                            ToastUtils.s("已通过申请");
+
+                            DialogUtils.showTopicDialogsCustom("确定同意加入？", xContext, new DialogUtils.DialogClickBack() {
+                                @Override
+                                public void define() {
+                                    tv_zang.setSelected(true);
+                                    tv_zang.setText("通过申请");
+                                    ToastUtils.s("已通过申请");
+                                }
+
+                                @Override
+                                public void cancel() {
+
+                                }
+                            });
+
 
                         }
                     }

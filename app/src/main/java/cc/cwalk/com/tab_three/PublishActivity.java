@@ -49,7 +49,7 @@ public class PublishActivity extends BaseActivity {
 
     @Override
     public void onRightClick() {
-        ToastUtils.s("发布成功");
+        ToastUtils.s("发布成功 积分 +1");
         finish();
     }
 

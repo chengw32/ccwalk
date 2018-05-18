@@ -107,7 +107,7 @@ public class DetailImagesActivity extends BaseListActivity {
             @Override
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                 holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getBefanstime());
+                holder.getTextView(R.id.tv_time).setText(item.getStr().get(0).getTime());
                 holder.getTextView(R.id.tv_evaluate).setText(item.getStr().get(0).getDes());
             }
 

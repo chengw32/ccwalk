@@ -13,10 +13,12 @@ import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.utils.DialogUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
+import cc.cwalk.com.utils.Utils;
 
 public class MemberDetailActivity extends BaseActivity {
 
@@ -95,7 +97,19 @@ public class MemberDetailActivity extends BaseActivity {
 
     @OnClick(R.id.tv_del)
     public void onViewClicked() {
-        EventUtil.sendEvent(EventUtil.REMOVE_MEMBER,bean);
-        finish();
+
+        DialogUtils.showTopicDialogsCustom("确定移除该成员？", xContext, new DialogUtils.DialogClickBack() {
+            @Override
+            public void define() {
+                EventUtil.sendEvent(EventUtil.REMOVE_MEMBER,bean);
+                ToastUtils.s("移除成功");
+                finish();
+            }
+
+            @Override
+            public void cancel() {
+
+            }
+        });
     }
 }

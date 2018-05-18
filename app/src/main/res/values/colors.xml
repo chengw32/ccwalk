@@ -36,4 +36,7 @@
     <color name="gray9">#DBDFE0</color>
 
     <color name="yellow">#FFC51B</color>
+
+    <!--对话框底色-->
+    <color name="dialog_color">#fafafa</color>
 </resources>

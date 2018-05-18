@@ -49,20 +49,30 @@ public class LoginActivity extends BaseActivity {
     public void onViewClicked() {
         String phone = mEtPhone.getText().toString().trim();
         String psw = mEtPwd.getText().toString().trim();
-        if (TextUtils.isEmpty(phone)){
+        if (TextUtils.isEmpty(phone)) {
             ToastUtils.s("用户不能为空");
             return;
         }
-        if (TextUtils.isEmpty(psw)){
+        if (TextUtils.isEmpty(psw)) {
             ToastUtils.s("密码不能为空");
             return;
         }
-        ToastUtils.s("登录成功");
-        SPUtils.setUserName(phone);
-        SPUtils.setIsLogin(true);
-        if ("张伟塔".equals(phone))
-        SPUtils.setCreat();
-        EventUtil.sendEvent(EventUtil.ACT_LOGIN,null);
-        finish();
+
+        if ("cwalk".equals(phone) || "张伟塔".equals(phone)) {
+
+            if ("123456".equals(psw)){
+
+                ToastUtils.s("登录成功");
+                SPUtils.setUserName(phone);
+                SPUtils.setIsLogin(true);
+                if ("张伟塔".equals(phone))
+                    SPUtils.setCreat(1);
+                else SPUtils.setCreat(0);
+                EventUtil.sendEvent(EventUtil.ACT_LOGIN, null);
+                finish();
+            }else ToastUtils.s("密码不正确");
+
+        }else ToastUtils.s("账号不对");
+
     }
 }

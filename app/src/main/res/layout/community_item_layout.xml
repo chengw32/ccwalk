@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:text="起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨起来嗨"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/d5"
         android:layout_height="wrap_content"/>

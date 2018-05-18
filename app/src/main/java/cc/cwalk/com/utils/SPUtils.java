@@ -98,9 +98,9 @@ public class SPUtils {
         return sp.getInt(SEX,0);
     }
 
-    public static void setCreat() {
+    public static void setCreat(int creat) {
         SharedPreferences.Editor editor = getEditor();
-        editor.putInt(CREAT,1);
+        editor.putInt(CREAT,creat);
         editor.commit();
     }
     public static int getCreat() {

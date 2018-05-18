@@ -64,7 +64,7 @@ public class ExpenditureFragment extends BaseListFragment {
             @Override
             public void bindData(RecyclerViewHolder holder, final int position, GroupInfoBean item) {
 
-                holder.getTextView(R.id.tv_mark).setText("1".equals(mParam1)?item.getActivity():"会员"+item.getName()+ " 海草 交团费");
+                holder.getTextView(R.id.tv_mark).setText("1".equals(mParam1)?item.getActivity():"会员 "+item.getName()+ " 交团费");
                 holder.getTextView(R.id.tv_money_change).setText("1".equals(mParam1)?"-300":"+200");
                 holder.getTextView(R.id.tv_time).setText("时间 "+item.getTime());
             }
@@ -86,7 +86,6 @@ public class ExpenditureFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailActivity.startActivity(getActivity(), (DataBean) mRcView.getDataContent().get(pos));
     }
 
     @Override

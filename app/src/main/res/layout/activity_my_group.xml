@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/d5"
-            android:text="成员管理" />
+            android:text="社团成员" />
     </LinearLayout>
 
     <include layout="@layout/line"></include>

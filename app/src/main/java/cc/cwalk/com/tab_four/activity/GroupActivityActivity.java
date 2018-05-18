@@ -33,7 +33,9 @@ getData(1);
 
     @Override
     public void onRightClick() {
-PublishActivityActivity.startActivity(xContext);
+
+        if (SPUtils.getCreat() != 1)return;
+        PublishActivityActivity.startActivity(xContext);
     }
 
     @Override
@@ -54,7 +56,7 @@ PublishActivityActivity.startActivity(xContext);
 
                 GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 holder.getTextView(R.id.tv_title).setText(item.getActivity());
-                holder.getTextView(R.id.tv_number).setText("已包名人数："+DataUtils.getInstance().getRandow(11));
+                holder.getTextView(R.id.tv_number).setText("已报名人数："+DataUtils.getInstance().getRandow(11));
                 holder.getTextView(R.id.tv_time).setText(item.getJointime());
                 if (position<2)
                 holder.getTextView(R.id.tv_is_runing).setText("进行中");
