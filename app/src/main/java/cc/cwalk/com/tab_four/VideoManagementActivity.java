@@ -92,12 +92,6 @@ public class VideoManagementActivity extends BaseActivity {
         xContext.startActivity(new Intent(xContext, VideoManagementActivity.class));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.tv_history, R.id.tv_cache, R.id.tv_collection})
     public void onViewClicked(View view) {
@@ -147,7 +141,7 @@ public class VideoManagementActivity extends BaseActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
     }
 }

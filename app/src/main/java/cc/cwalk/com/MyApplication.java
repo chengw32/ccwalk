@@ -15,6 +15,7 @@ import java.util.List;
 
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 public class MyApplication extends Application {
     private static MyApplication instance;
@@ -37,6 +38,10 @@ public class MyApplication extends Application {
         }
         scale = getResources().getDisplayMetrics().density;
         instance = this;
+
+//        if (!SPUtils.isInit())
+        DataUtils.getInstance().initData();
+
     }
 
     public static float getScale(){

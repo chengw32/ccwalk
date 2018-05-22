@@ -88,12 +88,6 @@ public class MemberDetailActivity extends BaseActivity {
         xContext.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick(R.id.tv_del)
     public void onViewClicked() {

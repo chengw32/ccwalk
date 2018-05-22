@@ -64,12 +64,6 @@ public class ActivityDetailActivity extends BaseActivity {
         xContext.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.tv_call,R.id.tv_join})
     public void onViewClicked(View view) {

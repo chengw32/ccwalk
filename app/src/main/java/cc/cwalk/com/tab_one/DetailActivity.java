@@ -26,7 +26,9 @@ import butterknife.OnClick;
 import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
@@ -47,7 +49,8 @@ public class DetailActivity extends BaseListActivity {
     EditText mEtEvaluate;
     private int numZang = 30;
     private TextView tv_attention;
-    private DataBean bean;
+    private AllDataBean bean;
+    UserBean userById;
     private AutoFlowLayout af_heads;
     private TextView tv_num_zang;
 
@@ -64,7 +67,8 @@ public class DetailActivity extends BaseListActivity {
     @Override
     protected void initView() {
         super.initView();
-        bean = (DataBean) getIntent().getSerializableExtra("bean");
+        bean = (AllDataBean) getIntent().getSerializableExtra("bean");
+        userById = DataUtils.getInstance().getUserById(bean.userid);
         videoPlayer = findViewById(R.id.video_view);
         videoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,10 +78,10 @@ public class DetailActivity extends BaseListActivity {
         });
 
         ImageView image = new ImageView(this);
-        GlideUtils.lodeImage(bean.getVideos().get(0).getVideoImages(), image);
+        GlideUtils.lodeImage(bean.video.videoImages, image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        videoPlayer.setUp(DataUtils.baseUrl + bean.getVideos().get(0).getVideoUrl(), true, "");
+        videoPlayer.setUp(DataUtils.baseUrl + bean.video.videoUrl, true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
@@ -119,33 +123,28 @@ public class DetailActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeHeadImage(bean.getHead(), iv_head);
+
+        GlideUtils.lodeHeadImage(userById.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
-        tv_name.setText(bean.getName());
+        tv_name.setText(userById.name);
         TextView tv_des = view.findViewById(R.id.tv_des);
-        tv_des.setText(bean.getVideos().get(0).getTitle());
+        tv_des.setText(bean.video.content);
         tv_num_zang.setText("共有 " + numZang + " 个赞");
         af_heads = view.findViewById(R.id.af_heads);
         mRcView.addHeadView(view);
-        getZangUser();
+        initZang();
+        List dataContent = mRcView.getDataContent();
+        dataContent.addAll( bean.evaluate);
+        mRcView.complete();
+
     }
 
-    private void getZangUser() {
-        DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                //Gson解析数据
-                List<DataBean> data = GsonUtil.getData(result);
-                initHead(data);
-            }
-        });
-    }
 
-    private void initHead(final List<DataBean> data) {
-        numZang = data.size();
+    private void initZang() {
+        numZang = bean.zang.size();
         tv_num_zang.setText("共有 " + numZang + " 个赞");
-        for (int i = 0; i < data.size(); i++) {
+        for (int i = 0; i < bean.zang.size(); i++) {
 
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams((int) (20 * MyApplication.getScale()), (int) (20 * MyApplication.getScale()));
             CircleImageView imageView = new CircleImageView(xContext);
@@ -153,11 +152,10 @@ public class DetailActivity extends BaseListActivity {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
-            GlideUtils.lodeHeadImage(data.get(i).getHead(), imageView);
+            UserBean userById = DataUtils.getInstance().getUserById(bean.zang.get(i).id);
+            GlideUtils.lodeHeadImage(userById.head, imageView);
             af_heads.addView(imageView);
-
         }
-
     }
 
 
@@ -183,12 +181,12 @@ public class DetailActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<AllDataBean.EvaluateBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getStr().get(0).getTime());
-                holder.getTextView(R.id.tv_evaluate).setText(item.getStr().get(0).getDes());
+            public void bindData(RecyclerViewHolder holder, int position, AllDataBean.EvaluateBean item) {
+                holder.getTextView(R.id.tv_name).setText(DataUtils.getInstance().getUserById(item.userid).name);
+                holder.getTextView(R.id.tv_time).setText(item.time);
+                holder.getTextView(R.id.tv_evaluate).setText(item.des);
 
             }
 
@@ -207,7 +205,7 @@ public class DetailActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+        mRcView.complete();
     }
 
     @Override
@@ -215,21 +213,18 @@ public class DetailActivity extends BaseListActivity {
         return null;
     }
 
-    public static void startActivity(Context context, DataBean bean) {
+    public static void startActivity(Context context, AllDataBean bean) {
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("bean", bean);
         context.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick(R.id.tv_evaluate)
     public void onViewClicked() {
+
+        if (!SPUtils.isLoginWithToast())return;
+
         String trim = mEtEvaluate.getText().toString().trim();
         if (TextUtils.isEmpty(trim)) {
             ToastUtils.s("内容不能为空");
@@ -240,25 +235,17 @@ public class DetailActivity extends BaseListActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date curDate = new Date(System.currentTimeMillis());//获取当前时间
         String time = formatter.format(curDate);
+        List<AllDataBean.EvaluateBean> evaluate = bean.evaluate;
 
-        DataBean bean = new DataBean();
+        AllDataBean.EvaluateBean evaluateBean = new AllDataBean.EvaluateBean();
+        evaluateBean.userid = SPUtils.getId() ;
+        evaluateBean.des = trim ;
+        evaluateBean.time = time ;
+        evaluate.add(0,evaluateBean );
 
-
-        List<DataBean.StrBean> strBeans = new ArrayList<>();
-        //创建评论的bean
-        DataBean.StrBean strBean = new DataBean.StrBean();
-        strBean.setDes(trim);
-        strBean.setTime(time);
-        strBeans.add(strBean);
-
-        bean.setStr(strBeans);
-
-        bean.setName(SPUtils.getUserName());
-
-        List<DataBean> dataContent = mRcView.getDataContent();
-
-        dataContent.add(0,bean);
-
+        List dataContent = mRcView.getDataContent();
+        dataContent.clear();
+        dataContent.addAll( bean.evaluate);
         mRcView.complete();
 
         Utils.hideSoft(mEtEvaluate);

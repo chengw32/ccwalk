@@ -63,7 +63,8 @@ public class VideoFragment extends BaseListFragment{
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailActivity.startActivity(getActivity(), (DataBean) mRcView.getDataContent().get(pos));
+        //TODO  "跳转"
+//        DetailActivity.startActivity(getActivity(), (DataBean) mRcView.getDataContent().get(pos));
     }
 
     @Override

@@ -79,7 +79,7 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
             @Override
             public void onRefresh() {
                 //下拉刷新 把数据容器清空
-                mHeaderViewRecyclerAdapter.getDataContent().clear();
+//                mHeaderViewRecyclerAdapter.getDataContent().clear();
                 RefreshLoadMoreRecyclerView.this.onRefresh();
             }
         });
@@ -161,13 +161,13 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
     }
 
     public void onLoadMore() {
-        if (!mIsRefreshing) {
-            mIsRefreshing = true;
-            pageNo++;
-            setLoadMoreView();
-            if (null != onRefreshLoadMoreListener)
-                onRefreshLoadMoreListener.onLoadMore(pageNo);
-        }
+//        if (!mIsRefreshing) {
+//            mIsRefreshing = true;
+//            pageNo++;
+//            setLoadMoreView();
+//            if (null != onRefreshLoadMoreListener)
+//                onRefreshLoadMoreListener.onLoadMore(pageNo);
+//        }
     }
 
     /**
@@ -180,7 +180,7 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
         if (isRefreshing())
             setRefreshing(false);
         mIsRefreshing = false;
-        setNoMoreView();
+//        setNoMoreView();
     }
 
     /**
@@ -308,6 +308,10 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
     //获取数据容器
     public   List getDataContent(){
         return mHeaderViewRecyclerAdapter.getDataContent();
+    }
+    //清空数据
+    public  void clearDataContent(){
+        mHeaderViewRecyclerAdapter.getDataContent().clear();
     }
 
 }

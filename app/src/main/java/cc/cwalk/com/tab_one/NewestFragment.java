@@ -1,6 +1,5 @@
 package cc.cwalk.com.tab_one;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,12 +11,12 @@ import java.util.List;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.AllDataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
-import cc.cwalk.com.utils.GsonUtil;
-import cc.cwalk.com.utils.StringCallback;
 
 /**
  * 热门视频
@@ -34,13 +33,13 @@ public class NewestFragment extends BaseListFragment {
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<AllDataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, final DataBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, final AllDataBean item) {
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), item);
+//                        UserHomePagerActivity.startActivity(getActivity(), item);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
@@ -50,12 +49,13 @@ public class NewestFragment extends BaseListFragment {
                     }
                 });
                 //设置头像
-                GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
+                UserBean userById = DataUtils.getInstance().getUserById(item.userid);
+                GlideUtils.lodeHeadImage(userById.head, holder.getImageView(R.id.iv_head));
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
-                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.getVideos().get(0).getNumEvaluate());
-                holder.getTextView(R.id.tv_num_zang).setText("" + item.getVideos().get(0).getNumZang());
+                holder.getTextView(R.id.tv_name).setText(userById.name);
+                holder.getTextView(R.id.tv_des).setText(item.video.content);
+                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.evaluate.size());
+                holder.getTextView(R.id.tv_num_zang).setText("" + item.zang.size());
                 NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, item);
@@ -75,28 +75,40 @@ public class NewestFragment extends BaseListFragment {
         };
     }
 
-    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, DataBean item) {
+    private void setThumbImageView(NormalGSYVideoPlayer videoPlayer, AllDataBean item) {
         //增加封面
-        DataBean.VideosBean videoInfo = item.getVideos().get(0);
+        AllDataBean.VideoBean videoInfo = item.video;
         ImageView imageView = new ImageView(getActivity());
-        GlideUtils.lodeImage(videoInfo.getVideoImages(), imageView);
+        GlideUtils.lodeImage(videoInfo.videoImages, imageView);
         videoPlayer.setThumbImageView(imageView);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(DataUtils.baseUrl+videoInfo.getVideoUrl(), true, "");
+        videoPlayer.setUp(DataUtils.baseUrl + videoInfo.videoUrl, true, "");
     }
 
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DetailActivity.startActivity(getActivity(), (DataBean) mRcView.getDataContent().get(pos));
+        List<AllDataBean> dataContent = mRcView.getDataContent();
+        AllDataBean allDataBean = dataContent.get(pos - 1);
+        switch (allDataBean.type) {
+            case 1:
+                DetailActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                break;
+            case 2:
+                DetailImagesActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                break;
+            case 3:
+                DetailTextActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                break;
+        }
     }
 
-    Dialog mDialog ;
 
     @Override
     public void getData(int pageNo) {
-                DataUtils.getInstance().getDataList(mRcView);
+        mRcView.getDataContent().clear();
+        DataUtils.getInstance().getNewestList(mRcView);
     }
 
 }

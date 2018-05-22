@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.AllDataBean;
+import cc.cwalk.com.beans.UserBean;
 
 public class GsonUtil {
 	private static Gson gson;
@@ -45,4 +48,23 @@ public class GsonUtil {
 	}
 
 
+    public static List getUserList(String jsonString) {
+		Type listType = new TypeToken<List<UserBean>>() {}.getType();
+		List<GroupInfoBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+    public static  List getNewestList(String jsonString) {
+		Type listType = new TypeToken<List<AllDataBean>>() {}.getType();
+		List<AllDataBean> data = getGson().fromJson(jsonString, listType);
+		List<AllDataBean> backList = new ArrayList<>();
+		for (int i = 0; i < data.size(); i++) {
+			if (1 == data.get(i).type){backList.add(data.get(i));}
+		}
+		return backList ;
+    }
+    public static  List getAllList(String jsonString) {
+		Type listType = new TypeToken<List<AllDataBean>>() {}.getType();
+		List<AllDataBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
 }

@@ -69,10 +69,11 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
-        if (itembean.getVideos().get(0).getIsVideo() == 1)
-            DetailActivity.startActivity(xContext,itembean);
-        else
-            DetailImagesActivity.startActivity(MyMessageActivity.this,itembean);
+        //TODO
+//        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos);
+//        if (itembean.getVideos().get(0).getIsVideo() == 1)
+//            DetailActivity.startActivity(xContext,itembean);
+//        else
+//            DetailImagesActivity.startActivity(MyMessageActivity.this,itembean);
     }
 }

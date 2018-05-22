@@ -62,12 +62,6 @@
         android:gravity="center_horizontal"
         android:layout_marginRight="3dp">
 
-        <ImageView
-            android:layout_width="@dimen/d7"
-            android:layout_height="@dimen/d7"
-            android:visibility="gone"
-            android:layout_marginRight="@dimen/d2"
-            android:src="@drawable/ic_action" />
 
         <TextView
             android:id="@+id/tv_zang"

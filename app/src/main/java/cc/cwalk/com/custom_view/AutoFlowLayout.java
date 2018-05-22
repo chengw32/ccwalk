@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 public class AutoFlowLayout extends ViewGroup {
     public AutoFlowLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        // TODO Auto-generated constructor stub
     }
 
     public AutoFlowLayout(Context context, AttributeSet attrs) {
@@ -53,6 +52,8 @@ public class AutoFlowLayout extends ViewGroup {
             stageHeight = childAt.getMeasuredHeight() + childAt.getPaddingTop() + childAt.getPaddingBottom();
         }
         int wholeHeight = stageHeight * stages;
+
+
 
         // report this final dimension
         setMeasuredDimension(resolveSize(wholeWidth, widthMeasureSpec),

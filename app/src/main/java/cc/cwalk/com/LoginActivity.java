@@ -64,7 +64,9 @@ public class LoginActivity extends BaseActivity {
 
                 ToastUtils.s("登录成功");
                 SPUtils.setUserName(phone);
+                SPUtils.setUserName(phone);
                 SPUtils.setIsLogin(true);
+                SPUtils.setId(1);
                 if ("张伟塔".equals(phone))
                     SPUtils.setCreat(1);
                 else SPUtils.setCreat(0);

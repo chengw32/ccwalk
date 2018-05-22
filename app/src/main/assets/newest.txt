@@ -1,0 +1,100 @@
+﻿[{
+	"userid": 1,
+	"type": 1,
+	"evaluate": [{
+			"userid": 2,
+			"time": "2018-5-17",
+			"des": "岁月不老，情怀还在"
+		},
+		{
+		"userid": 1,
+			"time": "2018-5-17",
+			"des": "不仅仅是喜欢。。。。。"
+		},
+		{
+		"userid": 1,
+			"time": "2018-5-17",
+			"des": "D.LHX国内最强高清C WALK教程 by D.LHX："
+		}
+	],
+	"video": {
+		"numPaly": 2356,
+		"time": "2018-5-6",
+		"videoUrl": "sample.mp4",
+		"videoImages": "sample.png",
+		"images":["sample.png","sample.png"],
+		"content": "cwalk 各种快"
+	},
+	"zang": [{
+		"id": 1
+	}, {
+		"id": 2
+	}]
+},
+{
+	"userid": 2,
+	"type":2,
+	"evaluate": [{
+			"userid": 2,
+			"time": "2018-5-17",
+			"des": "岁月不老，情怀还在"
+		},
+		{
+		"userid": 1,
+			"time": "2018-5-17",
+			"des": "不仅仅是喜欢。。。。。"
+		},
+		{
+		"userid": 1,
+			"time": "2018-5-17",
+			"des": "D.LHX国内最强高清C WALK教程 by D.LHX："
+		}
+	],
+	"video": {
+		"numPaly": 2356,
+		"time": "2018-5-6",
+		"videoUrl": "",
+		"videoImages": "sample.png",
+		"images":["sample.png","sample.png"],
+		"content": "cwalk 各种快"
+	},
+	"zang": [{
+		"id": 1
+	}, {
+		"id": 2
+	}]
+},
+ {
+ 	"userid": 3,
+ 	"type":3,
+ 	"evaluate": [{
+ 			"userid": 2,
+ 			"time": "2018-5-17",
+ 			"des": "岁月不老，情怀还在"
+ 		},
+ 		{
+ 		"userid": 1,
+ 			"time": "2018-5-17",
+ 			"des": "不仅仅是喜欢。。。。。"
+ 		},
+ 		{
+ 		"userid": 2,
+ 			"time": "2018-5-17",
+ 			"des": "D.LHX国内最强高清C WALK教程 by D.LHX："
+ 		}
+ 	],
+ 	"video": {
+ 		"numPaly": 2356,
+ 		"time": "2018-5-6",
+ 		"videoUrl": "",
+ 		"videoImages": "sample.png",
+ 		"images":["sample.png","sample.png"],
+ 		"content": "cwalk 各种快"
+ 	},
+ 	"zang": [{
+ 		"id": 1
+ 	}, {
+ 		"id": 2
+ 	}]
+ }
+]

@@ -1,28 +1,35 @@
 package cc.cwalk.com.beans;
 
-import java.io.Serializable;
-
-import cc.cwalk.com.utils.DataUtils;
-
 /**
  * Author chen_gw
  * Date 2018/4/24 16:35
  * DES :
  */
 public class UserBean extends BaseBean{
-    public String name ;// 名字
-    public String adress ;//所在地
-    public String attentiontime ;//关注时间
-    public String befanstime;//成为粉丝时间
-    public String head ;
-    public int sex ;//1 男 其他 女
 
-    public UserBean(String name, String adress, String attentiontime, String befanstime, String head, int sex) {
-        this.name = name;
-        this.adress = adress;
-        this.attentiontime = attentiontime;
-        this.befanstime = befanstime;
-        this.head = DataUtils.baseheadUrl + head;
-        this.sex = sex;
-    }
+    /**
+     * name : 张伟塔
+     * sex : 1
+     * id : 1
+     * creater : 1
+     * manager : 0
+     * grade : 大三
+     * college : 理工
+     * profession : 计算机科学与技术
+     * jointime : 2018-5-6
+     * persondes : 做一条有梦想的咸鱼
+     * head : 03514dbb47703398b8a96b1a9ab013c6.jpg
+     */
+
+    public String name;
+    public int sex;
+    public int id;
+    public int creater;
+    public int manager;
+    public String grade;
+    public String college;
+    public String profession;
+    public String jointime;
+    public String persondes;
+    public String head;
 }

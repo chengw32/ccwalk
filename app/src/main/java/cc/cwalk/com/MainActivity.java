@@ -23,7 +23,9 @@ import cc.cwalk.com.tab_four.MeFragment;
 import cc.cwalk.com.tab_one.FindFragment;
 import cc.cwalk.com.tab_three.CommunityFragment;
 import cc.cwalk.com.tab_two.AttentionFragment;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
+import cc.cwalk.com.utils.ToastUtils;
 
 public class MainActivity extends BaseActivity {
     @Bind(R.id.iv_tab_1)
@@ -148,7 +150,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
     }
 
 

@@ -17,11 +17,15 @@ public class SPUtils {
      */  
     private static final String FILE_NAME = "sp_data";  
     private static final String IS_LOGIN = "islogin";//登录状态
+    private static final String IS_INIT = "isinit";//登录状态
     private static final String PHONE = "phone";//手机号
+    private static final String ID = "id";//id
     private static final String NAME = "name";//昵称
     private static final String QQ = "QQ";
     private static final String SEX = "sex";//1 男 其他 女性
     private static final String CREAT = "1";//
+    private static final String userlist = "userlist";//
+    private static final String newestlist = "newestlist";//
     private static SharedPreferences	sp;
 
     /**
@@ -49,6 +53,23 @@ public class SPUtils {
         SharedPreferences sp = getPreferences();
        return sp.getBoolean(IS_LOGIN,false);
     }
+    public static void setIsLogin(boolean isLogin) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putBoolean(IS_LOGIN,isLogin);
+        editor.commit();
+    }
+
+    //----------------------------------是否初始化过数据---------------------------------
+    public static boolean isInit(){
+        SharedPreferences sp = getPreferences();
+       return sp.getBoolean(IS_INIT,false);
+    }
+    public static void setIsInit(boolean isLogin) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putBoolean(IS_INIT,isLogin);
+        editor.commit();
+    }
+
     //判断登录状态 有提示的方法
     public static boolean isLoginWithToast(){
         SharedPreferences sp = getPreferences();
@@ -72,11 +93,16 @@ public class SPUtils {
         return sp.getString(NAME,"");
     }
 
-    public static void setIsLogin(boolean isLogin) {
+    public static int getId() {
+        SharedPreferences sp = getPreferences();
+        return sp.getInt(ID,0);
+    }
+    public static void setId(int id) {
         SharedPreferences.Editor editor = getEditor();
-        editor.putBoolean(IS_LOGIN,isLogin);
+        editor.putInt(ID,id);
         editor.commit();
     }
+
 
     public static void setPhone(String phone) {
         SharedPreferences.Editor editor = getEditor();
@@ -107,4 +133,28 @@ public class SPUtils {
         SharedPreferences sp = getPreferences();
         return sp.getInt(CREAT,0);
     }
+
+    public static void setUser(String user) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(userlist,user);
+        editor.commit();
+    }
+    public static String getUser() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(userlist,"");
+    }
+
+    public static void setNewest(String newest) {
+        LogUtils.e(newest);
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(newestlist,newest);
+        editor.commit();
+    }
+
+    public static String getNewest() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(newestlist,"");
+    }
+
+
 }

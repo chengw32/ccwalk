@@ -114,12 +114,6 @@ public class ExpenditureActivity extends BaseActivity {
         xContext.startActivity(new Intent(xContext, ExpenditureActivity.class));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.tv_history, R.id.tv_cache})
     public void onViewClicked(View view) {

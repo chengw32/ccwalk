@@ -50,9 +50,10 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        if (bean.getVideos().get(0).getIsVideo() == 1)
-        DetailActivity.startActivity(xContext,bean);
-        else DetailImagesActivity.startActivity(xContext,bean);
+        //TODO  跳转
+//        if (bean.getVideos().get(0).getIsVideo() == 1)
+//        DetailActivity.startActivity(xContext,bean);
+//        else DetailImagesActivity.startActivity(xContext,bean);
     }
 
 

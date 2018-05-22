@@ -38,12 +38,6 @@ public class CreditsStoreActivity extends BaseActivity {
         context.startActivity(new Intent(context, CreditsStoreActivity.class));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.tv_buy4, R.id.tv_buy3, R.id.tv_buy2, R.id.tv_buy1, R.id.tv_buy})
     public void onViewClicked(View view) {

@@ -1,11 +1,15 @@
 package cc.cwalk.com.utils;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Random;
 
+import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.AllDataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.RefreshLoadMoreRecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -34,22 +38,40 @@ public class DataUtils {
         return mInstance;
     }
 
-    public int getRandow(int seed){
+
+   public void initData(){
+        initUser("user.txt");
+        initNewest("newest.txt");
+
+        SPUtils.setIsInit(true);
+   }
+
+    private void initNewest(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setNewest(assetsFile);
+    }
+
+    private void initUser(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setUser(assetsFile);
+    }
+
+    public int getRandow(int seed) {
         return new Random().nextInt(seed);
     }
 
- public void getDataList(final RefreshLoadMoreRecyclerView mRcView){
-     DataUtils.getInstance().getJsonFromService(new StringCallback() {
-         @Override
-         public void success(String result) {
-             //Gson解析数据
-             List<DataBean> data = GsonUtil.getData(result);
-             List dataContent = mRcView.getDataContent();
-             dataContent.addAll(data);
-             mRcView.complete();
-         }
-     });
- }
+    public void getDataList(final RefreshLoadMoreRecyclerView mRcView) {
+        DataUtils.getInstance().getJsonFromService(new StringCallback() {
+            @Override
+            public void success(String result) {
+                //Gson解析数据
+                List<DataBean> data = GsonUtil.getData(result);
+                List dataContent = mRcView.getDataContent();
+                dataContent.addAll(data);
+                mRcView.complete();
+            }
+        });
+    }
 
     public void getJsonFromService(final StringCallback callBack) {
 
@@ -92,7 +114,7 @@ public class DataUtils {
 
     }
 
-    public void getGroupList(final RefreshLoadMoreRecyclerView mRcView){
+    public void getGroupList(final RefreshLoadMoreRecyclerView mRcView) {
         DataUtils.getInstance().getJsonGroup(new StringCallback() {
             @Override
             public void success(String result) {
@@ -145,6 +167,55 @@ public class DataUtils {
 
 
     }
+
+
+    private String getAssetsFile(String fileName) {
+        try {
+            InputStream is = MyApplication.getContext().getAssets().open(fileName);
+            int lenght = is.available();
+            byte[] buffer = new byte[lenght];
+            is.read(buffer);
+            return new String(buffer, "utf8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "" ;
+    }
+
+    //--------------------------用户数据-----------------------------------
+
+    public  List getUserList() {
+        return GsonUtil.getUserList(SPUtils.getUser());
+    }
+    public  UserBean getUserById(int id) {
+        List<UserBean> userList =getUserList();
+        for (int i = 0; i <userList.size() ; i++) {
+            if (id == userList.get(i).id)return userList.get(i);
+        }
+        return new UserBean() ;
+    }
+
+
+    //--------------------------最新-----------------------------------
+
+    public List<AllDataBean> getNewestList(RefreshLoadMoreRecyclerView mRcView) {
+        List<AllDataBean> list = GsonUtil.getNewestList(SPUtils.getNewest());
+        List dataContent = mRcView.getDataContent();
+        dataContent.addAll(list);
+        mRcView.complete();
+        return list;
+    }
+    //--------------------------社区-----------------------------------
+
+    public List<AllDataBean> getAllList(RefreshLoadMoreRecyclerView mRcView) {
+        List<AllDataBean> list = GsonUtil.getAllList(SPUtils.getNewest());
+        List dataContent = mRcView.getDataContent();
+        dataContent.addAll(list);
+        mRcView.complete();
+        return list;
+    }
+
 
 
 }

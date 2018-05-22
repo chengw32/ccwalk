@@ -58,10 +58,4 @@ public class PublishNoticeActivity extends BaseActivity {
         context.startActivity(new Intent(context, PublishNoticeActivity.class));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

@@ -87,12 +87,6 @@ public class PublishActivityActivity extends BaseActivity {
         xContext.startActivity(new Intent(xContext, PublishActivityActivity.class));
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.add_pic, R.id.et_title})
     public void onViewClicked(View view) {

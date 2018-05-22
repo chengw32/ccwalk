@@ -13,11 +13,14 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
+import cc.cwalk.com.tab_one.DetailTextActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
@@ -30,7 +33,7 @@ import cc.cwalk.com.utils.StringCallback;
  */
 public class AttentionFragment extends BaseListFragment {
 
-    private  View inflate ;
+    private View inflate;
 
     @Override
     public void initView(View v) {
@@ -42,7 +45,7 @@ public class AttentionFragment extends BaseListFragment {
     }
 
 
-    private void initHead(final List<DataBean> data){
+    private void initHead(final List<DataBean> data) {
 
         inflate.findViewById(R.id.tv_more).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,28 +75,49 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<AllDataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, final DataBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, final AllDataBean item) {
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserHomePagerActivity.startActivity(getActivity(), item);
+                        //TODO  跳转
+//                        UserHomePagerActivity.startActivity(getActivity(), item);
+
                     }
                 });
+                View view = holder.getView(R.id.rl_image_video);
                 View iv_isvideo = holder.getView(R.id.iv_isvideo);
-                if (item.getVideos().get(0).getIsVideo() == 1)iv_isvideo.setVisibility(View.VISIBLE);
-                else iv_isvideo.setVisibility(View.GONE);
+                if (item.type == 3) {
+                    //纯文本
+                    view.setVisibility(View.GONE);
+                } else {
+                    //设置图片
+                    view.setVisibility(View.VISIBLE);
+                    if (item.type == 1) {
+                        //视频
+                        GlideUtils.lodeImage(item.video.videoImages, holder.getImageView(R.id.iv_images));
+                        iv_isvideo.setVisibility(View.VISIBLE);
+                    }
+                    else {
+                    //图片
+                        GlideUtils.lodeImage(item.video.images.get(0), holder.getImageView(R.id.iv_images));
+                        iv_isvideo.setVisibility(View.GONE);
+                    }
+
+                }
+
+
                 //设置头像
-                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
-                //设置图片
-                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
+                UserBean userById = DataUtils.getInstance().getUserById(item.userid);
+                GlideUtils.lodeHeadImage(userById.head, holder.getImageView(R.id.iv_head));
+
                 //设置名字
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
-                holder.getTextView(R.id.tv_des).setText(item.getVideos().get(0).getTitle());
-                holder.getTextView(R.id.tv_num_evaluate).setText(""+item.getVideos().get(0).getNumEvaluate());
-                holder.getTextView(R.id.tv_num_zang).setText(""+item.getVideos().get(0).getNumZang());
+                holder.getTextView(R.id.tv_name).setText(userById.name);
+                holder.getTextView(R.id.tv_time).setText(item.video.time);
+                holder.getTextView(R.id.tv_des).setText(item.video.content);
+                holder.getTextView(R.id.tv_num_evaluate).setText("" + item.evaluate.size());
+                holder.getTextView(R.id.tv_num_zang).setText("" + item.zang.size());
             }
 
             @Override
@@ -117,26 +141,25 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        DataBean itembean = (DataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
-        if (itembean.getVideos().get(0).getIsVideo() == 1)
-            DetailActivity.startActivity(xContext,itembean);
-        else
-        DetailImagesActivity.startActivity(getActivity(),itembean);
+        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
+        switch (itembean.type) {
+            case 1:
+                DetailActivity.startActivity(getActivity(), itembean);
+                break;
+            case 2:
+                DetailImagesActivity.startActivity(getActivity(), itembean);
+                break;
+            case 3:
+                DetailTextActivity.startActivity(getActivity(),itembean);
+                break;
+        }
 
     }
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getJsonFromService(new StringCallback() {
-            @Override
-            public void success(String result) {
-                List<DataBean> data = GsonUtil.getData(result);
-                initHead(data);
-                List dataContent = mRcView.getDataContent();
-                dataContent.addAll(data);
-                mRcView.complete();
-            }
-        });
+        mRcView.clearDataContent();
+        DataUtils.getInstance().getAllList(mRcView);
     }
 
 
