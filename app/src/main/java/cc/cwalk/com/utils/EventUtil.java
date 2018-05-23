@@ -15,9 +15,11 @@ import org.greenrobot.eventbus.EventBus;
 public class EventUtil {
 
 	public final static String ACT_LOGIN = "login";
+	public final static String ACT_REFRESH = "refresh";
 	public final static String IMAGE_VIDEO = "pickerimages";
 	public final static String NOTICE_PUBLISH = "publish";
 	public final static String REMOVE_MEMBER = "removemember";
+	public final static String REMOVE_ATTENTION = "removeattention";
 	/**
 	 * 注册订阅者
 	 * @param context

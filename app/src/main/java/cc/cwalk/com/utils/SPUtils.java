@@ -17,15 +17,12 @@ public class SPUtils {
      */  
     private static final String FILE_NAME = "sp_data";  
     private static final String IS_LOGIN = "islogin";//登录状态
-    private static final String IS_INIT = "isinit";//登录状态
-    private static final String PHONE = "phone";//手机号
+    private static final String IS_INIT = "isinit";//数据初始化
     private static final String ID = "id";//id
-    private static final String NAME = "name";//昵称
-    private static final String QQ = "QQ";
-    private static final String SEX = "sex";//1 男 其他 女性
-    private static final String CREAT = "1";//
     private static final String userlist = "userlist";//
     private static final String newestlist = "newestlist";//
+    private static final String fanslist = "fanslist";//
+    private static final String attentionlist = "attentionlist";//
     private static SharedPreferences	sp;
 
     /**
@@ -78,20 +75,6 @@ public class SPUtils {
        return aBoolean ;
     }
 
-    public static void setUserName(String name) {
-        SharedPreferences.Editor editor = getEditor();
-        editor.putString(NAME,name);
-        editor.commit();
-    }
-    public static void setQQName(String name) {
-        SharedPreferences.Editor editor = getEditor();
-        editor.putString(QQ,name);
-        editor.commit();
-    }
-    public static String getUserName() {
-        SharedPreferences sp = getPreferences();
-        return sp.getString(NAME,"");
-    }
 
     public static int getId() {
         SharedPreferences sp = getPreferences();
@@ -103,36 +86,6 @@ public class SPUtils {
         editor.commit();
     }
 
-
-    public static void setPhone(String phone) {
-        SharedPreferences.Editor editor = getEditor();
-        editor.putString(PHONE,phone);
-        editor.commit();
-    }
-    public static String getPhone() {
-        SharedPreferences sp = getPreferences();
-        return sp.getString(PHONE,"");
-    }
-    public static void setSex(int sex) {
-        SharedPreferences.Editor editor = getEditor();
-        editor.putInt(SEX,sex);
-        editor.commit();
-    }
-
-    public static int getSex() {
-        SharedPreferences sp = getPreferences();
-        return sp.getInt(SEX,0);
-    }
-
-    public static void setCreat(int creat) {
-        SharedPreferences.Editor editor = getEditor();
-        editor.putInt(CREAT,creat);
-        editor.commit();
-    }
-    public static int getCreat() {
-        SharedPreferences sp = getPreferences();
-        return sp.getInt(CREAT,0);
-    }
 
     public static void setUser(String user) {
         SharedPreferences.Editor editor = getEditor();
@@ -153,7 +106,27 @@ public class SPUtils {
 
     public static String getNewest() {
         SharedPreferences sp = getPreferences();
-        return sp.getString(newestlist,"");
+        String string = sp.getString(newestlist, "");
+        LogUtils.e("读取newest   "+string);
+        return string;
+    }
+    public static String getFansList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(fanslist,"");
+    }
+    public static void setFans(String fans) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(fanslist,fans);
+        editor.commit();
+    }
+    public static String getAttentionList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(attentionlist,"");
+    }
+    public static void setAttentionList(String fans) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(attentionlist,fans);
+        editor.commit();
     }
 
 

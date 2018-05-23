@@ -30,12 +30,12 @@ public class GroupNoticeActivity extends BaseListActivity {
 
     @Override
     public void setRightText(String text) {
-        super.setRightText(SPUtils.getCreat()==1?"发布公告":"");
+        super.setRightText(DataUtils.getInstance().getCreater()==1?"发布公告":"");
     }
 
     @Override
     public void onRightClick() {
-        if (SPUtils.getCreat() != 1)return;
+        if (DataUtils.getInstance().getCreater() != 1)return;
        PublishNoticeActivity.startActivity(xContext);
     }
 
@@ -83,7 +83,7 @@ public class GroupNoticeActivity extends BaseListActivity {
 
             bean.setStr(strBeans);
 
-            bean.setName(SPUtils.getUserName());
+            bean.setName(DataUtils.getInstance().getUserById(SPUtils.getId()).name);
 
             List<DataBean> dataContent = mRcView.getDataContent();
 

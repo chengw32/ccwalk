@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -35,13 +38,18 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getGroupList(mRcView);
+
+        mRcView.clearDataContent();
+        List<UserBean> userList = DataUtils.getInstance().getUserList();
+        mRcView.getDataContent().addAll(userList);
+        mRcView.complete();
+
     }
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
         if (EventUtil.REMOVE_MEMBER.equals(event.getAction())){
-            GroupInfoBean bean = (GroupInfoBean) event.getData();
+            UserBean bean = (UserBean) event.getData();
             mRcView.getDataContent().remove(bean);
             mRcView.notifyDataSetChanged();
         }
@@ -49,21 +57,21 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<GroupInfoBean>() {
+        return new BaseRecyclerAdapter<UserBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, GroupInfoBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, UserBean item) {
 
 
                 TextView textView = holder.getTextView(R.id.tv_type);
                 if (position< 10){
-                    if (item.getCreater() == 1) {
+                    if (item.creater == 1) {
                         textView.setVisibility(View.VISIBLE);
                         textView.setText("会长、副会长");
-                    } else if (item.getManager() == 1) {
+                    } else if (item.manager == 1) {
                         if (position > 0) {
-                            GroupInfoBean groupInfoBean = (GroupInfoBean) mRcView.getDataContent().get(position - 1);
-                            int manager = groupInfoBean.getManager();
-                            int manager1 = item.getManager();
+                            UserBean groupInfoBean = (UserBean) mRcView.getDataContent().get(position - 1);
+                            int manager = groupInfoBean.manager;
+                            int manager1 = item.manager;
                             if (manager == manager1){
                                 textView.setVisibility(View.GONE);
                             }else textView.setVisibility(View.VISIBLE);
@@ -74,7 +82,7 @@ public class GroupMemberActivity extends BaseListActivity {
                     }else {
                         GroupInfoBean groupInfoBean = (GroupInfoBean) mRcView.getDataContent().get(position - 1);
                         int manager = groupInfoBean.getManager();
-                        int manager1 = item.getManager();
+                        int manager1 = item.manager;
                         if (manager == manager1){
                             textView.setVisibility(View.GONE);
                         }else textView.setVisibility(View.VISIBLE);
@@ -85,9 +93,9 @@ public class GroupMemberActivity extends BaseListActivity {
                 }
 
 
-                holder.getTextView(R.id.tv_name).setText(item.getNiname());
-                holder.getTextView(R.id.tv_des).setText("入团时间： " + item.getJointime());
-                GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(item.name);
+                holder.getTextView(R.id.tv_des).setText("入团时间： " + item.jointime);
+                GlideUtils.lodeImage(item.head, holder.getImageView(R.id.iv_head));
                 final TextView tv_zang = holder.getTextView(R.id.tv_allow);
 //                tv_zang.setOnClickListener(new View.OnClickListener() {
 //                    @Override
@@ -119,6 +127,6 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        MemberDetailActivity.startActivity(xContext, (GroupInfoBean) mRcView.getDataContent().get(pos));
+        MemberDetailActivity.startActivity(xContext, (UserBean) mRcView.getDataContent().get(pos));
     }
 }

@@ -51,7 +51,7 @@ public class JoinGroupActivity extends BaseListActivity {
             public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
                     holder.getTextView(R.id.tv_name).setText(item.getName());
                     holder.getTextView(R.id.tv_des).setText(item.getStr().get(0).getDes());
-                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 final TextView tv_zang = holder.getTextView(R.id.tv_allow);
                 tv_zang.setOnClickListener(new View.OnClickListener() {
                     @Override

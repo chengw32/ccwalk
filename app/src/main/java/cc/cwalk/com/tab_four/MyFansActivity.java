@@ -4,17 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-
 import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
-import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.AttentionBean;
+import cc.cwalk.com.beans.FansBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
-import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.DialogUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.SPUtils;
 
 public class MyFansActivity extends BaseListActivity {
 
@@ -26,26 +29,28 @@ public class MyFansActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        List<DataBean> data = mRcView.getDataContent();
-        UserHomePagerActivity.startActivity(xContext,data.get(pos));
+        //TODO
+//        List<DataBean> data = mRcView.getDataContent();
+//        UserHomePagerActivity.startActivity(xContext,data.get(pos));
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<FansBean.FanslistBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
+            public void bindData(RecyclerViewHolder holder, final int position, FansBean.FanslistBean item) {
                 holder.getView(R.id.tv_remove).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRcView.getDataContent().remove(position);
-                        mRcView.notifyDataSetChanged();
+                        moveFans(position);
+
                     }
                 });
                 //设置头像
-                GlideUtils.lodeHeadImage(item.getHead(), holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getBefanstime()+" 成为你的粉丝");
+                UserBean userById = DataUtils.getInstance().getUserById(item.id);
+                GlideUtils.lodeImage(userById.head, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_name).setText(userById.name);
+                holder.getTextView(R.id.tv_time).setText(item.befanstime + " 成为你的粉丝");
 
             }
 
@@ -63,18 +68,59 @@ public class MyFansActivity extends BaseListActivity {
         };
     }
 
+    private void moveFans(final int position) {
+
+        DialogUtils.showTopicDialogsCustom("确定移除？", xContext, new DialogUtils.DialogClickBack() {
+            @Override
+            public void define() {
+                FansBean.FanslistBean o = (FansBean.FanslistBean) mRcView.getDataContent().get(position);
+                //从粉丝列表移除
+
+                //保存数据
+                saveFans(position);
+
+                mRcView.notifyDataSetChanged();
+            }
+
+            @Override
+            public void cancel() {
+
+            }
+        });
+
+    }
+
+    private void saveFans(int position) {
+        mRcView.getDataContent().remove(position);
+        for (int i = 0; i < fansList.size(); i++) {
+            if (SPUtils.getId() == fansList.get(i).id) {
+                fansList.get(i).fanslist = mRcView.getDataContent();
+                SPUtils.setFans(GsonUtil.toJosn(fansList));
+            }
+        }
+    }
+
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+        mRcView.complete();
     }
 
     public static void startActivity(Context context) {
-        context.startActivity(new Intent(context,MyFansActivity.class));
+        context.startActivity(new Intent(context, MyFansActivity.class));
     }
 
+    List<FansBean> fansList;
 
     @Override
     protected void initData() {
-        getData(1);
+        mRcView.clearDataContent();
+        fansList = DataUtils.getInstance().getFansList();
+        for (int i = 0; i < fansList.size(); i++) {
+            if (SPUtils.getId() == fansList.get(i).id) {
+                mRcView.getDataContent().addAll(fansList.get(i).fanslist);
+                mRcView.complete();
+                return;
+            }
+        }
     }
 }

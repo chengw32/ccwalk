@@ -57,17 +57,24 @@ public class PickerDialog extends Dialog implements View.OnClickListener {
                 dismiss();
             }
         });
-        findViewById(R.id.tv_photo).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_pic).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPickCallBack.photo();
                 dismiss();
             }
         });
-        findViewById(R.id.tv_camera).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPickCallBack.camera();
+                mPickCallBack.video();
+                dismiss();
+            }
+        });
+        findViewById(R.id.tv_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPickCallBack.text();
                 dismiss();
             }
         });
@@ -82,9 +89,10 @@ public class PickerDialog extends Dialog implements View.OnClickListener {
         }
     }
     public interface PickCallBack {
-         void camera();
-
          void photo();
+
+         void video();
+         void text();
 
     }
 

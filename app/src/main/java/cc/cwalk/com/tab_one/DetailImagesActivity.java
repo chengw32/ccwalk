@@ -89,7 +89,7 @@ public class DetailImagesActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeHeadImage(userById.head, iv_head);
+        GlideUtils.lodeImage(userById.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(userById.name);
@@ -141,7 +141,7 @@ public class DetailImagesActivity extends BaseListActivity {
             }
         });
 
-        numZang = mBean.zang.size();
+        numZang = mBean.zang != null ?mBean.zang.size():0;
         tv_num_zang.setText("共有 " + numZang + " 个赞");
         for (int i = 0; i < mBean.zang.size(); i++) {
 
@@ -152,7 +152,7 @@ public class DetailImagesActivity extends BaseListActivity {
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
             UserBean userById = DataUtils.getInstance().getUserById(mBean.zang.get(i).id);
-            GlideUtils.lodeHeadImage(userById.head, imageView);
+            GlideUtils.lodeImage(userById.head, imageView);
             af_heads.addView(imageView);
         }
     }

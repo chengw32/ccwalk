@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
@@ -17,15 +18,16 @@ import java.io.File;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.base.BaseActivity;
+import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.tab_four.MeFragment;
 import cc.cwalk.com.tab_one.FindFragment;
 import cc.cwalk.com.tab_three.CommunityFragment;
+import cc.cwalk.com.tab_three.PublishActivity;
 import cc.cwalk.com.tab_two.AttentionFragment;
-import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
-import cc.cwalk.com.utils.ToastUtils;
 
 public class MainActivity extends BaseActivity {
     @Bind(R.id.iv_tab_1)
@@ -66,7 +68,7 @@ public class MainActivity extends BaseActivity {
         mTvTab1.setSelected(true);
 
         GSYVideoManager instance = GSYVideoManager.instance();
-        instance.newProxy(xContext,new File(MyApplication.cachePath));
+        instance.newProxy(xContext, new File(MyApplication.cachePath));
     }
 
     @Override
@@ -81,7 +83,7 @@ public class MainActivity extends BaseActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
                     // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
-                    EventUtil.sendEvent(EventUtil.IMAGE_VIDEO,selectList);
+                    EventUtil.sendEvent(EventUtil.IMAGE_VIDEO, selectList);
                     break;
             }
         }
@@ -96,23 +98,23 @@ public class MainActivity extends BaseActivity {
      * Creat By_Chen
      * Time 2018/4/20 22:29
      * Des 切换片段
-     * */
+     */
     public void changeFragment(Fragment currentFragment) {
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
 
         if (null != findFragment && findFragment.isVisible())
-        transaction.hide(findFragment);
+            transaction.hide(findFragment);
         if (null != attentionFragment && attentionFragment.isVisible())
-        transaction.hide(attentionFragment);
+            transaction.hide(attentionFragment);
         if (null != commFragment && commFragment.isVisible())
-        transaction.hide(commFragment);
+            transaction.hide(commFragment);
         if (null != meFragment && meFragment.isVisible())
-        transaction.hide(meFragment);
+            transaction.hide(meFragment);
 
         if (!currentFragment.isAdded())
-        transaction.add(R.id.home_content,currentFragment);
+            transaction.add(R.id.home_content, currentFragment);
         transaction.show(currentFragment);
 
         //不保留状态提交事务
@@ -127,7 +129,7 @@ public class MainActivity extends BaseActivity {
      */
     private Fragment getInstanceByIndex(int index) {
         switch (index) {
-            case 1 ://发现
+            case 1://发现
                 if (findFragment == null)
                     findFragment = new FindFragment();
                 return findFragment;
@@ -153,12 +155,12 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_tab_1, R.id.ll_tab_2, R.id.ll_tab_3, R.id.ll_tab_4})
+    @OnClick({R.id.ll_publish,R.id.ll_tab_1, R.id.ll_tab_2, R.id.ll_tab_3, R.id.ll_tab_4})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_tab_1:
 
-                if (mIvTab1.isSelected())return;
+                if (mIvTab1.isSelected()) return;
                 mIvTab1.setSelected(true);
                 mTvTab1.setSelected(true);
                 mIvTab2.setSelected(false);
@@ -170,7 +172,7 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(1));
                 break;
             case R.id.ll_tab_2:
-                if (mIvTab2.isSelected())return;
+                if (mIvTab2.isSelected()) return;
                 mIvTab1.setSelected(false);
                 mTvTab1.setSelected(false);
                 mIvTab2.setSelected(true);
@@ -182,7 +184,7 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(2));
                 break;
             case R.id.ll_tab_3:
-                if (mIvTab3.isSelected())return;
+                if (mIvTab3.isSelected()) return;
                 mIvTab1.setSelected(false);
                 mTvTab1.setSelected(false);
                 mIvTab2.setSelected(false);
@@ -194,7 +196,7 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(3));
                 break;
             case R.id.ll_tab_4:
-                if (mIvTab4.isSelected())return;
+                if (mIvTab4.isSelected()) return;
                 mIvTab1.setSelected(false);
                 mTvTab1.setSelected(false);
                 mIvTab2.setSelected(false);
@@ -205,6 +207,40 @@ public class MainActivity extends BaseActivity {
                 mTvTab4.setSelected(true);
                 changeFragment(getInstanceByIndex(4));
                 break;
+            case R.id.ll_publish:
+                PickerDialog pickerDialog = new PickerDialog(MainActivity.this, new PickerDialog.PickCallBack() {
+                    @Override
+                    public void video() {
+
+                        PictureSelector.create(MainActivity.this)
+                                .openGallery(PictureMimeType.ofVideo())
+                                .maxSelectNum(1)
+                                .forResult(PictureConfig.CHOOSE_REQUEST);
+                    }
+
+                    @Override
+                    public void photo() {
+                        PictureSelector.create(MainActivity.this)
+                                .openGallery(PictureMimeType.ofImage())
+                                .forResult(PictureConfig.CHOOSE_REQUEST);
+
+                    }
+
+                    @Override
+                    public void text() {
+                        PublishActivity.startActivity(xContext,null);
+                    }
+                });
+                pickerDialog.show();
+                break;
         }
     }
+
+    @Override
+    public void onMessageEvent(EventUtil.BaseEvent event) {
+        if (EventUtil.IMAGE_VIDEO.equals(event.getAction())){
+            PublishActivity.startActivity(xContext,event.getData());
+        }
+    }
+
 }

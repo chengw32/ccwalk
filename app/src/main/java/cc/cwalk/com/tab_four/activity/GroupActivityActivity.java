@@ -28,13 +28,14 @@ getData(1);
 
     @Override
     public void setRightText(String text) {
-        super.setRightText(SPUtils.getCreat() == 1 ?"发布活动":"");
+
+        super.setRightText(DataUtils.getInstance().getCreater() == 1 ?"发布活动":"");
     }
 
     @Override
     public void onRightClick() {
 
-        if (SPUtils.getCreat() != 1)return;
+        if (DataUtils.getInstance().getCreater() != 1)return;
         PublishActivityActivity.startActivity(xContext);
     }
 
@@ -54,7 +55,7 @@ getData(1);
             @Override
             public void bindData(RecyclerViewHolder holder, int position, GroupInfoBean item) {
 
-                GlideUtils.lodeHeadImage(item.getHead(),holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
                 holder.getTextView(R.id.tv_title).setText(item.getActivity());
                 holder.getTextView(R.id.tv_number).setText("已报名人数："+DataUtils.getInstance().getRandow(11));
                 holder.getTextView(R.id.tv_time).setText(item.getJointime());

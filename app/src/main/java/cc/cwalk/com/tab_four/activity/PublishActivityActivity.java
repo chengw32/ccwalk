@@ -116,7 +116,7 @@ public class PublishActivityActivity extends BaseActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
                     // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
-                    GlideUtils.lodeLocalImage(selects.get(0).getCutPath(), mIvImage);
+                    GlideUtils.lodeImage(selects.get(0).getCutPath(), mIvImage);
                     break;
             }
         }

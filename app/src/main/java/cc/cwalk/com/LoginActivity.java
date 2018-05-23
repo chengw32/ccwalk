@@ -6,10 +6,14 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.widget.EditText;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.OnClick;
 import cc.cwalk.com.base.BaseActivity;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.utils.EventUtil;
+import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
 
@@ -58,23 +62,22 @@ public class LoginActivity extends BaseActivity {
             return;
         }
 
-        if ("cwalk".equals(phone) || "张伟塔".equals(phone)) {
+        List<UserBean> userList = GsonUtil.getUserList(SPUtils.getUser());
+        for (int i = 0; i < userList.size(); i++) {
+            UserBean userBean = userList.get(i);
+            if (userBean.name.equals(phone)) {
+                if ("123456".equals(psw)) {
 
-            if ("123456".equals(psw)){
-
-                ToastUtils.s("登录成功");
-                SPUtils.setUserName(phone);
-                SPUtils.setUserName(phone);
-                SPUtils.setIsLogin(true);
-                SPUtils.setId(1);
-                if ("张伟塔".equals(phone))
-                    SPUtils.setCreat(1);
-                else SPUtils.setCreat(0);
-                EventUtil.sendEvent(EventUtil.ACT_LOGIN, null);
-                finish();
-            }else ToastUtils.s("密码不正确");
-
-        }else ToastUtils.s("账号不对");
+                    ToastUtils.s("登录成功");
+                    SPUtils.setIsLogin(true);
+                    SPUtils.setId(userBean.id);
+                    EventUtil.sendEvent(EventUtil.ACT_LOGIN, null);
+                    finish();
+                } else ToastUtils.s("密码不正确");
+                return;
+            }
+        }
+        ToastUtils.s("账号不对");
 
     }
 }

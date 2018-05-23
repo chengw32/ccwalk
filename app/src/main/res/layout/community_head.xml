@@ -54,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/d3"
+            android:visibility="gone"
             android:layout_marginRight="@dimen/d5"
             android:background="@drawable/shape_corner_rect_solid_blue"
             android:text="发帖"/>

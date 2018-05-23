@@ -8,11 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -22,11 +25,11 @@ import cc.cwalk.com.utils.StringCallback;
 
 public class UserHomePagerActivity extends BaseListActivity {
 
-    private  View headView ;
+    private View headView;
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean.VideosBean>() {
+        return new BaseRecyclerAdapter<AllDataBean>() {
 
             @Override
             public Context getContext() {
@@ -39,10 +42,23 @@ public class UserHomePagerActivity extends BaseListActivity {
             }
 
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean.VideosBean item) {
-                holder.getTextView(R.id.tv_des).setText(item.getTitle());
+            public void bindData(RecyclerViewHolder holder, int position, AllDataBean item) {
+                holder.getTextView(R.id.tv_des).setText(item.video.content);
                 //设置图片
-                GlideUtils.lodeImage(item.getVideoImages(), holder.getImageView(R.id.iv_images));
+                switch (item.type) {
+                    case 1:
+                        holder.getImageView(R.id.iv_images).setVisibility(View.VISIBLE);
+                        GlideUtils.lodeImage(item.video.videoImages, holder.getImageView(R.id.iv_images));
+                        break;
+                    case 2:
+                        GlideUtils.lodeImage(item.video.images.get(0), holder.getImageView(R.id.iv_images));
+                        holder.getImageView(R.id.iv_images).setVisibility(View.VISIBLE);
+
+                        break;
+                    case 3:
+                        holder.getImageView(R.id.iv_images).setVisibility(View.GONE);
+                        break;
+                }
             }
 
         };
@@ -50,14 +66,21 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        //TODO  跳转
-//        if (bean.getVideos().get(0).getIsVideo() == 1)
-//        DetailActivity.startActivity(xContext,bean);
-//        else DetailImagesActivity.startActivity(xContext,bean);
+        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
+        switch (itembean.type) {
+            case 1:
+                DetailActivity.startActivity(UserHomePagerActivity.this, itembean);
+                break;
+            case 2:
+                DetailImagesActivity.startActivity(UserHomePagerActivity.this, itembean);
+                break;
+            case 3:
+                DetailTextActivity.startActivity(UserHomePagerActivity.this,itembean);
+                break;
+        }
     }
 
-
-    private DataBean bean;
+    UserBean bean;
 
     @Override
     protected void initView() {
@@ -69,19 +92,30 @@ public class UserHomePagerActivity extends BaseListActivity {
                 .inflate(R.layout.activity_user_home_pager_head_view, null);
         mRcView.addHeadView(headView);
 
+        int id = getIntent().getIntExtra("bean", 0);
+        List<AllDataBean> allList = DataUtils.getInstance().getAllList();
+        List<AllDataBean> dataList = new ArrayList<>();
+        for (int i = 0; i < allList.size(); i++) {
+            if (allList.get(i).userid == id) dataList.add(allList.get(i));
+        }
+        mRcView.getDataContent().addAll(dataList);
+        mRcView.complete();
+        bean = DataUtils.getInstance().getUserById(id);
+
+        setData();
     }
 
-    public void setData(){
-        GlideUtils.lodeHeadImage(bean.getHead(), (ImageView) headView.findViewById(R.id.head_image));
+    public void setData() {
+        GlideUtils.lodeImage(bean.head, (ImageView) headView.findViewById(R.id.head_image));
         //名字
         TextView tvName = headView.findViewById(R.id.tvName);
-        tvName.setText(bean.getName());
+        tvName.setText(bean.name);
         //名字
         TextView tvAccount = headView.findViewById(R.id.tvAccount);
-        tvAccount.setText(bean.getName());
+        tvAccount.setText(bean.name);
         //性别
         ImageView iv_sex = (ImageView) headView.findViewById(R.id.iv_sex);
-        iv_sex.setImageResource(bean.getSex() == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
+        iv_sex.setImageResource(bean.sex == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
 
         headView.findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,10 +131,10 @@ public class UserHomePagerActivity extends BaseListActivity {
         return "主页";
     }
 
-    public static void startActivity(Context context, DataBean bean) {
+    public static void startActivity(Context context, int id) {
 
         Intent intent = new Intent(context, UserHomePagerActivity.class);
-        intent.putExtra("bean", bean);
+        intent.putExtra("bean", id);
         context.startActivity(intent);
 
     }
@@ -108,30 +142,7 @@ public class UserHomePagerActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        bean = (DataBean) getIntent().getSerializableExtra("bean");
-        if (null == bean) {
-
-            DataUtils.getInstance().getJsonFromService(new StringCallback() {
-                @Override
-                public void success(String result) {
-                    //Gson解析数据
-                    List<DataBean> data = GsonUtil.getData(result);
-                    bean = data.get(0);
-                    List<DataBean.VideosBean> detail = data.get(0).getVideos();
-                    List dataContent = mRcView.getDataContent();
-                    dataContent.addAll(detail);
-                    mRcView.complete();
-                    setData();
-                }
-            });
-        } else {
-
-            List dataContent = mRcView.getDataContent();
-            List<DataBean.VideosBean> detail = bean.getVideos();
-            dataContent.addAll(detail);
-            mRcView.complete();
-                    setData();
-        }
+        mRcView.complete();
     }
 
     @Override

@@ -51,7 +51,7 @@
         <TextView
             android:id="@+id/tv_collection"
             android:layout_width="wrap_content"
-            android:text="我的收藏"
+            android:text="我的缓存"
             android:gravity="center"
             android:layout_weight="1"
             android:paddingRight="10dp"

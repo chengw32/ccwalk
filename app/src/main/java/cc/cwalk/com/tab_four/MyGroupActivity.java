@@ -12,6 +12,7 @@ import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.tab_four.activity.GroupActivityActivity;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.SPUtils;
 
 public class MyGroupActivity extends BaseActivity {
@@ -30,7 +31,7 @@ public class MyGroupActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        if (SPUtils.getCreat() != 1) {
+        if (DataUtils.getInstance().getCreater() != 1) {
                 llJoin.setVisibility(View.GONE);
             llexpenditure.setVisibility(View.GONE);
         }

@@ -6,6 +6,9 @@ import android.net.Uri;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import cc.cwalk.com.MyApplication;
 
 /**
@@ -25,4 +28,11 @@ public class Utils {
                 + phoneNumber));
         context.startActivity(intent);
     }
+
+    public static String getTime(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+       return formatter.format(curDate);
+    }
+
 }

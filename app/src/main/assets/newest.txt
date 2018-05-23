@@ -20,9 +20,9 @@
 	"video": {
 		"numPaly": 2356,
 		"time": "2018-5-6",
-		"videoUrl": "sample.mp4",
-		"videoImages": "sample.png",
-		"images":["sample.png","sample.png"],
+		"videoUrl": "http://chengw32.com:8080/videos/sample.mp4",
+		"videoImages": "http://chengw32.com:8080/videos/sample.png",
+		"images":[],
 		"content": "cwalk 各种快"
 	},
 	"zang": [{
@@ -54,8 +54,8 @@
 		"numPaly": 2356,
 		"time": "2018-5-6",
 		"videoUrl": "",
-		"videoImages": "sample.png",
-		"images":["sample.png","sample.png"],
+		"videoImages": "",
+		"images":["http://chengw32.com:8080/videos/sample.png","http://chengw32.com:8080/videos/sample.png"],
 		"content": "cwalk 各种快"
 	},
 	"zang": [{
@@ -87,8 +87,8 @@
  		"numPaly": 2356,
  		"time": "2018-5-6",
  		"videoUrl": "",
- 		"videoImages": "sample.png",
- 		"images":["sample.png","sample.png"],
+ 		"videoImages": "",
+ 		"images":[],
  		"content": "cwalk 各种快"
  	},
  	"zang": [{

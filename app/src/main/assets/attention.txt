@@ -1,0 +1,11 @@
+﻿[
+{
+		"id": 1,
+		"attentionlist":[{"id":2,"befanstime":"2018-05-06"},{"id":3,"befanstime":"2018-05-06"}]
+	},
+{
+		"id": 2,
+		"attentionlist":[{"id":1,"befanstime":"2018-05-06"},{"id":3,"befanstime":"2018-05-06"}]
+	}
+
+]

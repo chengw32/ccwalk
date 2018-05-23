@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 import cc.cwalk.com.MyApplication;
+import cc.cwalk.com.beans.AttentionBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.FansBean;
 import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.UserBean;
@@ -28,8 +30,8 @@ import okhttp3.Response;
  * DES :模拟数据获取
  */
 public class DataUtils {
-    public final static String baseUrl = "http://chengw32.com:8080/videos/";//视频跟缩略图的地址
-    public final static String baseheadUrl = "http://chengw32.com:8080/heads/";//头像地址（单独的文件夹）
+//    public final static String baseUrl = "http://chengw32.com:8080/videos/";//视频跟缩略图的地址
+//    public final static String baseheadUrl = "http://chengw32.com:8080/heads/";//头像地址（单独的文件夹）
 
     public static DataUtils mInstance;
 
@@ -42,9 +44,21 @@ public class DataUtils {
    public void initData(){
         initUser("user.txt");
         initNewest("newest.txt");
+        initFans("fans.txt");
+        initAttention("attention.txt");
 
         SPUtils.setIsInit(true);
    }
+
+    private void initAttention(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setAttentionList(assetsFile);
+    }
+
+    private void initFans(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setFans(assetsFile);
+    }
 
     private void initNewest(String s) {
         String assetsFile = getAssetsFile(s);
@@ -196,6 +210,10 @@ public class DataUtils {
         return new UserBean() ;
     }
 
+    public int getCreater(){
+        return DataUtils.getInstance().getUserById(SPUtils.getId()).creater;
+    }
+
 
     //--------------------------最新-----------------------------------
 
@@ -206,8 +224,12 @@ public class DataUtils {
         mRcView.complete();
         return list;
     }
-    //--------------------------社区-----------------------------------
+    //--------------------------获取所有数据-----------------------------------
 
+    public List<AllDataBean> getAllList() {
+        List<AllDataBean> list = GsonUtil.getAllList(SPUtils.getNewest());
+        return list;
+    }
     public List<AllDataBean> getAllList(RefreshLoadMoreRecyclerView mRcView) {
         List<AllDataBean> list = GsonUtil.getAllList(SPUtils.getNewest());
         List dataContent = mRcView.getDataContent();
@@ -216,6 +238,17 @@ public class DataUtils {
         return list;
     }
 
+
+    //--------------------------获取粉丝列表-----------------------------------
+    public List<FansBean> getFansList() {
+        List<FansBean> list = GsonUtil.getFansList(SPUtils.getFansList());
+        return list;
+    }
+    //--------------------------获取关注列表-----------------------------------
+    public List<AttentionBean> getAttentionList() {
+        List<AttentionBean> list = GsonUtil.getAttentionList(SPUtils.getAttentionList());
+        return list;
+    }
 
 
 }

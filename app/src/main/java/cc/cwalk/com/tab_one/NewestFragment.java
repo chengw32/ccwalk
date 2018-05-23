@@ -16,6 +16,7 @@ import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 
 /**
@@ -39,7 +40,7 @@ public class NewestFragment extends BaseListFragment {
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        UserHomePagerActivity.startActivity(getActivity(), item);
+                        UserHomePagerActivity.startActivity(getActivity(), item.userid);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ public class NewestFragment extends BaseListFragment {
                 });
                 //设置头像
                 UserBean userById = DataUtils.getInstance().getUserById(item.userid);
-                GlideUtils.lodeHeadImage(userById.head, holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(userById.head, holder.getImageView(R.id.iv_head));
                 //设置名字
                 holder.getTextView(R.id.tv_name).setText(userById.name);
                 holder.getTextView(R.id.tv_des).setText(item.video.content);
@@ -83,9 +84,16 @@ public class NewestFragment extends BaseListFragment {
         videoPlayer.setThumbImageView(imageView);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
-        videoPlayer.setUp(DataUtils.baseUrl + videoInfo.videoUrl, true, "");
+        videoPlayer.setUp(videoInfo.videoUrl, true, "");
     }
 
+
+    @Override
+    public void onMessageEvent(EventUtil.BaseEvent event) {
+        if (EventUtil.ACT_REFRESH.equals(event.getAction())){
+            getData(1);
+        }
+    }
 
     @Override
     public void onItemClick(View itemView, int pos) {

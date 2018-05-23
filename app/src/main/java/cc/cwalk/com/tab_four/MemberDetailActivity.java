@@ -3,6 +3,7 @@ package cc.cwalk.com.tab_four;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.UserBean;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.DialogUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
@@ -42,7 +45,7 @@ public class MemberDetailActivity extends BaseActivity {
     TextView tvDes;
     @Bind(R.id.tv_del)
     TextView tvDel;
-    private GroupInfoBean bean;
+    private UserBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -56,23 +59,22 @@ public class MemberDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        bean = (GroupInfoBean) getIntent().getSerializableExtra("bean");
+        bean = (UserBean) getIntent().getSerializableExtra("bean");
 
-        if (SPUtils.getCreat() == 1){
-            if (bean.getCreater() == 1){
+        if (DataUtils.getInstance().getCreater() == 1){
+            if (bean.creater == 1){
                 tvDel.setVisibility(View.GONE);
             }else
             tvDel.setVisibility(View.VISIBLE);
         }else tvDel.setVisibility(View.GONE);
 
-        tvName.setText(bean.getName());
-        tvNiName.setText(bean.getNiname());
-        tvCollege.setText(bean.getCollege());
-        tvSex.setText(bean.getSex() == 1 ? "男" : "女");
-        tvGrade.setText(bean.getGrade());
-        tvProfession.setText(bean.getProfession());
-        tvDes.setText(bean.getPersondes());
-        GlideUtils.lodeHeadImage(bean.getHead(), ivHead);
+        tvName.setText(bean.name);
+        tvCollege.setText(bean.college);
+        tvSex.setText(bean.sex == 1 ? "男" : "女");
+        tvGrade.setText(bean.grade);
+        tvProfession.setText(bean.profession);
+        tvDes.setText(bean.persondes);
+        GlideUtils.lodeImage(bean.head, ivHead);
 
 
     }
@@ -82,7 +84,7 @@ public class MemberDetailActivity extends BaseActivity {
 
     }
 
-    public static void startActivity(Context xContext, GroupInfoBean groupInfoBean) {
+    public static void startActivity(Context xContext, UserBean groupInfoBean) {
         Intent intent = new Intent(xContext, MemberDetailActivity.class);
         intent.putExtra("bean", groupInfoBean);
         xContext.startActivity(intent);

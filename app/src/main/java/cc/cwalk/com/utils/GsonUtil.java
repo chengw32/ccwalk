@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import cc.cwalk.com.beans.AttentionBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.FansBean;
 import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.UserBean;
@@ -50,7 +52,7 @@ public class GsonUtil {
 
     public static List getUserList(String jsonString) {
 		Type listType = new TypeToken<List<UserBean>>() {}.getType();
-		List<GroupInfoBean> data = getGson().fromJson(jsonString, listType);
+		List<UserBean> data = getGson().fromJson(jsonString, listType);
 		return data ;
     }
     public static  List getNewestList(String jsonString) {
@@ -65,6 +67,16 @@ public class GsonUtil {
     public static  List getAllList(String jsonString) {
 		Type listType = new TypeToken<List<AllDataBean>>() {}.getType();
 		List<AllDataBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+    public static  List getFansList(String jsonString) {
+		Type listType = new TypeToken<List<FansBean>>() {}.getType();
+		List<FansBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+    public static  List getAttentionList(String jsonString) {
+		Type listType = new TypeToken<List<AttentionBean>>() {}.getType();
+		List<AttentionBean> data = getGson().fromJson(jsonString, listType);
 		return data ;
     }
 }

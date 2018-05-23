@@ -1,6 +1,5 @@
 package cc.cwalk.com.tab_four;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +13,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
-import cc.cwalk.com.tab_one.MyHomePagerActivity;
-import cc.cwalk.com.utils.DataUtils;
-import cc.cwalk.com.utils.ToastUtils;
 import cc.cwalk.com.base.BaseFragment;
 import cc.cwalk.com.credits.CreditsActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
+import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.SPUtils;
+import cc.cwalk.com.utils.ToastUtils;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -40,6 +40,8 @@ public class MeFragment extends BaseFragment {
     TextView mTvDes;
     @Bind(R.id.iv_sex)
     ImageView mIvSex;
+    @Bind(R.id.ivHeader)
+    CircleImageView ivHeader;
 
     @Override
     protected int setContentLayout() {
@@ -53,7 +55,7 @@ public class MeFragment extends BaseFragment {
 
     @Override
     protected void onRightClick() {
-        if (!SPUtils.isLoginWithToast())return;
+        if (!SPUtils.isLoginWithToast()) return;
         MyMessageActivity.startActivity(xContext);
     }
 
@@ -70,13 +72,15 @@ public class MeFragment extends BaseFragment {
      * Des 刷新登录状态
      */
     private void refreshLayout() {
-        mIvSex.setImageResource(SPUtils.getSex() == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
+        mIvSex.setImageResource(DataUtils.getInstance().getUserById(SPUtils.getId()).sex == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
         if (SPUtils.isLogin()) {
             mLlSign.setVisibility(View.VISIBLE);
             mTvDes.setVisibility(View.VISIBLE);
             mIvSex.setVisibility(View.VISIBLE);
-            mTvName.setText(SPUtils.getUserName());
+            mTvName.setText(DataUtils.getInstance().getUserById(SPUtils.getId()).name);
             mTvDes.setText("社团成员");
+
+            GlideUtils.lodeImage(DataUtils.getInstance().getUserById(SPUtils.getId()).head,ivHeader);
         } else {
             mTvName.setText("请登录");
             mTvDes.setVisibility(View.GONE);
@@ -102,7 +106,7 @@ public class MeFragment extends BaseFragment {
         mygroup_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
+                if (!SPUtils.isLoginWithToast()) return;
                 MyGroupActivity.startActivity(xContext);
             }
         });
@@ -112,7 +116,7 @@ public class MeFragment extends BaseFragment {
         fans_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
+                if (!SPUtils.isLoginWithToast()) return;
                 MyFansActivity.startActivity(xContext);
             }
         });
@@ -132,7 +136,7 @@ public class MeFragment extends BaseFragment {
         my_credits_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
+                if (!SPUtils.isLoginWithToast()) return;
                 CreditsActivity.startActivity(xContext);
             }
         });
@@ -142,7 +146,7 @@ public class MeFragment extends BaseFragment {
         message_collection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
+                if (!SPUtils.isLoginWithToast()) return;
                 VideoManagementActivity.startActivity(xContext);
             }
         });
@@ -152,8 +156,8 @@ public class MeFragment extends BaseFragment {
         my_homepager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
-                MyHomePagerActivity.startActivity(xContext, null);
+                if (!SPUtils.isLoginWithToast()) return;
+                UserHomePagerActivity.startActivity(xContext, SPUtils.getId());
             }
         });
 
@@ -189,5 +193,13 @@ public class MeFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
     }
 }

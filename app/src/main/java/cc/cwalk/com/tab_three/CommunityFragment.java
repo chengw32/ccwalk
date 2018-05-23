@@ -73,12 +73,12 @@ public class CommunityFragment extends BaseListFragment {
 //                else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
                 UserBean userById = DataUtils.getInstance().getUserById(item.userid);
-                GlideUtils.lodeHeadImage(userById.head,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(userById.head,holder.getImageView(R.id.iv_head));
                 //设置图片
 //                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
                 //设置名字
                 String numE ;
-                int numEvaluate = item.evaluate.size();
+                int numEvaluate = item.evaluate !=null ?item.evaluate.size():0;
                 if (numEvaluate>99)numE = "99+";
                 else numE = String.valueOf(numEvaluate);
                 holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ numE +")");
@@ -104,37 +104,17 @@ public class CommunityFragment extends BaseListFragment {
 
 
     @Override
+    public void onMessageEvent(EventUtil.BaseEvent event) {
+        if (EventUtil.ACT_REFRESH.equals(event.getAction())){
+            getData(1);
+        }
+    }
+
+    @Override
     public void getData(int pageNo) {
         mRcView.getDataContent().clear();
       DataUtils.getInstance().getAllList(mRcView);
     }
 
-    @Override
-    public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.IMAGE_VIDEO.equals(event.getAction())){
-            PublishActivity.startActivity(xContext,event.getData());
-        }
-    }
 
-    @OnClick(R.id.tv_publish)
-    public void onViewClicked() {
-        PickerDialog pickerDialog = new PickerDialog(getActivity(), new PickerDialog.PickCallBack() {
-            @Override
-            public void camera() {
-
-                PictureSelector.create(getActivity())
-                        .openCamera(PictureMimeType.ofImage())
-                        .forResult(PictureConfig.CHOOSE_REQUEST);
-            }
-
-            @Override
-            public void photo() {
-
-                PictureSelector.create(getActivity())
-                        .openGallery(PictureMimeType.ofAll())
-                        .forResult(PictureConfig.CHOOSE_REQUEST);
-            }
-        });
-        pickerDialog.show();
-    }
 }

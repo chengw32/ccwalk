@@ -1,0 +1,11 @@
+﻿[
+{
+		"id": 1,
+		"fanslist":[{"id":2,"befanstime":"2018-05-06"},{"id":3,"befanstime":"2018-05-06"}]
+	},
+{
+		"id": 2,
+		"fanslist":[{"id":1,"befanstime":"2018-05-06"},{"id":3,"befanstime":"2018-05-06"}]
+	}
+
+]

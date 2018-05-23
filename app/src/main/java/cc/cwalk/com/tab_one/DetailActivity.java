@@ -27,6 +27,7 @@ import cc.cwalk.com.MyApplication;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.AllDataBean;
+import cc.cwalk.com.beans.AttentionBean;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
@@ -81,7 +82,7 @@ public class DetailActivity extends BaseListActivity {
         GlideUtils.lodeImage(bean.video.videoImages, image);
         videoPlayer.setThumbImageView(image);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        videoPlayer.setUp(DataUtils.baseUrl + bean.video.videoUrl, true, "");
+        videoPlayer.setUp(bean.video.videoUrl, true, "");
 
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
@@ -92,14 +93,14 @@ public class DetailActivity extends BaseListActivity {
             public void onClick(View v) {
                 if (tv_zang.isSelected()) {
                     tv_zang.setSelected(false);
-                    tv_zang.setText("取消赞");
-                    ToastUtils.s("取消赞");
+                    tv_zang.setText("点个赞");
+                    ToastUtils.s("已赞");
                     numZang--;
 
                 } else {
-                    tv_zang.setText("点个赞");
+                    tv_zang.setText("取消赞");
                     tv_zang.setSelected(true);
-                    ToastUtils.s("已赞");
+                    ToastUtils.s("取消赞");
                     numZang++;
 
                 }
@@ -107,6 +108,18 @@ public class DetailActivity extends BaseListActivity {
             }
         });
         tv_attention = view.findViewById(R.id.tv_attention);
+        List<AttentionBean> attentionList = DataUtils.getInstance().getAttentionList();
+        for (int i = 0; i < attentionList.size(); i++) {
+            AttentionBean attentionBean = attentionList.get(i);
+            if (attentionBean.id == SPUtils.getId()) {
+                //关注列表
+                List<AttentionBean.AttentionlistBean> attentionlistBeanlist = attentionBean.attentionlist;
+                for (int j = 0; j < attentionlistBeanlist.size(); j++) {
+
+                    if (bean.userid == attentionlistBeanlist.get(j).id)tv_attention.setText("- 已关注");
+                }
+            }
+        }
         tv_attention.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +137,7 @@ public class DetailActivity extends BaseListActivity {
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
 
-        GlideUtils.lodeHeadImage(userById.head, iv_head);
+        GlideUtils.lodeImage(userById.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(userById.name);
@@ -135,7 +148,7 @@ public class DetailActivity extends BaseListActivity {
         mRcView.addHeadView(view);
         initZang();
         List dataContent = mRcView.getDataContent();
-        dataContent.addAll( bean.evaluate);
+        dataContent.addAll(bean.evaluate);
         mRcView.complete();
 
     }
@@ -153,7 +166,7 @@ public class DetailActivity extends BaseListActivity {
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
             UserBean userById = DataUtils.getInstance().getUserById(bean.zang.get(i).id);
-            GlideUtils.lodeHeadImage(userById.head, imageView);
+            GlideUtils.lodeImage(userById.head, imageView);
             af_heads.addView(imageView);
         }
     }
@@ -223,7 +236,7 @@ public class DetailActivity extends BaseListActivity {
     @OnClick(R.id.tv_evaluate)
     public void onViewClicked() {
 
-        if (!SPUtils.isLoginWithToast())return;
+        if (!SPUtils.isLoginWithToast()) return;
 
         String trim = mEtEvaluate.getText().toString().trim();
         if (TextUtils.isEmpty(trim)) {
@@ -232,20 +245,18 @@ public class DetailActivity extends BaseListActivity {
         }
         mEtEvaluate.setText("");
         ToastUtils.s("评论成功");
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-        String time = formatter.format(curDate);
+
         List<AllDataBean.EvaluateBean> evaluate = bean.evaluate;
 
         AllDataBean.EvaluateBean evaluateBean = new AllDataBean.EvaluateBean();
-        evaluateBean.userid = SPUtils.getId() ;
-        evaluateBean.des = trim ;
-        evaluateBean.time = time ;
-        evaluate.add(0,evaluateBean );
+        evaluateBean.userid = SPUtils.getId();
+        evaluateBean.des = trim;
+        evaluateBean.time = Utils.getTime();
+        evaluate.add(0, evaluateBean);
 
         List dataContent = mRcView.getDataContent();
         dataContent.clear();
-        dataContent.addAll( bean.evaluate);
+        dataContent.addAll(bean.evaluate);
         mRcView.complete();
 
         Utils.hideSoft(mEtEvaluate);

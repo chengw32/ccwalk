@@ -60,6 +60,23 @@
                 android:textSize="@dimen/home_tab_button_text" />
         </LinearLayout>
 
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_publish"
+            style="@style/home_bottom_tab"
+            android:gravity="center"
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/publish"
+                android:layout_width="@dimen/d15"
+                android:layout_height="@dimen/d15"
+                android:background="@drawable/ic_takephoto" />
+
+
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_tab_3"
             style="@style/home_bottom_tab"

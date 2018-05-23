@@ -48,6 +48,7 @@ public class DetailTextActivity extends BaseListActivity {
     UserBean userById;
     private AutoFlowLayout af_heads;
     private TextView tv_zang;
+    private TextView tv_time;
     private TextView tv_num_zang;
 
     @Override
@@ -70,6 +71,8 @@ public class DetailTextActivity extends BaseListActivity {
         tv_num_zang = view.findViewById(R.id.tv_num_zang);
         af_heads = view.findViewById(R.id.af_heads);
         tv_zang = view.findViewById(R.id.tv_zang);
+        tv_time = view.findViewById(R.id.tv_time);
+        tv_time.setText(mBean.video.time);
        final TextView tv_attention = view.findViewById(R.id.tv_attention);
         tv_attention.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +90,7 @@ public class DetailTextActivity extends BaseListActivity {
         });
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
-        GlideUtils.lodeHeadImage(userById.head, iv_head);
+        GlideUtils.lodeImage(userById.head, iv_head);
         //名字
         TextView tv_name = view.findViewById(R.id.tv_name);
         tv_name.setText(userById.name);
@@ -138,7 +141,7 @@ public class DetailTextActivity extends BaseListActivity {
             imageView.setLayoutParams(lp);
             imageView.setImageResource(R.mipmap.default_head);
             UserBean userById = DataUtils.getInstance().getUserById(mBean.zang.get(i).id);
-            GlideUtils.lodeHeadImage(userById.head, imageView);
+            GlideUtils.lodeImage(userById.head, imageView);
             af_heads.addView(imageView);
         }
     }

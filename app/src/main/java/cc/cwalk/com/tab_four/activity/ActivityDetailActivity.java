@@ -48,7 +48,7 @@ public class ActivityDetailActivity extends BaseActivity {
 
         tvTitle.setText(bean.getActivity());
         tvDetial.setText(bean.getActivitydes());
-        GlideUtils.lodeHeadImage(bean.getHead(), ivImage);
+        GlideUtils.lodeImage(bean.getHead(), ivImage);
         tvManager.setText(bean.getName());
 
     }
