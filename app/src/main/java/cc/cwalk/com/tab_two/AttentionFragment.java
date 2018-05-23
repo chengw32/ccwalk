@@ -49,13 +49,14 @@ public class AttentionFragment extends BaseListFragment {
         getData(1);
     }
 
-    List<AttentionBean.AttentionlistBean> attentionlist ;
+    List<AttentionBean.AttentionlistBean> attentionlist;
+
     private void initAttentionList() {
 
         List<AttentionBean> data = DataUtils.getInstance().getAttentionList();
         for (int i = 0; i < data.size(); i++) {
-            if (SPUtils.getId() ==data.get(i).id) {
-               attentionlist = data.get(i).attentionlist;
+            if (SPUtils.getId() == data.get(i).id) {
+                attentionlist = data.get(i).attentionlist;
             }
         }
 
@@ -67,7 +68,7 @@ public class AttentionFragment extends BaseListFragment {
         });
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         content.removeAllViews();
-        for (int j = 0; j < (attentionlist.size() > 8 ? 8:attentionlist.size()); j++) {
+        for (int j = 0; j < (attentionlist.size() > 8 ? 8 : attentionlist.size()); j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
             UserBean userById = DataUtils.getInstance().getUserById(attentionlist.get(j).id);
             GlideUtils.lodeImage(userById.head, (ImageView) item.findViewById(R.id.iv_head));
@@ -88,7 +89,7 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.REMOVE_ATTENTION.equals(event.getAction())){
+        if (EventUtil.REMOVE_ATTENTION.equals(event.getAction())) {
             getData(1);
         }
     }
@@ -118,9 +119,8 @@ public class AttentionFragment extends BaseListFragment {
                         //视频
                         GlideUtils.lodeImage(item.video.videoImages, holder.getImageView(R.id.iv_images));
                         iv_isvideo.setVisibility(View.VISIBLE);
-                    }
-                    else if(item.type == 2){
-                    //图片
+                    } else if (item.type == 2) {
+                        //图片
                         GlideUtils.lodeImage(item.video.images.get(0), holder.getImageView(R.id.iv_images));
                         iv_isvideo.setVisibility(View.GONE);
                     }
@@ -161,7 +161,7 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
+        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos - mRcView.getHeadViewCount());
         switch (itembean.type) {
             case 1:
                 DetailActivity.startActivity(getActivity(), itembean);
@@ -170,7 +170,7 @@ public class AttentionFragment extends BaseListFragment {
                 DetailImagesActivity.startActivity(getActivity(), itembean);
                 break;
             case 3:
-                DetailTextActivity.startActivity(getActivity(),itembean);
+                DetailTextActivity.startActivity(getActivity(), itembean);
                 break;
         }
 
@@ -178,6 +178,10 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void getData(int pageNo) {
+        if (!SPUtils.isLogin()) {
+            mRcView.complete();
+            return;
+        }
         initAttentionList();
         mRcView.clearDataContent();
         List<AllDataBean> allList = DataUtils.getInstance().getAllList();
@@ -186,7 +190,7 @@ public class AttentionFragment extends BaseListFragment {
 
             int userid = allList.get(i).userid;
             for (int j = 0; j < attentionlist.size(); j++) {
-                if (userid == attentionlist.get(j).id)dataList.add(allList.get(i));
+                if (userid == attentionlist.get(j).id) dataList.add(allList.get(i));
             }
         }
         mRcView.getDataContent().addAll(dataList);

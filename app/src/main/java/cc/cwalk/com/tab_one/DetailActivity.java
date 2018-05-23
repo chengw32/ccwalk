@@ -34,6 +34,7 @@ import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.SPUtils;
@@ -48,12 +49,12 @@ public class DetailActivity extends BaseListActivity {
     NormalGSYVideoPlayer videoPlayer;
     @Bind(R.id.et_evaluate)
     EditText mEtEvaluate;
-    private int numZang = 30;
     private TextView tv_attention;
     private AllDataBean bean;
     UserBean userById;
     private AutoFlowLayout af_heads;
     private TextView tv_num_zang;
+    private TextView tv_zang ;
 
     @Override
     protected int setContentLayout() {
@@ -87,24 +88,34 @@ public class DetailActivity extends BaseListActivity {
 
         View view = LayoutInflater.from(this).inflate(R.layout.activity_detail_head, null);
         tv_num_zang = view.findViewById(R.id.tv_num_zang);
-        final TextView tv_zang = view.findViewById(R.id.tv_zang);
+
+
+        //点赞事件处理
+       tv_zang = view.findViewById(R.id.tv_zang);
         tv_zang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (tv_zang.isSelected()) {
                     tv_zang.setSelected(false);
-                    tv_zang.setText("点个赞");
+                    tv_zang.setText("取消赞");
+                    AllDataBean.ZangBean  zangBean = new AllDataBean.ZangBean();
+                    zangBean.id = SPUtils.getId();
+                    bean.zang.add(0,zangBean);
                     ToastUtils.s("已赞");
-                    numZang--;
 
                 } else {
-                    tv_zang.setText("取消赞");
+                    //取消赞
+                    for (int i = 0; i < bean.zang.size(); i++) {
+                        if (SPUtils.getId() == bean.zang.get(i).id)bean.zang.remove(i);
+                        break;
+                    }
+                    tv_zang.setText("点个赞");
                     tv_zang.setSelected(true);
                     ToastUtils.s("取消赞");
-                    numZang++;
 
                 }
-                tv_num_zang.setText("共有 " + numZang + " 个赞");
+                EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
+                initZang();
             }
         });
         tv_attention = view.findViewById(R.id.tv_attention);
@@ -116,24 +127,33 @@ public class DetailActivity extends BaseListActivity {
                 List<AttentionBean.AttentionlistBean> attentionlistBeanlist = attentionBean.attentionlist;
                 for (int j = 0; j < attentionlistBeanlist.size(); j++) {
 
-                    if (bean.userid == attentionlistBeanlist.get(j).id)tv_attention.setText("- 已关注");
+                    if (bean.userid == attentionlistBeanlist.get(j).id)
+                        tv_attention.setText("- 已关注");
                 }
             }
         }
-        tv_attention.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if ("+ 关注".equals(tv_attention.getText().toString())) {
 
-                    ToastUtils.s("已关注");
-                    tv_attention.setText("- 已关注");
-                } else {
-                    ToastUtils.s("取消关注");
-                    tv_attention.setText("+ 关注");
+        //关注事件处理
+        if (bean.userid == SPUtils.getId()) tv_attention.setVisibility(View.GONE);
+        else {
+            tv_attention.setVisibility(View.VISIBLE);
+            tv_attention.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if ("+ 关注".equals(tv_attention.getText().toString())) {
 
+                        ToastUtils.s("已关注");
+                        tv_attention.setText("- 已关注");
+                    } else {
+                        ToastUtils.s("取消关注");
+                        tv_attention.setText("+ 关注");
+
+                    }
                 }
-            }
-        });
+            });
+        }
+
+
         //头像
         ImageView iv_head = view.findViewById(R.id.iv_head);
 
@@ -143,7 +163,7 @@ public class DetailActivity extends BaseListActivity {
         tv_name.setText(userById.name);
         TextView tv_des = view.findViewById(R.id.tv_des);
         tv_des.setText(bean.video.content);
-        tv_num_zang.setText("共有 " + numZang + " 个赞");
+        tv_num_zang.setText("共有 " + bean.zang.size() + " 个赞");
         af_heads = view.findViewById(R.id.af_heads);
         mRcView.addHeadView(view);
         initZang();
@@ -155,9 +175,11 @@ public class DetailActivity extends BaseListActivity {
 
 
     private void initZang() {
-        numZang = bean.zang.size();
-        tv_num_zang.setText("共有 " + numZang + " 个赞");
+        tv_num_zang.setText("共有 " + bean.zang.size() + " 个赞");
+        af_heads.removeAllViews();
         for (int i = 0; i < bean.zang.size(); i++) {
+
+            if (bean.zang.get(i).id == SPUtils.getId()){tv_zang.setSelected(false);tv_zang.setText("取消赞");}
 
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams((int) (20 * MyApplication.getScale()), (int) (20 * MyApplication.getScale()));
             CircleImageView imageView = new CircleImageView(xContext);
