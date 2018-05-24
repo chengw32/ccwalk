@@ -46,9 +46,15 @@ public class DataUtils {
         initNewest("newest.txt");
         initFans("fans.txt");
         initAttention("attention.txt");
+        initNotice("notice.txt");
 
         SPUtils.setIsInit(true);
    }
+
+    private void initNotice(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setNoticeList(assetsFile);
+    }
 
     private void initAttention(String s) {
         String assetsFile = getAssetsFile(s);
@@ -245,9 +251,14 @@ public class DataUtils {
         return list;
     }
     //--------------------------获取关注列表-----------------------------------
-    public List<AttentionBean> getAttentionList() {
-        List<AttentionBean> list = GsonUtil.getAttentionList(SPUtils.getAttentionList());
-        return list;
+    public List getAttentionList() {
+        return GsonUtil.getAttentionList(SPUtils.getAttentionList());
+
+    }
+    //--------------------------获取群公告列表-----------------------------------
+    public List getNoticeList() {
+        return GsonUtil.getNoticeList(SPUtils.getNoticeList());
+
     }
 
 

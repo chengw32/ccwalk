@@ -21,13 +21,18 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.base.BaseActivity;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.tab_four.MeFragment;
 import cc.cwalk.com.tab_one.FindFragment;
 import cc.cwalk.com.tab_three.CommunityFragment;
 import cc.cwalk.com.tab_three.PublishActivity;
 import cc.cwalk.com.tab_two.AttentionFragment;
+import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 public class MainActivity extends BaseActivity {
     @Bind(R.id.iv_tab_1)
@@ -240,6 +245,23 @@ public class MainActivity extends BaseActivity {
     public void onMessageEvent(EventUtil.BaseEvent event) {
         if (EventUtil.IMAGE_VIDEO.equals(event.getAction())){
             PublishActivity.startActivity(xContext,event.getData());
+        }
+        else if (EventUtil.ACT_Save_All.equals(event.getAction())){
+            AllDataBean bean = (AllDataBean) event.getData();
+            List<AllDataBean> dataContent = DataUtils.getInstance().getAllList();
+            LogUtils.e("移除之前  "+dataContent.size());
+            for (int i = 0; i < dataContent.size(); i++) {
+                AllDataBean allDataBean1 = dataContent.get(i);
+                LogUtils.e("i = " + i + "allDataBean1   id=  "+allDataBean1.id);
+                if (allDataBean1.id == bean.id) {
+                    LogUtils.e("remove "+i);
+                    dataContent.remove(allDataBean1);
+                    dataContent.add(i, bean);
+                }
+            }
+            LogUtils.e("移除之hou  "+dataContent.size());
+            SPUtils.setNewest(GsonUtil.toJosn(dataContent));
+            EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
         }
     }
 

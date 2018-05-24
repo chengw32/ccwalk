@@ -72,6 +72,7 @@ public class LoginActivity extends BaseActivity {
                     SPUtils.setIsLogin(true);
                     SPUtils.setId(userBean.id);
                     EventUtil.sendEvent(EventUtil.ACT_LOGIN, null);
+                    EventUtil.sendEvent(EventUtil.ACT_REFRESH, null);
                     finish();
                 } else ToastUtils.s("密码不正确");
                 return;

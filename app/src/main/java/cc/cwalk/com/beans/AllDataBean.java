@@ -19,6 +19,7 @@ public class AllDataBean extends BaseBean{
      */
 
     public int userid;
+    public int id; //帖子id
     public int type; //1 视频 2 图片 3 文本
     public VideoBean video;
     public List<EvaluateBean> evaluate;

@@ -18,6 +18,9 @@ import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 /**
  * 热门视频
@@ -90,24 +93,26 @@ public class NewestFragment extends BaseListFragment {
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.ACT_REFRESH.equals(event.getAction())){
+        if (EventUtil.ACT_REFRESH.equals(event.getAction())) {
             getData(1);
         }
     }
 
+    private int currentPosition;
+
     @Override
     public void onItemClick(View itemView, int pos) {
-        List<AllDataBean> dataContent = mRcView.getDataContent();
-        AllDataBean allDataBean = dataContent.get(pos - 1);
-        switch (allDataBean.type) {
+        currentPosition = pos - mRcView.getHeadViewCount();
+        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(currentPosition);
+        switch (itembean.type) {
             case 1:
-                DetailActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                DetailActivity.startActivity(getActivity(), itembean);
                 break;
             case 2:
-                DetailImagesActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                DetailImagesActivity.startActivity(getActivity(), itembean);
                 break;
             case 3:
-                DetailTextActivity.startActivity(getActivity(), (AllDataBean) mRcView.getDataContent().get(pos));
+                DetailTextActivity.startActivity(getActivity(), itembean);
                 break;
         }
     }

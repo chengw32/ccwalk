@@ -27,6 +27,7 @@ import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.LogUtils;
@@ -67,6 +68,7 @@ public class PublishActivity extends BaseActivity {
 
         AllDataBean bean = new AllDataBean();
         bean.userid = SPUtils.getId();
+        bean.id = DataUtils.getInstance().getAllList().size()+1;
         bean.zang = new ArrayList<>();
         bean.evaluate = new ArrayList<>();
 
@@ -105,6 +107,7 @@ public class PublishActivity extends BaseActivity {
 
         SPUtils.setNewest(GsonUtil.toJosn(allList));
 
+        EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
         ToastUtils.s("发布成功 积分 +1");
         finish();
     }
@@ -129,7 +132,7 @@ public class PublishActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     PictureSelector.create(PublishActivity.this)
-                            .openGallery(PictureMimeType.ofAll())
+                            .openGallery(selectList.get(0).getMimeType())
                             .maxSelectNum(9 - selectList.size())
                             .forResult(PictureConfig.CHOOSE_REQUEST);
                 }
@@ -149,6 +152,8 @@ public class PublishActivity extends BaseActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
                     // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
+                    if (PictureMimeType.ofVideo() == selectList.get(0).getMimeType())
+                        selectList.clear();
                     selectList.addAll(selects);
                     refreshImages();
                     break;

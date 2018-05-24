@@ -13,6 +13,7 @@ import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.FansBean;
 import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.beans.AllDataBean;
+import cc.cwalk.com.beans.NoticeBean;
 import cc.cwalk.com.beans.UserBean;
 
 public class GsonUtil {
@@ -33,13 +34,13 @@ public class GsonUtil {
 	public static List getData(String jsonString) {
 		Type listType = new TypeToken<List<DataBean>>() {}.getType();
 		List<DataBean> data = getGson().fromJson(jsonString, listType);
-		Collections.shuffle(data);//模拟数据变化
-		for (int i = 0; i < data.size(); i++) {
-			List<DataBean.VideosBean> videos = data.get(i).getVideos();
-			Collections.shuffle(videos);
-            List<DataBean.StrBean> str = data.get(i).getStr();
-			Collections.shuffle(str);
-        }
+//		Collections.shuffle(data);//模拟数据变化
+//		for (int i = 0; i < data.size(); i++) {
+//			List<DataBean.VideosBean> videos = data.get(i).getVideos();
+//			Collections.shuffle(videos);
+//            List<DataBean.StrBean> str = data.get(i).getStr();
+//			Collections.shuffle(str);
+//        }
 		return data ;
 	}
 	public static List getGroupData(String jsonString) {
@@ -77,6 +78,11 @@ public class GsonUtil {
     public static  List getAttentionList(String jsonString) {
 		Type listType = new TypeToken<List<AttentionBean>>() {}.getType();
 		List<AttentionBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+    public static  List getNoticeList(String jsonString) {
+		Type listType = new TypeToken<List<NoticeBean>>() {}.getType();
+		List<NoticeBean> data = getGson().fromJson(jsonString, listType);
 		return data ;
     }
 }

@@ -10,7 +10,9 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -32,14 +34,15 @@ public class VideoFragment extends BaseListFragment{
     }
 
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<AllDataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, DataBean item) {
-                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_head));
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_user_head));
-                holder.getTextView(R.id.tv_title).setText(item.getVideos().get(0).getTitle());
-                holder.getTextView(R.id.tv_name).setText(item.getName());
-                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
+            public void bindData(RecyclerViewHolder holder, final int position, AllDataBean item) {
+                GlideUtils.lodeImage(item.video.videoImages,holder.getImageView(R.id.iv_head));
+                UserBean userById = DataUtils.getInstance().getUserById(item.userid);
+                GlideUtils.lodeImage(userById.head,holder.getImageView(R.id.iv_user_head));
+                holder.getTextView(R.id.tv_title).setText(item.video.content);
+                holder.getTextView(R.id.tv_name).setText(userById.name);
+                holder.getTextView(R.id.tv_time).setText(item.video.time);
             }
 
             @Override
@@ -65,7 +68,8 @@ public class VideoFragment extends BaseListFragment{
 
     @Override
     public void getData(int pageNo) {
-       DataUtils.getInstance().getDataList(mRcView);
+        mRcView.getDataContent().clear();
+        DataUtils.getInstance().getNewestList(mRcView);
     }
 
 }

@@ -12,6 +12,8 @@ import java.util.List;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.NoticeBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -41,12 +43,13 @@ public class GroupNoticeActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<NoticeBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                holder.getTextView(R.id.tv_name).setText("发布人： "+item.getName());
-                holder.getTextView(R.id.tv_content).setText(item.getStr().get(0).getDes());
-                holder.getTextView(R.id.tv_time).setText(item.getStr().get(0).getTime());
+            public void bindData(RecyclerViewHolder holder, int position, NoticeBean item) {
+                UserBean userById = DataUtils.getInstance().getUserById(item.userid);
+                holder.getTextView(R.id.tv_name).setText("发布人： "+userById.name);
+                holder.getTextView(R.id.tv_content).setText(item.content);
+                holder.getTextView(R.id.tv_time).setText(item.time);
             }
 
             @Override
@@ -98,7 +101,9 @@ public class GroupNoticeActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+        mRcView.clearDataContent();
+        mRcView.getDataContent().addAll( DataUtils.getInstance().getNoticeList());
+        mRcView.complete();
     }
 
     @Override

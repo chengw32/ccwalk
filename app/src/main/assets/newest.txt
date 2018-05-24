@@ -1,6 +1,7 @@
 ﻿[{
 	"userid": 1,
 	"type": 1,
+	"id": 1,
 	"evaluate": [{
 			"userid": 2,
 			"time": "2018-5-17",
@@ -34,6 +35,7 @@
 {
 	"userid": 2,
 	"type":2,
+	"id":2,
 	"evaluate": [{
 			"userid": 2,
 			"time": "2018-5-17",
@@ -67,6 +69,7 @@
  {
  	"userid": 3,
  	"type":3,
+ 	"id":3,
  	"evaluate": [{
  			"userid": 2,
  			"time": "2018-5-17",

@@ -23,6 +23,7 @@ public class SPUtils {
     private static final String newestlist = "newestlist";//
     private static final String fanslist = "fanslist";//
     private static final String attentionlist = "attentionlist";//
+    private static final String noticelist = "noticelist";//
     private static SharedPreferences	sp;
 
     /**
@@ -107,7 +108,6 @@ public class SPUtils {
     public static String getNewest() {
         SharedPreferences sp = getPreferences();
         String string = sp.getString(newestlist, "");
-        LogUtils.e("读取newest   "+string);
         return string;
     }
     public static String getFansList() {
@@ -126,6 +126,15 @@ public class SPUtils {
     public static void setAttentionList(String fans) {
         SharedPreferences.Editor editor = getEditor();
         editor.putString(attentionlist,fans);
+        editor.commit();
+    }
+    public static String getNoticeList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(noticelist,"");
+    }
+    public static void setNoticeList(String fans) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(noticelist,fans);
         editor.commit();
     }
 

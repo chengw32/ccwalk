@@ -49,16 +49,20 @@ public class AttentionFragment extends BaseListFragment {
         getData(1);
     }
 
-    List<AttentionBean.AttentionlistBean> attentionlist;
+    List<AttentionBean.AttentionlistBean> attentionList;
 
     private void initAttentionList() {
 
+        if (null != attentionList)attentionList.clear();//切换账号的时候有缓存要清除掉
+
         List<AttentionBean> data = DataUtils.getInstance().getAttentionList();
         for (int i = 0; i < data.size(); i++) {
-            if (SPUtils.getId() == data.get(i).id) {
-                attentionlist = data.get(i).attentionlist;
+            if (SPUtils.getId() ==data.get(i).id) {
+                attentionList = data.get(i).attentionlist;
             }
         }
+
+        if(null == attentionList)return;//匹配过后没有关注的人
 
         inflate.findViewById(R.id.tv_more).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +72,9 @@ public class AttentionFragment extends BaseListFragment {
         });
         LinearLayout content = (LinearLayout) inflate.findViewById(R.id.content);
         content.removeAllViews();
-        for (int j = 0; j < (attentionlist.size() > 8 ? 8 : attentionlist.size()); j++) {
+        for (int j = 0; j < (attentionList.size() > 8 ? 8 : attentionList.size()); j++) {
             View item = LayoutInflater.from(getActivity()).inflate(R.layout.attention_head_item, null);
-            UserBean userById = DataUtils.getInstance().getUserById(attentionlist.get(j).id);
+            UserBean userById = DataUtils.getInstance().getUserById(attentionList.get(j).id);
             GlideUtils.lodeImage(userById.head, (ImageView) item.findViewById(R.id.iv_head));
             TextView tv_name = item.findViewById(R.id.tv_name);
             tv_name.setText(userById.name);
@@ -89,7 +93,7 @@ public class AttentionFragment extends BaseListFragment {
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.REMOVE_ATTENTION.equals(event.getAction())) {
+        if (EventUtil.REMOVE_ATTENTION.equals(event.getAction()) || EventUtil.ACT_REFRESH.equals(event.getAction())) {
             getData(1);
         }
     }
@@ -186,16 +190,19 @@ public class AttentionFragment extends BaseListFragment {
         mRcView.clearDataContent();
         List<AllDataBean> allList = DataUtils.getInstance().getAllList();
         List dataList = new ArrayList();
+        if (null != attentionList)
         for (int i = 0; i < allList.size(); i++) {
 
             int userid = allList.get(i).userid;
-            for (int j = 0; j < attentionlist.size(); j++) {
-                if (userid == attentionlist.get(j).id) dataList.add(allList.get(i));
+            for (int j = 0; j < attentionList.size(); j++) {
+                if (userid == attentionList.get(j).id) dataList.add(allList.get(i));
             }
         }
         mRcView.getDataContent().addAll(dataList);
         mRcView.complete();
     }
+
+
 
 
 }

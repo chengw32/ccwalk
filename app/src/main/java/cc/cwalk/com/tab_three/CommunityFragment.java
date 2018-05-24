@@ -103,9 +103,10 @@ public class CommunityFragment extends BaseListFragment {
     }
 
 
+
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.ACT_REFRESH.equals(event.getAction())){
+        if (EventUtil.ACT_REFRESH.equals(event.getAction())) {
             getData(1);
         }
     }
