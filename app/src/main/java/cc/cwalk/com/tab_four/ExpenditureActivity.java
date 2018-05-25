@@ -5,34 +5,28 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
-import cc.cwalk.com.base.BaseListActivity;
-import cc.cwalk.com.recycles.BaseRecyclerAdapter;
-import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.beans.ActivityBean;
+import cc.cwalk.com.utils.DataUtils;
 
 /**
  * Creat By_Chen
  * Time 2018/5/12 21:49
  * Des 经费管理
- * */
+ */
 public class ExpenditureActivity extends BaseActivity {
-
 
 
 //
@@ -52,6 +46,8 @@ public class ExpenditureActivity extends BaseActivity {
     TextView tvHistory;
     @Bind(R.id.tv_cache)
     TextView tvCache;
+    @Bind(R.id.tv_current)
+    TextView tvCurrent;
     private ViewPager baseViewPager;
     private PageAdapter basePagerAdapter;
 
@@ -108,6 +104,16 @@ public class ExpenditureActivity extends BaseActivity {
     @Override
     protected void initData() {
 
+        List<ActivityBean> groupPay = DataUtils.getInstance().getGroupPay();
+        List groupIn = DataUtils.getInstance().getGroupMemberList();
+        int allIn = groupIn.size() * 200;
+        int allOut =0 ;
+        for (int i = 0; i < groupPay.size(); i++) {
+            allOut +=  groupPay.get(i).money;
+        }
+
+        tvCurrent.setText(""+(allIn-allOut));
+
     }
 
     public static void startActivity(Context xContext) {
@@ -127,6 +133,13 @@ public class ExpenditureActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
     public class PageAdapter extends FragmentStatePagerAdapter {
         private Fragment exIn;
         private Fragment exOut;
@@ -144,11 +157,11 @@ public class ExpenditureActivity extends BaseActivity {
             switch (position) {
                 case 0:
                     if (null == exIn)
-                        exIn = ExpenditureFragment.newInstance("1","");
+                        exIn = ExpenditureFragment.newInstance("1", "");
                     return exIn;
                 default:
                     if (null == exOut)
-                        exOut = ExpenditureFragment.newInstance("2","");
+                        exOut = ExpenditureInFragment.newInstance("2", "");
                     return exOut;
             }
         }

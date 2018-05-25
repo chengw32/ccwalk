@@ -8,15 +8,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.DialogUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
 
 public class JoinGroupActivity extends BaseListActivity {
@@ -35,7 +40,11 @@ public class JoinGroupActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+
+        mRcView.clearDataContent();
+        List<UserBean> userList = DataUtils.getInstance().getJoinList();
+        mRcView.getDataContent().addAll(userList);
+        mRcView.complete();
     }
 
 
@@ -46,12 +55,13 @@ public class JoinGroupActivity extends BaseListActivity {
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<UserBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                    holder.getTextView(R.id.tv_name).setText(item.getName());
-                    holder.getTextView(R.id.tv_des).setText(item.getStr().get(0).getDes());
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
+            public void bindData(RecyclerViewHolder holder, int position, final UserBean item) {
+                    holder.getTextView(R.id.tv_name).setText(item.name);
+                    holder.getTextView(R.id.tv_des).setText(item.persondes);
+
+                GlideUtils.lodeImage(item.head,holder.getImageView(R.id.iv_head));
                 final TextView tv_zang = holder.getTextView(R.id.tv_allow);
                 tv_zang.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -63,7 +73,13 @@ public class JoinGroupActivity extends BaseListActivity {
                                 public void define() {
                                     tv_zang.setSelected(true);
                                     tv_zang.setText("通过申请");
+                                    List<UserBean> groupMemberList = DataUtils.getInstance().getGroupMemberList();
+                                    groupMemberList.add(item);
+                                    SPUtils.setGroupmemberglist(GsonUtil.toJosn(groupMemberList));
+                                    mRcView.getDataContent().remove(item);
+                                    SPUtils.setJoinlist(GsonUtil.toJosn(mRcView.getDataContent()));
                                     ToastUtils.s("已通过申请");
+                                    EventUtil.sendEvent(EventUtil.ACT_REFRESH_group_member,null);
                                 }
 
                                 @Override

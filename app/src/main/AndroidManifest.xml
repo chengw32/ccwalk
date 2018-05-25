@@ -47,7 +47,6 @@
         </activity>
         <activity android:name=".tab_one.DetailActivity" />
         <activity android:name=".tab_one.UserHomePagerActivity" />
-        <activity android:name=".tab_one.MyHomePagerActivity" />
         <activity android:name=".tab_two.MyAttentionActivity" />
         <activity android:name=".tab_four.MyFansActivity" />
         <activity android:name=".tab_four.SettingActivity" />
@@ -69,14 +68,15 @@
         <activity android:name=".tab_four.JoinGroupActivity" />
         <activity android:name=".tab_four.GroupMoreInfoActivity" />
         <activity android:name=".tab_four.GroupMemberPostActivity" />
-        <activity android:name=".tab_four.activity.GroupActivityActivity"></activity>
-        <activity android:name=".tab_four.activity.ActivityDetailActivity"></activity>
-        <activity android:name=".tab_four.ExpenditureActivity"></activity>
-        <activity android:name=".tab_four.PurchaseActivity"></activity>
-        <activity android:name=".tab_four.PurchaseDetailActivity"></activity>
-        <activity android:name=".tab_four.activity.PublishActivityActivity"></activity>
-        <activity android:name=".tab_four.MemberDetailActivity"></activity>
-        <activity android:name=".credits.CreditsStoreActivity"></activity>
+        <activity android:name=".tab_four.activity.GroupActivityActivity" />
+        <activity android:name=".tab_four.activity.ActivityDetailActivity" />
+        <activity android:name=".tab_four.ExpenditureActivity" />
+        <activity android:name=".tab_four.PurchaseActivity" />
+        <activity android:name=".tab_four.PurchaseDetailActivity" />
+        <activity android:name=".tab_four.activity.PublishActivityActivity" />
+        <activity android:name=".tab_four.MemberDetailActivity" />
+        <activity android:name=".credits.CreditsStoreActivity" />
+        <activity android:name=".webview.SingleActivity"></activity>
     </application>
 
 </manifest>

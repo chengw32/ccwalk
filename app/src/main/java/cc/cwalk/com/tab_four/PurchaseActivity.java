@@ -12,6 +12,7 @@ import java.util.List;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.PurchaseBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
@@ -42,18 +43,21 @@ public class PurchaseActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getGroupList(mRcView);
+        mRcView.clearDataContent();
+        List purchaseList = DataUtils.getInstance().getPurchaseList();
+        mRcView.getDataContent().addAll(purchaseList);
+        mRcView.complete();
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<GroupInfoBean>() {
+        return new BaseRecyclerAdapter<PurchaseBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, GroupInfoBean item) {
-                holder.getTextView(R.id.tv_title).setText(item.getTitle());
-                holder.getTextView(R.id.tv_money).setText(item.getMoney());
-                holder.getTextView(R.id.tv_manager).setText("负责人："+item.getNiname());
-                holder.getTextView(R.id.tv_time).setText(item.getTime());
+            public void bindData(RecyclerViewHolder holder, int position, PurchaseBean item) {
+                holder.getTextView(R.id.tv_title).setText(item.title);
+                holder.getTextView(R.id.tv_money).setText(""+item.money);
+                holder.getTextView(R.id.tv_manager).setText("负责人："+item.name);
+                holder.getTextView(R.id.tv_time).setText(item.time);
             }
 
             @Override
@@ -71,7 +75,7 @@ public class PurchaseActivity extends BaseListActivity {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        PurchaseDetailActivity.startActivity(xContext,(GroupInfoBean)mRcView.getDataContent().get(pos));
+        PurchaseDetailActivity.startActivity(xContext,(PurchaseBean)mRcView.getDataContent().get(pos));
     }
 
     public static void startActivity(Context xContext) {

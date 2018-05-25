@@ -1,0 +1,38 @@
+﻿[{
+		"name": "张伟t",
+		"sex": 1,
+		"id":1,
+		"creater": 1,
+		"manager": 0,
+		"grade": "大三",
+		"college": "理工",
+		"profession": "计算机科学与技术",
+		"jointime": "2018-5-6",
+		"persondes": "做一条有梦想的咸鱼",
+		"head": "http://chengw32.com:8080/heads/03514dbb47703398b8a96b1a9ab013c6.jpg"
+	},
+	{
+		"name": "燕",
+		"sex": 0,
+		"id":2,
+		"manager": 1,
+		"grade": "大四",
+		"college": "理工",
+		"profession": "舞蹈表演",
+		"jointime": "2017-5-6",
+		"persondes": "日复一日",
+		"head": "http://chengw32.com:8080/heads/0aca472def0b8c0ccc9350674539f6a7.jpg"
+	},
+	{
+		"name": "赵文s",
+		"sex": 1,
+		"id":3,
+		"manager": 1,
+		"grade": "大四",
+		"college": "理工",
+		"profession": "舞蹈学",
+		"jointime": "2017-5-6",
+		"persondes": "日复一日",
+		"head": "http://chengw32.com:8080/heads/366dfdf17c2631aae519e03e857c11b5.jpg"
+	}
+]

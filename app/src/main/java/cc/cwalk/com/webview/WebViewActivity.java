@@ -90,7 +90,7 @@ public class WebViewActivity extends BaseActivity {
     }
 
 
-    public static void startActivity(Context xContext,String titile,String url) {
+    public static void startActivityt(Context xContext,String titile,String url) {
         Intent intent = new Intent(xContext, WebViewActivity.class);
         intent.putExtra(TITLE,titile);
         intent.putExtra(URL,url);

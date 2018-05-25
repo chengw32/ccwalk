@@ -33,7 +33,7 @@ public class DataUtils {
 //    public final static String baseUrl = "http://chengw32.com:8080/videos/";//视频跟缩略图的地址
 //    public final static String baseheadUrl = "http://chengw32.com:8080/heads/";//头像地址（单独的文件夹）
 
-    public static DataUtils mInstance;
+    private static DataUtils mInstance;
 
     public static DataUtils getInstance() {
         if (mInstance == null) mInstance = new DataUtils();
@@ -47,9 +47,51 @@ public class DataUtils {
         initFans("fans.txt");
         initAttention("attention.txt");
         initNotice("notice.txt");
+        initPurchase("purchase.txt");
+        initActivity("activity.txt");
+        initHot("hot.txt");
+        initTeaching("teaching.txt");
+        initGroupMember("groupmember.txt");
+        initJoin("joinlist.txt");
+        initGroupPaylist("payactivity.txt");
 
         SPUtils.setIsInit(true);
    }
+
+    private void initGroupPaylist(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setGroupPaylist(assetsFile);
+    }
+
+    private void initJoin(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setJoinlist(assetsFile);
+    }
+
+    private void initGroupMember(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setGroupmemberglist(assetsFile);
+    }
+
+    private void initTeaching(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setTeachinglist(assetsFile);
+    }
+
+    private void initHot(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setHotList(assetsFile);
+    }
+
+    private void initActivity(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setActivityList(assetsFile);
+    }
+
+    private void initPurchase(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setPurchaseList(assetsFile);
+    }
 
     private void initNotice(String s) {
         String assetsFile = getAssetsFile(s);
@@ -208,6 +250,12 @@ public class DataUtils {
     public  List getUserList() {
         return GsonUtil.getUserList(SPUtils.getUser());
     }
+    public  List getGroupMemberList() {
+        return GsonUtil.getGroupMemberList(SPUtils.getGroupmemberList());
+    }
+    public  List getJoinList() {
+        return GsonUtil.getJoinList(SPUtils.getJoinList());
+    }
     public  UserBean getUserById(int id) {
         List<UserBean> userList =getUserList();
         for (int i = 0; i <userList.size() ; i++) {
@@ -260,6 +308,24 @@ public class DataUtils {
         return GsonUtil.getNoticeList(SPUtils.getNoticeList());
 
     }
+    //--------------------------获取采购列表-----------------------------------
+    public List getPurchaseList() {
+        return GsonUtil.getPurchaseList(SPUtils.getPurchaseList());
+    }
+    //--------------------------获取活动列表-----------------------------------
+    public List getActivitysList() {
+        return GsonUtil.getActivityList(SPUtils.getActivityList());
+    }
 
 
+    public List getHotList() {
+        return GsonUtil.getHotList(SPUtils.getHotList());
+    }
+
+    public List getTeaching() {
+        return GsonUtil.getTeachingList(SPUtils.getTeachingList());
+    }
+    public List getGroupPay() {
+        return GsonUtil.getGroupPayList(SPUtils.getGroupPayList());
+    }
 }

@@ -1,0 +1,13 @@
+﻿[{
+		"banner": "http://chengw32.com:8080/heads/03514dbb47703398b8a96b1a9ab013c6.jpg",
+		"name": "张伟塔",
+		"title": "团服定制",
+		"content": "晚上聚餐",
+		"money": 400,
+		"publishtime": "2018-05-20",
+		"endtime": "2018-05-20",
+		"adress": "操场",
+		"member": ["赵文", "张"],
+		"phone": "15710607777"
+	}
+]

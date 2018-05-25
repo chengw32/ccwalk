@@ -55,7 +55,8 @@ public class DetailActivity extends BaseListActivity {
     UserBean userById;
     private AutoFlowLayout af_heads;
     private TextView tv_num_zang;
-    private TextView tv_zang ;
+    private TextView tv_zang;
+    private boolean ishot;
 
     @Override
     protected int setContentLayout() {
@@ -71,6 +72,7 @@ public class DetailActivity extends BaseListActivity {
     protected void initView() {
         super.initView();
         bean = (AllDataBean) getIntent().getSerializableExtra("bean");
+        ishot = getIntent().getBooleanExtra("ishot", false);
         userById = DataUtils.getInstance().getUserById(bean.userid);
         videoPlayer = findViewById(R.id.video_view);
         videoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
@@ -92,30 +94,32 @@ public class DetailActivity extends BaseListActivity {
 
 
         //点赞事件处理
-       tv_zang = view.findViewById(R.id.tv_zang);
+        tv_zang = view.findViewById(R.id.tv_zang);
         tv_zang.setSelected(true);
         tv_zang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!SPUtils.isLoginWithToast())return;
+                if (!SPUtils.isLoginWithToast()) return;
                 if (tv_zang.isSelected()) {
                     tv_zang.setSelected(false);
                     tv_zang.setText("取消赞");
-                    AllDataBean.ZangBean  zangBean = new AllDataBean.ZangBean();
+                    AllDataBean.ZangBean zangBean = new AllDataBean.ZangBean();
                     zangBean.id = SPUtils.getId();
-                    bean.zang.add(0,zangBean);
+                    bean.zang.add(0, zangBean);
                     ToastUtils.s("已赞");
 
                 } else {
                     //取消赞
                     for (int i = 0; i < bean.zang.size(); i++) {
-                        if (SPUtils.getId() == bean.zang.get(i).id)bean.zang.remove(i);
+                        if (SPUtils.getId() == bean.zang.get(i).id) bean.zang.remove(i);
                     }
                     tv_zang.setText("点个赞");
                     tv_zang.setSelected(true);
                     ToastUtils.s("取消赞");
                 }
-                EventUtil.sendEvent(EventUtil.ACT_Save_All,bean);
+                if (ishot) EventUtil.sendEvent(EventUtil.ACT_REFRESH_hot, bean);
+                else
+                    EventUtil.sendEvent(EventUtil.ACT_Save_All, bean);
                 initZang();
             }
         });
@@ -134,9 +138,10 @@ public class DetailActivity extends BaseListActivity {
                     //取出当前登录者的关注列表
                     List<AttentionBean.AttentionlistBean> attentionlistBeanlist = attentionBean.attentionlist;
                     for (int j = 0; j < attentionlistBeanlist.size(); j++) {
-                        if (bean.userid == attentionlistBeanlist.get(j).id){
+                        if (bean.userid == attentionlistBeanlist.get(j).id) {
                             tv_attention.setText("- 已关注");
-                        break;}
+                            break;
+                        }
                     }
                 }
             }
@@ -145,16 +150,16 @@ public class DetailActivity extends BaseListActivity {
                 public void onClick(View v) {
                     if ("+ 关注".equals(tv_attention.getText().toString())) {
 
-                        boolean hasList = false ;
+                        boolean hasList = false;
                         for (int i = 0; i < attentionList.size(); i++) {
                             //关注数据循环匹配登录者id
                             AttentionBean attentionBean = attentionList.get(i);
                             if (attentionBean.id == SPUtils.getId()) {
-                                hasList = true ;
+                                hasList = true;
                                 break;
                             }
                         }
-                        if (hasList){
+                        if (hasList) {
                             //有关注的id
                             for (int i = 0; i < attentionList.size(); i++) {
                                 //关注数据循环匹配登录者id
@@ -169,16 +174,16 @@ public class DetailActivity extends BaseListActivity {
                                     break;
                                 }
                             }
-                        }else {
+                        } else {
                             //没有 创建新容器
                             AttentionBean newBean = new AttentionBean();
                             newBean.id = SPUtils.getId();
                             AttentionBean.AttentionlistBean addBean = new AttentionBean.AttentionlistBean();
                             addBean.befanstime = Utils.getTime();
-                            addBean.id = bean.id ;
+                            addBean.id = bean.id;
                             newBean.attentionlist = new ArrayList<>();
                             newBean.attentionlist.add(addBean);
-                            attentionList.add(0,newBean);
+                            attentionList.add(0, newBean);
                         }
 
 
@@ -196,21 +201,21 @@ public class DetailActivity extends BaseListActivity {
                                 List<AttentionBean.AttentionlistBean> attentionlistBeanlist = attentionBean.attentionlist;
                                 for (int j = 0; j < attentionlistBeanlist.size(); j++) {
                                     //循环匹配id 匹配到之后移除
-                                    if (bean.userid == attentionlistBeanlist.get(j).id){
+                                    if (bean.userid == attentionlistBeanlist.get(j).id) {
                                         LogUtils.e(attentionlistBeanlist.get(j).id);
                                         attentionlistBeanlist.remove(j);
-                                        break;}
+                                        break;
+                                    }
                                 }
                                 break;
                             }
                         }
                     }
                     SPUtils.setAttentionList(GsonUtil.toJosn(attentionList));
-                    EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
+                    EventUtil.sendEvent(EventUtil.ACT_REFRESH, null);
                 }
             });
         }
-
 
 
         //头像
@@ -238,7 +243,10 @@ public class DetailActivity extends BaseListActivity {
         af_heads.removeAllViews();
         for (int i = 0; i < bean.zang.size(); i++) {
 
-            if (bean.zang.get(i).id == SPUtils.getId()){tv_zang.setSelected(false);tv_zang.setText("取消赞");}
+            if (bean.zang.get(i).id == SPUtils.getId()) {
+                tv_zang.setSelected(false);
+                tv_zang.setText("取消赞");
+            }
 
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams((int) (20 * MyApplication.getScale()), (int) (20 * MyApplication.getScale()));
             CircleImageView imageView = new CircleImageView(xContext);
@@ -313,6 +321,13 @@ public class DetailActivity extends BaseListActivity {
         context.startActivity(intent);
     }
 
+    public static void startActivityHot(Context context, AllDataBean bean) {
+        Intent intent = new Intent(context, DetailActivity.class);
+        intent.putExtra("bean", bean);
+        intent.putExtra("ishot", true);
+        context.startActivity(intent);
+    }
+
 
     @OnClick(R.id.tv_evaluate)
     public void onViewClicked() {
@@ -339,7 +354,9 @@ public class DetailActivity extends BaseListActivity {
         dataContent.clear();
         dataContent.addAll(bean.evaluate);
         mRcView.complete();
-        EventUtil.sendEvent(EventUtil.ACT_Save_All,bean);
+        if (ishot) EventUtil.sendEvent(EventUtil.ACT_REFRESH_hot, bean);
+        else
+            EventUtil.sendEvent(EventUtil.ACT_Save_All, bean);
         Utils.hideSoft(mEtEvaluate);
 
     }

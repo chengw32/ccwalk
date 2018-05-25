@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.GroupInfoBean;
+import cc.cwalk.com.beans.PurchaseBean;
 
 public class PurchaseDetailActivity extends BaseActivity {
 
@@ -21,7 +22,7 @@ public class PurchaseDetailActivity extends BaseActivity {
     TextView tvMoney;
     @Bind(R.id.tv_manager)
     TextView tvManager;
-    private GroupInfoBean bean;
+    private PurchaseBean bean;
 
     @Override
     protected int setContentLayout() {
@@ -31,12 +32,12 @@ public class PurchaseDetailActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        bean = (GroupInfoBean) getIntent().getSerializableExtra("bean");
+        bean = (PurchaseBean) getIntent().getSerializableExtra("bean");
 
-        tvTitle.setText(bean.getTitle());
-        tvDes.setText(bean.getDes());
-        tvMoney.setText(bean.getMoney());
-        tvManager.setText(bean.getName());
+        tvTitle.setText(bean.title);
+        tvDes.setText(bean.content);
+        tvMoney.setText(""+bean.money);
+        tvManager.setText(bean.name);
 
     }
 
@@ -50,7 +51,7 @@ public class PurchaseDetailActivity extends BaseActivity {
 
     }
 
-    public static void startActivity(Context xContext, GroupInfoBean groupInfoBean) {
+    public static void startActivity(Context xContext, PurchaseBean groupInfoBean) {
         Intent intent = new Intent(xContext, PurchaseDetailActivity.class);
         intent.putExtra("bean", groupInfoBean);
         xContext.startActivity(intent);

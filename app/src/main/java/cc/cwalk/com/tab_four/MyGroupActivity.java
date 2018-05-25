@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -13,7 +14,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.tab_four.activity.GroupActivityActivity;
 import cc.cwalk.com.utils.DataUtils;
-import cc.cwalk.com.utils.SPUtils;
+import cc.cwalk.com.utils.EventUtil;
 
 public class MyGroupActivity extends BaseActivity {
 
@@ -22,6 +23,8 @@ public class MyGroupActivity extends BaseActivity {
     LinearLayout llJoin;
     @Bind(R.id.ll_expenditure)
     LinearLayout llexpenditure;
+    @Bind(R.id.tv_join_num)
+    TextView tvJoinNum;
 
     @Override
     protected int setContentLayout() {
@@ -32,15 +35,23 @@ public class MyGroupActivity extends BaseActivity {
     protected void initView() {
 
         if (DataUtils.getInstance().getCreater() != 1) {
-                llJoin.setVisibility(View.GONE);
+            llJoin.setVisibility(View.GONE);
             llexpenditure.setVisibility(View.GONE);
         }
+
+        tvJoinNum.setText("入团申请 ("+DataUtils.getInstance().getJoinList().size()+")");
 
     }
 
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public void onMessageEvent(EventUtil.BaseEvent event) {
+        if (EventUtil.ACT_REFRESH_group_member.equals(event.getAction()))
+            tvJoinNum.setText("入团申请 ("+DataUtils.getInstance().getJoinList().size()+")");
     }
 
     @Override
@@ -80,4 +91,10 @@ public class MyGroupActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

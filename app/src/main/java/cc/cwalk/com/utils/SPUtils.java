@@ -24,6 +24,13 @@ public class SPUtils {
     private static final String fanslist = "fanslist";//
     private static final String attentionlist = "attentionlist";//
     private static final String noticelist = "noticelist";//
+    private static final String purchaselist = "purchaselist";//
+    private static final String activitylist = "activitylist";//
+    private static final String hotlist = "hotlist";//
+    private static final String teachinglist = "teachinglist";//
+    private static final String groupmemberlist = "groupmemberlist";//
+    private static final String joinlist = "joinlist";//
+    private static final String GroupPaylist = "GroupPaylist";//
     private static SharedPreferences	sp;
 
     /**
@@ -138,5 +145,76 @@ public class SPUtils {
         editor.commit();
     }
 
+
+    public static void setPurchaseList(String purchaseList) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(purchaselist,purchaseList);
+        editor.commit();
+    }
+    public static String getPurchaseList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(purchaselist,"");
+    }
+
+    public static String getActivityList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(activitylist,"");
+    }
+    public static void setActivityList(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(activitylist,s);
+        editor.commit();
+    }
+    public static void setHotList(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(hotlist,s);
+        editor.commit();
+    }
+
+    public static String getHotList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(hotlist,"");
+    }
+
+    public static void setTeachinglist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(teachinglist,s);
+        editor.commit();
+    }
+
+    public static String getTeachingList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(teachinglist,"");
+    }
+    public static void setGroupmemberglist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(groupmemberlist,s);
+        editor.commit();
+    }
+
+    public static String getGroupmemberList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(groupmemberlist,"");
+    }
+    public static void setJoinlist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(joinlist,s);
+        editor.commit();
+    }
+
+    public static String getJoinList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(joinlist,"");
+    }
+    public static void setGroupPaylist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(GroupPaylist,s);
+        editor.commit();
+    }
+
+    public static String getGroupPayList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(GroupPaylist,"");
+    }
 
 }

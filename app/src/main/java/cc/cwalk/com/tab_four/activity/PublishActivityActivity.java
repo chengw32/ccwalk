@@ -13,6 +13,7 @@ import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -20,8 +21,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
+import cc.cwalk.com.beans.ActivityBean;
+import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
+import cc.cwalk.com.utils.Utils;
 
 public class PublishActivityActivity extends BaseActivity {
 
@@ -78,8 +85,24 @@ public class PublishActivityActivity extends BaseActivity {
         if (TextUtils.isEmpty(adress)){
             ToastUtils.s("地点不能为空");
             return;}
+        List<ActivityBean> activitysList = DataUtils.getInstance().getActivitysList();
+
+        ActivityBean bean = new ActivityBean();
+        bean.member = new ArrayList<>();
+        bean.adress = adress;
+        bean.name = DataUtils.getInstance().getUserById(SPUtils.getId()).name;
+        bean.title = title ;
+        bean.banner = selects != null ?selects.get(0).getCutPath() :"";
+        bean.content = etDes.getText().toString();
+        bean.money = Integer.valueOf(etMoney.getText().toString() );
+        bean.endtime = time ;
+        bean.publishtime = Utils.getTime();
+        bean.id = activitysList.size() + 1 ;
+        activitysList.add(0,bean);
+        SPUtils.setActivityList(GsonUtil.toJosn(activitysList));
 
         ToastUtils.s("发布成功");
+        EventUtil.sendEvent(EventUtil.ACT_REFRESH_group_activity,null);
         finish();
     }
 
@@ -104,13 +127,15 @@ public class PublishActivityActivity extends BaseActivity {
         }
     }
 
+    List<LocalMedia> selects ;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片、视频、音频选择结果回调
-                    List<LocalMedia> selects = PictureSelector.obtainMultipleResult(data);
+                   selects = PictureSelector.obtainMultipleResult(data);
                     // 例如 LocalMedia 里面返回三种path
                     // 1.media.getPath(); 为原图path
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外

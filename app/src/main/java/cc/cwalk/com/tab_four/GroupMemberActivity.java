@@ -16,6 +16,9 @@ import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
 
 public class GroupMemberActivity extends BaseListActivity {
@@ -40,7 +43,7 @@ public class GroupMemberActivity extends BaseListActivity {
     public void getData(int pageNo) {
 
         mRcView.clearDataContent();
-        List<UserBean> userList = DataUtils.getInstance().getUserList();
+        List<UserBean> userList = DataUtils.getInstance().getGroupMemberList();
         mRcView.getDataContent().addAll(userList);
         mRcView.complete();
 
@@ -48,10 +51,21 @@ public class GroupMemberActivity extends BaseListActivity {
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.REMOVE_MEMBER.equals(event.getAction())){
+        if (EventUtil.REMOVE_MEMBER.equals(event.getAction())) {
             UserBean bean = (UserBean) event.getData();
-            mRcView.getDataContent().remove(bean);
-            mRcView.notifyDataSetChanged();
+            List<UserBean> dataContent = mRcView.getDataContent();
+            for (int i = 0; i < dataContent.size(); i++) {
+                UserBean userBean = dataContent.get(i);
+
+                int id = bean.id;
+                int id1 = userBean.id;
+                LogUtils.e("传回来的id "+id+"列表里的 id "+id1);
+                if (id == id1){ dataContent.remove(userBean);
+                mRcView.complete();
+                SPUtils.setGroupmemberglist(GsonUtil.toJosn(dataContent));
+                return;}
+
+            }
         }
     }
 
@@ -63,7 +77,7 @@ public class GroupMemberActivity extends BaseListActivity {
 
 
                 TextView textView = holder.getTextView(R.id.tv_type);
-                if (position< 10){
+                if (position < 10) {
                     if (item.creater == 1) {
                         textView.setVisibility(View.VISIBLE);
                         textView.setText("会长、副会长");
@@ -72,23 +86,23 @@ public class GroupMemberActivity extends BaseListActivity {
                             UserBean groupInfoBean = (UserBean) mRcView.getDataContent().get(position - 1);
                             int manager = groupInfoBean.manager;
                             int manager1 = item.manager;
-                            if (manager == manager1){
+                            if (manager == manager1) {
                                 textView.setVisibility(View.GONE);
-                            }else textView.setVisibility(View.VISIBLE);
+                            } else textView.setVisibility(View.VISIBLE);
                         }
 
                         textView.setText("管理员");
 
-                    }else {
-                        GroupInfoBean groupInfoBean = (GroupInfoBean) mRcView.getDataContent().get(position - 1);
-                        int manager = groupInfoBean.getManager();
+                    } else {
+                        UserBean groupInfoBean = (UserBean) mRcView.getDataContent().get(position - 1);
+                        int manager = groupInfoBean.manager;
                         int manager1 = item.manager;
-                        if (manager == manager1){
+                        if (manager == manager1) {
                             textView.setVisibility(View.GONE);
-                        }else textView.setVisibility(View.VISIBLE);
+                        } else textView.setVisibility(View.VISIBLE);
                         textView.setText("成员");
                     }
-                }else {
+                } else {
                     textView.setVisibility(View.GONE);
                 }
 

@@ -1,0 +1,34 @@
+﻿[{
+		"type": "CRIP",
+		"istitle": 1,
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	},
+	{
+		"type": "CRIP",
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	},
+	{
+		"type": "CRIP",
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	},
+	{
+		"type": "曳步舞教程",
+		"istitle": 1,
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	},
+	{
+		"type": "CRIP",
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	},
+	{
+		"type": "CRIP",
+		"title": "xxx",
+		"url": "http://chengw32.com:8080/videos/sample.mp4"
+	}
+
+]

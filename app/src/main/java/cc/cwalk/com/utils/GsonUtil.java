@@ -8,12 +8,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import cc.cwalk.com.beans.ActivityBean;
 import cc.cwalk.com.beans.AttentionBean;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.FansBean;
 import cc.cwalk.com.beans.GroupInfoBean;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.NoticeBean;
+import cc.cwalk.com.beans.PurchaseBean;
+import cc.cwalk.com.beans.TeachingBean;
 import cc.cwalk.com.beans.UserBean;
 
 public class GsonUtil {
@@ -85,4 +88,44 @@ public class GsonUtil {
 		List<NoticeBean> data = getGson().fromJson(jsonString, listType);
 		return data ;
     }
+    public static  List getPurchaseList(String jsonString) {
+		Type listType = new TypeToken<List<PurchaseBean>>() {}.getType();
+		List<PurchaseBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+    public static  List getActivityList(String jsonString) {
+		Type listType = new TypeToken<List<ActivityBean>>() {}.getType();
+		List<ActivityBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+    }
+
+	public static List getHotList(String jsonString) {
+		Type listType = new TypeToken<List<AllDataBean>>() {}.getType();
+		List<AllDataBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+	}
+
+	public static List getTeachingList(String jsonString) {
+		Type listType = new TypeToken<List<TeachingBean>>() {}.getType();
+		List<TeachingBean> data = getGson().fromJson(jsonString, listType);
+		return data ;
+	}
+
+	public static List getGroupMemberList(String user) {
+		Type listType = new TypeToken<List<UserBean>>() {}.getType();
+		List<UserBean> data = getGson().fromJson(user, listType);
+		return data ;
+	}
+
+	public static List getJoinList(String joinList) {
+		Type listType = new TypeToken<List<UserBean>>() {}.getType();
+		List<UserBean> data = getGson().fromJson(joinList, listType);
+		return data ;
+	}
+
+	public static List getGroupPayList(String groupPayList) {
+		Type listType = new TypeToken<List<ActivityBean>>() {}.getType();
+		List<ActivityBean> data = getGson().fromJson(groupPayList, listType);
+		return data ;
+	}
 }

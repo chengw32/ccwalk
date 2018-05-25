@@ -16,6 +16,9 @@ public class EventUtil {
 
 	public final static String ACT_LOGIN = "login";
 	public final static String ACT_REFRESH = "refresh";
+	public final static String ACT_REFRESH_group_member = "ACT_REFRESH_group_member";
+	public final static String ACT_REFRESH_group_activity = "ACT_REFRESH_group_activity";
+	public final static String ACT_REFRESH_hot = "ACT_REFRESH_hot";
 	public final static String ACT_Save_All = "save_all";
 	public final static String IMAGE_VIDEO = "pickerimages";
 	public final static String NOTICE_PUBLISH = "publish";
