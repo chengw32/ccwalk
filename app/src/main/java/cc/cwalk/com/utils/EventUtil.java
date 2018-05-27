@@ -15,6 +15,7 @@ import org.greenrobot.eventbus.EventBus;
 public class EventUtil {
 
 	public final static String ACT_LOGIN = "login";
+	public final static String ACT_regist = "regist";
 	public final static String ACT_REFRESH = "refresh";
 	public final static String ACT_REFRESH_group_member = "ACT_REFRESH_group_member";
 	public final static String ACT_REFRESH_group_activity = "ACT_REFRESH_group_activity";

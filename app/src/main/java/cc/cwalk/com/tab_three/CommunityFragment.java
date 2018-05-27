@@ -1,19 +1,22 @@
 package cc.cwalk.com.tab_three;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 
-import java.util.List;
-
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListFragment;
 import cc.cwalk.com.beans.AllDataBean;
-import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.dialog.PickerDialog;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
@@ -24,8 +27,6 @@ import cc.cwalk.com.tab_one.DetailTextActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
-import cc.cwalk.com.utils.GsonUtil;
-import cc.cwalk.com.utils.StringCallback;
 
 /**
  * Created by Chen on 2018/4/18.
@@ -33,6 +34,9 @@ import cc.cwalk.com.utils.StringCallback;
  */
 
 public class CommunityFragment extends BaseListFragment {
+    @Bind(R.id.tv_post_num)
+    TextView mTvPostNum;
+
     @Override
     public void initView(View v) {
         super.initView(v);
@@ -49,7 +53,7 @@ public class CommunityFragment extends BaseListFragment {
 
     @Override
     public void onItemClick(View itemView, int pos) {
-        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos-mRcView.getHeadViewCount());
+        AllDataBean itembean = (AllDataBean) mRcView.getDataContent().get(pos - mRcView.getHeadViewCount());
         switch (itembean.type) {
             case 1:
                 DetailActivity.startActivity(getActivity(), itembean);
@@ -58,7 +62,7 @@ public class CommunityFragment extends BaseListFragment {
                 DetailImagesActivity.startActivity(getActivity(), itembean);
                 break;
             case 3:
-                DetailTextActivity.startActivity(getActivity(),itembean);
+                DetailTextActivity.startActivity(getActivity(), itembean);
                 break;
         }
     }
@@ -73,15 +77,15 @@ public class CommunityFragment extends BaseListFragment {
 //                else iv_isvideo.setVisibility(View.GONE);
                 //设置头像
                 UserBean userById = DataUtils.getInstance().getUserById(item.userid);
-                GlideUtils.lodeImage(userById.head,holder.getImageView(R.id.iv_head));
+                GlideUtils.lodeImage(userById.head, holder.getImageView(R.id.iv_head));
                 //设置图片
 //                GlideUtils.lodeImage(item.getVideos().get(0).getVideoImages(),holder.getImageView(R.id.iv_images));
                 //设置名字
-                String numE ;
-                int numEvaluate = item.evaluate !=null ?item.evaluate.size():0;
-                if (numEvaluate>99)numE = "99+";
+                String numE;
+                int numEvaluate = item.evaluate != null ? item.evaluate.size() : 0;
+                if (numEvaluate > 99) numE = "99+";
                 else numE = String.valueOf(numEvaluate);
-                holder.getTextView(R.id.tv_num_evaluate).setText("评论 ("+ numE +")");
+                holder.getTextView(R.id.tv_num_evaluate).setText("评论 (" + numE + ")");
                 holder.getTextView(R.id.tv_time).setText(item.video.time);
 //                holder.getTextView(R.id.tv_num_zang).setText("赞 ("+item.getVideos().get(0).getNumZang()+")");
                 holder.getTextView(R.id.tv_name).setText(userById.name);
@@ -103,7 +107,6 @@ public class CommunityFragment extends BaseListFragment {
     }
 
 
-
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
         if (EventUtil.ACT_REFRESH.equals(event.getAction())) {
@@ -114,8 +117,50 @@ public class CommunityFragment extends BaseListFragment {
     @Override
     public void getData(int pageNo) {
         mRcView.getDataContent().clear();
-      DataUtils.getInstance().getAllList(mRcView);
+        DataUtils.getInstance().getAllList(mRcView);
+        mTvPostNum.setText("访问 209  话题 "+mRcView.getDataContent().size());
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
+    @OnClick(R.id.tv_publish)
+    public void onViewClicked() {
+        PickerDialog pickerDialog = new PickerDialog(getActivity(), new PickerDialog.PickCallBack() {
+            @Override
+            public void video() {
+
+                PictureSelector.create(getActivity())
+                        .openGallery(PictureMimeType.ofVideo())
+                        .maxSelectNum(1)
+                        .forResult(PictureConfig.CHOOSE_REQUEST);
+            }
+
+            @Override
+            public void photo() {
+                PictureSelector.create(getActivity())
+                        .openGallery(PictureMimeType.ofImage())
+                        .forResult(PictureConfig.CHOOSE_REQUEST);
+
+            }
+
+            @Override
+            public void text() {
+                PublishActivity.startActivity(xContext, null);
+            }
+        });
+        pickerDialog.show();
+    }
 }

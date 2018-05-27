@@ -22,7 +22,9 @@ public class UserBean extends BaseBean{
      */
 
     public String name;
+    public String pwd;
     public int sex;
+    public int issign;
     public int id;
     public int creater;
     public int manager;

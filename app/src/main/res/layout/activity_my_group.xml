@@ -196,5 +196,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/d5"
             android:text="社团活动" />
+
+
     </LinearLayout>
+        <include layout="@layout/line"></include>
+
+            <TextView
+                android:id="@+id/tv_join"
+                android:layout_width="match_parent"
+                android:background="@color/blue"
+                android:text="申请入团"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_height="@dimen/d20"/>
 </LinearLayout>

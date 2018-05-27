@@ -213,30 +213,34 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(4));
                 break;
             case R.id.ll_publish:
-                PickerDialog pickerDialog = new PickerDialog(MainActivity.this, new PickerDialog.PickCallBack() {
-                    @Override
-                    public void video() {
-
-                        PictureSelector.create(MainActivity.this)
+                PictureSelector.create(MainActivity.this)
                                 .openGallery(PictureMimeType.ofVideo())
                                 .maxSelectNum(1)
                                 .forResult(PictureConfig.CHOOSE_REQUEST);
-                    }
-
-                    @Override
-                    public void photo() {
-                        PictureSelector.create(MainActivity.this)
-                                .openGallery(PictureMimeType.ofImage())
-                                .forResult(PictureConfig.CHOOSE_REQUEST);
-
-                    }
-
-                    @Override
-                    public void text() {
-                        PublishActivity.startActivity(xContext,null);
-                    }
-                });
-                pickerDialog.show();
+//                PickerDialog pickerDialog = new PickerDialog(MainActivity.this, new PickerDialog.PickCallBack() {
+//                    @Override
+//                    public void video() {
+//
+//                        PictureSelector.create(MainActivity.this)
+//                                .openGallery(PictureMimeType.ofVideo())
+//                                .maxSelectNum(1)
+//                                .forResult(PictureConfig.CHOOSE_REQUEST);
+//                    }
+//
+//                    @Override
+//                    public void photo() {
+//                        PictureSelector.create(MainActivity.this)
+//                                .openGallery(PictureMimeType.ofImage())
+//                                .forResult(PictureConfig.CHOOSE_REQUEST);
+//
+//                    }
+//
+//                    @Override
+//                    public void text() {
+//                        PublishActivity.startActivity(xContext,null);
+//                    }
+//                });
+//                pickerDialog.show();
                 break;
         }
     }
@@ -249,17 +253,13 @@ public class MainActivity extends BaseActivity {
         else if (EventUtil.ACT_Save_All.equals(event.getAction())){
             AllDataBean bean = (AllDataBean) event.getData();
             List<AllDataBean> dataContent = DataUtils.getInstance().getAllList();
-            LogUtils.e("移除之前  "+dataContent.size());
             for (int i = 0; i < dataContent.size(); i++) {
                 AllDataBean allDataBean1 = dataContent.get(i);
-                LogUtils.e("i = " + i + "allDataBean1   id=  "+allDataBean1.id);
                 if (allDataBean1.id == bean.id) {
-                    LogUtils.e("remove "+i);
                     dataContent.remove(allDataBean1);
                     dataContent.add(i, bean);
                 }
             }
-            LogUtils.e("移除之hou  "+dataContent.size());
             SPUtils.setNewest(GsonUtil.toJosn(dataContent));
             EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
         }

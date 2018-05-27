@@ -58,7 +58,7 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
 
         LayoutParams tv_lParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         empty_TV = new TextView(this.getContext());
-        empty_TV.setText("暂无数据");
+        empty_TV.setText("");
         empty_TV.setTextColor(Color.WHITE);
         empty_TV.setGravity(Gravity.CENTER);
         empty_TV.setLayoutParams(tv_lParams);
@@ -109,6 +109,10 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
             endlessRecyclerOnScrollListener.setLayoutManager(mRecyclerView.getLayoutManager());
     }
 
+    public void setEmptyHintText(String hintText){
+        if (null != empty_TV)
+        empty_TV.setText(hintText);
+    }
 
     private void setRecycleScrollBug() {
 
@@ -197,7 +201,7 @@ public class RefreshLoadMoreRecyclerView  extends SwipeRefreshLayout {
     //空数据提示
     private void isDataEmpty() {
         if (null != mHeaderViewRecyclerAdapter) {
-            int itemCount = mHeaderViewRecyclerAdapter.getItemCount();
+            int itemCount = mHeaderViewRecyclerAdapter.getDataContent().size();
             if (itemCount > 0) {
                 empty_TV.setVisibility(View.GONE);
 

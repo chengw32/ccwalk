@@ -37,11 +37,12 @@
                 android:textSize="14sp"/>
 
             <TextView
+                android:id="@+id/tv_post_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="3dp"
-                android:text="访问 83209  话题 39382"
+                android:text="访问 209  话题 3"
                 android:textColor="@color/gray3"
                 android:textSize="13sp"/>
 
@@ -54,7 +55,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/d3"
-            android:visibility="gone"
             android:layout_marginRight="@dimen/d5"
             android:background="@drawable/shape_corner_rect_solid_blue"
             android:text="发帖"/>

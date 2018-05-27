@@ -1,6 +1,8 @@
 ﻿[{
 		"name": "张伟塔",
 		"sex": 1,
+		"issign": 0,
+		"pwd": "123456",
 		"id":1,
 		"creater": 1,
 		"manager": 0,
@@ -14,7 +16,9 @@
 	{
 		"name": "尚燕",
 		"sex": 0,
+		"pwd": "123456",
 		"id":2,
+		"issign": 0,
 		"manager": 1,
 		"grade": "大四",
 		"college": "理工",
@@ -25,8 +29,10 @@
 	},
 	{
 		"name": "赵文",
+		"pwd": "123456",
 		"sex": 1,
 		"id":3,
+		"issign": 0,
 		"manager": 1,
 		"grade": "大四",
 		"college": "理工",
@@ -38,7 +44,9 @@
      	{
      		"name": "传仨",
      		"sex": 1,
+     		"pwd": "123456",
      		"id":4,
+     		"issign": 0,
      		"manager": 0,
      		"grade": "大四",
      		"college": "理工",

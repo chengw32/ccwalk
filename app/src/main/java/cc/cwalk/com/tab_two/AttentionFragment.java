@@ -184,8 +184,9 @@ public class AttentionFragment extends BaseListFragment {
     public void getData(int pageNo) {
         if (!SPUtils.isLogin()) {
             mRcView.complete();
+            mRcView.setEmptyHintText("请登录");
             return;
-        }
+        }else  mRcView.setEmptyHintText("");
         initAttentionList();
         mRcView.clearDataContent();
         List<AllDataBean> allList = DataUtils.getInstance().getAllList();

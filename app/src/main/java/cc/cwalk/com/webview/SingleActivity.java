@@ -37,6 +37,7 @@ public class SingleActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         //释放所有
+        if (null != videoView)
         videoView.setVideoAllCallBack(null);
         GSYVideoManager.releaseAllVideos();
     }
@@ -44,12 +45,14 @@ public class SingleActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (null != videoView)
         videoView.onVideoResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        if (null != videoView)
         videoView.onVideoPause();
     }
 

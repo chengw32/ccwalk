@@ -4,6 +4,7 @@ package cc.cwalk.com;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 
 import java.util.List;
@@ -36,6 +37,13 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void initView() {
 
+        findViewById(R.id.tv_regist).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,RegistActivity.class));
+            }
+        });
+
     }
 
 
@@ -47,6 +55,11 @@ public class LoginActivity extends BaseActivity {
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, LoginActivity.class));
+    }
+
+    @Override
+    public void onMessageEvent(EventUtil.BaseEvent event) {
+        if (EventUtil.ACT_regist.equals(event.getAction()))finish();
     }
 
     @OnClick(R.id.btnLogin)
@@ -66,7 +79,7 @@ public class LoginActivity extends BaseActivity {
         for (int i = 0; i < userList.size(); i++) {
             UserBean userBean = userList.get(i);
             if (userBean.name.equals(phone)) {
-                if ("123456".equals(psw)) {
+                if (userBean.pwd.equals(psw)) {
 
                     ToastUtils.s("登录成功");
                     SPUtils.setIsLogin(true);

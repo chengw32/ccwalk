@@ -8,17 +8,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.credits.CreditsActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -74,6 +78,7 @@ public class MeFragment extends BaseFragment {
     private void refreshLayout() {
         mIvSex.setImageResource(DataUtils.getInstance().getUserById(SPUtils.getId()).sex == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
         if (SPUtils.isLogin()) {
+            mMineSignTv.setText(DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1?"已签到":"未签到");
             mLlSign.setVisibility(View.VISIBLE);
             mTvDes.setVisibility(View.VISIBLE);
             mIvSex.setVisibility(View.VISIBLE);
@@ -176,8 +181,16 @@ public class MeFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_sign:
+                if (DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1)return;
                 ToastUtils.s("已签到 积分 +1");
-                mMineSignTv.setText("已签到");
+                List<UserBean> userList = DataUtils.getInstance().getUserList();
+                for (int i = 0; i < userList.size(); i++) {
+                    if (userList.get(i).id == SPUtils.getId())userList.get(i).issign = 1 ;
+                    SPUtils.setUser(GsonUtil.toJosn(userList));
+                    refreshLayout();
+                    break;
+
+                }
                 break;
             case R.id.llMyInfo:
                 if (SPUtils.isLogin())
