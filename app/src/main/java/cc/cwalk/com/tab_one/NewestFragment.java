@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
+import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.utils.SPUtils;
+import cc.cwalk.com.utils.ToastUtils;
 
 /**
  * 热门视频
@@ -39,16 +41,23 @@ public class NewestFragment extends BaseListFragment {
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter<AllDataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, final AllDataBean item) {
+            public void bindData(final RecyclerViewHolder holder, final int position, final AllDataBean item) {
+                final NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
                 holder.getView(R.id.rl_head).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //释放播放器
+                        view.setVideoAllCallBack(null);
+                        GSYVideoManager.releaseAllVideos();
                         UserHomePagerActivity.startActivity(getActivity(), item.userid);
                     }
                 });
                 holder.getView(R.id.ll_detial).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //释放播放器
+                        view.setVideoAllCallBack(null);
+                        GSYVideoManager.releaseAllVideos();
                         DetailActivity.startActivity(getActivity(), item);
                     }
                 });
@@ -60,7 +69,6 @@ public class NewestFragment extends BaseListFragment {
                 holder.getTextView(R.id.tv_des).setText(item.video.content);
                 holder.getTextView(R.id.tv_num_evaluate).setText("" + item.evaluate.size());
                 holder.getTextView(R.id.tv_num_zang).setText("" + item.zang.size());
-                NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, item);
             }
@@ -89,6 +97,8 @@ public class NewestFragment extends BaseListFragment {
         videoPlayer.getBackButton().setVisibility(View.INVISIBLE);
         videoPlayer.setUp(videoInfo.videoUrl, true, "");
     }
+
+
 
 
     @Override

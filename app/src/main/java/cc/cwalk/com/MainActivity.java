@@ -213,6 +213,7 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(4));
                 break;
             case R.id.ll_publish:
+                if (!SPUtils.isLoginWithToast())return;
                 PictureSelector.create(MainActivity.this)
                                 .openGallery(PictureMimeType.ofVideo())
                                 .maxSelectNum(1)

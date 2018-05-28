@@ -12,13 +12,16 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.beans.DataBean;
+import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.tab_one.DetailActivity;
 import cc.cwalk.com.tab_one.DetailImagesActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 public class MyMessageActivity extends BaseListActivity {
 
@@ -34,20 +37,36 @@ public class MyMessageActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+
+        mRcView.clearDataContent();
+        List<AllDataBean> allList = DataUtils.getInstance().getAllList();
+        List dataContent = mRcView.getDataContent();
+        for (int i = 0; i < allList.size(); i++) {
+            AllDataBean allDataBean = allList.get(i);
+            if (allDataBean.userid == SPUtils.getId()) {
+                List<AllDataBean.EvaluateBean> evaluate = allDataBean.evaluate;
+                for (int j = 0; j < evaluate.size(); j++) {
+                    if (evaluate.get(j).userid != SPUtils.getId())
+                        dataContent.add(evaluate.get(j));
+                }
+            }
+        }
+        mRcView.complete();
+
     }
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<AllDataBean.EvaluateBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
+            public void bindData(RecyclerViewHolder holder, int position, AllDataBean.EvaluateBean item) {
                 //设置头像
-                GlideUtils.lodeImage(item.getHead(),holder.getImageView(R.id.iv_head));
-                holder.getTextView(R.id.tv_title).setText(item.getName() +"  评论了你的作品  ");
-                holder.getTextView(R.id.tv_video_name).setText( item.getVideos().get(0).getTitle());
-                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
-                holder.getTextView(R.id.tv_des).setText(item.getStr().get(0).getDes());
+                UserBean userById = DataUtils.getInstance().getUserById(item.userid);
+                GlideUtils.lodeImage(userById.head, holder.getImageView(R.id.iv_head));
+                holder.getTextView(R.id.tv_title).setText(userById.name + "  评论了你  ");
+//                holder.getTextView(R.id.tv_video_name).setText( item.getVideos().get(0).getTitle());
+                holder.getTextView(R.id.tv_time).setText(item.time);
+                holder.getTextView(R.id.tv_des).setText(item.des);
             }
 
             @Override
@@ -64,7 +83,7 @@ public class MyMessageActivity extends BaseListActivity {
     }
 
     public static void startActivity(Context xContext) {
-        xContext.startActivity(new Intent(xContext,MyMessageActivity.class));
+        xContext.startActivity(new Intent(xContext, MyMessageActivity.class));
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.shuyu.gsyvideoplayer.video.NormalGSYVideoPlayer;
+import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
 import java.util.List;
 
@@ -41,23 +42,27 @@ public class HotFragment extends BaseListFragment {
     protected BaseRecyclerAdapter getAdapter() {
         return new BaseRecyclerAdapter<AllDataBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, final int position, final AllDataBean item) {
+            public void bindData(final RecyclerViewHolder holder, final int position, final AllDataBean item) {
+                final NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
                 holder.getView(R.id.iv_head).setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
-                        //TODO
+                        //释放播放器
+                        view.setVideoAllCallBack(null);
+                        GSYVideoManager.releaseAllVideos();
                         UserHomePagerActivity.startActivity(getActivity(), item.userid);
                     }
                 });
                 holder.getView(R.id.tv_name).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //TODO
+                        //释放播放器
+                        view.setVideoAllCallBack(null);
+                        GSYVideoManager.releaseAllVideos();
                         UserHomePagerActivity.startActivity(getActivity(), item.userid);
                     }
                 });
-                NormalGSYVideoPlayer view = (NormalGSYVideoPlayer) holder.getView(R.id.video_view);
 
                 setThumbImageView(view, item);
                 holder.getView(R.id.tv_detial).setOnClickListener(new View.OnClickListener() {

@@ -54,9 +54,15 @@ public class DataUtils {
         initGroupMember("groupmember.txt");
         initJoin("joinlist.txt");
         initGroupPaylist("payactivity.txt");
+        initCreditslist("credits.txt");
 
         SPUtils.setIsInit(true);
    }
+
+    private void initCreditslist(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setCreditslist(assetsFile);
+    }
 
     private void initGroupPaylist(String s) {
         String assetsFile = getAssetsFile(s);
@@ -327,5 +333,9 @@ public class DataUtils {
     }
     public List getGroupPay() {
         return GsonUtil.getGroupPayList(SPUtils.getGroupPayList());
+    }
+
+    public List getCreditsList() {
+        return GsonUtil.getCreditsList(SPUtils.getCreditsList());
     }
 }

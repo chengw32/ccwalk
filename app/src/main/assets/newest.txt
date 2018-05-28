@@ -28,7 +28,10 @@
 	},
 	"zang": [{
 		"id": 1
-	}, {
+	},
+	{
+    		"id": 4
+    	},{
 		"id": 2
 	}]
 },
@@ -57,18 +60,56 @@
 		"time": "2018-5-6",
 		"videoUrl": "",
 		"videoImages": "",
-		"images":["http://chengw32.com:8080/videos/sample.png","http://chengw32.com:8080/videos/sample.png"],
-		"content": "cwalk 各种快"
+		"images":["http://chengw32.com:8080/videos/8AF705836C6694848E227F3D7F5D4ABD.png","http://chengw32.com:8080/videos/01AC2E0111D3A6BA0D2B1F9904D6EA3E.png"],
+		"content": "喜欢很多年了，计划开练，希望在这里学习，快速成长。有一起的新人可以互相鼓励"
 	},
 	"zang": [{
 		"id": 1
 	}, {
+       		"id": 5
+       	},{
 		"id": 2
 	}]
-},
+}
+,
  {
  	"userid": 3,
  	"type":3,
+ 	"id":3,
+ 	"evaluate": [{
+ 			"userid": 2,
+ 			"time": "2018-5-17",
+ 			"des": "僵是由于你的重心太靠后.你站不稳.可将重心前倾.基本可解决"
+ 		},
+ 		{
+ 		"userid": 1,
+ 			"time": "2018-5-17",
+ 			"des": "重心放在前脚，重心频繁切换，要放在前面那只脚"
+ 		},
+ 		{
+ 		"userid": 2,
+ 			"time": "2018-5-17",
+ 			"des": "试着屈膝（这是动作看上去有弹性的关键），重心在前脚后跟上。重点还是要多加练习"
+ 		}
+ 	],
+ 	"video": {
+ 		"numPaly": 2356,
+ 		"time": "2018-5-6",
+ 		"videoUrl": "",
+ 		"videoImages": "",
+ 		"images":[],
+ 		"content": "【求助】新人学cwalk，跳heel toe总是感觉特别僵硬，跳不出视频中的感觉来"
+ 	},
+ 	"zang": [{
+ 		"id": 1
+ 	}, {
+ 		"id": 3
+ 	}]
+ }
+,
+ {
+ 	"userid": 4,
+ 	"type":1,
  	"id":3,
  	"evaluate": [{
  			"userid": 2,
@@ -89,10 +130,10 @@
  	"video": {
  		"numPaly": 2356,
  		"time": "2018-5-6",
- 		"videoUrl": "",
- 		"videoImages": "",
+ 		"videoUrl": "http://chengw32.com:8080/videos/8AF705836C6694848E227F3D7F5D4ABD.mp4",
+ 		"videoImages": "http://chengw32.com:8080/videos/8AF705836C6694848E227F3D7F5D4ABD.png",
  		"images":[],
- 		"content": "cwalk 各种快"
+ 		"content": "大神级舞步"
  	},
  	"zang": [{
  		"id": 1

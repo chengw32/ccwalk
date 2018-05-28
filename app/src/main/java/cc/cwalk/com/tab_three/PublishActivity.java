@@ -26,6 +26,7 @@ import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
+import cc.cwalk.com.utils.CreditsUtils;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
@@ -109,6 +110,7 @@ public class PublishActivity extends BaseActivity {
 
         EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
         ToastUtils.s("发布成功 积分 +1");
+        CreditsUtils.addCredits("发布帖子");
         finish();
     }
 

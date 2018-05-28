@@ -61,6 +61,7 @@ public class FindFragment extends BaseFragment {
                         mTvTeaching.setTextColor(getResources().getColor(R.color.blue));
                         break;
                 }
+
             }
 
             @Override

@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:text="C-Walk 基础教程"
         style="@style/base_text_style"
-        android:singleLine="true"
         android:background="@color/gray"
         android:padding="@dimen/d5"
         android:layout_height="wrap_content" />

@@ -31,6 +31,7 @@ public class SPUtils {
     private static final String groupmemberlist = "groupmemberlist";//
     private static final String joinlist = "joinlist";//
     private static final String GroupPaylist = "GroupPaylist";//
+    private static final String creditslist = "GroupPaylist";//
     private static SharedPreferences	sp;
 
     /**
@@ -216,5 +217,14 @@ public class SPUtils {
         SharedPreferences sp = getPreferences();
         return sp.getString(GroupPaylist,"");
     }
+    public static void setCreditslist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(creditslist,s);
+        editor.commit();
+    }
 
+    public static String getCreditsList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(creditslist,"");
+    }
 }

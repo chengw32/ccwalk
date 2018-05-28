@@ -10,6 +10,7 @@ import java.util.List;
 
 import cc.cwalk.com.beans.ActivityBean;
 import cc.cwalk.com.beans.AttentionBean;
+import cc.cwalk.com.beans.CreditsBean;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.beans.FansBean;
 import cc.cwalk.com.beans.GroupInfoBean;
@@ -128,4 +129,10 @@ public class GsonUtil {
 		List<ActivityBean> data = getGson().fromJson(groupPayList, listType);
 		return data ;
 	}
+
+    public static List getCreditsList(String creditsList) {
+		Type listType = new TypeToken<List<CreditsBean>>() {}.getType();
+		List<CreditsBean> data = getGson().fromJson(creditsList, listType);
+		return data ;
+    }
 }

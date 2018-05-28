@@ -40,7 +40,8 @@
 		"jointime": "2017-5-6",
 		"persondes": "日复一日",
 		"head": "http://chengw32.com:8080/heads/366dfdf17c2631aae519e03e857c11b5.jpg"
-	},
+	}
+	,
      	{
      		"name": "传仨",
      		"sex": 1,
@@ -54,5 +55,50 @@
      		"jointime": "2017-5-6",
      		"persondes": "日复一日",
      		"head": "http://chengw32.com:8080/heads/366dfdf17c2631aae519e03e857c11b5.jpg"
+     	}
+	,
+     	{
+     		"name": "朱品",
+     		"sex": 2,
+     		"pwd": "123456",
+     		"id":5,
+     		"issign": 0,
+     		"manager": 0,
+     		"grade": "大四",
+     		"college": "理工",
+     		"profession": "广播电视编导",
+     		"jointime": "2017-5-6",
+     		"persondes": "日复一日",
+     		"head": "http://chengw32.com:8080/heads/8ecaf4ccd0d9bde63be9ca977235b6fc.jpg"
+     	}
+	,
+     	{
+     		"name": "云燕",
+     		"sex": 2,
+     		"pwd": "123456",
+     		"id":6,
+     		"issign": 0,
+     		"manager": 0,
+     		"grade": "大四",
+     		"college": "理工",
+     		"profession": "戏剧影视美术设计",
+     		"jointime": "2017-5-6",
+     		"persondes": "丿深藏功与名",
+     		"head": "http://chengw32.com:8080/heads/9f1ee91e8c65b00ca11ab66fc2cf453b.jpg"
+     	}
+	,
+     	{
+     		"name": "孔方",
+     		"sex": 2,
+     		"pwd": "123456",
+     		"id":7,
+     		"issign": 0,
+     		"manager": 0,
+     		"grade": "大四",
+     		"college": "理工",
+     		"profession": "录音艺术",
+     		"jointime": "2017-5-6",
+     		"persondes": "丿深藏功与名",
+     		"head": "http://chengw32.com:8080/heads/44b62fc7009739141241daff798e307c.jpg"
      	}
 ]

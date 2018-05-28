@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -16,15 +17,18 @@ import butterknife.OnClick;
 import cc.cwalk.com.LoginActivity;
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseFragment;
+import cc.cwalk.com.beans.CreditsBean;
 import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.credits.CreditsActivity;
 import cc.cwalk.com.tab_one.UserHomePagerActivity;
+import cc.cwalk.com.utils.CreditsUtils;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.utils.ToastUtils;
+import cc.cwalk.com.utils.Utils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -78,16 +82,17 @@ public class MeFragment extends BaseFragment {
     private void refreshLayout() {
         mIvSex.setImageResource(DataUtils.getInstance().getUserById(SPUtils.getId()).sex == 1 ? R.mipmap.ic_gender_male : R.mipmap.ic_gender_female);
         if (SPUtils.isLogin()) {
-            mMineSignTv.setText(DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1?"已签到":"未签到");
+            mMineSignTv.setText(DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1 ? "已签到" : "未签到");
             mLlSign.setVisibility(View.VISIBLE);
             mTvDes.setVisibility(View.VISIBLE);
             mIvSex.setVisibility(View.VISIBLE);
             mTvName.setText(DataUtils.getInstance().getUserById(SPUtils.getId()).name);
             mTvDes.setText("社团成员");
 
-            GlideUtils.lodeImage(DataUtils.getInstance().getUserById(SPUtils.getId()).head,ivHeader);
+            GlideUtils.lodeImage(DataUtils.getInstance().getUserById(SPUtils.getId()).head, ivHeader);
         } else {
             mTvName.setText("请登录");
+            ivHeader.setImageResource(R.mipmap.default_header);
             mTvDes.setVisibility(View.GONE);
             mLlSign.setVisibility(View.GONE);
             mIvSex.setVisibility(View.GONE);
@@ -181,16 +186,22 @@ public class MeFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_sign:
-                if (DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1)return;
+                if (DataUtils.getInstance().getUserById(SPUtils.getId()).issign == 1) return;
                 ToastUtils.s("已签到 积分 +1");
+
+                //对应用户标记签到
                 List<UserBean> userList = DataUtils.getInstance().getUserList();
                 for (int i = 0; i < userList.size(); i++) {
-                    if (userList.get(i).id == SPUtils.getId())userList.get(i).issign = 1 ;
+                    UserBean userBean = userList.get(i);
+                    if (userBean.id == SPUtils.getId()) {userList.get(i).issign = 1;
                     SPUtils.setUser(GsonUtil.toJosn(userList));
                     refreshLayout();
-                    break;
+                    break;}
 
                 }
+
+                CreditsUtils.addCredits("签到");
+
                 break;
             case R.id.llMyInfo:
                 if (SPUtils.isLogin())

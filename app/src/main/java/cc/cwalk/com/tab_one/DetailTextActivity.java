@@ -29,6 +29,7 @@ import cc.cwalk.com.beans.UserBean;
 import cc.cwalk.com.custom_view.AutoFlowLayout;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
+import cc.cwalk.com.utils.CreditsUtils;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
@@ -304,6 +305,6 @@ public class DetailTextActivity extends BaseListActivity {
         mRcView.complete();
         EventUtil.sendEvent(EventUtil.ACT_Save_All,mBean);
         Utils.hideSoft(mEtEvaluate);
-
+        CreditsUtils.addCredits("发布帖子");
     }
 }

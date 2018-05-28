@@ -17,14 +17,17 @@ import java.util.List;
 
 import cc.cwalk.com.R;
 import cc.cwalk.com.base.BaseListActivity;
+import cc.cwalk.com.beans.CreditsBean;
 import cc.cwalk.com.beans.DataBean;
 import cc.cwalk.com.recycles.BaseRecyclerAdapter;
 import cc.cwalk.com.recycles.RecyclerViewHolder;
 import cc.cwalk.com.utils.DataUtils;
+import cc.cwalk.com.utils.SPUtils;
 import cc.cwalk.com.webview.WebViewActivity;
 
 public class CreditsActivity extends BaseListActivity {
 
+    private TextView credits ;
 
     @Override
     protected void initData() {
@@ -36,9 +39,10 @@ public class CreditsActivity extends BaseListActivity {
         super.initView();
         View view = LayoutInflater.from(xContext).inflate(R.layout.activity_credits_head, null);
         TextView tv_time = view.findViewById(R.id.tv_time);
-        SimpleDateFormat formatter   =   new   SimpleDateFormat   ("更新时间 yyyy-MM-dd   HH:mm:ss");
-        Date curDate =  new Date(System.currentTimeMillis());
-        String   str   =   formatter.format(curDate);
+        credits = view.findViewById(R.id.tv_all_credits);
+        SimpleDateFormat formatter = new SimpleDateFormat("更新时间 yyyy-MM-dd   HH:mm:ss");
+        Date curDate = new Date(System.currentTimeMillis());
+        String str = formatter.format(curDate);
         tv_time.setText(str);
         mRcView.addHeadView(view);
     }
@@ -61,18 +65,27 @@ public class CreditsActivity extends BaseListActivity {
 
     @Override
     public void getData(int pageNo) {
-        DataUtils.getInstance().getDataList(mRcView);
+
+        mRcView.clearDataContent();
+        List<CreditsBean> creditsList = DataUtils.getInstance().getCreditsList();
+        for (int i = 0; i < creditsList.size(); i++) {
+            CreditsBean creditsBean = creditsList.get(i);
+            if (SPUtils.getId() == creditsBean.id)
+                mRcView.getDataContent().addAll(creditsBean.creditslist);
+        }
+        credits.setText(""+mRcView.getDataContent().size());
+        mRcView.complete();
     }
 
-    String [] mark = {"签到","发布视频","评论帖子"};
+    String[] mark = {"签到", "发布视频", "评论帖子"};
 
     @Override
     protected BaseRecyclerAdapter getAdapter() {
-        return new BaseRecyclerAdapter<DataBean>() {
+        return new BaseRecyclerAdapter<CreditsBean.CreditslistBean>() {
             @Override
-            public void bindData(RecyclerViewHolder holder, int position, DataBean item) {
-                holder.getTextView(R.id.tv_time).setText(item.getAttentiontime());
-                holder.getTextView(R.id.tv_mark).setText(mark[position%mark.length]);
+            public void bindData(RecyclerViewHolder holder, int position, CreditsBean.CreditslistBean item) {
+                holder.getTextView(R.id.tv_time).setText(item.time);
+                holder.getTextView(R.id.tv_mark).setText(item.des);
             }
 
             @Override

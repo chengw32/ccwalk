@@ -27,6 +27,7 @@ import cc.cwalk.com.tab_one.DetailTextActivity;
 import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
+import cc.cwalk.com.utils.SPUtils;
 
 /**
  * Created by Chen on 2018/4/18.
@@ -138,6 +139,7 @@ public class CommunityFragment extends BaseListFragment {
 
     @OnClick(R.id.tv_publish)
     public void onViewClicked() {
+        if (!SPUtils.isLoginWithToast())return;
         PickerDialog pickerDialog = new PickerDialog(getActivity(), new PickerDialog.PickCallBack() {
             @Override
             public void video() {
