@@ -135,4 +135,10 @@ public class GsonUtil {
 		List<CreditsBean> data = getGson().fromJson(creditsList, listType);
 		return data ;
     }
+
+    public static List<AllDataBean> getCommunityList(String communityList) {
+		Type listType = new TypeToken<List<AllDataBean>>() {}.getType();
+		List<AllDataBean> data = getGson().fromJson(communityList, listType);
+		return data ;
+    }
 }

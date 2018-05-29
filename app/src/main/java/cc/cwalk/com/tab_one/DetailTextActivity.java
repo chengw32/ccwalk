@@ -155,7 +155,7 @@ public class DetailTextActivity extends BaseListActivity {
                                     AttentionBean.AttentionlistBean b = new AttentionBean.AttentionlistBean();
                                     b.id = mBean.userid;
                                     b.befanstime = Utils.getTime();
-                                    attentionlistBeanlist.add(b);
+                                    attentionlistBeanlist.add(0,b);
                                     break;
                                 }
                             }
@@ -165,8 +165,10 @@ public class DetailTextActivity extends BaseListActivity {
                             newBean.id = SPUtils.getId();
                             AttentionBean.AttentionlistBean addBean = new AttentionBean.AttentionlistBean();
                             addBean.befanstime = Utils.getTime();
-                            addBean.id = mBean.id ;
-                            attentionList.add(0,newBean);
+                            addBean.id = mBean.userid;
+                            newBean.attentionlist = new ArrayList<>();
+                            newBean.attentionlist.add(0,addBean);
+                            attentionList.add(0, newBean);
                         }
 
 

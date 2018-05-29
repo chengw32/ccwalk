@@ -55,9 +55,15 @@ public class DataUtils {
         initJoin("joinlist.txt");
         initGroupPaylist("payactivity.txt");
         initCreditslist("credits.txt");
+        initCommunitylist("community.txt");
 
         SPUtils.setIsInit(true);
    }
+
+    private void initCommunitylist(String s) {
+        String assetsFile = getAssetsFile(s);
+        SPUtils.setCommunitylist(assetsFile);
+    }
 
     private void initCreditslist(String s) {
         String assetsFile = getAssetsFile(s);
@@ -337,5 +343,9 @@ public class DataUtils {
 
     public List getCreditsList() {
         return GsonUtil.getCreditsList(SPUtils.getCreditsList());
+    }
+
+    public List getCommunityList() {
+       return GsonUtil.getCommunityList(SPUtils.getCommunityList());
     }
 }

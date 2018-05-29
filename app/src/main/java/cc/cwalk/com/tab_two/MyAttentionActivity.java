@@ -19,6 +19,7 @@ import cc.cwalk.com.utils.DialogUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GlideUtils;
 import cc.cwalk.com.utils.GsonUtil;
+import cc.cwalk.com.utils.LogUtils;
 import cc.cwalk.com.utils.SPUtils;
 
 public class MyAttentionActivity extends BaseListActivity {
@@ -112,6 +113,7 @@ public class MyAttentionActivity extends BaseListActivity {
         for (int i = 0; i < data.size(); i++) {
             if (SPUtils.getId() ==data.get(i).id) {
                 List<AttentionBean.AttentionlistBean>  attentionlist = data.get(i).attentionlist;
+                LogUtils.e(GsonUtil.toJosn(attentionlist));
                 mRcView.getDataContent().addAll(attentionlist);
                 mRcView.complete();
                 return;

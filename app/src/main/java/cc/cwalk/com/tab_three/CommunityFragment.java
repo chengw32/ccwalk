@@ -11,6 +11,8 @@ import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -118,7 +120,8 @@ public class CommunityFragment extends BaseListFragment {
     @Override
     public void getData(int pageNo) {
         mRcView.getDataContent().clear();
-        DataUtils.getInstance().getAllList(mRcView);
+        mRcView.getDataContent().addAll(DataUtils.getInstance().getCommunityList());
+        mRcView.complete();
         mTvPostNum.setText("访问 209  话题 "+mRcView.getDataContent().size());
     }
 
@@ -160,7 +163,7 @@ public class CommunityFragment extends BaseListFragment {
 
             @Override
             public void text() {
-                PublishActivity.startActivity(xContext, null);
+                PublishActivity.startActivity(xContext, null,true);
             }
         });
         pickerDialog.show();

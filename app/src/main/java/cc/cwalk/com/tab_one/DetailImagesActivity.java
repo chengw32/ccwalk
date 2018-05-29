@@ -113,7 +113,7 @@ public class DetailImagesActivity extends BaseListActivity {
             for (int i = 0; i < attentionList.size(); i++) {
                 AttentionBean attentionBean = attentionList.get(i);
                 if (attentionBean.id == SPUtils.getId()) {
-                    //关注列表
+                    //当前登录账号下的关注列表
                     List<AttentionBean.AttentionlistBean> attentionlistBeanlist = attentionBean.attentionlist;
                     for (int j = 0; j < attentionlistBeanlist.size(); j++) {
                         if (mBean.userid == attentionlistBeanlist.get(j).id){
@@ -147,7 +147,7 @@ public class DetailImagesActivity extends BaseListActivity {
                                     AttentionBean.AttentionlistBean b = new AttentionBean.AttentionlistBean();
                                     b.id = mBean.userid;
                                     b.befanstime = Utils.getTime();
-                                    attentionlistBeanlist.add(b);
+                                    attentionlistBeanlist.add(0,b);
                                     break;
                                 }
                             }
@@ -155,10 +155,12 @@ public class DetailImagesActivity extends BaseListActivity {
                             //没有 创建新容器
                             AttentionBean newBean = new AttentionBean();
                             newBean.id = SPUtils.getId();
+                            newBean.attentionlist = new ArrayList<>();
                             AttentionBean.AttentionlistBean addBean = new AttentionBean.AttentionlistBean();
                             addBean.befanstime = Utils.getTime();
-                            addBean.id = mBean.id ;
-                            attentionList.add(0,newBean);
+                            addBean.id = mBean.userid;
+                            newBean.attentionlist.add(0,addBean);
+                            attentionList.add(0, newBean);
                         }
 
 
@@ -186,6 +188,7 @@ public class DetailImagesActivity extends BaseListActivity {
                         }
                     }
                     SPUtils.setAttentionList(GsonUtil.toJosn(attentionList));
+                    EventUtil.sendEvent(EventUtil.ACT_REFRESH, null);
                 }
             });
         }

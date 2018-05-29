@@ -39,12 +39,14 @@ import cc.cwalk.com.utils.Utils;
 public class PublishActivity extends BaseActivity {
 
     private final static String DATA = "DATA";
+    private final static String iscommunity = "iscommunity";
     @Bind(R.id.et_content)
     EditText etContent;
     private int image_width;
     @Bind(R.id.af_images)
     AutoFlowLayout mAfImages;
     private List<LocalMedia> selectList;
+    private  boolean iscomm ;
 
     @Override
     protected int setContentLayout() {
@@ -54,6 +56,7 @@ public class PublishActivity extends BaseActivity {
     @Override
     protected void initView() {
         image_width = (int) (MyApplication.getScreenWidth(PublishActivity.this) / 3 - 20 * MyApplication.getScale());
+         iscomm = getIntent().getBooleanExtra(iscommunity, false);
         selectList = (List<LocalMedia>) getIntent().getSerializableExtra(DATA);
         refreshImages();
 
@@ -65,11 +68,16 @@ public class PublishActivity extends BaseActivity {
 
         String content = etContent.getText().toString().trim();
 
-        List<AllDataBean> allList = DataUtils.getInstance().getAllList();
+        List<AllDataBean> allList = null;
+        if (iscomm)
+        allList = DataUtils.getInstance().getCommunityList();
+        else
+        allList = DataUtils.getInstance().getAllList();
+
 
         AllDataBean bean = new AllDataBean();
         bean.userid = SPUtils.getId();
-        bean.id = DataUtils.getInstance().getAllList().size()+1;
+        bean.id = SPUtils.getPostId() ;
         bean.zang = new ArrayList<>();
         bean.evaluate = new ArrayList<>();
 
@@ -106,6 +114,8 @@ public class PublishActivity extends BaseActivity {
         bean.video = videoBean;
         allList.add(0, bean);
 
+        if (iscomm)SPUtils.setCommunitylist(GsonUtil.toJosn(allList));
+        else
         SPUtils.setNewest(GsonUtil.toJosn(allList));
 
         EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
@@ -190,9 +200,10 @@ public class PublishActivity extends BaseActivity {
         return "";
     }
 
-    public static void startActivity(Context xContext, Object data) {
+    public static void startActivity(Context xContext, Object data,boolean isCommunity) {
         Intent intent = new Intent(xContext, PublishActivity.class);
         intent.putExtra(DATA, (Serializable) data);
+        intent.putExtra(iscommunity, isCommunity);
         xContext.startActivity(intent);
     }
 

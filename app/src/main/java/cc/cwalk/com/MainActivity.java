@@ -23,6 +23,7 @@ import butterknife.OnClick;
 import cc.cwalk.com.base.BaseActivity;
 import cc.cwalk.com.beans.AllDataBean;
 import cc.cwalk.com.dialog.PickerDialog;
+import cc.cwalk.com.dialog.PickerDialog2;
 import cc.cwalk.com.tab_four.MeFragment;
 import cc.cwalk.com.tab_one.FindFragment;
 import cc.cwalk.com.tab_three.CommunityFragment;
@@ -32,6 +33,7 @@ import cc.cwalk.com.utils.DataUtils;
 import cc.cwalk.com.utils.EventUtil;
 import cc.cwalk.com.utils.GsonUtil;
 import cc.cwalk.com.utils.LogUtils;
+import cc.cwalk.com.utils.PicCode;
 import cc.cwalk.com.utils.SPUtils;
 
 public class MainActivity extends BaseActivity {
@@ -80,7 +82,9 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                case PictureConfig.CHOOSE_REQUEST:
+                case PicCode.From_Main:
+                    //底部的发布按钮 只发布到动态
+
                     // 图片、视频、音频选择结果回调
                     List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
                     // 例如 LocalMedia 里面返回三种path
@@ -88,7 +92,19 @@ public class MainActivity extends BaseActivity {
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
                     // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
-                    EventUtil.sendEvent(EventUtil.IMAGE_VIDEO, selectList);
+                    EventUtil.sendEvent(EventUtil.IMAGE_VIDEO_main, selectList);
+                    break;
+                case PictureConfig.CHOOSE_REQUEST:
+                    //底部的发布按钮 只发布到社区
+
+                    // 图片、视频、音频选择结果回调
+                    List<LocalMedia> selectList2 = PictureSelector.obtainMultipleResult(data);
+                    // 例如 LocalMedia 里面返回三种path
+                    // 1.media.getPath(); 为原图path
+                    // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
+                    // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
+                    // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
+                    EventUtil.sendEvent(EventUtil.IMAGE_VIDEO, selectList2);
                     break;
             }
         }
@@ -160,7 +176,7 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_publish,R.id.ll_tab_1, R.id.ll_tab_2, R.id.ll_tab_3, R.id.ll_tab_4})
+    @OnClick({R.id.ll_publish, R.id.ll_tab_1, R.id.ll_tab_2, R.id.ll_tab_3, R.id.ll_tab_4})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_tab_1:
@@ -213,56 +229,72 @@ public class MainActivity extends BaseActivity {
                 changeFragment(getInstanceByIndex(4));
                 break;
             case R.id.ll_publish:
-                if (!SPUtils.isLoginWithToast())return;
-                PictureSelector.create(MainActivity.this)
-                                .openGallery(PictureMimeType.ofVideo())
-                                .maxSelectNum(1)
-                                .forResult(PictureConfig.CHOOSE_REQUEST);
-//                PickerDialog pickerDialog = new PickerDialog(MainActivity.this, new PickerDialog.PickCallBack() {
-//                    @Override
-//                    public void video() {
-//
-//                        PictureSelector.create(MainActivity.this)
+                if (!SPUtils.isLoginWithToast()) return;
+//                PictureSelector.create(MainActivity.this)
 //                                .openGallery(PictureMimeType.ofVideo())
 //                                .maxSelectNum(1)
 //                                .forResult(PictureConfig.CHOOSE_REQUEST);
-//                    }
-//
-//                    @Override
-//                    public void photo() {
-//                        PictureSelector.create(MainActivity.this)
-//                                .openGallery(PictureMimeType.ofImage())
-//                                .forResult(PictureConfig.CHOOSE_REQUEST);
-//
-//                    }
-//
-//                    @Override
-//                    public void text() {
-//                        PublishActivity.startActivity(xContext,null);
-//                    }
-//                });
-//                pickerDialog.show();
+                PickerDialog2 pickerDialog = new PickerDialog2(MainActivity.this, new PickerDialog2.PickCallBack() {
+                    @Override
+                    public void video() {
+
+                        PictureSelector.create(MainActivity.this)
+                                .openCamera(PictureMimeType.ofVideo())
+                                .forResult(PicCode.From_Main);
+                    }
+
+                    @Override
+                    public void photo() {
+                        PictureSelector.create(MainActivity.this)
+                                .openGallery(PictureMimeType.ofVideo())
+                                .maxSelectNum(1)
+                                .forResult(PicCode.From_Main);
+
+                    }
+
+                    @Override
+                    public void text() {
+                    }
+                });
+                pickerDialog.show();
                 break;
         }
     }
 
     @Override
     public void onMessageEvent(EventUtil.BaseEvent event) {
-        if (EventUtil.IMAGE_VIDEO.equals(event.getAction())){
-            PublishActivity.startActivity(xContext,event.getData());
-        }
-        else if (EventUtil.ACT_Save_All.equals(event.getAction())){
+        if (EventUtil.IMAGE_VIDEO.equals(event.getAction())) {
+            //只存储到社区
+            PublishActivity.startActivity(xContext, event.getData(), true);
+        } else if (EventUtil.IMAGE_VIDEO_main.equals(event.getAction())) {
+            //只存储到动态
+            PublishActivity.startActivity(xContext, event.getData(), false);
+        } else if (EventUtil.ACT_Save_All.equals(event.getAction())) {
             AllDataBean bean = (AllDataBean) event.getData();
+
+            //查询动态列表 有id匹配的就是这个帖子有变化
             List<AllDataBean> dataContent = DataUtils.getInstance().getAllList();
             for (int i = 0; i < dataContent.size(); i++) {
                 AllDataBean allDataBean1 = dataContent.get(i);
                 if (allDataBean1.id == bean.id) {
                     dataContent.remove(allDataBean1);
                     dataContent.add(i, bean);
+                    SPUtils.setNewest(GsonUtil.toJosn(dataContent));
+                    break;
                 }
             }
-            SPUtils.setNewest(GsonUtil.toJosn(dataContent));
-            EventUtil.sendEvent(EventUtil.ACT_REFRESH,null);
+            //查询社区帖子列表 有id匹配的就是这个帖子有变化
+            dataContent = DataUtils.getInstance().getCommunityList();
+            for (int i = 0; i < dataContent.size(); i++) {
+                AllDataBean allDataBean1 = dataContent.get(i);
+                if (allDataBean1.id == bean.id) {
+                    dataContent.remove(allDataBean1);
+                    dataContent.add(i, bean);
+                    SPUtils.setCommunitylist(GsonUtil.toJosn(dataContent));
+                    break;
+                }
+            }
+            EventUtil.sendEvent(EventUtil.ACT_REFRESH, null);
         }
     }
 

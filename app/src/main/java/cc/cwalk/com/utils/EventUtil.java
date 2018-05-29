@@ -22,6 +22,7 @@ public class EventUtil {
 	public final static String ACT_REFRESH_hot = "ACT_REFRESH_hot";
 	public final static String ACT_Save_All = "save_all";
 	public final static String IMAGE_VIDEO = "pickerimages";
+	public final static String IMAGE_VIDEO_main = "pickerimages_main";
 	public final static String NOTICE_PUBLISH = "publish";
 	public final static String REMOVE_MEMBER = "removemember";
 	public final static String REMOVE_ATTENTION = "removeattention";

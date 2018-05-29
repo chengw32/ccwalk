@@ -19,6 +19,7 @@ public class SPUtils {
     private static final String IS_LOGIN = "islogin";//登录状态
     private static final String IS_INIT = "isinit";//数据初始化
     private static final String ID = "id";//id
+    private static final String PostID = "PostID";//id
     private static final String userlist = "userlist";//
     private static final String newestlist = "newestlist";//
     private static final String fanslist = "fanslist";//
@@ -31,7 +32,8 @@ public class SPUtils {
     private static final String groupmemberlist = "groupmemberlist";//
     private static final String joinlist = "joinlist";//
     private static final String GroupPaylist = "GroupPaylist";//
-    private static final String creditslist = "GroupPaylist";//
+    private static final String creditslist = "creditslist";//
+    private static final String communityList = "communityList";//
     private static SharedPreferences	sp;
 
     /**
@@ -89,6 +91,20 @@ public class SPUtils {
         SharedPreferences sp = getPreferences();
         return sp.getInt(ID,0);
     }
+    public static int getPostId() {
+        SharedPreferences sp = getPreferences();
+        int anInt = sp.getInt(PostID, 0);
+        if (anInt < 100)anInt = 100 ;
+        savePostId(anInt);
+        return anInt ;
+    }
+
+    private static void savePostId( int id) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putInt(PostID,id+1);
+        editor.commit();
+    }
+
     public static void setId(int id) {
         SharedPreferences.Editor editor = getEditor();
         editor.putInt(ID,id);
@@ -226,5 +242,15 @@ public class SPUtils {
     public static String getCreditsList() {
         SharedPreferences sp = getPreferences();
         return sp.getString(creditslist,"");
+    }
+    public static void setCommunitylist(String s) {
+        SharedPreferences.Editor editor = getEditor();
+        editor.putString(communityList,s);
+        editor.commit();
+    }
+
+    public static String getCommunityList() {
+        SharedPreferences sp = getPreferences();
+        return sp.getString(communityList,"");
     }
 }

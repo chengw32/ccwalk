@@ -170,7 +170,7 @@ public class DetailActivity extends BaseListActivity {
                                     AttentionBean.AttentionlistBean b = new AttentionBean.AttentionlistBean();
                                     b.id = bean.userid;
                                     b.befanstime = Utils.getTime();
-                                    attentionlistBeanlist.add(b);
+                                    attentionlistBeanlist.add(0,b);
                                     break;
                                 }
                             }
@@ -180,9 +180,9 @@ public class DetailActivity extends BaseListActivity {
                             newBean.id = SPUtils.getId();
                             AttentionBean.AttentionlistBean addBean = new AttentionBean.AttentionlistBean();
                             addBean.befanstime = Utils.getTime();
-                            addBean.id = bean.id;
+                            addBean.id = bean.userid;
                             newBean.attentionlist = new ArrayList<>();
-                            newBean.attentionlist.add(addBean);
+                            newBean.attentionlist.add(0,addBean);
                             attentionList.add(0, newBean);
                         }
 
