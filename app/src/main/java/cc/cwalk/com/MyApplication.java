@@ -39,7 +39,7 @@ public class MyApplication extends Application {
         scale = getResources().getDisplayMetrics().density;
         instance = this;
 
-//        if (!SPUtils.isInit())
+        if (!SPUtils.isInit())
         DataUtils.getInstance().initData();
 
     }

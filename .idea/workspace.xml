@@ -14,13 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a992780e-2f28-4c3b-86ce-1b3de28836fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/groupmember.txt" afterPath="$PROJECT_DIR$/app/src/main/assets/groupmember.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,11 +79,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="groupmember.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="groupmember.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/groupmember.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+            <state relative-caret-position="459">
+              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="43" column="15" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -105,31 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommunityFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="64" column="41" lean-forward="false" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DetailTextActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/DetailTextActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3321">
               <caret line="165" column="48" lean-forward="false" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyAttentionActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_two/MyAttentionActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2133">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1934,7 +1928,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/ExpenditureInFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_four/ExpenditureFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/payactivity.txt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_expenditure.xml" />
@@ -1985,6 +1978,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/tab_one/DetailTextActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/groupmember.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java" />
       </list>
     </option>
   </component>
@@ -2273,7 +2267,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/GifPlayerDemo" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="SearchEverywhereHistoryKey" value="myatt&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.MyAttentionActivity&#10;comm&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;deta&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailTextActivity&#10;detail&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;main&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/MainActivity.java&#10;pub&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/PublishActivity.java&#10;data&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;datau&#9;PSI&#9;JAVA://cc.cwalk.com.utils.DataUtils&#10;groupact&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.activity.GroupActivityActivity&#10;det&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailTextActivity&#10;publis&#9;PSI&#9;JAVA://cc.cwalk.com.tab_three.PublishActivity&#10;detai&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;uti&#9;PSI&#9;JAVA://cc.cwalk.com.utils.Utils&#10;reg&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;login&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;mef&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java&#10;hot&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.HotFragment&#10;credit&#9;PSI&#9;JAVA://cc.cwalk.com.credits.CreditsActivity&#10;newes&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;com&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;mess&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyMessageActivity.java&#10;teachin&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.TeachingFragment&#10;mymess&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyMessageActivity&#10;regis&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;regi&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;atten&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.AttentionFragment&#10;basel&#9;PSI&#9;JAVA://cc.cwalk.com.base.BaseListFragment&#10;basef&#9;PSI&#9;JAVA://cc.cwalk.com.base.BaseFragment&#10;lgo&#9;PSI&#9;JAVA://sun.security.util.AbstractAlgorithmConstraints&#10;logina&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;groupi&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.GroupInfoActivity&#10;mygroup&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyGroupActivity.java&#10;sing&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/webview/SingleActivity.java&#10;userb&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/beans/UserBean.java&#10;groupme&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/GroupMemberActivity.java&#10;pur&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/PurchaseActivity.java&#10;new&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;single&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/webview/SingleActivity.java&#10;detaila&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;groupactivity&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/activity/GroupActivityActivity.java&#10;publisha&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/activity/PublishActivityActivity.java&#10;publisn&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.PublishNoticeActivity&#10;mygro&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyGroupActivity&#10;group&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.activity.GroupActivityActivity&#10;join&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.JoinGroupActivity&#10;memberd&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MemberDetailActivity&#10;groum&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/GroupMemberActivity.java&#10;groupm&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.GroupMemberActivity&#10;teach&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.TeachingFragment&#10;glideu&#9;PSI&#9;JAVA://cc.cwalk.com.utils.GlideUtils" />
+    <property name="SearchEverywhereHistoryKey" value="myapp&#9;PSI&#9;JAVA://cc.cwalk.com.MyApplication&#10;myatt&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.MyAttentionActivity&#10;comm&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;deta&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailTextActivity&#10;detail&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;main&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/MainActivity.java&#10;pub&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/PublishActivity.java&#10;data&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/utils/DataUtils.java&#10;datau&#9;PSI&#9;JAVA://cc.cwalk.com.utils.DataUtils&#10;groupact&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.activity.GroupActivityActivity&#10;det&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.DetailTextActivity&#10;publis&#9;PSI&#9;JAVA://cc.cwalk.com.tab_three.PublishActivity&#10;detai&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;uti&#9;PSI&#9;JAVA://cc.cwalk.com.utils.Utils&#10;reg&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;login&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;mef&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MeFragment.java&#10;hot&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.HotFragment&#10;credit&#9;PSI&#9;JAVA://cc.cwalk.com.credits.CreditsActivity&#10;newes&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;com&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_three/CommunityFragment.java&#10;mess&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyMessageActivity.java&#10;teachin&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.TeachingFragment&#10;mymess&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyMessageActivity&#10;regis&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;regi&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/RegistActivity.java&#10;atten&#9;PSI&#9;JAVA://cc.cwalk.com.tab_two.AttentionFragment&#10;basel&#9;PSI&#9;JAVA://cc.cwalk.com.base.BaseListFragment&#10;basef&#9;PSI&#9;JAVA://cc.cwalk.com.base.BaseFragment&#10;lgo&#9;PSI&#9;JAVA://sun.security.util.AbstractAlgorithmConstraints&#10;logina&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/LoginActivity.java&#10;groupi&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.GroupInfoActivity&#10;mygroup&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/MyGroupActivity.java&#10;sing&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/webview/SingleActivity.java&#10;userb&#9;FILE&#9;file://D:/mywork/ccwalk/app/src/main/java/cc/cwalk/com/beans/UserBean.java&#10;groupme&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/GroupMemberActivity.java&#10;pur&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/PurchaseActivity.java&#10;new&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/NewestFragment.java&#10;single&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/webview/SingleActivity.java&#10;detaila&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_one/DetailActivity.java&#10;groupactivity&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/activity/GroupActivityActivity.java&#10;publisha&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/activity/PublishActivityActivity.java&#10;publisn&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.PublishNoticeActivity&#10;mygro&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MyGroupActivity&#10;group&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.activity.GroupActivityActivity&#10;join&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.JoinGroupActivity&#10;memberd&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.MemberDetailActivity&#10;groum&#9;FILE&#9;file://C:/Users/Administrator/Documents/GitHub/ccwalk/app/src/main/java/cc/cwalk/com/tab_four/GroupMemberActivity.java&#10;groupm&#9;PSI&#9;JAVA://cc.cwalk.com.tab_four.GroupMemberActivity&#10;teach&#9;PSI&#9;JAVA://cc.cwalk.com.tab_one.TeachingFragment" />
     <property name="android.profiler.active" value="true" />
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-mi_5-72844525" />
     <property name="DEBUGGABLE_PROCESS" value="cc.cwalk.com" />
@@ -2392,7 +2386,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184005657" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184183918" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2440,7 +2434,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184005657" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184183918" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2623,7 +2617,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184005658" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528184183918" />
       </method>
     </configuration>
     <list size="1">
@@ -2763,17 +2757,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_teaching.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/teaching.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -3037,13 +3020,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="571">
           <caret line="140" column="20" lean-forward="false" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="349" column="5" lean-forward="false" selection-start-line="349" selection-start-column="5" selection-end-line="349" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3061,6 +3038,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="93" column="31" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3153,8 +3131,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/groupmember.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state relative-caret-position="459">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cc/cwalk/com/utils/DataUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="43" column="15" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
           <folding />
         </state>
       </provider>
